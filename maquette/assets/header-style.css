@@ -1,0 +1,95 @@
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 10rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color:#33242B;
+    color: white;
+
+    border-bottom: 1px solid black;
+}
+
+#div-header-logo{
+    position: relative;
+    width: 23%;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 2%;
+}
+#logo-header{
+    box-sizing: border-box ;
+}
+
+#div-header-navbar{
+    position: relative;
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    justify-content: flex-start;
+    font-size: 2rem;
+
+    margin: 0;
+    padding: 0;
+}
+#div-header-navbar li{
+    display: inline-flex;
+    list-style-type: none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    margin-right: 40px;
+    color: white;
+    text-decoration: none;
+    transition: ease-in-out 0.15s;
+}
+#div-header-navbar ul :hover{
+    cursor: pointer;
+    color: #C246EB;
+    transition: ease-in-out 0.15s;
+}
+
+
+#div-header-icons{
+    position: relative;
+    width: 23%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: space-around;
+    border-left: 1px solid black;
+    font-size: 1.5rem;
+}
+#div-header-icons ul li{
+    position: relative;
+    width: 25%;
+    display: inline;
+    list-style-type: none;
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#div-header-icons ul li button{
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.5rem;
+    transition: ease-in-out 0.15s;
+    color: white;
+}
+#div-header-icons ul li button:hover{
+    cursor: pointer;
+    background-color: #7B5D85;
+    transition: ease-in-out 0.15s;
+}
