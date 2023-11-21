@@ -1,9 +1,9 @@
 header{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
 
-    height: 10rem;
+    height: 15%;
     width: 100%;
 
     display: flex;
@@ -17,12 +17,14 @@ header{
 
 #div-header-logo{
     position: relative;
-    width: 23%;
+    width: 23vw;
     top: 0;
     left: 0;
     display: flex;
     padding: 2%;
 }
+
+
 #logo-header{
     box-sizing: border-box ;
 }
@@ -30,31 +32,34 @@ header{
 #div-header-navbar{
     position: relative;
     width: 50%;
-
-    display: flex;
-    align-items: center;
-
     text-decoration: none;
-    justify-content: flex-start;
-    font-size: 2rem;
+    font-size: 1rem;
 
     margin: 0;
     padding: 0;
 }
+
+#div-header-navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 #div-header-navbar li{
     display: inline-flex;
     list-style-type: none;
     padding-bottom: 15px;
     padding-top: 15px;
-
-    margin-right: 40px;
     color: white;
     text-decoration: none;
     transition: ease-in-out 0.15s;
 }
 #div-header-navbar ul :hover{
     cursor: pointer;
-    color: #C246EB;
+    color: #EB4791;
     transition: ease-in-out 0.15s;
 }
 
@@ -66,7 +71,6 @@ header{
     align-items: center;
     text-decoration: none;
     justify-content: space-around;
-    border-left: 1px solid black;
     font-size: 1.5rem;
 }
 #div-header-icons ul li{

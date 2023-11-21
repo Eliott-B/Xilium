@@ -1,4 +1,44 @@
-body{
+#div-body{
     margin: 0;
-    padding: 0;
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    height: 150%;
+    box-sizing: border-box ;
+
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 30%;
+
+    background-color: black;
+    color: #EB4791;
+}
+
+#button-creer{
+    margin: auto;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: #33242B;
+    color: white;
+    font-size : 2rem;
+    padding-left: 50px;
+    padding-right : 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    transition: ease-in-out 0.2s;
+}
+#button-creer:hover {
+    cursor: pointer;
+    background-color: #2F2433;
+    color: #C246EB;
+    transform : translate(0px, -10px) ;
+    box-shadow: 0px 0px 80px #C246EB;
+}
+
+#paragraph{
+    display: flex;
+    text-align: justify;
+    text-justify: auto;
 }
