@@ -1,0 +1,72 @@
+#div-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding : 20px;
+
+    margin: 0;
+    box-sizing: border-box ;
+
+    width: 100%;
+    height: 200px;
+
+    background-color: black;
+    color: #EB4791;
+}
+#button-creer{
+    margin: auto;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: #33242B;
+    color: #EB4791;
+    font-size : 2rem;
+    padding: 20px 50px 20px 50px;
+
+    transition: ease 0.2s;
+}
+#button-creer:hover {
+    cursor: pointer;
+    background-color: #2F2433;
+    color: #C246EB;
+    box-shadow: 0px 0px 30px #C246EB;
+}
+
+#mes-tickets{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #2F2433;
+}
+
+.tickets{
+    background: no-repeat center url("/maquette/assets/SVG/Fichier25.svg");
+    box-shadow: 0px 0px 50px #EB479199;
+    border-radius: 32px;
+    height: 500px;
+    padding: 10px;
+    margin: 20px ;
+    background-color: #7B5D85;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+.ticket{
+    width: 30%;
+    height: 90%;
+    margin: 25px 30px;
+    background-color: #5CB893CC;
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 0px 0px 20px #46EBA899;
+    float: none;
+    display: inline-block;
+    zoom: 1;
+}
+#titre-tickets{
+    color: white;
+    font-size: 2rem;
+    margin: 0px;
+}

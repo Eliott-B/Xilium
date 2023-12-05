@@ -1,0 +1,9 @@
+#div-footer{
+    background-color: #33242B;
+    position: sticky;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 150px;
+}
