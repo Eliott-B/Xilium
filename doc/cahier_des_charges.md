@@ -1,3 +1,4 @@
+<div align='justify'>
 # CAHIER DES CHARGES
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
@@ -132,3 +133,4 @@ Notre dépôt Git doit contenir la documentation et les annexes du projet. Il do
 
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
+</div>
