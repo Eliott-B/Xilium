@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Lena";
+    src: local("Lena"), url("fonts/lena/Lena.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Sloth";
+    src: local("Sloth"), url("fonts/Sloth/Sloth-Regular.ttf") format("truetype");
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 0px;
+
+    font-family: "Sloth", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lena", sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+img {
+    margin: auto;
+    width: 70%;
+}
+
+main {
+    display: flex;
+
+    flex-grow: 1;
+}
+
+header {
+    width: 20%;
+
+    background-color: #46eba8;
+}
+
+header ul {
+    list-style: none;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+header li {
+    width: 100%;
+}
+
+section {
+    flex-grow: 1;
+
+    background-color: #f6fefb;
+}
+
+footer {
+    background-color: #46eba8;
+}
+
+
+.button {
+    text-decoration: none;
+
+    width: 100%;
+
+    border: 2px solid #5d8575;
+}
+
+.ticket {
+
+}
