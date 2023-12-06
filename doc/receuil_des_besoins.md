@@ -1,3 +1,4 @@
+<div align='justify'>
 # RECUEIL DES BESOINS
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
@@ -206,4 +207,5 @@ Il faut aussi savoir maîtriser le site web Trello et la suite JetBrains.
 ### (e) Quelles sont les hypothèses et les dépendances affectant l’environnement humain ?  
 *RAS*  
 
-> FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
+> FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
+</div>
