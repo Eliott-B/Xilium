@@ -42,7 +42,7 @@
 
 .tickets{
     background: no-repeat center url("/maquette/assets/SVG/Fichier25.svg");
-    box-shadow: 0px 0px 50px #EB479199;
+    box-shadow: 0px 0px 30px #EB479177;
     border-radius: 32px;
     height: 500px;
     padding: 10px;
@@ -60,7 +60,7 @@
     background-color: #5CB893CC;
     border: 1px solid black;
     border-radius: 16px;
-    box-shadow: 0px 0px 20px #46EBA899;
+    box-shadow: 0px 0px 10px #46EBA899;
     float: none;
     display: inline-block;
     zoom: 1;

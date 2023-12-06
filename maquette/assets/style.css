@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Lena";
+    src: local("Lena"), url("./fonts/lena/Lena.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Sloth";
+    src: local("Sloth"), url("./fonts/Sloth/Sloth-Regular.woff") format("woff");
+}
+
+body{
+    background-color: #A15CB8;
+    margin: 0;
+    padding: 0;
+    font-family: "Sloth", sans-serif;
+}
+
+h1, h2, h3, h4{
+    font-family: "Lena", sans-serif;
+}
