@@ -29,6 +29,7 @@
     - [(c) Performances](#c-performances)
     - [(d) Opérations, sécurité, documentation](#d-opérations-sécurité-documentation)
     - [(e) Utilisation et utilisabilité](#e-utilisation-et-utilisabilité)
+    - [(f) Maintenance et portabilité](#f-maintenance-et-portabilité)
     - [(g) Questions non résolues ou reportées à plus tard](#g-questions-non-résolues-ou-reportées-à-plus-tard)
   - [VI./ Chapitre 6 – Recours humain, questions juridiques, politiques, organisationnelles.](#vi-chapitre-6--recours-humain-questions-juridiques-politiques-organisationnelles)
     - [(a) Quel est le recours humain au fonctionnement du système ?](#a-quel-est-le-recours-humain-au-fonctionnement-du-système-)
@@ -178,7 +179,7 @@ Le but de cette application est de faciliter et d’accélérer la résolution d
 **Utilisabilité :**  
 L’application doit être facile d’utilisation, afin de permettre l’accessibilité à tous les utilisateurs de la plateforme.  
 
-### (f) Maintenance et portabilité  
+### (f) Maintenance et portabilité  
 &emsp;Le projet est programmé en anglais et documenté pour le mettre à jour facilement. De plus, il faut éviter les parties de code redondantes et éviter les incohérences. L’utilisation de l’anglais permet de garantir une meilleure maintenabilité.  
 La portabilité du projet se limite aux distributions Linux. Cependant il est possible de charger le site sur un autre système d’exploitation, mais il faudra changer certains paramètres et les vérifier, car il n’est pas garanti que la migration se déroule sans problèmes.  
 
