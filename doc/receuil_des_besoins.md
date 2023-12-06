@@ -17,18 +17,20 @@
   - [IV./ Chapitre 4 – La technologie employée](#iv-chapitre-4--la-technologie-employée)
     - [(a) Quelles sont les exigences technologiques pour ce système ?](#a-quelles-sont-les-exigences-technologiques-pour-ce-système-)
     - [(b) Avec quels systèmes ce système s’interfacera-t-il et avec quelles exigences ?](#b-avec-quels-systèmes-ce-système-sinterfacera-t-il-et-avec-quelles-exigences-)
-- [V./ Chapitre 5 – Autres exigences](#v-chapitre-5--autres-exigences)
+  - [V./ Chapitre 5 – Autres exigences](#v-chapitre-5--autres-exigences)
     - [(a) Processus de développement](#a-processus-de-développement)
       - [i) Qui sont les participants au projet ?](#i-qui-sont-les-participants-au-projet-)
       - [ii) Quelles valeurs devront être privilégiées ? (exemple : simplicité, disponibilité, rapidité, souplesse etc... )](#ii-quelles-valeurs-devront-être-privilégiées--exemple--simplicité-disponibilité-rapidité-souplesse-etc-)
       - [iii) Quels retours ou quelle visibilité sur le projet les utilisateurs et commanditaires souhaitent-ils ?](#iii-quels-retours-ou-quelle-visibilité-sur-le-projet-les-utilisateurs-et-commanditaires-souhaitent-ils-)
+      - [iv) Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?](#iv-que-peut-on-acheter--que-doit-on-construire--qui-sont-nos-concurrents-)
       - [v) Quelles sont les autres exigences du processus ? (exemple : tests, installation, etc...)](#v-quelles-sont-les-autres-exigences-du-processus--exemple--tests-installation-etc)
+      - [vi) À quelles dépendances le projet est-il soumis ?](#vi-à-quelles-dépendances-le-projet-est-il-soumis-)
     - [(b) Règles métier](#b-règles-métier)
     - [(c) Performances](#c-performances)
     - [(d) Opérations, sécurité, documentation](#d-opérations-sécurité-documentation)
     - [(e) Utilisation et utilisabilité](#e-utilisation-et-utilisabilité)
     - [(g) Questions non résolues ou reportées à plus tard](#g-questions-non-résolues-ou-reportées-à-plus-tard)
-- [VI./ Chapitre 6 – Recours humain, questions juridiques, politiques, organisationnelles.](#vi-chapitre-6--recours-humain-questions-juridiques-politiques-organisationnelles)
+  - [VI./ Chapitre 6 – Recours humain, questions juridiques, politiques, organisationnelles.](#vi-chapitre-6--recours-humain-questions-juridiques-politiques-organisationnelles)
     - [(a) Quel est le recours humain au fonctionnement du système ?](#a-quel-est-le-recours-humain-au-fonctionnement-du-système-)
     - [(b) Quelles sont les exigences juridiques et politiques ?](#b-quelles-sont-les-exigences-juridiques-et-politiques-)
     - [(c) Quelles sont les conséquences humaines de la réalisation du système ?](#c-quelles-sont-les-conséquences-humaines-de-la-réalisation-du-système-)
@@ -125,26 +127,26 @@ Les cas d’utilisation sont disponibles dans [les spécifications](specificatio
 &emsp;Il s’interfacera dans un navigateur web et il devra fonctionner sur n’importe quel navigateur, il devra s’adapter à toutes les tailles d’écran. Il devra respecter des exigences de sécurité importantes pour éviter toute fuite de données ou de cyber attaque.  
 
 
-# V./ Chapitre 5 – Autres exigences  
+## V./ Chapitre 5 – Autres exigences  
 
 ### (a) Processus de développement  
 
 #### i) Qui sont les participants au projet ?  
-&emsp;Les participants du projet sont l’équipe de développement.  
+&emsp;Les participants du projet sont l’équipe de développement. 
+
 #### ii) Quelles valeurs devront être privilégiées ? (exemple : simplicité, disponibilité, rapidité, souplesse etc... )  
 &emsp;Les valeurs privilégiées sont la robustesse (de l’application), la maintenabilité du code. Pour une expérience utilisateur sans faille, il faut une application simple d’usage et disponible sans arrêt, puisqu’elle concerne la résolution de problèmes plus ou moins graves.    
 
-
 #### iii) Quels retours ou quelle visibilité sur le projet les utilisateurs et commanditaires souhaitent-ils ?  
 &emsp;Ils souhaitent avoir un retour de manière ponctuel à l’aide de tags sur Git. Il pourront voir les versions finales de chaque livrable.  
-        
-#### iv) Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?  
+
+#### iv) Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ? 
 Nos concurrents sont les sites de ticketing comme Tuleap.  
 
 #### v) Quelles sont les autres exigences du processus ? (exemple : tests, installation, etc...)  
 Il faut réaliser un dossier de tests complets.  
 
-#### vi) À quelles dépendances le projet est-il soumis ?  
+#### vi) À quelles dépendances le projet est-il soumis ?   
 &emsp;Le projet est soumis à quelques dépendances :  
 * Dépendances de ressources :   
 Le projet est dépendant aux ressources telles que le personnel ou encore le matériel mis à disposition. Si des absences se font ressentir, le projet a de grandes chances d’être impacté.  
@@ -184,7 +186,7 @@ La portabilité du projet se limite aux distributions Linux. Cependant il est po
 *RAS*  
 
 
-# VI./ Chapitre 6 – Recours humain, questions juridiques, politiques, organisationnelles.  
+## VI./ Chapitre 6 – Recours humain, questions juridiques, politiques, organisationnelles.  
 ### (a) Quel est le recours humain au fonctionnement du système ?  
 &emsp;Ce site est mis en place par l’équipe de développement appelé Rooteam. Une fois installé et opérationnel, il nécessite des techniciens support disponibles pour répondre aux tickets des utilisateurs. Il doit aussi y avoir un administrateur web et administrateur système pour l’administration de l’application.  
 
