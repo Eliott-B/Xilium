@@ -17,7 +17,7 @@
 
 ## I./ Introduction
 
-&emsp;Le document suivant est le cahier des charges du projet de la plateforme de ticketing interne. L’objectif de ce cahier des charges est de permettre la livraison d’un produit cohérent avec les attentes du client. Il permet d’éviter les incompréhensions et les ambiguïtés.  
+&emsp;Le présent document est le cahier des charges du projet de la plateforme de ticketing interne. L’objectif de ce cahier des charges est de permettre la livraison d’un produit cohérent avec les attentes du client. Il permet d’éviter les incompréhensions et les ambiguïtés.  
 
 &emsp;L’énoncé du document présent dans la deuxième partie résume les fonctionnalités primaires et la portée du projet. L’énoncé est divisé en 2 parties, une partie sur les attentes du client et une autre partie sur les objectifs que nous nous sommes fixés. Les attentes du client ont été écrites grâce à la création d’un tableau disponible en [annexe 1](#annexe-1). En troisième partie, les pré-requis présentent les technologies matérielles et logicielles nécessaires pour la réalisation de ce projet. On y trouve aussi les connaissances et compétences requises. Enfin, en dernière partie, seront listées les priorités éventuelles du développement, si elles ont été fixées avec l’accord du client.  
 Pour établir ce document, nous avons utilisé un premier cahier des charges fourni par Monsieur Hoguin, disponible en [annexe](clients/cahier_des_charges_client.pdf).  
@@ -46,10 +46,8 @@ La plateforme contient 5 principaux acteurs :
 
 - L’administrateur web :   
     - Il gère la liste de libellés affectés aux différents problèmes qui peuvent être rencontrés.  
-    - Il définit les statuts des tickets.  
-    3 formats (ouvert, en cours de traitement, fermé)  
-    - Il définit les niveaux d'urgence des tickets à résoudre  
-    4 niveaux (4 = faible, 3 = moyen, 2 = important, 1 = urgent).  
+    - Il définit les statuts des tickets (ouvert, en cours de traitement, fermé).   
+    - Il définit les niveaux d'urgence des tickets à résoudre (faible, moyen, important, urgent).  
     - Il crée les comptes des techniciens.  
     - Il visualise les tickets ouverts et les affecte à un technicien.  
 
@@ -60,13 +58,13 @@ La plateforme contient 5 principaux acteurs :
 - Les utilisateurs inscrits :   
     - Ils peuvent faire une demande de dépannage, c'est-à-dire ouvrir un ticket.  
     - Ils accèdent à leur tableau de bord contenant les tickets créés ainsi que leurs états.  
-    - Ils accèdent à son profil.  
-    - Ils changent leur mot de passe depuis leur compte.  
+    - Ils peuvent accéder à leur profil.  
+    - Ils peuvent changer leur mot de passe depuis leur compte.  
 
 - Le visiteurs :  
-    - Le visiteur qui s'inscrit pour la première fois doit remplir un formulaire d'inscription confirmé avec un captcha pour devenir utilisateur.  
+    - Le visiteur qui s'inscrit pour la première fois doit remplir un formulaire d'inscription comportant un captcha de validation pour la création du compte.  
     - Il n'y a pas de confirmation d'inscription reçue par email ni de méthode de récupération de mot de passe. En effet, il doit y avoir une redirection vers une page temporaire.  
-    - Il visualise les 10 dernières demandes et non au tableau de bord.  
+    - Il visualise les 10 dernières demandes, il n’a pas d’accès à un tableau de bord quelconque.  
 
 &emsp;Tous les utilisateurs de l’application, soit les utilisateurs inscrits, les techniciens, les administrateur web et système, doivent se connecter et se déconnecter.  
 
@@ -118,9 +116,9 @@ Notre dépôt Git doit contenir la documentation et les annexes du projet. Il do
 
 &emsp;Pour ce projet la première priorité est de lancer et bien configurer le serveur. En effet, le serveur est le fondement du projet, sa base, il va héberger le site web, la base de données et s’occuper de la communication entre les deux. Il est primordial que les configurations d’accès soient convenablement gérées afin de limiter les intrusions malveillantes dans le système.  
 
-&emsp;Une fois que le serveur est convenablement configuré et en place, la priorité est de réaliser une maquette statique du site web. Cette maquette statique est importante car c’est sur cette maquette qu’on fait toutes les modifications nécessaires afin de respecter notre charte graphique et l’accessibilité. Le respect de la charte graphique et l’accessibilité sont donc des priorités pour cette application.  
+&emsp;Une fois que le serveur est convenablement configuré et en place, la priorité est de réaliser une maquette statique du site web. Cette maquette statique est importante car c’est sur cette maquette qu’on fait toutes les modifications nécessaires afin de respecter notre charte graphique et l’accessibilité. Le respect de la charte graphique et l’accessibilité sont donc des priorités pour cette application. Deux maquettes seront réalisées, nous prendrons la décision ensuite quant à celle que nous allons retenir.   
 
-&emsp;Maintenant que le serveur et la maquette sont opérationnels, la prochaine priorité est de concevoir et créer la base de données qui va recueillir les informations du site. La conception de la base de données est optimisée pour être efficace et compacte. Sa configuration vise à sécuriser les informations sensibles et à limiter les accès.  
+&emsp;Une fois que le serveur et la maquette seront opérationnels, la prochaine priorité est de concevoir et créer la base de données qui va recueillir les informations du site. La conception de la base de données est optimisée pour être efficace et compacte. Sa configuration vise à sécuriser les informations sensibles et à limiter les accès.  
 
 &emsp;La priorité principale de ce projet informatique est sa sécurité. On veut empêcher au maximum les intrusions dans le système ou encore les fuites de données de notre client.  
 	
