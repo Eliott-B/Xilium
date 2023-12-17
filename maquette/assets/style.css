@@ -9,12 +9,20 @@
 }
 
 body{
-    background-color: #A15CB8;
+    background-color: #FEF6FA;
     margin: 0;
     padding: 0;
     font-family: "Sloth", sans-serif;
 }
 
+footer{
+    color: white;
+}
+
 h1, h2, h3, h4{
     font-family: "Lena", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
 }
