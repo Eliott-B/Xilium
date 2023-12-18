@@ -2,6 +2,8 @@
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
 
+Le diagramme des cas d'utilisation est disponible ici : [Cas d'utilisation](cas_utilisation/index.html).  
+
 ## Cas d'utilisation  
 
 **Cas d'utilisation 1 :** Utiliser l’application  
