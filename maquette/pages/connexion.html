@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xilium - Connexion</title>
+    <link rel="stylesheet" type="text/css" href="../assets/styles/connexion.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css"/>
+</head>
+<body>
+<div class="connexion">
+    <div class="logo">
+        <img src="../assets/SVG/Fichier12.svg"
+             width="500px"
+        />
+    </div>
+    <div class="form-connexion">
+        <form action="process-login.php" method="post">
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="bottom-form">
+                <button type="submit">Se connecter</button>
+                <a href="../index.html">Mot de passe oublié ?</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
