@@ -10,7 +10,6 @@
         background-position: right;
     }
 }
-
 #div-button{
     display: flex;
     justify-content: center;
@@ -31,6 +30,31 @@
     color: #EB4791;
 }
 
+#video-accueil{
+    display: flex;
+    height: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#video{
+    height: 450px;
+    width: 900px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+}
+#play-video{
+    border-radius: 20px;
+    background-color: red;
+    border: 0;
+    font-size: 4rem;
+    color: white;
+    padding: 10px 60px;
+}
 
 #button-creer{
     margin: auto;
@@ -55,41 +79,42 @@
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: #2F2433;
+    background-color: #FCF6FE;
 }
 .tickets{
     background: no-repeat center url("/maquette/assets/SVG/Fichier25.svg");
-    box-shadow: 0px 0px 30px #EB479177;
+    box-shadow: 0px 0px 30px #C246EB77;
     border-radius: 32px;
     height: 500px;
     padding: 10px;
     margin: 20px ;
-    background-color: #7B5D85;
+    background-color: #FEF6FA;
+    border: 1px solid black;
     overflow-x: scroll;
     float: none;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
+    display: block;
 }
 .ticket{
     width: 30%;
     height: 90%;
     margin: 18px 30px;
-    background-color: #5CB893DD;
+    padding: 0px 30px;
+    background-color: #A15CB8FA;
     border: 1px solid black;
     border-radius: 16px;
-    box-shadow: 0px 0px 50px #46EBA899;
     display: inline-block;
     zoom: 1;
 }
 #titre-tickets{
-    color: white;
     font-size: 2rem;
     margin: 0px;
 }
 #titre-tickets a{
     text-decoration: none;
     text-decoration: underline;
-    color: #EDC7F9;
+    color: #EB4791;
 }
 
 /*vvvvvv Questions Frequentes vvvvvv*/
@@ -136,17 +161,16 @@
     justify-content: center;
     align-items: center;
     height: 160px;
-    background-image: var(--gradient);
-    background-size: 400%;
-    animation: bg-button 12s infinite alternate;
+    background: transparent;
+
 }
 .nav-tableau ul{
     display: flex;
     justify-content: space-between;
     width: 80%;
     margin-left: -30px;
-}
 
+}
 .nav-tableau ul a{
     text-decoration: none;
     color: black;
@@ -154,19 +178,18 @@
     padding: 0px 40px;
 
     border-radius: 16px;
-    background: #C246EB;
-
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: bg-button 12s infinite alternate;
     transition: 0.1s ease-in-out;
 }
-
 .nav-tableau li{
     display: inline;
     list-style: none;
 }
-
 .nav-tableau ul a:hover{
     cursor: pointer;
-    background-color: #C246EB;
+    background-color: #C246EBAA;
     transform: translate(0px, -5px);
 }
 .tab-section{
@@ -175,7 +198,6 @@
     padding-left: 125px;
     padding-right: 125px;
 }
-
 #history{
     margin-top: 0;
 }
@@ -183,7 +205,6 @@
     margin-left: 100px;
     font-size: 2rem;
 }
-
 #body-tab-de-bord{
     padding-bottom: 100px;
 }

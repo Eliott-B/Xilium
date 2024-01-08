@@ -76,6 +76,10 @@ button:hover {
     justify-content: center;
 }
 
+.connexion input{
+    margin-bottom: 30px;
+}
+
 .bottom-form{
     display: flex;
     justify-content: space-between;

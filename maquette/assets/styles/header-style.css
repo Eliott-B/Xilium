@@ -85,6 +85,13 @@ header{
     transition: ease 0.15s;
     color: white;
 }
+
+#div-header-icons button a{
+    border: 0;
+    background: transparent;
+    text-decoration: none;
+    color: #FEF6FA;
+}
 #div-header-icons button:hover{
     color: black;
     cursor: pointer;
