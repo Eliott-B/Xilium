@@ -1,5 +1,5 @@
 :root{
-    --gradient: linear-gradient(to right, #EB479188, #C246EBAA, #46EBA888);
+    --gradient: linear-gradient(to right, #EB479188, #C246EBAA);
 }
 /*#33242B, #2F2433*/
 @keyframes bg-button {
@@ -24,7 +24,7 @@
     background-size: 500%;
     background-position: left;
 
-    animation: bg-button 12s infinite alternate;
+    animation: bg-button 10s infinite alternate;
     transition: ease-in-out 0.5s;
 
     color: #EB4791;
@@ -32,7 +32,7 @@
 
 #video-accueil{
     display: flex;
-    height: 500px;
+    height: 600px;
     width: 100%;
     justify-content: center;
     align-items: center;
