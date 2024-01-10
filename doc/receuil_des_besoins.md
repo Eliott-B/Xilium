@@ -64,15 +64,15 @@
 
 **Apache :** Service Linux qui permet d’héberger un serveur internet.  
 
-**HTML :** Langage de balisage utilisé pour faire des sites internet statiques.  
+**HTML :** (HyperText Markup Language) Langage de balisage utilisé pour faire des sites internet statiques.  
 
-**CSS :** Feuille de style permettant d’ajouter du style aux pages internet.  
+**CSS :** (Cascading Style Sheets) Feuille de style permettant d’ajouter du style aux pages internet.  
 
-**PHP :** Langage de programmation permettant de gérer des pages internet dynamiques côté serveur.  
+**PHP :** (Hypertext Preprocessor) Langage de programmation permettant de gérer des pages internet dynamiques côté serveur.  
 
 **Markdown :** Langage de balisage utilisé pour écrire des rapports ou des notes.  
 
-**SQL :** Langage de programmation permettant de gérer les bases de données.  
+**SQL :** (Structured Query Language) Langage de programmation permettant de gérer les bases de données.  
 
 **MySQL :** Base de données utilisant le langage de programmation SQL.  
 
@@ -92,7 +92,7 @@
 
 **Pull Request :** Demande de merge une branche vers une autre branche du projet, qui doit être validée et pour laquelle les conflits de code doivent être résolus.  
 
-**MVC :** Style d'architecture d'un logiciel informatique (model vue controler).  
+**MVC :** (Model Vue Controler) Style d'architecture d'un logiciel informatique.  
 
 
 ## III./ Chapitre 3 – Les cas d’utilisation  
