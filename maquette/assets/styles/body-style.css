@@ -15,16 +15,16 @@
     justify-content: center;
     align-items: center;
     padding : 20px;
-    margin: 0;
+    margin-top: 70px;
     box-sizing: border-box ;
     width: 100%;
-    height: 200px;
+    height: 300px;
 
     background-image: var(--gradient);
     background-size: 500%;
     background-position: left;
 
-    animation: bg-button 10s infinite alternate;
+    animation: bg-button 12s infinite alternate;
     transition: ease-in-out 0.5s;
 
     color: #EB4791;
@@ -62,7 +62,7 @@
     border: 1px solid black;
     border-radius: 50px;
     background-color: #33242B;
-    color: #EB4791;
+    color: #46EBA8;
     font-size : 2rem;
     padding: 20px 50px 20px 50px;
 
@@ -82,7 +82,10 @@
     background-color: #FCF6FE;
 }
 .tickets{
-    background: no-repeat center url("/maquette/assets/SVG/Fichier25.svg");
+    background-image: var(--gradient);
+    background-size: 500%;
+    animation: bg-button 12s infinite alternate;
+
     box-shadow: 0px 0px 30px #C246EB77;
     border-radius: 32px;
     height: 500px;
@@ -99,9 +102,9 @@
 .ticket{
     width: 30%;
     height: 90%;
-    margin: 18px 30px;
+    margin: 20px 30px;
     padding: 0px 30px;
-    background-color: #A15CB8FA;
+    background-color: #FEF6FADD;
     border: 1px solid black;
     border-radius: 16px;
     display: inline-block;
@@ -133,7 +136,7 @@
     flex-direction: column;
     box-sizing: border-box;
     margin: 20px 0px;
-    padding: 20px;
+    padding: 30px 50px;
     width: 100%;
     background: linear-gradient(to right, #F9C8DE, #EDC7F9);
     border-radius: 16px;
@@ -180,7 +183,7 @@
     border-radius: 16px;
     background-image: var(--gradient);
     background-size: 400%;
-    animation: bg-button 12s infinite alternate;
+    animation: bg-button 8s infinite alternate;
     transition: 0.1s ease-in-out;
 }
 .nav-tableau li{
