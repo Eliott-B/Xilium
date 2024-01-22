@@ -37,6 +37,7 @@ html{
     height: 1000px;
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 
@@ -44,7 +45,8 @@ html{
     width: 60%;
     height: 1000px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
     align-items: center;
 }
 

@@ -24,7 +24,7 @@
     background-size: 500%;
     background-position: left;
 
-    animation: bg-button 12s infinite alternate;
+    animation: bg-button 4s infinite alternate;
     transition: ease-in-out 0.5s;
 
     color: #EB4791;
