@@ -29,6 +29,9 @@ html{
     scroll-behavior: smooth;
 }
 
+button:hover{
+    cursor: pointer !important;
+}
 
 /*CLASSES CUSTO SUR TOUTES PAGES*/
 
