@@ -194,7 +194,7 @@ La portabilité du projet se limite aux distributions Linux. Cependant il est po
 &emsp;Ce site est mis en place par l’équipe de développement appelé Rooteam. Une fois installé et opérationnel, il nécessite des techniciens support disponibles pour répondre aux tickets des utilisateurs. Il doit aussi y avoir un administrateur web et administrateur système pour l’administration de l’application.  
 
 ### (b) Quelles sont les exigences juridiques et politiques ?  
-*RAS*  
+[Document de droit](annexes/droit.md)  
 
 ### (c) Quelles sont les conséquences humaines de la réalisation du système ?  
 &emsp;Afin de bien intégrer le système à son nouvel environnement. Les nouveaux utilisateurs devront prendre l’habitude de se référer à la plateforme. A noter que l’interface de celle-ci sera optimisée pour que tout le monde puisse l’utiliser facilement et intuitivement.  
