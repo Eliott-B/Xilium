@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-class ModelExemple
+class Exemple
 {
     public function __construct()
     {
