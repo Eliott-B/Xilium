@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Xilium</title>
+    <link rel="stylesheet" href="/gstyles/main/main.css" />
+    <link rel="stylesheet" href="/gstyles/header/header.css" />
+    <link rel="stylesheet" href="/gstyles/footer/footer.css" />
+    <link rel="stylesheet" href="/gstyles/button/button.css" />
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<!-- HEADER -->
+<header>
+    <a href="/index.html">
+        <div class="logo">
+            <img alt="logo-xilium" src="/assets/images/logos/xilium.svg">
+        </div>
+    </a>
+    <div class="navbar">
+        <ul>
+            <a href="/dashboard/">
+                <li>
+                    <h1>Tableau de bord</h1>
+                </li>
+            </a>
+            <a href="/faq/">
+                <li>
+                    <h1>Questions Frequentes</h1>
+                </li>
+            </a>
+            <a href="/about/">
+                <li>
+                    <h1>A propos</h1>
+                </li>
+            </a>
+
+        </ul>
+    </div>
+    <div class="icons">
+        <img src="/assets/images/icons/user.svg" alt="icon user" class="icon">
+        <button><a href="/login/">Connexion</a></button>
+    </div>
+</header>
+<!-- BODY -->
+
+<body>
+    <div class="box-login">
+        <form>
+            <div class="login">
+                
+                <h1>Connexion</h1>
+                <p>Veuillez renseigner vos identifiants de connexion.</p>
+                <hr>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Entrez votre email" name="email" required class="inputuser">
+
+                <label for="psw"><b>Mot de passe</b></label>
+                <input type="password" placeholder="Entrez votre mot de passe" name="psw" required class="inputpass">
+
+                <button type="submit" class="btn-primary">Connexion</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer">
+        &copy; 2024 Xilium. All rights reserved.
+    </div>
+</footer>
+
+
+</html>

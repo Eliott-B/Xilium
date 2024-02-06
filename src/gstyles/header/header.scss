@@ -1,0 +1,105 @@
+@import '../colors/colors.scss';
+
+header {
+    box-shadow: 0px 0px 10px black;
+    position: sticky;
+    z-index: 99999;
+    top: 0;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-2b;
+    color: white;
+    padding: 0;
+    margin: 0;
+    .logo {
+        padding: 2%;
+        width: 15vw;
+        display: flex;
+        img {
+            box-sizing: border-box;
+        }
+    }
+    .navbar {
+        width: 50%;
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 0;
+        padding: 1%;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            :hover {
+                cursor: pointer;
+                color: $primary;
+                transition: ease-in-out 0.15s;
+            }
+        }
+        li {
+            display: inline-flex;
+            list-style-type: none;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            color: white;
+            text-decoration: none;
+            transition: ease-in-out 0.15s;
+        }
+    }
+    .icons {
+        width: 23%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        justify-content: space-around;
+        font-size: 1.5rem;
+        img,
+        button {
+            color: white;
+        }
+        img {
+            width: 15%;
+            display: inline;
+            list-style-type: none;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        button {
+            background: transparent;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5rem;
+            transition: ease 0.15s;
+            a {
+                border: 0;
+                background: transparent;
+                text-decoration: none;
+                color: $primary-2;
+            }
+            &:hover {
+                color: black;
+                cursor: pointer;
+                background-color: $primary-1b;
+                transition: ease-in-out 0.15s;
+                box-shadow: 0px 0px 20px $primary;
+            }
+        }
+    }
+    .icon {
+        &:hover {
+            cursor: pointer;
+            filter: invert(40%) sepia(45%) saturate(1502%) hue-rotate(292deg) brightness(95%) contrast(94%);
+        }
+        transition: ease-in-out 0.15s;
+    }
+}
+
+header + * {
+    margin-top: 5%;
+}

@@ -1,0 +1,44 @@
+@import "../colors/colors.scss";
+
+.btn {
+    &-primary {
+        @extend .btn;
+        background-color: $primary-1;
+        color: $primary-1b;
+        &:hover {
+            background-color: $primary-1b;
+            color: $primary-1;
+        }
+    }
+    &-secondary {
+        @extend .btn;
+        background-color: $secondary-1;
+        color: $secondary-1b;
+        &:hover {
+            background-color: $secondary-1b;
+            color: $secondary-1;
+        }
+    }
+    &-tertiary {
+        @extend .btn;
+        background-color: $tertiary-1;
+        color: $tertiary-1b;
+        &:hover {
+            background-color: $tertiary-1b;
+            color: $tertiary-1;
+        }
+    }
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    font-weight: bold;
+    transition: ease-in-out 0.4s;
+    &:hover {
+        cursor: pointer;
+        transition: ease-in-out 0.4s;
+    }
+    &:active {
+        transform: scale(0.5);
+        transition: ease-in-out 0.4s;
+    }
+}

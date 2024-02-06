@@ -1,0 +1,30 @@
+.box-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 24px;
+}
+form input {
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+form input::placeholder {
+  padding: 1rem;
+  opacity: 0.5;
+}
+form button {
+  font-size: 1rem;
+}

@@ -1,0 +1,77 @@
+.btns-selec {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  padding: 10px 50px;
+  height: auto;
+  border-radius: 24px;
+}
+.dashboard .tickets {
+  padding-top: 100px;
+  padding-left: 125px;
+  padding-right: 125px;
+}
+.dashboard .tickets details.ticket {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  padding: 20px;
+  width: 100%;
+  background: linear-gradient(to right, #f9c8de, #edc7f9);
+  border-radius: 16px;
+  border: 1px solid white;
+}
+.dashboard .tickets details.ticket a {
+  color: #031c12;
+  text-decoration: #031c12 underline;
+  transition: ease-in-out 0.1s;
+}
+.dashboard .tickets details.ticket a:hover {
+  font-weight: bolder;
+  color: #6e0c38;
+  text-decoration: #031c12 underline;
+}
+.dashboard .tickets details.ticket:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.dashboard .tickets details.ticket + details {
+  border-top: none;
+}
+.dashboard .tickets details.ticket[open] {
+  padding-bottom: 1em;
+}
+.dashboard .tickets details.ticket[open] summary::after {
+  transform: rotate(0deg);
+}
+.dashboard .tickets details.ticket summary {
+  padding: 1rem 2em 1rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+.dashboard .tickets details.ticket summary::marker {
+  content: none;
+}
+.dashboard .tickets details.ticket summary::before, .dashboard .tickets details.ticket summary::after {
+  content: "";
+  width: 0.75em;
+  height: 0;
+  border-bottom: 2px solid;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.dashboard .tickets details.ticket summary::after {
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+  transition: ease-in-out 0.2s;
+}

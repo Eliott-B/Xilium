@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Lena";
+  src: local("Lena"), url("./fonts/lena/Lena.woff") format("woff");
+}
+@font-face {
+  font-family: "Sloth";
+  src: local("Sloth"), url("./fonts/Sloth/Sloth-Regular.woff") format("woff");
+}
+body {
+  background-color: #fef6fa;
+  margin: 0;
+  padding: 0;
+  font-family: "Sloth", sans-serif;
+  overflow: overlay;
+}
+
+h1,
+h2,
+h3,
+h4,
+button {
+  font-weight: normal;
+  font-family: "Lena", sans-serif;
+  font-size: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #EB4791;
+  border-radius: 9px;
+}
