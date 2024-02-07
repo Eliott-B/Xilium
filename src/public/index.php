@@ -1,7 +1,5 @@
 <?php
-require '..\autoload.php';
+require '..\app.php';
 
-use app\models\Exemple;
 
-echo Exemple::texte();
 

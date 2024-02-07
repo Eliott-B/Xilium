@@ -8,8 +8,4 @@ class Exemple
     {
     }
 
-    public static function texte()
-    {
-        return "Bonsoir";
-    }
 }
