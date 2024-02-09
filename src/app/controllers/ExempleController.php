@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Exemple;
+
 class ExempleController
 {
     public function bonjour(){
@@ -18,6 +20,11 @@ class ExempleController
     }
 
     public function update(){
-        print_r($_POST);
+        if(isset($_POST['nom'])){
+            $mon_exemple = new Exemple(htmlspecialchars($_POST['nom']));
+            $mon_exemple->update();
+        }
+
+        header('Location: /bonjour');
     }
 }
