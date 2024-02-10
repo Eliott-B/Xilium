@@ -75,13 +75,14 @@ De plus, nous avons déclaré la classe "Journal" abstraction de "Ticket" afin d
 journal.  
 
 Nous avons aussi créé la classe "Comment" abstraction de "Utilisateur" qui sert pour la description du ticket.
-![Diagramme_Classe](./img/Diagramme_Classe.png)
+![Diagramme_Classe](./img/Diagramme_Classe.jpg)
 
 ## Diagramme de Classe Détaillé
 
 Afin de pouvoir commencer la programmation, nous avons détaillé les classes que nous avons besoin.  
 Nous avons aussi détaillé les classes en renseignant les différents champs et les méthodes utiles au développement  
 
-Dans ce diagramme, nous avons détaillé les classes en ajoutant les méthodes et les champs.
-![Diagramme_Classe_Detaille](./img/Diagramme_Classe_Detaille.png)
+Dans ce diagramme, nous avons détaillé les classes en ajoutant les méthodes et les champs.  
+![Diagramme_Classe_Detaille](./img/Diagramme_Classe_Detaille.jpg)
+
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
