@@ -21,6 +21,44 @@ comments (__com_id__, com_title, com_comment, com_date, #ticket_id, #user_id, #r
 
 ## Diagramme de Classe
 
+| Objet | Etat | Comportement |
+|-------|------|--------------|
+| plateforme | en ligne <br> utilisateur <br> administeur système <br> administrateur web <br> technicien <br> visiteur | - permet d'établir des requêtes de dépannage, d'amélioration et de fonctionnalité <br> - fournit les journaux de l'application à l'administrateur système |
+| ticket | nature du problème <br> niveau d'urgence <br> demandeur <br> ont un technicien attribué | |
+| utilisateur | ont un rôle <br> ont un mot de passe | - peut changer leur mot de passe <br> - fait une demande de dépannage (ouvrir un ticket) <br> - accède à son profil <br> - se déconnecte |
+| requête | | |
+| dépannage | | |
+| amélioration | | |
+| fonctionnalité | | |
+| acteur | est un administrateur système <br> est un administrateur web <br> est un technicien <br> est un utilisateur <br> est un visiteur | accède aux pages |
+| administrateur système | | - accède aux journaux d'activités <br> - manipule les données statistiques |
+| administrateur web | | - gère la liste des libellés <br> - définit les status des tickets <br> - définit les niveaux d'urgence <br> - crée des comptes techniciens <br> - visualise les tickets ouverts <br> - affecte les tickets à un technicien |
+| technicien | | - s'attribue des tickets <br> - change l'état des tickets |
+| visiteur | | - visualise les 10 dernières demandes <br> - s'incrit <br> - se connecte |
+| pages | | |
+| rôle | | |
+| journaux d'activités | date <br> adresse IP <br> auteur <br> niveau d'urgence | |
+| données statistiques | | |
+| libellé | | |
+| problème | | |
+| statut | ouvert <br> en traitement <br> fermé | |
+| niveaux d'urgence | faible <br> moyen <br> important <br> urgent | |
+| compte | | |
+| etat | | |
+| tableau de board | | |
+| profil | | |
+| mot de passe | | |
+| formulaire | | |
+| inscription | | |
+| captcha | | |
+| redirection | | |
+| page temporaire | | |
+| Raspberry PI | | |
+| page d'accueil | texte expliquant le principe du site <br> vidéo de présentation | |
+| vidéo de présentation | | |
+| historique | a des tickets | - stocke les tickets fermés |
+
+
 Pour créer le diagramme de classe, nous avons utilisé les tables données précédemment. Grâce aux liaisons entre elles,
 nous avons pu les lier avec des associations.  
 
