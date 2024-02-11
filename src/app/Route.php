@@ -1,6 +1,7 @@
 <?php
 
 namespace app;
+
 class Route
 {
     private string $path;
@@ -8,6 +9,10 @@ class Route
     private array $matches = [];
     private array $params = [];
 
+    /**
+     * @param string $path Le chemin de la route
+     * @param string $callable Le nom de la fonction
+     */
     public function __construct($path, $callable)
     {
         $this->path = trim($path, '/');
@@ -15,13 +20,14 @@ class Route
     }
 
     /**
-     * Capturer l'url avec les paramètres
-     * @param $url L'url de la route
-     * @return bool La route correspond à l'url
+     * Compare le chemin actuel de l'url avec le chemin de la route this
+     * @param $url L'url actuel dans la barre de navigation
+     * @return bool Le chemin de la route correspond à l'url
      */
     public function match($url)
     {
         $url = trim($url, '/');
+        // Appelle la fonction paramMatch au lieu de directement remplacer
         $path = preg_replace_callback('#:([\w]+)#', [$this, 'paramMatch'], $this->path);
         $regex = "#^$path$#i";
         if (!preg_match($regex, $url, $matches)) {
@@ -33,11 +39,11 @@ class Route
     }
 
     /**
-     *
-     * @param $match
-     * @return string
+     * Pour entourer les paramètres de l'url avec des parenthèse pour correspondre au traitement de nos expressions
+     * @param string $match La route this
+     * @return string L'expression régulière
      */
-    private function paramMatch($match)
+    private function paramMatch($match) : string
     {
         if (isset($this->params[$match[1]])) {
             return '(' . $this->params[$match[1]] . ')';
@@ -60,7 +66,7 @@ class Route
     }
 
     /**
-     * Exécuter la fonction anonyme/fonction du controller passé en argument de la route
+     * Appelle la route et exécution de la fonction anonyme/fonction du controller passé en argument de la route
      * @return mixed Le résultat de la fonction
      */
     public function call()

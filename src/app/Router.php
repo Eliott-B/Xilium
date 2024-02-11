@@ -17,7 +17,7 @@ class Router
     }
 
     /**
-     * Exécuter la route courante
+     * Execute la route courante en fonction de l'url
      * @return mixed Le retour de la fonction call
      */
     public function run()
@@ -48,7 +48,7 @@ class Router
     }
 
     /**
-     * Avoir une route get notamment pour les vues
+     * Creer une route get
      * @param string $path Le chemin de la route
      * @param callable|string $callable La fonction appelé par la route
      * @param string|null $name Le nom de la route
@@ -60,7 +60,7 @@ class Router
     }
 
     /**
-     * Avoir une route post notamment pour les formulaires
+     * Creer une route post
      * @param string $path Le chemin de la route
      * @param callable|string $callable La fonction appelé par la route
      * @param string|null $name Le nom de la route
@@ -72,11 +72,11 @@ class Router
     }
 
     /**
-     * Creer une route et lui attribuer ses paramètres
-     * @param $path string Le chemin de l'url de la route
-     * @param $callable callable|string La fonction appelé par la route
+     * Creer la route $route et l'enregistre dans la liste des routes
+     * @param string $path Le chemin de l'url de la route
+     * @param callable|string $callable La fonction appelé par la route
      * @param string|null $name string Nom de la route
-     * @param $method string Methode utilisé par la route
+     * @param string $method Methode utilisé par la route
      * @return Route La route ainsi créé
      */
     private function add(string $path, callable|string $callable, string|null $name, string $method): Route
