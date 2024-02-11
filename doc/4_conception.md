@@ -7,6 +7,7 @@
 ### Modèle relationnel  
 
 ![Modèle relationnel](./img/Modele_Relationnel.png)  
+Figure 1 : Modèle relationnel de base de données  
 
 ### Modèle logique  
 
@@ -58,31 +59,29 @@ comments (__com_id__, com_title, com_comment, com_date, #ticket_id, #user_id, #r
 | vidéo de présentation | | |
 | historique | a des tickets | - stocke les tickets fermés |
 
+On ne crée pas la classe plateforme car c'est l'objet du domaine.  
+On a décidé de ne pas faire de classe pour l'historique puisque c'est seulement un affichage si le ticket est fermé.  
+Nous avons aussi décidé de ne pas faire de classe pour la page d'accueil puisque ce n'est pas un objet en lui même mais seulement une page web surement statique.  
 
-Pour créer le diagramme de classe, nous avons utilisé les tables données précédemment. Grâce aux liaisons entre elles,
-nous avons pu les lier avec des associations.  
+Nous créons la classe Role abstraction de l'objet acteur, administrateur web, administrateur système, technicien, visiteur et role. Cette classe aura comme attribut un identifiant (id) et un nom (name).  
 
-Nous avons créé la classe "Role" abstraction de "Utilisateur" pour permettre à l'utilisateur de posséder un rôle. 
-Ainsi, on peut appliquer les caractéristiques de chaque utilisateur à un rôle.  
+Nous créons la classe User abstraction d'utilisateur avec comme attributs un identifiant (id), un pseudonyme (username), un nom (name), un prénom (firstname) et un role.  
 
-Ensuite, nous avons ajouté les classes "Niveau", "Libelle" et "Statut" abstraction de la classe "Utilisateur" pour que 
-l'utilisateur puisse gérer les différents aspects qui définissent les tickets.
+Nous créons la classe Priority abstraction de niveaux d'urgence avec comme attribut un identifiant (id), un nom (name), un rang (index) et un auteur (user).  
 
-Aussi, nous avons introduit la classe "Tickets" abstraction des classes "Niveau", "Libelle", "Statut", "Utilisateur" 
-afin que les tickets soient caractérisés et attribués.  
+Nous créons aussi la classe Label abstraction de libellé. Les attributs de la classe seront un identifiant (id), un nom (name) et un auteur (user).  
 
-De plus, nous avons déclaré la classe "Journal" abstraction de "Ticket" afin de retrouver tous les tickets dans le 
-journal.  
+De plus, nous créons la classe Status abstraction de l'objet statut, avec comme attribut un identifiant (id), un nom (name) et un auteur (user).  
 
-Nous avons aussi créé la classe "Comment" abstraction de "Utilisateur" qui sert pour la description du ticket.
-![Diagramme_Classe](./img/Diagramme_Classe.jpg)
+Nous créons la classe Ticket abstraction de ticket. Les attributs sont un identifiant (id), un titre (title), une description, un niveau d'urgence (priority), un libellé (label), un statut (status), un auteur (author) et un technicien.  
 
-## Diagramme de Classe Détaillé
+Nous créons aussi la classe Logs abstraction des journaux d'activité. Les attributs de cette classe sont un identifiant (id), une date, une adresse IP (ip), un contenu (content), un utilisateur (user) et un ticket.  
 
-Afin de pouvoir commencer la programmation, nous avons détaillé les classes que nous avons besoin.  
-Nous avons aussi détaillé les classes en renseignant les différents champs et les méthodes utiles au développement  
+Enfin, nous créons la classe Comment. Ce n'est pas une attente du client mais il est important pour les techniciens de pouvoir retracer les manipulations à faire pour règler les problèmes des tickets. Cette classe a comme attribut un identifiant (id), un titre (title), un commentaire (comment), une date (date), un ticket (ticket) et un auteur (user).  
 
-Dans ce diagramme, nous avons détaillé les classes en ajoutant les méthodes et les champs.  
-![Diagramme_Classe_Detaille](./img/Diagramme_Classe_Detaille.jpg)
+![Diagramme_Classe](./img/Diagramme_Classe.jpg)  
+Figure 2: Diagramme de classe  
+![Diagramme_Classe_Detaille](./img/Diagramme_Classe_Detaille.jpg)  
+Figure 3: Diagramme de classe détaillé  
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
