@@ -2,17 +2,12 @@
 
 namespace app\models;
 
-class Exemple
+class Exemple extends Model
 {
-    public string $string;
+    private string $table = 'exemples';
 
-    public function __construct($string)
-    {
-        $this->string = $string;
-    }
 
-    public function update(){
-        // met à jour ce model dans la bdd
-    }
+
+
 
 }

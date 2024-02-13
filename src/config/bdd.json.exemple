@@ -1,0 +1,8 @@
+{
+  "driver": "mysql",
+  "host": "localhost",
+  "port": "",
+  "database": "xiliumtick",
+  "username": "exemple",
+  "password": ""
+}

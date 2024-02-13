@@ -73,7 +73,7 @@ class Route
     {
         if (is_string($this->callable)) {
             $params = explode('#', $this->callable);
-            $controller = "app\\controllers\\" . $params[0] . "Controller";
+            $controller = "app\\controllers\\" . $params[0];
             $controller = new $controller();
             return call_user_func_array([$controller, $params[1]], $this->matches);
         } else {

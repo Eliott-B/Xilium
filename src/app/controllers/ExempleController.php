@@ -17,12 +17,12 @@ class ExempleController
         <input type='submit'>
         </form>
         ";
+
     }
 
     public function update(){
         if(isset($_POST['nom'])){
-            $mon_exemple = new Exemple(htmlspecialchars($_POST['nom']));
-            $mon_exemple->update();
+            $exemple = new Exemple();
         }
 
         header('Location: /bonjour');
