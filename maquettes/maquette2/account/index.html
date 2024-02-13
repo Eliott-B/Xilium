@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/gstyles/header/header.css" />
     <link rel="stylesheet" href="/gstyles/footer/footer.css" />
     <link rel="stylesheet" href="/gstyles/button/button.css" />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="account.css">
 </head>
 
 <!-- HEADER -->
@@ -46,26 +46,32 @@
 <!-- BODY -->
 
 <body>
-    <div class="box-login">
-        <form>
-            <div class="login">
-                
-                <h1>Connexion</h1>
-                <p>Veuillez renseigner vos identifiants de connexion.</p>
-                <hr>
-
-                <label for="email"><b>Email</b> <span class="required">*</span></label>
-                <input type="text" placeholder="Entrez votre email" name="email" required id="email">
-
-                <label for="psw"><b>Mot de passe</b> <span class="required">*</span></label>
-                <input type="password" placeholder="Entrez votre mot de passe" name="psw" required id="psw">
-
-                <div class="btn-center"><button type="submit" class="btn-primary">Connexion</button></div>
-            </div>
-            <p> Vous n'avez pas de compte ? <a href="/signup/">Inscrivez-vous</a></p>
-        </form>
-        
+    <div class="name">
+        <h1>Fabrice Hoguin</h1>
     </div>
+    <div class="role">Administrateur système</div>
+    <div class="box-changepass">
+        <form>
+            <h1>Modifier son mot de passe</h1>
+            <hr>
+
+            <label for="email"><b>Mot de passe actuel</b> <span class="required">*</span></label>
+            <input type="text" placeholder="Mot de passe actuel" name="email" required id="email">
+
+            <label for="psw"><b>Nouveau mot de passe</b> <span class="required">*</span></label>
+            <input type="password" placeholder="Entrez votre nouveau mot de passe" name="psw" required id="psw">
+            <label for="psw-repeat"><b>Confirmer le mot de passe</b> <span class="required">*</span></label>
+            <input type="password" placeholder="Confirmer le mot de passe" name="psw-repeat" required id="psw-repeat">
+            <div class="btn-center"><button type="submit" class="btn-primary">Valider</button></div>
+        </form>
+    </div>
+    <div class="admin-link">
+        <a href="/admin/">Accéder à l'interface administrateur/technicien</a>
+    </div>
+    <div class="logout">
+        <button class="btn-primary" onclick="window.location.href='/logout/';">Déconnexion</button>
+    </div>
+    
 </body>
 
 <!-- FOOTER -->

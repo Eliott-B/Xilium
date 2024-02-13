@@ -5,6 +5,13 @@
     justify-content: space-evenly;
 }
 
+.add-ticket {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 100;
+}
+
 .dashboard {
     display: flex;
     flex-direction: column;

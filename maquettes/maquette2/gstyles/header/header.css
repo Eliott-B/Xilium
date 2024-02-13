@@ -17,9 +17,15 @@ header .logo {
   padding: 2%;
   width: 15vw;
   display: flex;
+  transition: ease-in-out 0.15s;
 }
 header .logo img {
   box-sizing: border-box;
+}
+header .logo :hover {
+  cursor: pointer;
+  filter: brightness(0.6);
+  transition: ease-in-out 0.15s;
 }
 header .navbar {
   width: 50%;

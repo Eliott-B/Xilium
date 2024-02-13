@@ -21,6 +21,12 @@ header {
         img {
             box-sizing: border-box;
         }
+        transition: ease-in-out 0.15s;
+        :hover{
+            cursor: pointer;
+            filter: brightness(0.6);
+            transition: ease-in-out 0.15s;
+        }
     }
     .navbar {
         width: 50%;

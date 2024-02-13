@@ -1,11 +1,28 @@
 @import '../gstyles/colors/colors.scss';
 
-
-.box-login{
+.name, .role{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
+}
+
+.name {
+    margin-top: 5%;
+}
+
+.role{
+    font-weight: lighter;
+}
+
+.box-changepass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    h1{
+        text-align: center;
+    }
     form {
         padding: 20px;
         display: flex;
@@ -26,7 +43,8 @@
             }
         }
         label{
-            margin: 30px;
+            margin-left: 30px;
+            margin-right: 30px;
         }
         .btn-center{
             margin: 2rem;
@@ -38,6 +56,25 @@
             }
         }
     }
+    .required {
+        color: rgb(160, 0, 0);
+    }
+}
+
+.logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+
+
+.admin-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
     a {
         color : $tertiary-2b;
         text-decoration: $tertiary-2b underline ;
@@ -48,9 +85,4 @@
             text-decoration: $tertiary-2b underline ;
         }
     }
-    .required {
-        color: rgb(160, 0, 0);
-    }
 }
-
-

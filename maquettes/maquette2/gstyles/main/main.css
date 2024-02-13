@@ -24,6 +24,19 @@ button {
   font-size: 2rem;
 }
 
+textarea, ::placeholder, input, select, option, label {
+  font-family: "Sloth", sans-serif;
+  font-size: 1rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #6e0c38;
+  opacity: 0.2;
+  margin: 1rem;
+}
+
 html {
   scroll-behavior: smooth;
 }

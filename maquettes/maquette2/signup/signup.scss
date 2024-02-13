@@ -1,7 +1,7 @@
 @import '../gstyles/colors/colors.scss';
 
 
-.box-login{
+.box-su{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,8 +25,8 @@
                 opacity: 0.5;
             }
         }
-        label{
-            margin: 30px;
+        label, p{
+            margin-left: 30px;
         }
         .btn-center{
             margin: 2rem;
@@ -37,6 +37,7 @@
                 font-size: 1rem;
             }
         }
+        
     }
     a {
         color : $tertiary-2b;

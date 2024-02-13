@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Xilium</title>
+    <link rel="stylesheet" href="/gstyles/main/main.css" />
+    <link rel="stylesheet" href="/gstyles/header/header.css" />
+    <link rel="stylesheet" href="/gstyles/footer/footer.css" />
+    <link rel="stylesheet" href="/gstyles/button/button.css" />
+    <link rel="stylesheet" href="admin.css" />
+</head>
+
+<!-- HEADER -->
+<header>
+    <a href="/index.html">
+        <div class="logo">
+            <img alt="logo-xilium" src="/assets/images/logos/xilium.svg">
+        </div>
+    </a>
+    <div class="navbar">
+        <ul>
+            <a href="/dashboard/">
+                <li>
+                    <h1>Tableau de bord</h1>
+                </li>
+            </a>
+            <a href="/faq/">
+                <li>
+                    <h1>Questions Frequentes</h1>
+                </li>
+            </a>
+            <a href="/about/">
+                <li>
+                    <h1>A propos</h1>
+                </li>
+            </a>
+
+        </ul>
+    </div>
+    <div class="icons">
+        <img src="/assets/images/icons/user.svg" alt="icon user" class="icon"
+            onclick="window.location.href='/account/';">
+        <button><a href="/login/">Connexion</a></button>
+    </div>
+</header>
+<!-- BODY -->
+
+<body>
+    <div class="ticket">
+        <div class="ticket-main">
+            <div class="ticket-main-title">
+                <span>Problème de connexion</span>
+            </div>
+            <div class="ticket-main-author">
+                <span>Sébastien Barreau</span>
+            </div>
+            <div class="ticket-main-labels">
+                <span class="ticket-category bug">Bug</span>
+                <span class="ticket-problem">Compte</span>
+                <span class="ticket-priority medium">Moyen</span>
+            </div>
+            <div class="ticket-main-status open">
+                Ouvert
+            </div>
+            <div class="ticket-main-message">
+                <p>Je n'arrive pas à me connecter à mon compte</p>
+            </div>
+            <div class="ticket-main-actions">
+                <button class="btn-primary">Commenter</button>
+                <button class="btn-primary">Modifier</button>
+                <button class="btn-tertiary">Fermer</button>
+                <button class="btn-secondary">Supprimer</button>
+            </div>
+            <div class="ticket-main-date">
+                <p>12/12/2024</p>
+            </div>
+        </div>
+        <div class="ticket-comments">
+            <div class="comment">
+                <div class="comment-author">
+                    <span>Admin</span>
+                </div>
+                <div class="comment-message">
+                    <p>Je vais regarder ça</p>
+                </div>
+                <div class="comment-date">
+                    <p>12/12/2024</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="comment-author">
+                    <span>Sébastien Barreau</span>
+                </div>
+                <div class="comment-message">
+                    <p>Ok problème résolu</p>
+                </div>
+                <div class="comment-date">
+                    <p>12/12/2024</p>
+                </div>
+            </div>
+        </div>
+
+            </div>
+            <div class="ticket">
+                <div class="ticket-main">
+                    <div class="ticket-main-title">
+                        <span>PC s'allume pas</span>
+                    </div>
+                    <div class="ticket-main-author">
+                        <span>Kylian Gravier</span>
+                    </div>
+                    <div class="ticket-main-labels">
+                        <span class="ticket-category bug">Bug</span>
+                        <span class="ticket-problem">Matériel</span>
+                        <span class="ticket-priority high">Elevé</span>
+                    </div>
+                    <div class="ticket-main-status closed">
+                        Fermé
+                    </div>
+                    <div class="ticket-main-message">
+                        <p>Mon PC ne s'allume pas, j'ai essayé de le brancher sur une autre prise mais rien n'y fait</p>
+                    </div>
+                    <div class="ticket-main-actions">
+                        <button class="btn-primary">Commenter</button>
+                        <button class="btn-primary">Modifier</button>
+                        <button class="btn-tertiary">Fermer</button>
+                        <button class="btn-secondary">Supprimer</button>
+                    </div>
+                    <div class="ticket-main-date">
+                        <p>12/12/2024</p>
+                    </div>
+                </div>
+            </div>
+</body>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer">
+        &copy; 2024 Xilium. All rights reserved.
+    </div>
+</footer>
+
+
+</html>

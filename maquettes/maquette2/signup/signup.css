@@ -1,10 +1,10 @@
-.box-login {
+.box-su {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10%;
 }
-.box-login form {
+.box-su form {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   border: 1px solid black;
   border-radius: 24px;
 }
-.box-login form input {
+.box-su form input {
   padding-left: 1rem;
   width: 80%;
   border-radius: 30px;
@@ -21,31 +21,31 @@
   display: block;
   margin: 20px;
 }
-.box-login form input::placeholder {
+.box-su form input::placeholder {
   opacity: 0.5;
 }
-.box-login form label {
-  margin: 30px;
+.box-su form label, .box-su form p {
+  margin-left: 30px;
 }
-.box-login form .btn-center {
+.box-su form .btn-center {
   margin: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.box-login form .btn-center button {
+.box-su form .btn-center button {
   font-size: 1rem;
 }
-.box-login a {
+.box-su a {
   color: #031c12;
   text-decoration: #031c12 underline;
   transition: ease-in-out 0.1s;
 }
-.box-login a:hover {
+.box-su a:hover {
   font-weight: bolder;
   color: #6e0c38;
   text-decoration: #031c12 underline;
 }
-.box-login .required {
+.box-su .required {
   color: rgb(160, 0, 0);
 }

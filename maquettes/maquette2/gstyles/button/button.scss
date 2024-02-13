@@ -28,6 +28,21 @@
             color: $tertiary-1;
         }
     }
+    &-icon {
+        @extend .btn-primary;
+        .add-icon {
+            filter: brightness(0) saturate(100%) invert(11%) sepia(32%) saturate(7289%) hue-rotate(317deg)
+                brightness(88%) contrast(100%);
+        }
+        &:hover {
+            .add-icon {
+                filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1571%) hue-rotate(285deg)
+                    brightness(112%) contrast(109%);
+            }
+        }
+
+        padding: 1rem 1rem 0.5rem;
+    }
     padding: 1rem 2rem;
     border-radius: 2rem;
     border: none;

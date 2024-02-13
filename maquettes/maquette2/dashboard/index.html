@@ -39,7 +39,7 @@
         </ul>
     </div>
     <div class="icons">
-        <img src="/assets/images/icons/user.svg" alt="icon user" class="icon">
+        <img src="/assets/images/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='/account/';">
         <button><a href="/login/">Connexion</a></button>
     </div>
 </header>
@@ -50,7 +50,6 @@
         <button class="btn-primary" onclick="document.getElementById('opened').scrollIntoView();">En cours</button>
         <button class="btn-secondary" onclick="document.getElementById('closed').scrollIntoView();">Clos</button>
     </div>
-
     <section class="dashboard">
         <div class="tickets" id="opened">
             <h2>En cours</h2>
@@ -79,6 +78,9 @@
             </details>
         </div>
     </section>
+    <div class="add-ticket">
+        <button class="btn-icon"><img src="/assets/images/icons/add.svg" alt="add" class="add-icon" onclick="window.location.href='/new-ticket/';"></button>
+    </div>
 </body>
 
 <!-- FOOTER -->
