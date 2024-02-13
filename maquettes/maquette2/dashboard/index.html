@@ -50,34 +50,91 @@
         <button class="btn-primary" onclick="document.getElementById('opened').scrollIntoView();">En cours</button>
         <button class="btn-secondary" onclick="document.getElementById('closed').scrollIntoView();">Clos</button>
     </div>
-    <section class="dashboard">
-        <div class="tickets" id="opened">
-            <h2>En cours</h2>
-            <details class="ticket">
-                <summary class="ticket-title">Ticket en cours</summary>
-                <p class="ticket-content">....</p>
-                <a href="#"> > Afficher les détails du ticket</a>
-            </details>
-            <details class="ticket">
-                <summary class="ticket-title">autre ticket en cours là</summary>
-                <p class="ticket-content">autre solution</p>
-                <a href="#"> > Afficher les détails du ticket</a>
-            </details>
+    <div class="ticket" id="opened">
+        <div class="ticket-main">
+            <div class="ticket-main-title">
+                <span>Problème de connexion</span>
+            </div>
+            <div class="ticket-main-author">
+                <span>Kylian Gravier</span>
+            </div>
+            <div class="ticket-main-labels">
+                <span class="ticket-category bug">Bug</span>
+                <span class="ticket-problem">Compte</span>
+                <span class="ticket-priority medium">Moyen</span>
+            </div>
+            <div class="ticket-main-status open">
+                Ouvert
+            </div>
+            <div class="ticket-main-message">
+                <p>Je n'arrive pas à me connecter à mon compte</p>
+            </div>
+            <div class="ticket-main-actions">
+                <button class="btn-primary">Commenter</button>
+                <button class="btn-primary">Modifier</button>
+                <button class="btn-tertiary">Fermer</button>
+                <button class="btn-secondary">Supprimer</button>
+            </div>
+            <div class="ticket-main-date">
+                <p>12/12/2024</p>
+            </div>
         </div>
-        <div class="tickets" id="closed">
-            <h2>Clos</h2>
-            <details class="ticket">
-                <summary class="ticket-title">Problème à l'ancienne</summary>
-                <p class="ticket-content">détail </p>
-                <a href="#"> > Afficher les détails du ticket</a>
-            </details>
-            <details class="ticket">
-                <summary class="ticket-title">autre problème</summary>
-                <p class="ticket-content">autre détail</p>
-                <a href="#"> > Afficher les détails du ticket</a>
-            </details>
+        <div class="ticket-comments">
+            <div class="comment">
+                <div class="comment-author">
+                    <span>Admin</span>
+                </div>
+                <div class="comment-message">
+                    <p>Je vais regarder ça</p>
+                </div>
+                <div class="comment-date">
+                    <p>12/12/2024</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="comment-author">
+                    <span>Kylian Gravier</span>
+                </div>
+                <div class="comment-message">
+                    <p>Ok problème résolu</p>
+                </div>
+                <div class="comment-date">
+                    <p>12/12/2024</p>
+                </div>
+            </div>
         </div>
-    </section>
+
+    </div>
+    <div class="ticket" id="closed">
+        <div class="ticket-main">
+            <div class="ticket-main-title">
+                <span>PC s'allume pas</span>
+            </div>
+            <div class="ticket-main-author">
+                <span>Kylian Gravier</span>
+            </div>
+            <div class="ticket-main-labels">
+                <span class="ticket-category bug">Bug</span>
+                <span class="ticket-problem">Matériel</span>
+                <span class="ticket-priority high">Elevé</span>
+            </div>
+            <div class="ticket-main-status closed">
+                Fermé
+            </div>
+            <div class="ticket-main-message">
+                <p>Mon PC ne s'allume pas, j'ai essayé de le brancher sur une autre prise mais rien n'y fait</p>
+            </div>
+            <div class="ticket-main-actions">
+                <button class="btn-primary">Commenter</button>
+                <button class="btn-primary">Modifier</button>
+                <button class="btn-tertiary">Fermer</button>
+                <button class="btn-secondary">Supprimer</button>
+            </div>
+            <div class="ticket-main-date">
+                <p>12/12/2024</p>
+            </div>
+        </div>
+    </div>
     <div class="add-ticket">
         <button class="btn-icon"><img src="/assets/images/icons/add.svg" alt="add" class="add-icon" onclick="window.location.href='/new-ticket/';"></button>
     </div>
