@@ -121,3 +121,17 @@
   margin-top: 10px;
   font-size: 14px;
 }
+.ticket-icon-comments {
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+}
+.ticket-icon-comments img {
+  width: 30px;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
+  transition: ease-in-out 0.3s;
+}
+.ticket-icon-comments img:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+}
