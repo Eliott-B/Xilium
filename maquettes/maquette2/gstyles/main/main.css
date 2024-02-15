@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Lena";
-  src: local("Lena"), url("./fonts/lena/Lena.woff") format("woff");
+  src: local("Lena"), url("../fonts/lena/Lena.woff") format("woff");
 }
 @font-face {
   font-family: "Sloth";
-  src: local("Sloth"), url("./fonts/Sloth/Sloth-Regular.woff") format("woff");
+  src: local("Sloth"), url("../fonts/Sloth/Sloth-Regular.woff") format("woff");
 }
 body {
   background-color: #fef6fa;
