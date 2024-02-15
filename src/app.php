@@ -3,7 +3,8 @@ require __DIR__.'\autoload.php';
 
 use app\models\Exemple;
 
-$db = new \app\Database("../config/bdd.json");
+$instance = \app\Database::getInstance();
+$db = $instance->getDb();
 $router = new \app\Router($_SERVER['REQUEST_URI']);
 
 
@@ -20,6 +21,9 @@ $router->get('/bonjour', 'ExempleController#bonjour');
 $router->get('/tab', 'ExempleController#form');
 $router->post('/tab', 'ExempleController#update');
 
+$router->get('/labels', 'LabelController#liste');
+$router->get('/labels/:id', 'LabelController#affiche_label');
 
+// Dernier élément
 $router->run();
 
