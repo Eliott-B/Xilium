@@ -52,31 +52,37 @@
     }
 
     .list-tickets {
-        box-shadow: 0px 0px 30px $secondary;
-        border-radius: 32px;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
         flex-flow: row nowrap;
         display: flex;
         background-color: $primary-2;
-        border: 1px solid black;
         overflow-x: scroll;
         float: none;
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
-    }
-    .ticket {
-        width: 30%;
-        height: auto;
-        margin: 18px 30px;
-        padding: 0px 30px;
-        background-color: $secondary-1;
-        border: 1px solid black;
-        border-radius: 16px;
-        .ticket-title {
-            font-size: 2rem;
-            margin-top: 10px;
+        .ticket {
+            width: 30%;
+            height: auto;
+            margin: 18px 30px;
+            padding: 0px 30px;
+            background-color: $primary-2;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            transition: ease-in-out 0.2s;
+            .ticket-title {
+                font-size: 2rem;
+                margin-top: 10px;
+            }
+            .ticket-content {
+                white-space: normal;
+            }
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                
+            }
         }
-        .ticket-content {
-            white-space: normal;
-        }
     }
+    
 }
