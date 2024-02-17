@@ -1,0 +1,29 @@
+@import '../colors/colors.scss';
+.footer{
+    color: $primary-2;
+    background-color: $primary-2b;
+    position: sticky;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    &-content{
+        display: grid;
+        justify-content: space-evenly;
+        text-align: center;
+        *{
+            margin: 5px;
+        }
+        a {
+            flex-basis: 100%;
+            color: $primary-2;
+            text-decoration: none;
+            &:hover {
+                color: $primary-1;
+            }
+        }
+    }
+}

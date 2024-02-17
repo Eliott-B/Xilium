@@ -1,0 +1,137 @@
+.btns-selec {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add-ticket {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+.ticket-main {
+  background-color: #FEF6FA;
+  padding: 10px;
+  margin: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.ticket-main-title {
+  font-size: 30px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+.ticket-main-author {
+  font-size: 25px;
+}
+.ticket-main-date {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #696969;
+}
+.ticket-main-status {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #1c030e;
+  font-size: 12px;
+}
+.ticket-main-status.open {
+  background-color: #f39c12;
+}
+.ticket-main-status.closed {
+  background-color: #e74c3c;
+}
+.ticket-main-labels {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.ticket-main-labels span {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+  background-color: #3498db;
+  color: #1c030e;
+}
+.ticket-main-labels span.ticket-category.bug {
+  background-color: #e74c3c;
+}
+.ticket-main-labels span.ticket-category.feature {
+  background-color: #2ecc71;
+}
+.ticket-main-labels span.ticket-category.update {
+  background-color: #f1c40f;
+}
+.ticket-main-labels span.ticket-category.other {
+  background-color: #9b59b6;
+}
+.ticket-main-labels span.ticket-priority.low {
+  background-color: #2ecc71;
+}
+.ticket-main-labels span.ticket-priority.medium {
+  background-color: #f1c40f;
+}
+.ticket-main-labels span.ticket-priority.high {
+  background-color: #e74c3c;
+}
+.ticket-main-labels span.ticket-problem {
+  background-color: #3498db;
+}
+.ticket-main-message {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.ticket-main-actions {
+  margin-top: 10px;
+}
+.ticket-main-actions button {
+  font-size: 12px;
+}
+.ticket-comments {
+  margin-top: -20px;
+}
+.ticket-comments .comment {
+  background-color: #FEF6FA;
+  padding: 10px;
+  margin: 0px 100px 30px 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.ticket-comments .comment-author {
+  font-size: 20px;
+  font-weight: bold;
+}
+.ticket-comments .comment-date {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #696969;
+}
+.ticket-comments .comment-message {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.ticket-icon-comments {
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+}
+.ticket-icon-comments img {
+  width: 30px;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
+  transition: ease-in-out 0.3s;
+}
+.ticket-icon-comments img:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+}
