@@ -100,7 +100,7 @@ header {
     .icon {
         &:hover {
             cursor: pointer;
-            filter: invert(40%) sepia(45%) saturate(1502%) hue-rotate(292deg) brightness(95%) contrast(94%);
+            filter: brightness(0) saturate(100%) invert(68%) sepia(83%) saturate(304%) hue-rotate(102deg) brightness(96%) contrast(102%);
         }
         transition: ease-in-out 0.15s;
     }

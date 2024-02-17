@@ -73,12 +73,12 @@
   margin-bottom: 50px;
 }
 .admin-link a {
-  color: #031c12;
-  text-decoration: #031c12 underline;
+  color: #1c030e;
+  text-decoration: #1c030e underline;
   transition: ease-in-out 0.1s;
 }
 .admin-link a:hover {
   font-weight: bolder;
-  color: #6e0c38;
-  text-decoration: #031c12 underline;
+  color: #0c6e46;
+  text-decoration: #1c030e underline;
 }

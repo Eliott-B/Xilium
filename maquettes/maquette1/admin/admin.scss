@@ -135,11 +135,11 @@ $label-orange: #f39c12;
             bottom: 50px;
             img {
                 width: 30px;
-                filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
+                filter: brightness(0) saturate(100%) invert(68%) sepia(83%) saturate(304%) hue-rotate(102deg) brightness(96%) contrast(102%);
                 transition: ease-in-out 0.3s;
                 &:hover {
                     cursor: pointer;
-                    filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+                    filter: brightness(0) saturate(100%) invert(33%) sepia(14%) saturate(3903%) hue-rotate(114deg) brightness(89%) contrast(91%);
                 }
             }
         }

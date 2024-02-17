@@ -8,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1c030e;
+  background-color: #031c12;
   color: white;
   padding: 0;
   margin: 0;
@@ -44,7 +44,7 @@ header .navbar ul {
 }
 header .navbar ul :hover {
   cursor: pointer;
-  color: #EB4791;
+  color: #46EBA8;
   transition: ease-in-out 0.15s;
 }
 header .navbar li {
@@ -87,21 +87,21 @@ header .icons button a {
   border: 0;
   background: transparent;
   text-decoration: none;
-  color: #FEF6FA;
+  color: #F6FEFB;
 }
 header .icons button:hover {
   color: black;
   cursor: pointer;
-  background-color: #6e0c38;
+  background-color: #0c6e46;
   transition: ease-in-out 0.15s;
-  box-shadow: 0px 0px 20px #EB4791;
+  box-shadow: 0px 0px 20px #46EBA8;
 }
 header .icon {
   transition: ease-in-out 0.15s;
 }
 header .icon:hover {
   cursor: pointer;
-  filter: invert(40%) sepia(45%) saturate(1502%) hue-rotate(292deg) brightness(95%) contrast(94%);
+  filter: brightness(0) saturate(100%) invert(68%) sepia(83%) saturate(304%) hue-rotate(102deg) brightness(96%) contrast(102%);
 }
 
 header + * {

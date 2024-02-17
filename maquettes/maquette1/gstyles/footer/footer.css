@@ -1,6 +1,6 @@
 .footer {
-  color: #FEF6FA;
-  background-color: #1c030e;
+  color: #F6FEFB;
+  background-color: #031c12;
   position: sticky;
   bottom: 0;
   margin: 0;
@@ -20,9 +20,9 @@
 }
 .footer-content a {
   flex-basis: 100%;
-  color: #FEF6FA;
+  color: #F6FEFB;
   text-decoration: none;
 }
 .footer-content a:hover {
-  color: #F9C8DE;
+  color: #C7F9E5;
 }

@@ -37,14 +37,14 @@
   font-size: 1rem;
 }
 .box-su a {
-  color: #031c12;
-  text-decoration: #031c12 underline;
+  color: #1c030e;
+  text-decoration: #1c030e underline;
   transition: ease-in-out 0.1s;
 }
 .box-su a:hover {
   font-weight: bolder;
-  color: #6e0c38;
-  text-decoration: #031c12 underline;
+  color: #0c6e46;
+  text-decoration: #1c030e underline;
 }
 .box-su .required {
   color: rgb(160, 0, 0);

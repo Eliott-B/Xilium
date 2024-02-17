@@ -31,13 +31,11 @@
     &-icon {
         @extend .btn-primary;
         .add-icon {
-            filter: brightness(0) saturate(100%) invert(11%) sepia(32%) saturate(7289%) hue-rotate(317deg)
-                brightness(88%) contrast(100%);
+            filter: brightness(0) saturate(100%) invert(8%) sepia(69%) saturate(419%) hue-rotate(103deg) brightness(103%) contrast(102%);
         }
         &:hover {
             .add-icon {
-                filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1571%) hue-rotate(285deg)
-                    brightness(112%) contrast(109%);
+                filter: brightness(0) saturate(100%) invert(87%) sepia(28%) saturate(200%) hue-rotate(104deg) brightness(100%) contrast(102%);
             }
         }
 

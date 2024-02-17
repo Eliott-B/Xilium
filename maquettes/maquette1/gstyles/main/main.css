@@ -7,7 +7,7 @@
   src: local("Sloth"), url("../fonts/Sloth/Sloth-Regular.woff") format("woff");
 }
 body {
-  background-color: #fef6fa;
+  background-color: #F6FEFB;
   margin: 0;
   padding: 0;
   font-family: "Sloth", sans-serif;
@@ -32,7 +32,7 @@ textarea, ::placeholder, input, select, option, label {
 hr {
   border: 0;
   height: 1px;
-  background: #6e0c38;
+  background: #0c6e46;
   opacity: 0.2;
   margin: 1rem;
 }
@@ -51,6 +51,6 @@ html {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #F9C8DE;
+  background-color: #C7F9E5;
   border-radius: 9px;
 }

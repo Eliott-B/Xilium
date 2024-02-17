@@ -1,5 +1,5 @@
 .ticket-main {
-  background-color: #FEF6FA;
+  background-color: #F6FEFB;
   padding: 10px;
   margin: 50px;
   border-radius: 5px;
@@ -27,7 +27,7 @@
   top: 10px;
   padding: 5px 10px;
   border-radius: 5px;
-  color: #1c030e;
+  color: #031c12;
   font-size: 12px;
 }
 .ticket-main-status.open {
@@ -47,7 +47,7 @@
   margin-right: 5px;
   font-size: 12px;
   background-color: #3498db;
-  color: #1c030e;
+  color: #031c12;
 }
 .ticket-main-labels span.ticket-category.bug {
   background-color: #e74c3c;
@@ -87,7 +87,7 @@
   margin-top: -20px;
 }
 .ticket-comments .comment {
-  background-color: #FEF6FA;
+  background-color: #F6FEFB;
   padding: 10px;
   margin: 0px 100px 30px 100px;
   border-radius: 5px;
@@ -116,10 +116,10 @@
 }
 .ticket-icon-comments img {
   width: 30px;
-  filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(68%) sepia(83%) saturate(304%) hue-rotate(102deg) brightness(96%) contrast(102%);
   transition: ease-in-out 0.3s;
 }
 .ticket-icon-comments img:hover {
   cursor: pointer;
-  filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+  filter: brightness(0) saturate(100%) invert(33%) sepia(14%) saturate(3903%) hue-rotate(114deg) brightness(89%) contrast(91%);
 }
