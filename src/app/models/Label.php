@@ -4,8 +4,8 @@ namespace app\models;
 
 class Label extends Model
 {
-    private string $table = 'labels';
-    private array $fillable = [
+    protected string $table = 'labels';
+    protected array $fillable = [
         'name'
     ];
 }

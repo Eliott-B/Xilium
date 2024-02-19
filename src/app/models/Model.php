@@ -6,13 +6,14 @@ use app\Database;
 
 abstract class Model
 {
-    private Database $db;
-    private string $table;
+    protected Database $db;
+
+    protected string $table;
     /**
      * @var array Les données du model qui peuvent être remplies sur la bdd
      */
-    private array $fillable = [];
-    public int $id;
+    protected array $fillable = [];
+    protected int $id;
 
 
     public function __construct()
@@ -32,11 +33,16 @@ abstract class Model
     /** Fonction qui permet de faire une requête en
      * prenant en compte l'id en paramètre dans le where
      * @param int $id L'identifiant
-     * @return array
+     * @return Model
      */
     public function find($id)
     {
-        return $this->db->query("select * from $this->table where " . substr($this->table, 0, 3) . "_id = :id", ['id' => $id]);
+        $res = $this->db->query("select * from $this->table where " . substr($this->table, 0, 3) . "_id = :id", ['id' => $id]);
+        foreach ($res as $rep){
+            $ret = $rep;
+        }
+        $this->id = $ret['lab_id'];
+        return $ret;
     }
 
     /** Fonction qui permet d'exécuter une requête personnalisée
@@ -56,10 +62,11 @@ abstract class Model
         $values = [];
         foreach ($args as $k => $v){
             if (in_array($k, $this->fillable)){
-                $values[] = [$k => $v];
+                $values = array_merge($values, [$k => $v]);
             }
         }
-
+        var_dump($values);
+        echo "<br>";
         $fillable_string = "";
         foreach ($this->fillable as $fill_str) {
             if(!in_array($fill_str, array_keys($values))){
@@ -69,9 +76,11 @@ abstract class Model
             $fillable_string .= ":" . $fill_str . ",";
         }
         $fillable_string = substr($fillable_string, 0, -1);
+        var_dump($fillable_string);
+        echo "<br>";
 
 
-        $this->db->query("insert into $this->table value ($fillable_string)", $values);
+        $this->db->query("insert into $this->table value (NULL, $fillable_string)", $values);
         $this->id = $this->db->getLastId();
 
     }
@@ -82,6 +91,7 @@ abstract class Model
      * @return void
      */
     public function update(array $args){
+        var_dump($args);
         $values = [];
         foreach ($args as $k => $v){
             if (in_array($k, $this->fillable)){
@@ -100,7 +110,7 @@ abstract class Model
     /** Fonction qui permet de supprimer une ligne dans un table
      * @return void
      */
-    public function delete(){
-        $this->db->query("DELETE FROM $this->table WHERE" . substr($this->table, 0, 3) . "_id = $this->id");
+    public function delete($id){
+        $this->db->query("DELETE FROM $this->table WHERE " . substr($this->table, 0, 3) . "_id = $id");
     }
 }
