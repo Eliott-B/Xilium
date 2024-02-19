@@ -4,5 +4,5 @@ namespace app\models;
 
 class Priority extends Model
 {
-    private string $table = 'priorities';
+    protected string $table = 'priorities';
 }
