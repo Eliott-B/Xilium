@@ -107,7 +107,7 @@ abstract class Model
         $this->db->query("UPDATE $this->table SET $fillable_string WHERE " . substr($this->table, 0, 3) . "_id = $this->id", $values);
     }
 
-    /** Fonction qui permet de supprimer une ligne dans un table
+    /** Fonction qui permet de supprimer une ligne dans une table
      * @return void
      */
     public function delete($id){
