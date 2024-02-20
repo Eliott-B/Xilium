@@ -48,7 +48,8 @@ Le Navigateur communique aussi avec le controlleur via des requete HTTP
 Le Contrôleur agit comme l'intermédiaire entre le Modèle et la Vue. 
 Il gère les requêtes entrantes du navigateur et les traite en conséquence. 
 Le Contrôleur est composé de deux éléments principaux : le Serveur Web et le Site Web.  
-- Le serveur web représente le Raspberry qui héberge le site web et sert les pages du site web aux clients, ici la Vue.  
+- Le Serveur Web est chargé de recevoir et de traiter les requêtes HTTP provenant des navigateurs des utilisateurs. 
+Il incarne le Raspberry Pi qui héberge le site web et distribue les pages web aux clients, qui sont représentés ici par la Vue.
 - Le site web est constitué de 4 composantes qui sont des scripts php. Il s'agit des scripts suivants ;
 
 
