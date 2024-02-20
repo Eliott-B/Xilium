@@ -25,32 +25,32 @@ comments (__com_id__, com_title, com_comment, com_date, #ticket_id, #user_id, #r
 
 ![Diagramme_composants](./img/diagramme_composants.png)
 
-
-Nous avons créer les composants :  
-
+#### Vue d'ensemble du Système
+Le système est composé de trois principaux composants :
 * **MODELE**  
 * **VUE**  
 * **CONTROLEUR**  
 
+Ces composants travaillent ensemble pour fournir une expérience utilisateur cohérente et fonctionnelle.
 
 
-#### Le modele,
+
+#### Le modele
 Le modèle est vide, il ne contient aucune composante interne. Cependant il communique
 avec le controlleur via un protocole PDO
 
 #### La Vue
-La Vue représente le site web servi du coté du client.  
-La Vue est composée du Navigateur qui sert les pages.html ainsi que les img.jpg  
+La Vue est la partie du système qui est visible et accessible à l'utilisateur.  
+Elle est composée du Navigateur qui sert les pages.html ainsi que les img.jpg  
 Le Navigateur communique aussi avec le controlleur via des requete HTTP
 
 ### Le controleur
-Le controleur est consitué de deux composants, le site web ainsi que le serveur web.  
-Le serveur web représente le Raspberry qui héberge le site web et sert les pages du site web aux clients, ici la Vue.  
-Le site web est constitué de 4 composantes qui sont des scripts php. Il s'agit des scripts :
-- Router.php
-- Controllers.php
-- Views.php
-- Models.php
+Le Contrôleur agit comme l'intermédiaire entre le Modèle et la Vue. 
+Il gère les requêtes entrantes du navigateur et les traite en conséquence. 
+Le Contrôleur est composé de deux éléments principaux : le Serveur Web et le Site Web.  
+- Le serveur web représente le Raspberry qui héberge le site web et sert les pages du site web aux clients, ici la Vue.  
+- Le site web est constitué de 4 composantes qui sont des scripts php. Il s'agit des scripts suivants ;
+
 
 #### Router.php
 Le script Router.php sert de point d'entrée au site web. Il lit l'url et en fonction du lien de l'url, il appelle des fonctions dans le controller correspondant
@@ -66,7 +66,11 @@ Le script Views.php sert afficher les données demandées au clients, donc au na
 #### Models.php
 Le script Models.php
 
+### Conclusion  
 
+Le diagramme de composants fournit une vue d'ensemble claire de l'architecture du système, mettant en lumière les différents composants et leurs interactions.
+On remarque ici que chaque compsant de la plateforme a sa propre place et ses relations sont bien définies afin d'assurer un bon foncionnement.
+Ce diagramme peut donc servir de guide pour le développement, la maintenance et la compréhension du site web dans son ensemble.
 
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
