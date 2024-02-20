@@ -54,7 +54,7 @@ abstract class Model
         return $this->db->query($query, $args);
     }
 
-    /** Fonction qui permet de insérer une nouvelle ligne dans la table
+    /** Fonction qui permet d'insérer une nouvelle ligne dans la table
      * @param array $args
      * @return void
      */
@@ -91,24 +91,25 @@ abstract class Model
      */
     public function update(array $args){
         var_dump($args);
-        $values = []; // La liste des valeur reelement mis à jour
+        $values = []; // La liste des valeurs réellement mise à jour
         foreach ($args as $k => $v){
-            // On parcours le tableau en argument pour en recuperer seulement les champs qui
+            // On parcourt le tableau en argument pour en récupérer seulement les champs qui
             // doivent être mis à jour dans notre model (ceux qui sont dans fillable)
             if (in_array($k, $this->fillable)){
                 // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
-                // jour donc on lajoute dans values
+                // jour donc on l'ajoute dans values
                 $values[] = [$k => $v];
             }
         }
 
-        // On cree la chaine de caractère qu'on viendra mettre dans la requete pour prevenir des champs qui vont être inserés
+        // On crée la chaine de caractère qu'on viendra mettre dans la requête pour prévenir des champs qui vont être insérés
         $fillable_string = "";
         foreach (array_keys($values) as $k) {
             $fillable_string .= "" . $k . "= :" . $k . ",";
             // De la forme : attribut = :nom_du_param, attribut2 = ... etc
         }
-        // Piste substr du dernier caractere qui doit etre une virgule de fillable string
+        // Piste substr du dernier caractère qui doit être une virgule de fillable string
+        // et ajout du prefix à $k
 
         $this->db->query("UPDATE $this->table SET $fillable_string WHERE " . substr($this->table, 0, 3) . "_id = $this->id", $values);
     }

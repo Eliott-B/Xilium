@@ -33,7 +33,7 @@ $router->get('/labels/:id', 'LabelController#show_label');
 $router->get('/labels/:id/delete', 'LabelController#delete');
 
 
-
+require __DIR__.'/route_test.php';
 // Dernier élément
 $router->run();
 
