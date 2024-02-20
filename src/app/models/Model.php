@@ -86,23 +86,29 @@ abstract class Model
     }
 
     /** Fonction qui permet de mettre à jour
-     * un table en prenant un array en paramètre
-     * @param array $args
-     * @return void
+     * une table en prenant un array en paramètre
+     * @param array $args Un tableau associatif contenant les champs devant être mis à jour et leur nouvelle valeur
      */
     public function update(array $args){
         var_dump($args);
-        $values = [];
+        $values = []; // La liste des valeur reelement mis à jour
         foreach ($args as $k => $v){
+            // On parcours le tableau en argument pour en recuperer seulement les champs qui
+            // doivent être mis à jour dans notre model (ceux qui sont dans fillable)
             if (in_array($k, $this->fillable)){
+                // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
+                // jour donc on lajoute dans values
                 $values[] = [$k => $v];
             }
         }
 
+        // On cree la chaine de caractère qu'on viendra mettre dans la requete pour prevenir des champs qui vont être inserés
         $fillable_string = "";
         foreach (array_keys($values) as $k) {
             $fillable_string .= "" . $k . "= :" . $k . ",";
+            // De la forme : attribut = :nom_du_param, attribut2 = ... etc
         }
+        // Piste substr du dernier caractere qui doit etre une virgule de fillable string
 
         $this->db->query("UPDATE $this->table SET $fillable_string WHERE " . substr($this->table, 0, 3) . "_id = $this->id", $values);
     }
