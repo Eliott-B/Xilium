@@ -6,7 +6,7 @@ class Label extends Model
 {
     protected string $table = 'labels';
     protected array $fillable = [
-        'name'
+        'lab_name'
     ];
 
 //    public function __construct()

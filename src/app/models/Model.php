@@ -41,8 +41,8 @@ abstract class Model
         foreach ($res as $rep){
             $ret = $rep;
         }
-        $this->id = $ret['lab_id'];
-        return $this;
+        $this->id = $ret[substr($this->table, 0, 3).'_id'];
+        return $ret;
     }
 
     /** Fonction qui permet d'exécuter une requête personnalisée
@@ -91,7 +91,7 @@ abstract class Model
         foreach ($args as $k => $v){
             // On parcourt le tableau en argument pour en récupérer seulement les champs qui
             // doivent être mis à jour dans notre model (ceux qui sont dans fillable)
-            if (in_array(substr($k, 4), $this->fillable)){
+            if (in_array($k, $this->fillable)){
                 // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
                 // jour donc on l'ajoute dans values
                 $values = array_merge($values, [$k => $v]);
