@@ -6,6 +6,6 @@ class Status extends Model
 {
     protected string $table = 'status';
     protected array $fillable = [
-        'name'
+        'sta_name'
     ];
 }

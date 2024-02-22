@@ -6,8 +6,8 @@ class Ticket extends Model
 {
     protected string $table = 'tickets';
     protected array $fillable = [
-        'title',
-        'description',
+        'tic_title',
+        'tic_description',
         'author_id',
         'label_id',
         'priority_id',

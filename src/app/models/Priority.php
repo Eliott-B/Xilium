@@ -6,7 +6,7 @@ class Priority extends Model
 {
     protected string $table = 'priorities';
     protected array $fillable = [
-        'name',
-        'index'
+        'pri_name',
+        'pri_index'
     ];
 }

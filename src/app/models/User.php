@@ -6,10 +6,10 @@ class User extends Model
 {
     protected string $table = 'users';
     protected array $fillable = [
-        'username',
-        'password',
-        'name',
-        'firstname',
+        'use_username',
+        'use_password',
+        'use_name',
+        'use_firstname',
         'role_id'
     ];
 }
