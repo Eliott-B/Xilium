@@ -28,7 +28,7 @@ class Route
     {
         $url = trim($url, '/');
         // Appelle la fonction paramMatch au lieu de directement remplacer
-        $path = preg_replace_callback('#:([\w]+)#', [$this, 'paramMatch'], $this->path);
+        $path = preg_replace_callback('#\{([\w]+)}#', [$this, 'paramMatch'], $this->path);
         $regex = "#^$path$#i";
         if (!preg_match($regex, $url, $matches)) {
             return false;

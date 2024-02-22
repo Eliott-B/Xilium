@@ -53,7 +53,7 @@ class LabelController
         $label = new Label();
         $label = $label->find($id);
         echo "
-        <form action='./' method='post'>
+        <form action='' method='post'>
             <input type='hidden' name='id' value='$id'>
             <label for='name'>Nom</label>
             <input type='text' name='name' id='name' value='" . $label['lab_name'] . "'>
@@ -65,7 +65,6 @@ class LabelController
     public function update(){
         $label = new Label();
         $label = $label->find($_POST['id']);
-        var_dump($label);
         $label->update(['lab_name' => $_POST['name']]);
     }
 

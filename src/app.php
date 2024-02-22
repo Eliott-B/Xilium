@@ -26,11 +26,11 @@ $router->get('/labels', 'LabelController#list_labels');
 $router->get('/labels/create', 'LabelController#create_form');
 $router->post('/labels/create', 'LabelController#create');
 
-$router->get('/labels/update/:id', 'LabelController#update_form');
-$router->post('/labels/update', 'LabelController#update');
+$router->get('/labels/update/{id}', 'LabelController#update_form');
+$router->post('/labels/update/{id}', 'LabelController#update');
 
-$router->get('/labels/:id', 'LabelController#show_label');
-$router->get('/labels/:id/delete', 'LabelController#delete');
+$router->get('/labels/{id}', 'LabelController#show_label');
+$router->get('/labels/{id}/delete', 'LabelController#delete');
 
 
 require __DIR__.'/route_test.php';

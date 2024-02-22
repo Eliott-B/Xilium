@@ -42,7 +42,7 @@ abstract class Model
             $ret = $rep;
         }
         $this->id = $ret['lab_id'];
-        return $ret;
+        return $this;
     }
 
     /** Fonction qui permet d'exécuter une requête personnalisée
@@ -65,21 +65,18 @@ abstract class Model
                 $values = array_merge($values, [$k => $v]);
             }
         }
-        var_dump($values);
-        echo "<br>";
         $fillable_string = "";
         foreach ($this->fillable as $fill_str) {
             if(!in_array($fill_str, array_keys($values))){
-                $values[] = [$fill_str => NULL];
+                $values = array_merge($values, [$fill_str => NULL]);
             }
 
             $fillable_string .= ":" . $fill_str . ",";
         }
         $fillable_string = substr($fillable_string, 0, -1);
-        var_dump($fillable_string);
-        echo "<br>";
 
 
+        // todo : gerer les FK, gerer les valeurs automatiques
         $this->db->query("insert into $this->table value (NULL, $fillable_string)", $values);
         $this->id = $this->db->getLastId();
 
@@ -90,15 +87,14 @@ abstract class Model
      * @param array $args Un tableau associatif contenant les champs devant être mis à jour et leur nouvelle valeur
      */
     public function update(array $args){
-        var_dump($args);
         $values = []; // La liste des valeurs réellement mise à jour
         foreach ($args as $k => $v){
             // On parcourt le tableau en argument pour en récupérer seulement les champs qui
             // doivent être mis à jour dans notre model (ceux qui sont dans fillable)
-            if (in_array($k, $this->fillable)){
+            if (in_array(substr($k, 4), $this->fillable)){
                 // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
                 // jour donc on l'ajoute dans values
-                $values[] = [$k => $v];
+                $values = array_merge($values, [$k => $v]);
             }
         }
 
@@ -108,8 +104,7 @@ abstract class Model
             $fillable_string .= "" . $k . "= :" . $k . ",";
             // De la forme : attribut = :nom_du_param, attribut2 = ... etc
         }
-        // Piste substr du dernier caractère qui doit être une virgule de fillable string
-        // et ajout du prefix à $k
+        $fillable_string = substr($fillable_string, 0, -1); // On retire la virgule finale
 
         $this->db->query("UPDATE $this->table SET $fillable_string WHERE " . substr($this->table, 0, 3) . "_id = $this->id", $values);
     }

@@ -8,4 +8,9 @@ class Label extends Model
     protected array $fillable = [
         'name'
     ];
+
+//    public function __construct()
+//    {
+//        parent::__construct();
+//    }
 }
