@@ -1,0 +1,21 @@
+.error {
+    min-height: 58vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    h1{
+        font-size: 10rem;
+        margin: 1rem;
+        font-weight: bold;
+        &:hover{
+            letter-spacing: 5rem;
+            opacity: 0;
+        }
+        transition: ease-in-out 5s;
+    }
+    button {
+        margin: 1rem;
+    }
+}
