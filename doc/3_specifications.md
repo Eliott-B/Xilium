@@ -5,8 +5,8 @@
 ## Maquettes
 
 Nous avons réalisé 2 maquettes en HTML CSS.  
-Une première est disponible ici : [Maquette 1](maquettes/maquette1/index.html)  
-Une seconde est disponible ici : [Maquette 2](maquettes/maquette2/index.html)   
+Une première est disponible ici : [Maquette 1](../maquettes/maquette1/index.html)  
+Une seconde est disponible ici : [Maquette 2](../maquettes/maquette2/index.html)   
 
 Pour l'application, nous avons choisi de d'utiliser la maquette 2.  
 

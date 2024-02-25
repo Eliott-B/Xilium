@@ -80,8 +80,8 @@ Nous créons aussi la classe Logs abstraction des journaux d'activité. Les attr
 Enfin, nous créons la classe Comment. Ce n'est pas une attente du client mais il est important pour les techniciens de pouvoir retracer les manipulations à faire pour règler les problèmes des tickets. Cette classe a comme attribut un identifiant (id), un titre (title), un commentaire (comment), une date (date), un ticket (ticket) et un auteur (user).  
 
 ![Diagramme_Classe](./img/Diagramme_Classe.jpg)  
-Figure 2: Diagramme de classe  
+Figure 2: Diagramme de classe  <br>
 ![Diagramme_Classe_Detaille](./img/Diagramme_Classe_Detaille.jpg)  
-Figure 3: Diagramme de classe détaillé  
+Figure 3: Diagramme de classe détaillé  <br>
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
