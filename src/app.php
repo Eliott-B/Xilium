@@ -16,7 +16,7 @@ $router->get('/test/:id/:id2', function ($id, $id2){
     echo "Test numero $id => $id2";
 });
 
-$router->get('/bonjour', 'ExempleController#bonjour');
+$router->get('/bonjour/{id}', 'ExempleController#bonjour');
 
 $router->get('/tab', 'ExempleController#form');
 $router->post('/tab', 'ExempleController#update');

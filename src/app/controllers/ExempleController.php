@@ -6,8 +6,9 @@ use app\models\Exemple;
 
 class ExempleController
 {
-    public function bonjour(){
-        echo "Bonjour";
+    public function bonjour($id){
+
+        require "views/test.php";
     }
 
     public function form(){
