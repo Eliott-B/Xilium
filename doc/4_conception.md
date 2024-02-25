@@ -36,42 +36,56 @@ Ces composants travaillent ensemble pour fournir une expérience utilisateur coh
 
 
 #### Le modele
-Le modèle est vide, il ne contient aucune composante interne. Cependant il communique
-avec le controlleur via un protocole PDO
+Le composant modèle correspond à la base de données. Il s'interface
+avec le controleur grâce à PDO. PDO est un module de PHP permettant de 
+dialoguer avec une base de données.
 
 #### La Vue
 La Vue est la partie du système qui est visible et accessible à l'utilisateur.  
-Elle est composée du Navigateur qui sert les pages.html ainsi que les img.jpg  
+Elle est composée du Navigateur qui sert les pages.html généré par le serveur (le compsoant 
+est nommé pages pour préciser qu'il s'agit de toutes les pages qui seront envoyé au 
+navigateur) ainsi que les images.jpg (meme convention de nommage)  
 Le Navigateur communique aussi avec le controlleur via des requete HTTP
 
 ### Le controleur
 Le Contrôleur agit comme l'intermédiaire entre le Modèle et la Vue. 
-Il gère les requêtes entrantes du navigateur et les traite en conséquence. 
+Il est composé du serveur web qui gère les requêtes entrantes du navigateur et les 
+traite en conséquence. 
 Le Contrôleur est composé de deux éléments principaux : le Serveur Web et le Site Web.  
 - Le Serveur Web est chargé de recevoir et de traiter les requêtes HTTP provenant des navigateurs des utilisateurs. 
-Il incarne le Raspberry Pi qui héberge le site web et distribue les pages web aux clients, qui sont représentés ici par la Vue.
-- Le site web est constitué de 4 composantes qui sont des scripts php. Il s'agit des scripts suivants ;
+Le controleur incarne le Raspberry Pi qui héberge le serveur web, lequel accede
+au site web et génère et distribue les pages web aux clients, qui sont représentés 
+ici par la Vue.
+- Le site web est constitué de 4 composantes qui sont des scripts php. Il s'agit des 
+scripts suivants ;
 
 
 #### Router.php
-Le script Router.php sert de point d'entrée au site web. Il lit l'url et en fonction du lien de l'url, il appelle des fonctions dans le controller correspondant
+Le script Router.php sert de point d'entrée au site web. Il lit l'url et en 
+fonction du lien de l'url, il appelle des fonctions dans le controller correspondant
 
 #### Controllers.php
-Le script Controllers.php  
-1- soit renvoie une vue au router qui l'affiche (il recupere les données a afficher sur la vue via le modele)  
+Les scripts Controllers.php (Controllers.php représente tous les controleurs)  
+1- soit renvoie une vue au router qui l'affiche (il recupere les données a afficher 
+sur la vue via le modele)  
 2- soit il envoie des données au modèle
 
 #### Views.php
-Le script Views.php sert afficher les données demandées au clients, donc au navigateur.
+Les scripts Views.php sert afficher les données demandées au clients, donc au navigateur.
+Il représente les vues du site.
 
 #### Models.php
-Le script Models.php
+Les scripts Models.php représente les modeles du site web. Ils communiquent avec la base
+de données pour récupérer ou mettre à jour les données.
 
 ### Conclusion  
 
-Le diagramme de composants fournit une vue d'ensemble claire de l'architecture du système, mettant en lumière les différents composants et leurs interactions.
-On remarque ici que chaque compsant de la plateforme a sa propre place et ses relations sont bien définies afin d'assurer un bon foncionnement.
-Ce diagramme peut donc servir de guide pour le développement, la maintenance et la compréhension du site web dans son ensemble.
+Le diagramme de composants fournit une vue d'ensemble claire de l'architecture du 
+système, mettant en lumière les différents composants et leurs interactions.
+On remarque ici que chaque compsant de la plateforme a sa propre place et ses relations 
+sont bien définies afin d'assurer un bon fonctionnement.
+Ce diagramme peut donc servir de guide pour le développement, la maintenance et 
+la compréhension du site web dans son ensemble.
 
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
