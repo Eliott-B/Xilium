@@ -6,8 +6,9 @@ use app\models\Exemple;
 
 class ExempleController
 {
-    public function bonjour(){
-        echo "Bonjour";
+    public function bonjour($id){
+
+        require "views/test.php";
     }
 
     public function form(){
@@ -17,12 +18,12 @@ class ExempleController
         <input type='submit'>
         </form>
         ";
+
     }
 
     public function update(){
         if(isset($_POST['nom'])){
-            $mon_exemple = new Exemple(htmlspecialchars($_POST['nom']));
-            $mon_exemple->update();
+            $exemple = new Exemple();
         }
 
         header('Location: /bonjour');

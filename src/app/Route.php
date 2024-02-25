@@ -28,7 +28,7 @@ class Route
     {
         $url = trim($url, '/');
         // Appelle la fonction paramMatch au lieu de directement remplacer
-        $path = preg_replace_callback('#:([\w]+)#', [$this, 'paramMatch'], $this->path);
+        $path = preg_replace_callback('#\{([\w]+)}#', [$this, 'paramMatch'], $this->path);
         $regex = "#^$path$#i";
         if (!preg_match($regex, $url, $matches)) {
             return false;
@@ -73,7 +73,7 @@ class Route
     {
         if (is_string($this->callable)) {
             $params = explode('#', $this->callable);
-            $controller = "app\\controllers\\" . $params[0] . "Controller";
+            $controller = "app\\controllers\\" . $params[0];
             $controller = new $controller();
             return call_user_func_array([$controller, $params[1]], $this->matches);
         } else {

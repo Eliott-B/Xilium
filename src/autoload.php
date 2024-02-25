@@ -30,4 +30,3 @@ spl_autoload_register('psr4_autoloader');
 //    require __DIR__ . '/' . $path;
 //});
 
-// https://pretzelhands.com/posts/build-your-own-psr-4-autoloader/
