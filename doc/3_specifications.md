@@ -2,9 +2,17 @@
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
 
-Le diagramme des cas d'utilisation est disponible ici : [Cas d'utilisation](cas_utilisation/index.html).  
+## Maquettes
+
+Nous avons réalisé 2 maquettes en HTML CSS.  
+Une première est disponible ici : [Maquette 1](../maquettes/maquette1/index.html)  
+Une seconde est disponible ici : [Maquette 2](../maquettes/maquette2/index.html)   
+
+Pour l'application, nous avons choisi de d'utiliser la maquette 2.  
 
 ## Cas d'utilisation  
+
+Le diagramme des cas d'utilisation est disponible ici : [Cas d'utilisation](cas_utilisation/index.html).   
 
 **Cas d'utilisation 1 :** Utiliser l’application  
 Objet : utilisation de l’application  

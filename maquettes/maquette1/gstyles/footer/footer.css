@@ -1,0 +1,28 @@
+.footer {
+  color: #F6FEFB;
+  background-color: #031c12;
+  position: sticky;
+  bottom: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+}
+.footer-content {
+  display: grid;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.footer-content * {
+  margin: 5px;
+}
+.footer-content a {
+  flex-basis: 100%;
+  color: #F6FEFB;
+  text-decoration: none;
+}
+.footer-content a:hover {
+  color: #C7F9E5;
+}

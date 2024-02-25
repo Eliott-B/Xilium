@@ -1,0 +1,15 @@
+.content {
+    padding: 10px;
+    width: 95%;
+    margin: 10px auto;
+    text-align: justify;
+    text-justify: auto;
+    p {
+        font-size: 1.2rem;
+        br {
+            content: "A" !important;
+            display: block !important;
+            margin-bottom: 1.5em !important;
+        }
+    }
+}

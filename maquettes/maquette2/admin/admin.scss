@@ -1,0 +1,147 @@
+@import "../gstyles/colors/colors.scss";
+
+$date-color: #696969;
+$label-red: #e74c3c;
+$label-green: #2ecc71;
+$label-yellow: #f1c40f;
+$label-blue: #3498db;
+$label-purple: #9b59b6;
+$label-orange: #f39c12;
+
+
+.ticket {
+    &-main {
+        background-color: $primary-2;
+        padding: 10px;
+        margin: 50px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+        &-title {
+            font-size: 30px;
+            margin-top: 40px;
+
+            font-weight: bold;
+        }
+        &-author {
+            font-size: 25px;
+        }
+
+        &-date {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+            font-size: 12px;
+            color: $date-color;
+        }
+        &-status {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: $primary-2b;
+            font-size: 12px;
+            &.open {
+                background-color: $label-orange;
+            }
+            &.closed {
+                background-color: $label-red;
+            }
+        }
+        &-labels {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            span {
+                padding: 5px 10px;
+                border-radius: 5px;
+                margin-right: 5px;
+                font-size: 12px;
+                background-color: $label-blue;
+                color: $primary-2b;
+                &.ticket-category {
+                    &.bug {
+                        background-color: $label-red;
+                    }
+                    &.feature {
+                        background-color: $label-green;
+                    }
+                    &.update {
+                        background-color: $label-yellow;
+                    }
+                    &.other {
+                        background-color: $label-purple;
+                    }
+                }
+                &.ticket-priority {
+                    &.low {
+                        background-color: $label-green;
+                    }
+                    &.medium {
+                        background-color: $label-yellow;
+                    }
+                    &.high {
+                        background-color: $label-red;
+                    }
+                }
+                &.ticket-problem {
+                    background-color: $label-blue;
+                }
+            }
+        }
+        &-message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        &-actions {
+            margin-top: 10px;
+            button {
+                font-size: 12px;
+            }
+        }
+    }
+    &-comments {
+        margin-top: -20px;
+        .comment {
+            background-color: $primary-2;
+            padding: 10px;
+            margin: 0px 100px 30px 100px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            &-author {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            &-date {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                font-size: 12px;
+                color: $date-color;
+            }
+            &-message {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+    &-icon {
+        &-comments {
+            position: absolute;
+            right: 10px;
+            bottom: 50px;
+            img {
+                width: 30px;
+                filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
+                transition: ease-in-out 0.3s;
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+                }
+            }
+        }
+    }
+}

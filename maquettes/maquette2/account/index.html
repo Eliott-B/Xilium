@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Xilium</title>
+    <link rel="stylesheet" href="/gstyles/main/main.css" />
+    <link rel="stylesheet" href="/gstyles/header/header.css" />
+    <link rel="stylesheet" href="/gstyles/footer/footer.css" />
+    <link rel="stylesheet" href="/gstyles/button/button.css" />
+    <link rel="stylesheet" href="account.css">
+</head>
+
+<!-- HEADER -->
+<header>
+    <a href="/index.html">
+        <div class="logo">
+            <img alt="logo-xilium" src="/assets/images/logos/xilium.svg">
+        </div>
+    </a>
+    <div class="navbar">
+        <ul>
+            <a href="/dashboard/">
+                <li>
+                    <h1>Tableau de bord</h1>
+                </li>
+            </a>
+            <a href="/faq/">
+                <li>
+                    <h1>Questions Frequentes</h1>
+                </li>
+            </a>
+            <a href="/about/">
+                <li>
+                    <h1>A propos</h1>
+                </li>
+            </a>
+
+        </ul>
+    </div>
+    <div class="icons">
+        <img src="/assets/images/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='/account/';">
+        <button><a href="/login/">Connexion</a></button>
+    </div>
+</header>
+<!-- BODY -->
+
+<body>
+    <div class="name">
+        <h1>Fabrice Hoguin</h1>
+    </div>
+    <div class="role">Administrateur système</div>
+    <div class="box-changepass">
+        <form>
+            <h1>Modifier son mot de passe</h1>
+            <hr>
+
+            <label for="email"><b>Mot de passe actuel</b> <span class="required">*</span></label>
+            <input type="text" placeholder="Mot de passe actuel" name="email" required id="email">
+
+            <label for="psw"><b>Nouveau mot de passe</b> <span class="required">*</span></label>
+            <input type="password" placeholder="Entrez votre nouveau mot de passe" name="psw" required id="psw">
+            <label for="psw-repeat"><b>Confirmer le mot de passe</b> <span class="required">*</span></label>
+            <input type="password" placeholder="Confirmer le mot de passe" name="psw-repeat" required id="psw-repeat">
+            <div class="btn-center"><button type="submit" class="btn-primary">Valider</button></div>
+        </form>
+    </div>
+    <div class="admin-link">
+        <a href="/admin/">Accéder à l'interface administrateur/technicien</a>
+    </div>
+    <div class="logout">
+        <button class="btn-primary" onclick="window.location.href='/logout/';">Déconnexion</button>
+    </div>
+    
+</body>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer">
+        <div class="footer-content">
+            <span>&copy; 2024 Xilium.</span>
+            <a href="/terms/">Conditions d'utilisation</a>
+            <a href="/privacy/">Politique de confidentialité</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

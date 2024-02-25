@@ -1,0 +1,57 @@
+@import '../gstyles/colors/colors.scss';
+
+
+.box-su{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        border: 1px solid black;
+        border-radius: 24px;
+        input {
+            padding-left: 1rem;
+            width: 80%;
+            border-radius: 30px;
+            height: 30px;
+            border: 1px solid black;
+            display :block;
+            margin: 20px;
+            &::placeholder{
+                opacity: 0.5;
+            }
+        }
+        label, p{
+            margin-left: 30px;
+        }
+        .btn-center{
+            margin: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button{
+                font-size: 1rem;
+            }
+        }
+        
+    }
+    a {
+        color : $tertiary-2b;
+        text-decoration: $tertiary-2b underline ;
+        transition: ease-in-out 0.1s;
+        &:hover {
+            font-weight: bolder;
+            color : $primary-1b;
+            text-decoration: $tertiary-2b underline ;
+        }
+    }
+    .required {
+        color: rgb(160, 0, 0);
+    }
+}
+
+
