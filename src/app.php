@@ -1,5 +1,7 @@
 <?php
-require __DIR__.'\autoload.php';
+session_start();
+
+require __DIR__.'/autoload.php';
 
 
 $instance = \app\Database::getInstance();

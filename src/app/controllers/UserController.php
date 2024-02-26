@@ -16,7 +16,26 @@ class UserController
         $user = $user->custom('SELECT * FROM users WHERE use_username=:username AND use_password=:password', ['username'=>$_POST['username'], 'password'=>$_POST['psw']]);
 
         var_dump($user);
-//        header('Location: /dashboard');
+        $_SESSION['id'] = $user[0]['use_id'];
+
+
+
+        if (isset($_SESSION['id'])) {
+            header('Location: /dashboard');
+        } else
+        {
+        }
+    }
+
+    public function account() {
+        if (!isset($_SESSION['id'])) {
+            header('Location: /login');
+
+        }
+        else{
+            require 'views/account.php';
+        }
+
     }
 
 
@@ -44,19 +63,14 @@ class UserController
         var_dump($user);
     }
 
-    public function create_form()
+    public function register_form()
     {
-        echo "
-        <form action='' method='post'>
-            <label for='username'>Nom</label>
-            <input type='text' name='username' id='username'>
-            <input type='submit' value='Ajouter'>
-        </form>
-        ";
+        require 'views/register.php';
     }
 
-    public function create()
+    public function register()
     {
+        // enregistrer l'utilisateur dans la base
         $user = new User();
         $user->create(['username' => $_POST['username']]);
     }

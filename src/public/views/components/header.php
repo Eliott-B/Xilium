@@ -39,7 +39,14 @@
         </ul>
     </div>
     <div class="icons">
-        <img src="../../imgs/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='/account'">
-        <button><a href="./login">Connexion</a></button>
+
+        <?php if (isset($_SESSION['id'])) : ?>
+            <img src="../../imgs/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='/account'">
+        <?php else : ?>
+            <button><a href="./login">Connexion</a></button>
+        <?php endif
+        ?>
+
+
     </div>
 </header>

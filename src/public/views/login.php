@@ -18,7 +18,7 @@
 
                 <div class="btn-center"><button type="submit" class="btn-primary">Connexion</button></div>
             </div>
-            <p> Vous n'avez pas de compte ? <a href="../signup/">Inscrivez-vous</a></p>
+            <p> Vous n'avez pas de compte ? <a href="register/">Inscrivez-vous</a></p>
         </form>
 
     </div>
