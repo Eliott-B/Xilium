@@ -1,8 +1,28 @@
 <?php
 if (isset($router)){
-//    $router->get('/toto',function (){
-//        echo 'toto';
-//    });
+    $router->get('/', function () {
+        echo "Bonsoir";
+    });
+
+    $router->get('/test/:id/:id2', function ($id, $id2){
+        echo "Test numero $id => $id2";
+    });
+
+    $router->get('/bonjour/{id}', 'ExempleController#bonjour');
+
+    $router->get('/tab', 'ExempleController#form');
+    $router->post('/tab', 'ExempleController#update');
+
+    $router->get('/labels', 'LabelController#list_labels');
+
+    $router->get('/labels/create', 'LabelController#create_form');
+    $router->post('/labels/create', 'LabelController#create');
+
+    $router->get('/labels/update/{id}', 'LabelController#update_form');
+    $router->post('/labels/update/{id}', 'LabelController#update');
+
+    $router->get('/labels/{id}', 'LabelController#show_label');
+    $router->get('/labels/{id}/delete', 'LabelController#delete');
 
     // Test Route Comment
     $router->get('/comments','CommentController#list_comments');

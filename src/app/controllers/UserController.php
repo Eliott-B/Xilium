@@ -7,6 +7,18 @@ use app\models\User;
 class UserController
 {
 
+    public function login_form(){
+        require 'views/login.php';
+    }
+
+    public function login(){
+        $user = new User();
+        $user = $user->custom('SELECT * FROM users WHERE use_username=:username AND use_password=:password', ['username'=>$_POST['username'], 'password'=>$_POST['psw']]);
+
+        var_dump($user);
+//        header('Location: /dashboard');
+    }
+
 
     public function list_users()
     {
