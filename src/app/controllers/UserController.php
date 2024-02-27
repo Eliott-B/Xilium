@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\Hash;
 use app\models\Role;
 use app\models\User;
 
@@ -18,9 +19,9 @@ class UserController
         $user = new User();
         $user = $user->custom(
             'SELECT * FROM users WHERE use_username=:username',
-            ['username' => $_POST['username']]); // todo : RC4
+            ['username' => $_POST['username']]);
 
-        if ($user[0]['use_password'] == $_POST['psw']) {
+        if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
 
 
@@ -67,7 +68,7 @@ class UserController
         $user = new User();
         $user->create([
             'use_username' => $_POST['username'],
-            'use_password' => $_POST['psw'], // todo : RC4
+            'use_password' => Hash::rc4($_POST['psw']),
             'use_name' => $_POST['lname'],
             'use_firstname' => $_POST['fname'],
             'role_id' => 1
@@ -82,15 +83,19 @@ class UserController
         $user = $user->find($_SESSION['id']);
 
         if ($_POST['psw'] == $_POST['psw-repeat']) {
-            if ($user['use_password'] == $_POST['old-psw']) { // todo : RC4
+            if ($user['use_password'] == Hash::rc4($_POST['old-psw'])) {
+                $user = new User();
+                $user->find($_SESSION['id']);
                 $user->update([
-                    'use_password' => $_POST['psw'] // todo : RC4
+                    'use_password' => Hash::rc4($_POST['psw'])
                 ]);
             } else {
-                echo "le mot de passe entré est incorrect";
+                $_SESSION['error'] = "le mot de passe entré est incorrect";
+                header('Location: /account');
             }
         } else{
-            echo "les deux mdp ne correpondent pas";
+            $_SESSION['error'] = "les deux mdp ne correpondent pas";
+            header('Location: /account');
         }
 
         header('Location: /account');
