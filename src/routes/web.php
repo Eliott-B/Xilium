@@ -1,12 +1,5 @@
 <?php
 if (isset($router)){
-    // $router->get('/', function () {
-    //     $tickets = new \app\models\Ticket();
-    //     $tickets = $tickets->all();
-
-    //     require 'views/index.php';
-    // });
-
     $router->get('/', 'IndexController#index');
 
     $router->get('/dashboard', 'DashboardController#index');
@@ -20,6 +13,9 @@ if (isset($router)){
     $router->get('/account', 'UserController#account');
     $router->post('/account', 'UserController#update');
     $router->get('/logout', 'UserController#logout');
+
+    $router->get('/create', 'TicketController#create_form');
+    $router->post('/create', 'TicketController#create');
 
     // PAGES STATIQUES
     $router->get('/about', function () {

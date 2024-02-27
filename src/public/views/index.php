@@ -13,7 +13,7 @@
 
         <div class="create-ticket">
             <?php if (isset($_SESSION['id'])) : ?>
-                <button class="btn-primary" onclick="window.location.href='./ticket/create'">Nouveau ticket</button>
+                <button class="btn-primary" onclick="window.location.href='./create'">Nouveau ticket</button>
             <?php else : ?>
                 <button class="btn-primary" onclick="window.location.href='./login'">Connexion</button>
             <?php endif ?>

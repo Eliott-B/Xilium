@@ -55,12 +55,13 @@ CREATE TABLE tickets
     status_id       INT         NOT NULL,
     updater_id      INT         NOT NULL,
     tech_id INT NULL,
-    creation_date   TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    update_date     TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    creation_date   TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
+    update_date     TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (author_id) REFERENCES users (use_id),
     FOREIGN KEY (label_id) REFERENCES labels (lab_id),
     FOREIGN KEY (priority_id) REFERENCES priorities (pri_id),
     FOREIGN KEY (status_id) REFERENCES status (sta_id),
+    FOREIGN KEY (category_id) REFERENCES categories (cat_id),
     FOREIGN KEY (updater_id) REFERENCES users (use_id),
     FOREIGN KEY (tech_id) REFERENCES users (use_id)
 );

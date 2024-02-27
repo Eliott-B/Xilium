@@ -92,7 +92,7 @@
     <?php endforeach; ?>
     <div class="add-ticket">
         <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"
-                onclick="window.location.href='../new-ticket/';"></button>
+                onclick="window.location.href='./create';"></button>
     </div>
 </main>
 
