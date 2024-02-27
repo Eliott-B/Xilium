@@ -1,11 +1,13 @@
 <?php
 if (isset($router)){
-    $router->get('/', function () {
-        $tickets = new \app\models\Ticket();
-        $tickets = $tickets->all();
+    // $router->get('/', function () {
+    //     $tickets = new \app\models\Ticket();
+    //     $tickets = $tickets->all();
 
-        require 'views/index.php';
-    });
+    //     require 'views/index.php';
+    // });
+
+    $router->get('/', 'IndexController#index');
 
     $router->get('/dashboard', 'DashboardController#index');
 

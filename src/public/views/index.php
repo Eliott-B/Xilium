@@ -18,11 +18,12 @@
                 <button class="btn-primary" onclick="window.location.href='./login'">Connexion</button>
             <?php endif ?>
         </div>
-
+        <?php if( $logedin == true) : ?>
         <section class="box-tickets">
             <div class="tickets-title">
                 <h2><a href="./dashboard">Mes tickets en cours</a></h2>
             </div>
+            
             <div class="list-tickets">
                 <?php foreach ($tickets as $ticket): ?>
 
@@ -35,6 +36,7 @@
 
             </div>
         </section>
+        <?php endif ?>
     </main>
 
 
