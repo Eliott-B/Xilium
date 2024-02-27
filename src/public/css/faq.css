@@ -1,0 +1,72 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  padding: 10px 50px;
+  height: auto;
+  border-radius: 24px;
+}
+.faq .questions {
+  padding-top: 100px;
+  padding-left: 125px;
+  padding-right: 125px;
+}
+.faq .questions details.question {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  padding: 20px;
+  width: 100%;
+  background: linear-gradient(to right, #F9C8DE, #EDC7F9);
+  border-radius: 16px;
+  border: 1px solid white;
+}
+.faq .questions details.question a {
+  color: #031c12;
+  text-decoration: #031c12 underline;
+  transition: ease-in-out 0.1s;
+}
+.faq .questions details.question a:hover {
+  font-weight: bolder;
+  color: #6e0c38;
+  text-decoration: #031c12 underline;
+}
+.faq .questions details.question:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.faq .questions details.question + details {
+  border-top: none;
+}
+.faq .questions details.question[open] {
+  padding-bottom: 1em;
+}
+.faq .questions details.question[open] summary::after {
+  transform: rotate(0deg);
+}
+.faq .questions details.question summary {
+  padding: 1rem 2em 1rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+.faq .questions details.question summary::marker {
+  content: none;
+}
+.faq .questions details.question summary::before, .faq .questions details.question summary::after {
+  content: "";
+  width: 0.75em;
+  height: 0;
+  border-bottom: 2px solid;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.faq .questions details.question summary::after {
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+  transition: ease-in-out 0.2s;
+}

@@ -28,4 +28,19 @@ if (isset($router)){
     $router->post('/register', 'UserController#register');
 
     $router->get('/account', 'UserController#account');
+    $router->post('/account', 'UserController#update');
+    $router->get('/logout', 'UserController#logout');
+
+    // PAGES STATIQUES
+    $router->get('/about', function () {
+        require "views/about.php";
+    });
+
+    $router->get('/faq', function () {
+        require "views/faq.php";
+    });
+
+    $router->get('/privacy', function (){
+        require 'views/privacy.php';
+    });
 }

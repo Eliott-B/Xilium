@@ -50,7 +50,13 @@ abstract class Model
      * @param $args
      * @return array|false
      */
-    public function custom($query, $args){
+    public function custom($query, $args = NULL){
+        if (isset($args)) {
+            foreach ($args as $k => $v) {
+                $args[$k] = htmlspecialchars($v);
+            }
+        }
+
         return $this->db->query($query, $args);
     }
 
@@ -62,7 +68,7 @@ abstract class Model
         $values = [];
         foreach ($args as $k => $v){
             if (in_array($k, $this->fillable)){
-                $values = array_merge($values, [$k => $v]);
+                $values = array_merge($values, [$k => htmlspecialchars($v)]);
             }
         }
         $fillable_string = "";
@@ -94,7 +100,7 @@ abstract class Model
             if (in_array($k, $this->fillable)){
                 // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
                 // jour donc on l'ajoute dans values
-                $values = array_merge($values, [$k => $v]);
+                $values = array_merge($values, [$k => htmlspecialchars($v)]);
             }
         }
 
