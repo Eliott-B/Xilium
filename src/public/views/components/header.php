@@ -13,24 +13,24 @@
 <body>
 <!-- HEADER -->
 <header>
-    <a href="./" class="logo">
+    <a href="/" class="logo">
         <div class="logo">
             <img alt="logo-xilium" src="../../imgs/logos/xilium.svg">
         </div>
     </a>
     <div class="navbar">
         <ul>
-            <a href="./dashboard">
+            <a href="/dashboard">
                 <li>
                     <h1>Tableau de bord</h1>
                 </li>
             </a>
-            <a href="./faq">
+            <a href="/faq">
                 <li>
                     <h1>Questions Frequentes</h1>
                 </li>
             </a>
-            <a href="./about">
+            <a href="/about">
                 <li>
                     <h1>A propos</h1>
                 </li>
