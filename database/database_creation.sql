@@ -26,6 +26,12 @@ CREATE TABLE status
     sta_name VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE categories
+(
+    cat_id   INT PRIMARY KEY AUTO_INCREMENT,
+    cat_name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE users
 (
     use_id        INT PRIMARY KEY AUTO_INCREMENT,
@@ -44,6 +50,7 @@ CREATE TABLE tickets
     tic_description TEXT        NOT NULL,
     author_id       INT         NOT NULL,
     label_id        INT         NOT NULL,
+    category_id     INT         NOT NULL,
     priority_id     INT         NOT NULL,
     status_id       INT         NOT NULL,
     updater_id      INT         NOT NULL,

@@ -7,19 +7,7 @@ if (isset($router)){
         require 'views/index.php';
     });
 
-    $router->get('/dashboard', function (){
-        if (!isset($_SESSION['id'])) {
-            header('Location: /login');
-
-        }
-        else {
-            $tickets = new \app\models\Ticket();
-            $tickets = $tickets->all();
-
-            require 'views/dashboard.php';
-        }
-
-    });
+    $router->get('/dashboard', 'DashboardController#index');
 
     $router->get('/login', 'UserController#login_form');
     $router->post('/login', 'UserController#login');
