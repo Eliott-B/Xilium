@@ -8,6 +8,7 @@
                     width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen></iframe>
             <p>Guide de présentation</p>
+            <button class="btn-secondary" onclick="window.location.href='./dashboard'">Mes tickets</button>
         </div>
 
 
@@ -18,10 +19,10 @@
                 <button class="btn-primary" onclick="window.location.href='./login'">Connexion</button>
             <?php endif ?>
         </div>
-        <?php if( $logedin == true) : ?>
+        
         <section class="box-tickets">
             <div class="tickets-title">
-                <h2><a href="./dashboard">Mes tickets en cours</a></h2>
+                <h2>Tickets en cours dans Xilium</h2>
             </div>
             
             <div class="list-tickets">
@@ -36,7 +37,6 @@
 
             </div>
         </section>
-        <?php endif ?>
     </main>
 
 

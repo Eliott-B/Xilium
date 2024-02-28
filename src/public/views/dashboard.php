@@ -1,4 +1,4 @@
-<?php require 'components/header.php';?>
+<?php require 'components/header.php'; ?>
 
 
 <main>
@@ -8,23 +8,18 @@
         <button class="btn-secondary closeds">Clos</button>
 
     </div>
-
-    <?php foreach ($tickets as $ticket): ?>
-        <!-- <div class="ticket" id="opened"> -->
+    <?php foreach ($view_tickets as $v_ticket): ?>
         <?php
-        $status = new app\models\Status();
-        $status = $status->get_status($ticket['status_id']);
-        if ($status === "Fermé") {
+        if ($v_ticket['status']['sta_name'] === "Fermé") {
             echo "<div class='ticket' id='closed'>";
         } else {
             echo "<div class='ticket' id='opened'>";
         }
         ?>
-        <!-- <div class="ticket" id="opened"> -->
-        <div class="ticket-main" id="ticket1">
+        <div class="ticket-main" id=<?= $v_ticket['tic_id'] ?>>
             <div class="ticket-main-title">
                 <span>
-                    <?= $ticket['tic_title'] ?>
+                    <?= $v_ticket['tic_title'] ?>
                 </span>
             </div>
             <div class="ticket-main-author">
@@ -34,61 +29,42 @@
                 </span>
             </div>
             <div class="ticket-main-labels">
-
-                <?php
-                $category = new app\models\Category();
-                $category = $category->get_category($ticket['category_id']);
-                $dict_css_category = [
-                    "Bug" => "bug",
-                    "Mise-à-jour" => "update",
-                    "Fonctionnalité" => "feature",
-                    "Autre" => "other"
-                ];
-                echo '<span class="ticket-category ' . $dict_css_category[$category] . '">' . $category . '</span>';
-
-                $label = new app\models\Label();
-                $label = $label->get_label($ticket['label_id']);
-                echo '<span class="ticket-problem">' . $label . '</span>';
-
-                $priority = new app\models\Priority();
-                $priority = $priority->get_priority($ticket['priority_id']);
-                $dict_css_priority = [
-                    "Faible" => "low",
-                    "Moyen" => "medium",
-                    "Elevé" => "high"
-                ];
-                echo '<span class="ticket-priority ' . $dict_css_priority[$priority] . '">' . $priority . '</span>';
-                ?>
+                <span class="ticket-category" style="background-color: <?= $v_ticket['category']['cat_css_color'] ?>">
+                    <?= $v_ticket['category']['cat_name'] ?>
+                </span>
+                <span class="ticket-problem" style="background-color: <?= $v_ticket['label']['lab_css_color'] ?>">
+                    <?= $v_ticket['label']['lab_name'] ?>
+                </span>
+                <span class="ticket-priority" style="background-color: <?= $v_ticket['priority']['pri_css_color'] ?>">
+                    <?= $v_ticket['priority']['pri_name'] ?>
+                </span>
             </div>
-
-            <?php
-            $status = new app\models\Status();
-            $status = $status->get_status($ticket['status_id']);
-            $dict_css_status = [
-                "Ouvert" => "open",
-                "Fermé" => "closed"
-            ];
-            echo '<div class="ticket-main-status ' . $dict_css_status[$status] . '">' . $status . '</div>';
-            ?>
+            <div class="ticket-main-status" style="background-color: <?= $v_ticket['status']['sta_css_color'] ?>">
+                <?= $v_ticket['status']['sta_name'] ?>
+            </div>
             <div class="ticket-main-message">
                 <p>
-                    <?= $ticket['tic_description'] ?>
+                    <?= $v_ticket['tic_description'] ?>
                 </p>
             </div>
-            <div class="ticket-main-actions">
+            <!-- TODO -->
+            <!-- <div class="ticket-main-actions">
                 <button class="btn-primary">Commenter</button>
                 <button class="btn-primary">Modifier</button>
                 <button class="btn-tertiary">Fermer</button>
                 <button class="btn-secondary">Supprimer</button>
-            </div>
+            </div> -->
             <div class="ticket-main-date">
-                <p>12/12/2024</p>
+                <p>
+                    <?= $v_ticket['creation_date'] ?>
+                </p>
             </div>
-            <div class="ticket-icon-comments">
+            <!-- TODO -->
+            <!-- <div class="ticket-icon-comments">
                 <img src="../imgs/icons/comments_off.svg" alt="comments off" class="comments-off-icon">
-            </div>
+            </div> -->
         </div>
-        </div>
+    </div>
     <?php endforeach; ?>
     <div class="add-ticket">
         <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"

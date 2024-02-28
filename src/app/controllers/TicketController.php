@@ -3,6 +3,10 @@
 namespace app\controllers;
 
 use app\models\Ticket;
+use app\models\Category;
+use app\models\Label;
+use app\models\Priority;
+
 
 class TicketController
 {
@@ -38,6 +42,12 @@ class TicketController
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
         }
+        $category = new Category();
+        $categories = $category->all();
+        $label = new Label();
+        $labels = $label->all();
+        $priority = new Priority();
+        $priorities = $priority->all();
         require 'views/create.php';
     }
 
@@ -48,13 +58,16 @@ class TicketController
             'tic_title' => $_POST['title'],
             'tic_description' => $_POST['description'],
             'author_id' => $_SESSION['id'],
-            'label_id' => $_POST['problem'],
-            'priority_id' => $_POST['priority'],
+            'label_id' =>  $_POST['problem'],
+            'priority_id' =>  $_POST['priority'],
             'status_id' => 1,
-            'category_id' => 1,
+            'category_id' => $_POST['category'],
             'updater_id' => $_SESSION['id'],
+            'creation_date' => date('Y-m-d H:i:s'),
+            'update_date' => date('Y-m-d H:i:s')
         ]);
-        require 'views/dashboard.php';
+
+        header('Location: /dashboard');
     }
 
     public function update_form($id){

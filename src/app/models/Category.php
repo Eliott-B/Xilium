@@ -6,13 +6,14 @@ class Category extends Model
 {
     protected string $table = 'categories';
     protected array $fillable = [
-        'cat_name'
+        'cat_name',
+        'cat_css_color'
     ];
 
     public function get_category($id)
     {
         $category = new Category();
-        $category = $category->custom("select cat_name from categories where cat_id = :id", ['id' => $id]);
-        return $category[0]['cat_name'];
+        $category = $category->custom("select * from categories where cat_id = :id", ['id' => $id]);
+        return $category[0];
     }
 }
