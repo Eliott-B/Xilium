@@ -1,3 +1,4 @@
+-- DROP DATABASE IF EXISTS xiliumtick;
 CREATE DATABASE xiliumtick CHARACTER SET utf8mb4;
 USE xiliumtick;
 
@@ -11,25 +12,29 @@ CREATE TABLE priorities
 (
     pri_id    INT PRIMARY KEY AUTO_INCREMENT,
     pri_name  VARCHAR(50) NOT NULL,
-    pri_index TINYINT     NOT NULL DEFAULT 0
+    pri_index TINYINT     NOT NULL DEFAULT 0,
+    pri_css_color   VARCHAR(50)
 );
 
 CREATE TABLE labels
 (
     lab_id   INT PRIMARY KEY AUTO_INCREMENT,
-    lab_name VARCHAR(50) NOT NULL
+    lab_name VARCHAR(50) NOT NULL,
+    lab_css_color  VARCHAR(50)
 );
 
 CREATE TABLE status
 (
     sta_id   INT PRIMARY KEY AUTO_INCREMENT,
-    sta_name VARCHAR(50) NOT NULL
+    sta_name VARCHAR(50) NOT NULL,
+    sta_css_color  VARCHAR(50)
 );
 
 CREATE TABLE categories
 (
     cat_id   INT PRIMARY KEY AUTO_INCREMENT,
-    cat_name VARCHAR(50) NOT NULL
+    cat_name VARCHAR(50) NOT NULL,
+    cat_css_color  VARCHAR(50)
 );
 
 CREATE TABLE users
@@ -92,6 +97,8 @@ CREATE TABLE comments
     FOREIGN KEY (reply_to) REFERENCES comments (com_id)
 );
 
+-- JDD
+
 INSERT INTO roles
 VALUES (1, 'Utilisateur'),
        (10, 'Technicien'),
@@ -99,24 +106,29 @@ VALUES (1, 'Utilisateur'),
        (100, 'Administrateur Système');
 
 INSERT INTO priorities
-VALUES (NULL, 'Faible', 1),
-       (NULL, 'Moyen', 2),
-       (NULL, 'Important', 3);
-
-INSERT INTO status
-VALUES (NULL, 'Ouvert'),
-       (NULL, 'En traitement'),
-       (NULL, 'Fermé');
+VALUES (1, 'Faible', 1, '#2ecc71'),
+       (2, 'Moyenne', 2, '#f39c12'),
+       (3, 'Haute', 3, '#e74c3c'),
+       (4, 'Urgente', 4, '#e70000');
 
 INSERT INTO labels
-VALUES (NULL, 'Réseau'),
-         (NULL, 'Logiciel'),
-         (NULL, 'Matériel'),
-         (NULL, 'Compte'),
-         (NULL, 'Autre');
+VALUES (1, 'Bug', '#e74c3c'),
+       (2, 'Amélioration', '#2ecc71'),
+       (3, 'Documentation', '#9b59b6'),
+       (4, 'Sécurité', '#808080');
+
+INSERT INTO status
+VALUES (1, 'Nouveau', '#3498db'),
+       (2, 'En cours', '#f39c12'),
+       (3, 'Résolu', '#2ecc71'),
+       (4, 'Fermé', '#808080');
 
 INSERT INTO categories
-VALUES (NULL, 'Bug'),
-         (NULL, 'Fonctionnalité'),
-         (NULL, 'Mise-à-jour');
+VALUES (1, 'Logiciel', '#9b59b6'),
+       (2, 'Matériel', '#9b59b6'),
+       (3, 'Réseau', '#9b59b6'),
+       (4, 'Sécurité', '#9b59b6');
 
+INSERT INTO users
+VALUES (1, 'admin', '9ffa04f5', 'Admin', 'Admin', 100),
+       (2, 'user', '9ffa04f5', 'User', 'User', 1);

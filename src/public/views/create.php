@@ -12,37 +12,31 @@
                 <input type="text" placeholder="Entrez l'objet de votre ticket" name="title" required id="title">
 
                 <label for="category"><b>Catégorie</b> <span class="required">*</span></label>
-                
                 <select id="category" name="category">
-                    
-                    <option disabled selected
-                    >Catégorie</option>
-                    <?php foreach (array_slice($categories, 1) as $category){
-                        // echo $category['cat_name'] . $category['cat_id'] . "<br>";
-                        echo "<option value='" . $category['cat_id'] . "'>" . $category['cat_name'] . "</option>";
+                
+                    <option disabled selected>Catégorie</option>
+                    <?php foreach ($categories as $category){
+                        echo "<option value=" .$category['cat_id'] . ">" . $category['cat_name'] . "</option>";
                     }
-                    echo "<option value='0'>Autre</option>";
                     ?>
                 </select>
 
                 <label for="problem"><b>Problème</b> <span class="required">*</span></label>
                 <select id="problem" name="problem">
-                    <option disabled selected
-                    >Problème</option>
-                    <option value="1">Réseau</option>
-                    <option value="2">Logiciel</option>
-                    <option value="3">Matériel</option>
-                    <option value="4">Compte</option>
-                    <option value="5">Autre</option>
+                    <option disabled selected>Problème</option>
+                    <?php foreach ($labels as $label){
+                        echo "<option value=" . $label['lab_id'] . ">" . $label['lab_name'] . "</option>";
+                    }
+                    ?>
                 </select>
 
                 <label for="priority"><b>Niveau d'urgence estimé</b></label>
                 <select id="priority" name="priority">
-                    <option disabled selected
-                    >Niveau d'urgence</option>
-                    <option value="1">Faible</option>
-                    <option value="2">Moyen</option>
-                    <option value="3">Elevé</option>
+                    <option disabled selected>Niveau d'urgence</option>
+                    <?php foreach ($priorities as $priority){
+                        echo "<option value=" . $priority['pri_id'] . ">" . $priority['pri_name'] . "</option>";
+                    }
+                    ?>
                 </select>
                 <label for="description"><b>Description</b> <span class="required">*</span></label>
 
