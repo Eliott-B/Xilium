@@ -47,20 +47,22 @@
                     <?= $v_ticket['tic_description'] ?>
                 </p>
             </div>
-            <div class="ticket-main-actions">
+            <!-- TODO -->
+            <!-- <div class="ticket-main-actions">
                 <button class="btn-primary">Commenter</button>
                 <button class="btn-primary">Modifier</button>
                 <button class="btn-tertiary">Fermer</button>
                 <button class="btn-secondary">Supprimer</button>
-            </div>
+            </div> -->
             <div class="ticket-main-date">
                 <p>
                     <?= $v_ticket['creation_date'] ?>
                 </p>
             </div>
-            <div class="ticket-icon-comments">
+            <!-- TODO -->
+            <!-- <div class="ticket-icon-comments">
                 <img src="../imgs/icons/comments_off.svg" alt="comments off" class="comments-off-icon">
-            </div>
+            </div> -->
         </div>
     </div>
     <?php endforeach; ?>
