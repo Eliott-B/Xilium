@@ -1,25 +1,8 @@
 <?php
 if (isset($router)){
-    $router->get('/', function () {
-        $tickets = new \app\models\Ticket();
-        $tickets = $tickets->all();
+    $router->get('/', 'IndexController#index');
 
-        require 'views/index.php';
-    });
-
-    $router->get('/dashboard', function (){
-        if (!isset($_SESSION['id'])) {
-            header('Location: /login');
-
-        }
-        else {
-            $tickets = new \app\models\Ticket();
-            $tickets = $tickets->all();
-
-            require 'views/dashboard.php';
-        }
-
-    });
+    $router->get('/dashboard', 'DashboardController#index');
 
     $router->get('/login', 'UserController#login_form');
     $router->post('/login', 'UserController#login');
@@ -28,4 +11,22 @@ if (isset($router)){
     $router->post('/register', 'UserController#register');
 
     $router->get('/account', 'UserController#account');
+    $router->post('/account', 'UserController#update');
+    $router->get('/logout', 'UserController#logout');
+
+    $router->get('/create', 'TicketController#create_form');
+    $router->post('/create', 'TicketController#create');
+
+    // PAGES STATIQUES
+    $router->get('/about', function () {
+        require "views/about.php";
+    });
+
+    $router->get('/faq', function () {
+        require "views/faq.php";
+    });
+
+    $router->get('/privacy', function (){
+        require 'views/privacy.php';
+    });
 }

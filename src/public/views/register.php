@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../css/signup.css">
 
     <div class="box-su">
-        <form>
+        <form action="" method="post">
             <div class="su">
 
                 <h1>Inscription</h1>
@@ -35,7 +35,7 @@
                     <button type="submit" class="btn-primary">Inscription</button>
                 </div>
             </div>
-            <p> Vous avez déjà un compte ? <a href="../login/">Connectez-vous</a></p>
+            <p> Vous avez déjà un compte ? <a href="/login">Connectez-vous</a></p>
         </form>
 
     </div>

@@ -34,19 +34,27 @@ class TicketController
 
     public function create_form()
     {
-        echo "
-        <form action='' method='post'>
-            <label for='title'>Nom</label>
-            <input type='text' name='title' id='title'>
-            <input type='submit' value='Ajouter'>
-        </form>
-        ";
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+        require 'views/create.php';
     }
 
     public function create()
     {
         $ticket = new Ticket();
-        $ticket->create(['title' => $_POST['title']]);
+        $ticket->create([
+            'tic_title' => $_POST['title'],
+            'tic_description' => $_POST['description'],
+            'author_id' => $_SESSION['id'],
+            'label_id' => $_POST['problem'],
+            'priority_id' => $_POST['priority'],
+            'status_id' => 1,
+            'category_id' => 1,
+            'updater_id' => $_SESSION['id'],
+        ]);
+        require 'views/dashboard.php';
     }
 
     public function update_form($id){

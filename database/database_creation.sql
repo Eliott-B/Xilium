@@ -26,6 +26,12 @@ CREATE TABLE status
     sta_name VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE categories
+(
+    cat_id   INT PRIMARY KEY AUTO_INCREMENT,
+    cat_name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE users
 (
     use_id        INT PRIMARY KEY AUTO_INCREMENT,
@@ -44,16 +50,18 @@ CREATE TABLE tickets
     tic_description TEXT        NOT NULL,
     author_id       INT         NOT NULL,
     label_id        INT         NOT NULL,
+    category_id     INT         NOT NULL,
     priority_id     INT         NOT NULL,
     status_id       INT         NOT NULL,
     updater_id      INT         NOT NULL,
     tech_id INT NULL,
-    creation_date   TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    update_date     TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    creation_date   TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
+    update_date     TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (author_id) REFERENCES users (use_id),
     FOREIGN KEY (label_id) REFERENCES labels (lab_id),
     FOREIGN KEY (priority_id) REFERENCES priorities (pri_id),
     FOREIGN KEY (status_id) REFERENCES status (sta_id),
+    FOREIGN KEY (category_id) REFERENCES categories (cat_id),
     FOREIGN KEY (updater_id) REFERENCES users (use_id),
     FOREIGN KEY (tech_id) REFERENCES users (use_id)
 );

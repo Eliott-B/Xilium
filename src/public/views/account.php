@@ -4,11 +4,11 @@
 
     <link rel="stylesheet" href="../css/account.css"/>
     <div class="name">
-        <h1>Fabrice Hoguin</h1>
+        <h1><?= $user['use_firstname'] . ' ' . $user['use_name'] ?></h1>
     </div>
-    <div class="role">Administrateur système</div>
+    <div class="role"><?= $role['rol_name'] ?></div>
     <div class="box-changepass">
-        <form>
+        <form action="" method="post">
             <h1>Modifier son mot de passe</h1>
             <hr>
 
@@ -24,11 +24,13 @@
             </div>
         </form>
     </div>
-    <div class="admin-link">
-        <a href="../admin/">Accéder à l'interface administrateur/technicien</a>
-    </div>
+    <?php if ($user['role_id'] == 50 or $user['role_id'] == 100): ?>
+        <div class="admin-link">
+            <a href="/admin">Accéder à l'interface administrateur/technicien</a>
+        </div>
+    <?php endif ?>
     <div class="logout">
-        <button class="btn-primary" onclick="window.location.href='../logout/';">Déconnexion</button>
+        <button class="btn-primary" onclick="window.location.href='/logout';">Déconnexion</button>
     </div>
 
 </main>
