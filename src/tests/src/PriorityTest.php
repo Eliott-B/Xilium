@@ -34,9 +34,9 @@ final class PriorityTest extends TestCase
             'pri_name' => "test",
             'pri_index' => 6
         ]);
-        $priority = $priority->find($id);
-        $this->assertSame('test', $priority["pri_name"]);
-        $this->assertSame(6, $priority["pri_index"]);
-        $priority->delete(end($priorities)["pri_id"]);
+        $prio = $priority->find($id);
+        $this->assertSame('test', $prio["pri_name"]);
+        $this->assertSame(6, $prio["pri_index"]);
+        $priority->delete($prio["pri_id"]);
     }
 }
