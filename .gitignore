@@ -1,6 +1,6 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,phpstorm,webstorm,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,phpstorm,webstorm,windows
+# Created by https://www.toptal.com/developers/gitignore/api/windows,webstorm,visualstudiocode,phpstorm,macos,phpunit
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,webstorm,visualstudiocode,phpstorm,macos,phpunit
 
 ### macOS ###
 # General
@@ -148,6 +148,21 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
 
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
+
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -268,10 +283,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,phpstorm,webstorm,windows
+# End of https://www.toptal.com/developers/gitignore/api/windows,webstorm,visualstudiocode,phpstorm,macos,phpunit
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 .idea/.gitignore
-
 *bdd.json
+src/tests/vendor

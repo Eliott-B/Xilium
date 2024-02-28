@@ -12,6 +12,7 @@ class Ticket extends Model
         'label_id',
         'priority_id',
         'status_id',
+        'category_id',
         'updater_id',
         'tech_id',
         'creation_date',
