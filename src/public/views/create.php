@@ -12,14 +12,17 @@
                 <input type="text" placeholder="Entrez l'objet de votre ticket" name="title" required id="title">
 
                 <label for="category"><b>Catégorie</b> <span class="required">*</span></label>
-
+                
                 <select id="category" name="category">
+                    
                     <option disabled selected
                     >Catégorie</option>
-                    <option value="1">Bug</option>
-                    <option value="2">Fonctionnalité</option>
-                    <option value="3">Mise-à-jour</option>
-                    <option value="4">Autre</option>
+                    <?php foreach (array_slice($categories, 1) as $category){
+                        // echo $category['cat_name'] . $category['cat_id'] . "<br>";
+                        echo "<option value='" . $category['cat_id'] . "'>" . $category['cat_name'] . "</option>";
+                    }
+                    echo "<option value='0'>Autre</option>";
+                    ?>
                 </select>
 
                 <label for="problem"><b>Problème</b> <span class="required">*</span></label>

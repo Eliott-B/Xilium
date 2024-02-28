@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Ticket;
+use app\models\Category;
 
 class TicketController
 {
@@ -38,6 +39,8 @@ class TicketController
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
         }
+        $category = new Category();
+        $categories = $category->all();
         require 'views/create.php';
     }
 
@@ -54,7 +57,7 @@ class TicketController
             'category_id' => 1,
             'updater_id' => $_SESSION['id'],
         ]);
-        require 'views/dashboard.php';
+        header('Location: /dashboard');
     }
 
     public function update_form($id){

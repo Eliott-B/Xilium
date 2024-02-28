@@ -101,12 +101,22 @@ VALUES (1, 'Utilisateur'),
 INSERT INTO priorities
 VALUES (NULL, 'Faible', 1),
        (NULL, 'Moyen', 2),
-       (NULL, 'Important', 3),
-       (NULL, 'Urgent', 4);
+       (NULL, 'Important', 3);
 
 INSERT INTO status
 VALUES (NULL, 'Ouvert'),
        (NULL, 'En traitement'),
        (NULL, 'Fermé');
 
+INSERT INTO labels
+VALUES (NULL, 'Réseau'),
+         (NULL, 'Logiciel'),
+         (NULL, 'Matériel'),
+         (NULL, 'Compte'),
+         (NULL, 'Autre');
+
+INSERT INTO categories
+VALUES (NULL, 'Bug'),
+         (NULL, 'Fonctionnalité'),
+         (NULL, 'Mise-à-jour');
 
