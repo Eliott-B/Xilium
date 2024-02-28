@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Xilium</title>
+    <link rel="stylesheet" href="./gstyles/main/main.css" />
+    <link rel="stylesheet" href="./gstyles/header/header.css" />
+    <link rel="stylesheet" href="./gstyles/footer/footer.css" />
+    <link rel="stylesheet" href="./gstyles/button/button.css" />
+    <link rel="stylesheet" href="./gstyles/index/index.css" />
+</head>
+
+<!-- BODY -->
+<body>
+    <header>
+        <a href="./index.html" class="logo">
+            <div class="logo">
+                <img alt="logo-xilium" src="./assets/images/logos/xilium.svg">
+            </div>
+        </a>
+        <div class="navbar">
+            <ul>
+                <a href="./dashboard/">
+                    <li>
+                        <h1>Tableau de bord</h1>
+                    </li>
+                </a>
+                <a href="./faq/">
+                    <li>
+                        <h1>Questions Frequentes</h1>
+                    </li>
+                </a>
+                <a href="./about/">
+                    <li>
+                        <h1>A propos</h1>
+                    </li>
+                </a>
+    
+            </ul>
+        </div>
+        <div class="icons">
+            <img src="./assets/images/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='./account/';">
+            <button><a href="./login/">Connexion</a></button>
+        </div>
+    </header>
+    
+    <div style="text-align: center;">
+        <iframe src="https://player.vimeo.com/video/754521237?h=5a6ec07bcd&autoplay=0&title=0&byline=0&portrait=0"
+        width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    
+    
+    <div class="create-ticket"><button class="btn-primary" onclick="window.location.href='./new-ticket/';">Nouveau ticket</button></div>
+
+    <section class="box-tickets">
+        <div class="tickets-title">
+            <h2><a href="dashboard/">Mes tickets en cours</a></h2>
+        </div>
+        <div class="list-tickets">
+            <div class="ticket" onclick="window.location.href='./dashboard/#ticket1';">
+                <h3 class="ticket-title">Problème de connexion</h3>
+                <p class="ticket-content">Je n'arrive pas à me connecter à mon compte</p>
+            </div>
+            <div class="ticket"  onclick="window.location.href='./dashboard/#ticket2';">
+                <h3 class="ticket-title">PC s'allume pas</h3>
+                <p class="ticket-content">Mon PC ne s'allume pas, j'ai essayé de le brancher sur une autre prise mais rien n'y fait</p>
+            </div>
+            <div class="ticket">
+                <h3 class="ticket-title">y'a pas internet</h3>
+                <p class="ticket-content">ils ont coupé la fibre...</p>
+            </div>
+            <div class="ticket">
+                <h3 class="ticket-title">Demain dès l'aube</h3>
+                <p class="ticket-content">
+                    Demain, dès l'aube, à l'heure où blanchit la campagne,<br>
+                    Je partirai. Vois-tu, je sais que tu m'attends.<br>
+                    J'irai par la forêt, j'irai par la montagne.<br>
+                    Je ne puis demeurer loin de toi plus longtemps.<br>
+                    <br>
+                    Je marcherai les yeux fixés sur mes pensées,<br>
+                    Sans rien voir au dehors, sans entendre aucun bruit,<br>
+                    Seul, inconnu, le dos courbé, les mains croisées,<br>
+                    Triste, et le jour pour moi sera comme la nuit.<br>
+                    <br>
+                    Je ne regarderai ni l'or du soir qui tombe,<br>
+                    Ni les voiles au loin descendant vers Harfleur,<br>
+                    Et quand j'arriverai, je mettrai sur ta tombe<br>
+                    Un bouquet de houx vert et de bruyère en fleur.</p>
+            </div>
+            <div class="ticket">
+                <h3 class="ticket-title">NEVER GONNA GIVE YOU UP</h3>
+                <p class="ticket-content">
+                    Desert you<br>
+                    Ooh-ooh-ooh-ooh<br>
+                    Hurt you<br>
+                    <br>
+                    We're no strangers to love<br>
+                    You know the rules and so do I<br>
+                    A full commitment's what I'm thinking of<br>
+                    You wouldn't get this from any other guy<br>
+                    <br>
+                    I just wanna tell you how I'm feeling<br>
+                    Gotta make you understand<br>
+                    <br>
+                    Never gonna give you up<br>
+                    Never gonna let you down<br>
+                    Never gonna run around and desert you<br>
+                    Never gonna make you cry<br>
+                    Never gonna say goodbye</p>
+            </div>
+            <div class="ticket">
+                <h3 class="ticket-title">lorem</h3>
+                <p class="ticket-content">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, placeat alias<br>
+                    facere iste nihil ab autem rerum enim ad et quisquam sint quis, molestiae qui aut reprehenderit<br>
+                    voluptatem, omnis accusantium!</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer">
+        <div class="footer-content">
+            <span>&copy; 2024 Xilium.</span>
+            <a href="./terms/">Conditions d'utilisation</a>
+            <a href="./privacy/">Politique de confidentialité</a>
+            <a href="./contact/">Contact</a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

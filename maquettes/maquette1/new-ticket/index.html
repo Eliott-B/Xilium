@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Xilium</title>
+    <link rel="stylesheet" href="../gstyles/main/main.css" />
+    <link rel="stylesheet" href="../gstyles/header/header.css" />
+    <link rel="stylesheet" href="../gstyles/footer/footer.css" />
+    <link rel="stylesheet" href="../gstyles/button/button.css" />
+    <link rel="stylesheet" href="new-ticket.css" />
+</head>
+
+<!-- BODY -->
+<body>
+    <header>
+        <a href="../index.html">
+            <div class="logo">
+                <img alt="logo-xilium" src="../assets/images/logos/xilium.svg">
+            </div>
+        </a>
+        <div class="navbar">
+            <ul>
+                <a href="../dashboard/">
+                    <li>
+                        <h1>Tableau de bord</h1>
+                    </li>
+                </a>
+                <a href="../faq/">
+                    <li><footer>
+                        <div class="footer">
+                            &copy; 2024 Xilium. All rights reserved.
+                        </div>
+                    </footer>
+                        <h1>Questions Frequentes</h1>
+                    </li>
+                </a>
+                <a href="../about/">
+                    <li>
+                        <h1>A propos</h1>
+                    </li>
+                </a>
+    
+            </ul>
+        </div>
+        <div class="icons">
+            <img src="../assets/images/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='../account/';">
+            <button><a href="../login/">Connexion</a></button>
+        </div>
+    </header>
+    
+    <div class="box-new-ticket">
+        <form>
+            <div class="new-ticket">
+                <h1>Nouveau ticket</h1>
+                <p>Veuillez renseigner les informations pour créer un nouveau ticket.</p>
+                <hr>
+
+                <label for="title"><b>Objet</b> <span class="required">*</span></label>
+                <input type="text" placeholder="Entrez l'objet de votre ticket" name="title" required id="title">
+
+                <label for="category"><b>Catégorie</b> <span class="required">*</span></label>
+
+                <select id="category">
+                    <option value="1" disabled selected
+                    >Catégorie</option>
+                    <option value="2">Bug</option>
+                    <option value="3">Fonctionnalité</option>
+                    <option value="4">Mise-à-jour</option>
+                    <option value="5">Autre</option>
+                </select>
+
+                <label for="problem"><b>Problème</b> <span class="required">*</span></label>
+                <select id="problem">
+                    <option value="1" disabled selected
+                    >Problème</option>
+                    <option value="2">Réseau</option>
+                    <option value="3">Logiciel</option>
+                    <option value="4">Matériel</option>
+                    <option value="5">Compte</option>
+                    <option value="6">Autre</option>
+                </select>
+
+                <label for="priority"><b>Niveau d'urgence estimé</b></label>
+                <select id="priority">
+                    <option value="1" disabled selected
+                    >Niveau d'urgence</option>
+                    <option value="2">Faible</option>
+                    <option value="3">Moyen</option>
+                    <option value="4">Elevé</option>
+                </select>
+                <label for="description"><b>Description</b> <span class="required">*</span></label>
+
+                <textarea placeholder="Entrez la description de votre ticket" name="description" required rows="5" cols="33" id="description"
+                ></textarea>
+
+                <div class="btn-center"><button type="submit" class="btn-primary">Créer le ticket</button></div>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer">
+        <div class="footer-content">
+            <span>&copy; 2024 Xilium.</span>
+            <a href="../terms/">Conditions d'utilisation</a>
+            <a href="../privacy/">Politique de confidentialité</a>
+            <a href="../contact/">Contact</a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

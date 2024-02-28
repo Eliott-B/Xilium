@@ -1,0 +1,57 @@
+@import "../colors/colors.scss";
+
+.btn {
+    &-primary {
+        @extend .btn;
+        background-color: $primary-1;
+        color: $primary-1b;
+        &:hover {
+            background-color: $primary-1b;
+            color: $primary-1;
+        }
+    }
+    &-secondary {
+        @extend .btn;
+        background-color: $secondary-1;
+        color: $secondary-1b;
+        &:hover {
+            background-color: $secondary-1b;
+            color: $secondary-1;
+        }
+    }
+    &-tertiary {
+        @extend .btn;
+        background-color: $tertiary-1;
+        color: $tertiary-1b;
+        &:hover {
+            background-color: $tertiary-1b;
+            color: $tertiary-1;
+        }
+    }
+    &-icon {
+        @extend .btn-primary;
+        .add-icon {
+            filter: brightness(0) saturate(100%) invert(8%) sepia(69%) saturate(419%) hue-rotate(103deg) brightness(103%) contrast(102%);
+        }
+        &:hover {
+            .add-icon {
+                filter: brightness(0) saturate(100%) invert(87%) sepia(28%) saturate(200%) hue-rotate(104deg) brightness(100%) contrast(102%);
+            }
+        }
+
+        padding: 1rem 1rem 0.5rem;
+    }
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    font-weight: bold;
+    transition: ease-in-out 0.4s;
+    &:hover {
+        cursor: pointer;
+        transition: ease-in-out 0.4s;
+    }
+    &:active {
+        transform: scale(0.5);
+        transition: ease-in-out 0.4s;
+    }
+}

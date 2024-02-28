@@ -1,0 +1,48 @@
+.btn, .btn-tertiary, .btn-secondary, .btn-primary, .btn-icon {
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  font-weight: bold;
+  transition: ease-in-out 0.4s;
+}
+.btn-primary, .btn-icon {
+  background-color: #C7F9E5;
+  color: #0c6e46;
+}
+.btn-primary:hover, .btn-icon:hover {
+  background-color: #0c6e46;
+  color: #C7F9E5;
+}
+.btn-secondary {
+  background-color: #EDC7F9;
+  color: #560c6e;
+}
+.btn-secondary:hover {
+  background-color: #560c6e;
+  color: #EDC7F9;
+}
+.btn-tertiary {
+  background-color: #F9C8DE;
+  color: #6e0c38;
+}
+.btn-tertiary:hover {
+  background-color: #6e0c38;
+  color: #F9C8DE;
+}
+.btn-icon {
+  padding: 1rem 1rem 0.5rem;
+}
+.btn-icon .add-icon {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(69%) saturate(419%) hue-rotate(103deg) brightness(103%) contrast(102%);
+}
+.btn-icon:hover .add-icon {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(28%) saturate(200%) hue-rotate(104deg) brightness(100%) contrast(102%);
+}
+.btn:hover, .btn-primary:hover, .btn-secondary:hover, .btn-tertiary:hover, .btn-icon:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+.btn:active, .btn-primary:active, .btn-secondary:active, .btn-tertiary:active, .btn-icon:active {
+  transform: scale(0.5);
+  transition: ease-in-out 0.4s;
+}

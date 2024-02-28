@@ -1,0 +1,77 @@
+.box-new-ticket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+}
+.box-new-ticket form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 24px;
+}
+.box-new-ticket form input {
+  padding-left: 1rem;
+  width: 78%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.box-new-ticket form input::placeholder {
+  opacity: 0.5;
+}
+.box-new-ticket form label,
+.box-new-ticket form p {
+  margin-left: 30px;
+}
+.box-new-ticket form .btn-center {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-new-ticket form .btn-center button {
+  font-size: 1rem;
+}
+.box-new-ticket form textarea {
+  padding: 1rem;
+  width: 75%;
+  border-radius: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+  resize: vertical;
+  min-height: 100px;
+}
+.box-new-ticket form textarea::placeholder {
+  opacity: 0.5;
+}
+.box-new-ticket form select {
+  padding-left: 1rem;
+  width: 82%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.box-new-ticket form select option:disabled {
+  opacity: 0.5;
+}
+.box-new-ticket a {
+  color: #1c030e;
+  text-decoration: #1c030e underline;
+  transition: ease-in-out 0.1s;
+}
+.box-new-ticket a:hover {
+  font-weight: bolder;
+  color: #0c6e46;
+  text-decoration: #1c030e underline;
+}
+.box-new-ticket .required {
+  color: rgb(160, 0, 0);
+}
