@@ -1,10 +1,10 @@
 <?php
 
-namespace rooteam\xiliumtest;
+namespace app\xiliumtest;
 
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use app\models;
+use app\models\Priority;
 
 final class PriorityTest extends TestCase
 {
@@ -15,8 +15,22 @@ final class PriorityTest extends TestCase
             'pri_name' => "test",
             'pri_index' => 5
         ]);
-        $priorities = $priorities->all();
-    
-        $this->assertSame('test', $priorities.Last().pri_name);
+        $priorities = $priority->all();
+        $this->assertSame('test', end($priorities)["pri_name"]);
+    }
+
+    public function testUpdate()
+    {
+        $priority = new Priority();
+        $priorities = $priority->all();
+        $id = end($priorities)["pri_id"];
+        $priority->find($id);
+        $priority->update([
+            'pri_name' => "test",
+            'pri_index' => 6
+        ]);
+        $priority = $priority->find($id);
+        $this->assertSame('test', $priority["pri_name"]);
+        $this->assertSame(6, $priority["pri_index"]);
     }
 }
