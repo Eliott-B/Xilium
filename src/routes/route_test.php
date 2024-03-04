@@ -1,9 +1,9 @@
 <?php
 if (isset($router)){
 
-    $router->get('/test/:id/:id2', function ($id, $id2){
-        echo "Test numero $id => $id2";
-    });
+//    $router->get('/test/:id/:id2', function ($id, $id2){
+//        echo "Test numero $id => $id2";
+//    });
 
 
 

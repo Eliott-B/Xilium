@@ -8,7 +8,7 @@ class ExempleController
 {
     public function bonjour($id){
 
-        require "views/test.php";
+//        require "views/test.php";
     }
 
     public function form(){

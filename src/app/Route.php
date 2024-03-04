@@ -89,7 +89,10 @@ class Route
      */
     public function with($param, $regex)
     {
-        $this->params[$param] = str_replace('(', '(?:', $regex);
+        $final = $regex;
+        $final = str_replace('(', '(?{', $final);
+        $final = str_replace(')', '})?', $final);
+        $this->params[$param] = $final;
         return $this;
     }
 }
