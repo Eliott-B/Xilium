@@ -7,6 +7,7 @@ services:
     restart: always
     volumes:
       - ./src:/var/www/html
+      - ./config/xilium.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
       - "80:80"
     networks:
@@ -19,7 +20,7 @@ services:
       - ./.env/database_pass
     volumes:
       - ./database/data:/var/lib/mysql
-      - ./database/database_creation.sql:/docker-entrypoint-initdb.d/xilium_base.sql
+      - ./database/database_creation.sql:/docker-entrypoint-initdb.d/init.sql
     platform: linux/amd64
     networks:
       - base
