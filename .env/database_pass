@@ -1,0 +1,4 @@
+MYSQL_DATABASE=xiliumtick
+MYSQL_USER=xilium
+MYSQL_PASSWORD=xilium
+MYSQL_ROOT_PASSWORD=xilium
