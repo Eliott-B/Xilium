@@ -4,10 +4,14 @@ namespace app\controllers;
 
 use app\models\Role;
 
+/**
+ * Module du controleur des roles
+ */
 class RoleController
 {
-
-
+    /**
+     * Liste les roles
+     */
     public function list_roles()
     {
         $roles = new Role();
@@ -16,6 +20,10 @@ class RoleController
         var_dump($roles);
     }
 
+    /**
+     * Affiche un role
+     * @param int $id identifiant du role
+     */
     public function show_role($id)
     {
         $role = new Role();
@@ -24,6 +32,10 @@ class RoleController
         var_dump($role);
     }
 
+    /**
+     * Supprime un role
+     * @param int $id identifiant du role
+     */
     public function delete($id)
     {
         $role = new Role();
@@ -32,6 +44,9 @@ class RoleController
         var_dump($role);
     }
 
+    /**
+     * Affiche le formulaire pour la création d'un role
+     */
     public function create_form()
     {
         echo "
@@ -43,12 +58,18 @@ class RoleController
         ";
     }
 
+    /**
+     * Crée un role à partir du formulaire
+     */
     public function create()
     {
         $role = new Role();
         $role->create(['name' => $_POST['name']]);
     }
 
+    /**
+     * Affiche le formulaire pour la modification d'un role
+     */
     public function update_form($id){
         $role = new Role();
         $role = $role->find($id);
@@ -62,12 +83,13 @@ class RoleController
         ";
     }
 
+    /**
+     * Modifie un role à partir du formulaire
+     */
     public function update(){
         $role = new Role();
         $role = $role->find($_POST['id']);
         var_dump($role);
         $role->update(['rol_name' => $_POST['name']]);
     }
-
-
 }

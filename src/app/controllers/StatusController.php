@@ -4,10 +4,14 @@ namespace app\controllers;
 
 use app\models\Status;
 
+/**
+ * Module du controleur des statuts
+ */
 class StatusController
 {
-
-
+    /**
+     * Liste les statuts
+     */
     public function list_status()
     {
         $status = new Status();
@@ -16,6 +20,10 @@ class StatusController
         var_dump($status);
     }
 
+    /**
+     * Affiche un statut
+     * @param int $id identifiant du statut
+     */
     public function show_status($id)
     {
         $status = new Status();
@@ -24,6 +32,10 @@ class StatusController
         var_dump($status);
     }
 
+    /**
+     * Supprime un statut
+     * @param int $id identifiant du statut
+     */
     public function delete($id)
     {
         $status = new Status();
@@ -32,6 +44,9 @@ class StatusController
         var_dump($status);
     }
 
+    /**
+     * Affiche le formulaire pour la création d'un statut
+     */
     public function create_form()
     {
         echo "
@@ -43,12 +58,19 @@ class StatusController
         ";
     }
 
+    /**
+     * Crée un statut à partir des données du formulaire
+     */
     public function create()
     {
         $status = new Status();
         $status->create(['name' => $_POST['name']]);
     }
 
+    /**
+     * Affiche le formulaire pour la modification d'un statut
+     * @param int $id identifiant du statut
+     */
     public function update_form($id){
         $status = new Status();
         $status = $status->find($id);
@@ -62,12 +84,13 @@ class StatusController
         ";
     }
 
+    /**
+     * Modifie un statut à partir des données du formulaire
+     */
     public function update(){
         $status = new Status();
         $status = $status->find($_POST['id']);
         var_dump($status);
         $status->update(['sta_name' => $_POST['name']]);
     }
-
-
 }

@@ -7,11 +7,14 @@ use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
 
-
+/**
+ * Module du controleur des tickets
+ */
 class TicketController
 {
-
-
+    /**
+     * Liste les tickets
+     */
     public function list_tickets()
     {
         $tickets = new Ticket();
@@ -20,6 +23,10 @@ class TicketController
         var_dump($tickets);
     }
 
+    /**
+     * Affiche un ticket
+     * @param int $id identifiant du ticket
+     */
     public function show_ticket($id)
     {
         $ticket = new Ticket();
@@ -28,6 +35,10 @@ class TicketController
         var_dump($ticket);
     }
 
+    /**
+     * Supprime un ticket
+     * @param int $id identifiant du ticket
+     */
     public function delete($id)
     {
         $ticket = new Ticket();
@@ -36,6 +47,9 @@ class TicketController
         var_dump($ticket);
     }
 
+    /**
+     * Affiche le formulaire pour la création d'un ticket
+     */
     public function create_form()
     {
         if (!isset($_SESSION['id'])) {
@@ -51,6 +65,9 @@ class TicketController
         require 'views/create.php';
     }
 
+    /**
+     * Crée un ticket à partir des données du formulaire
+     */
     public function create()
     {
         $ticket = new Ticket();
@@ -70,6 +87,9 @@ class TicketController
         header('Location: /dashboard');
     }
 
+    /**
+     * Affiche le formulaire pour la modification d'un ticket
+     */
     public function update_form($id){
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
@@ -83,12 +103,13 @@ class TicketController
         ";
     }
 
+    /**
+     * Modifie un ticket à partir des données du formulaire
+     */
     public function update(){
         $ticket = new Ticket();
         $ticket = $ticket->find($_POST['id']);
         var_dump($ticket);
         $ticket->update(['tic_title' => $_POST['title']]);
     }
-
-
 }

@@ -9,11 +9,17 @@ use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
 
+/**
+ * Module du controleur du tableau de bord
+ */
 class DashboardController
 {
+    /**
+     * Intègre les informations du tableau de bord dans la vue
+     * Renvoi vers la page de connexion si l'utilisateur n'est pas connecté
+     */
     public function index()
     {
-        
         if (!isset($_SESSION['id'])) {
             header('Location: /login');
 
