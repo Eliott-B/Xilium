@@ -2,7 +2,7 @@ FROM debian:latest
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y apache2 php libapache2-mod-php php-mysql libapache2-mod-security2
+    apt-get install -y apache2 php libapache2-mod-php php-mysql libapache2-mod-security2 python3
 
 RUN chown -R www-data:www-data /var/www/html
 

@@ -291,3 +291,4 @@ $RECYCLE.BIN/
 *bdd.json
 src/tests/vendor
 database/data
+.env
