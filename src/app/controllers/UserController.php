@@ -16,7 +16,12 @@ class UserController
      */
     public function login_form()
     {
-        require 'views/login.php';
+        if (isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous êtes déjà connecté";
+            header('Location: /');
+        } else {
+            require 'views/login.php';
+        }
     }
 
     /**
@@ -73,7 +78,12 @@ class UserController
      */
     public function register_form()
     {
-        require 'views/register.php';
+        if (isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous êtes déjà connecté";
+            header('Location: /');
+        } else {
+            require 'views/register.php';
+        }
     }
 
     /**
