@@ -71,6 +71,9 @@ class TicketController
         header('Location: /dashboard');
     }
 
+    /** Fonction pour afficher le formulaire de modification d'un ticket
+     * @param int $id id du ticket à modifier
+     */
     public function update_form($id){
         if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
@@ -79,32 +82,46 @@ class TicketController
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
-        $category = new Category();
-        $categories = $category->all();
-        $label = new Label();
-        $labels = $label->all();
-        $priority = new Priority();
-        $priorities = $priority->all();
+        $ticket = (array) $ticket;
+        
+        if ($ticket['author_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+            header('Location: /dashboard');
+        } else {
+            $category = new Category();
+            $categories = $category->all();
+            $label = new Label();
+            $labels = $label->all();
+            $priority = new Priority();
+            $priorities = $priority->all();
 
-        require 'views/update.php';
+            require 'views/update.php';
+        }
     }
 
+    /** Fonction pour modifier un ticket
+     * @param int $id id du ticket à modifier
+     */
     public function update($id){
         $ticket = new Ticket();
-        $ticket->find($id);
+        $ticket = $ticket->find($id);
 
-        $ticket->update([
-            'tic_title' => $_POST['title'],
-            'tic_description' => $_POST['description'],
-            'label_id' =>  $_POST['problem'],
-            'priority_id' =>  $_POST['priority'],
-            'category_id' => $_POST['category'],
-            'updater_id' => $_SESSION['id'],
-            'update_date' => date('Y-m-d H:i:s')
-        ]);
+        $ticket = (array) $ticket;
+
+        if ($ticket['tic_title'] !== $_POST['title'] || $ticket['tic_description'] !== $_POST['description'] || $ticket['label_id'] !== $_POST['problem'] || $ticket['priority_id'] !== $_POST['priority'] || $ticket['category_id'] !== $_POST['category']) {
+            $ticket = new Ticket();
+            $ticket -> find($id);
+            $ticket->update([
+                'tic_title' => $_POST['title'],
+                'tic_description' => $_POST['description'],
+                'label_id' =>  $_POST['problem'],
+                'priority_id' =>  $_POST['priority'],
+                'category_id' => $_POST['category'],
+                'updater_id' => $_SESSION['id'],
+                'update_date' => date('Y-m-d H:i:s')
+            ]);
+        }
 
         header('Location: /dashboard');
     }
-
-
 }
