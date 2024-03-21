@@ -17,7 +17,7 @@ class UserController
     public function login_form()
     {
         if (isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous êtes déjà connecté";
+            $_SESSION['error'] = "Vous êtes déjà connecté";
             header('Location: /');
         } else {
             require 'views/login.php';
@@ -46,7 +46,7 @@ class UserController
             }
         } else
         {
-            $_SESSION['error'] = "nom d'utilisateur ou mot de passe incorrecte";
+            $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
             header('Location: /login');
         }
 
@@ -59,7 +59,7 @@ class UserController
     public function account()
     {
         if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous n'etes pas connecté";
+            $_SESSION['error'] = "Vous n'êtes pas connecté";
             header('Location: /login');
 
         } else {
@@ -79,7 +79,7 @@ class UserController
     public function register_form()
     {
         if (isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous êtes déjà connecté";
+            $_SESSION['error'] = "Vous êtes déjà connecté";
             header('Location: /');
         } else {
             require 'views/register.php';
@@ -120,11 +120,11 @@ class UserController
                     'use_password' => Hash::rc4($_POST['psw'])
                 ]);
             } else {
-                $_SESSION['error'] = "le mot de passe entré est incorrect";
+                $_SESSION['error'] = "Le mot de passe entré est incorrect";
                 header('Location: /account');
             }
         } else{
-            $_SESSION['error'] = "les deux mdp ne correpondent pas";
+            $_SESSION['error'] = "Les deux mots de passe ne correpondent pas";
             header('Location: /account');
         }
 
@@ -137,7 +137,7 @@ class UserController
     public function logout()
     {
         if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous n'êtes pas connecté";
+            $_SESSION['error'] = "Vous n'êtes pas connecté";
             header('Location: /');
         } else {
             unset($_SESSION['id']);
