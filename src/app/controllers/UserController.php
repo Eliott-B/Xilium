@@ -136,7 +136,12 @@ class UserController
      */
     public function logout()
     {
-        unset($_SESSION['id']);
-        header('Location: /');
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'êtes pas connecté";
+            header('Location: /');
+        } else {
+            unset($_SESSION['id']);
+            header('Location: /');
+        }
     }
 }
