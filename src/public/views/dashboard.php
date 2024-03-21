@@ -49,7 +49,7 @@
             <div class="ticket-main-actions">
                 <!--                <button class="btn-primary">Commenter</button>-->
                 <button class="btn-primary" onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
-                <!--                <button class="btn-tertiary">Fermer</button>-->
+                <button class="btn-tertiary" onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>
                 <!--                <button class="btn-secondary">Supprimer</button>-->
             </div>
             <div class="ticket-main-date">
