@@ -1,0 +1,26 @@
+var class_php_parser_1_1_parser_abstract =
+[
+    [ "__construct", "class_php_parser_1_1_parser_abstract.html#a65896935fb0afe548b835e2d398a3cd0", null ],
+    [ "createEmptyElemAttributes", "class_php_parser_1_1_parser_abstract.html#ad32e69f1b5ee37bfda811c0d4d2f8110", null ],
+    [ "createTokenMap", "class_php_parser_1_1_parser_abstract.html#aac88a2f15ec4d7418846f116b62db8b1", null ],
+    [ "doParse", "class_php_parser_1_1_parser_abstract.html#aae0ab48d2d2687ea37ad2ee03ad53e01", null ],
+    [ "fixupAlternativeElse", "class_php_parser_1_1_parser_abstract.html#aef5942fcbf971d49b9527bd2b44c7243", null ],
+    [ "getAttributes", "class_php_parser_1_1_parser_abstract.html#a806485a0bc69dfc62dee8522f07d73de", null ],
+    [ "getAttributesAt", "class_php_parser_1_1_parser_abstract.html#a523bc725b7ce5f24ce7efe4879c122ad", null ],
+    [ "getAttributesForToken", "class_php_parser_1_1_parser_abstract.html#a5f8fccfb06ff9fe5069893814d0823f7", null ],
+    [ "getCommentBeforeToken", "class_php_parser_1_1_parser_abstract.html#ae1c214a2105ef6cec6b65c1c66b82fc6", null ],
+    [ "getErrorMessage", "class_php_parser_1_1_parser_abstract.html#a843efff4af5a1e0b21d5d7f75069edaa", null ],
+    [ "getExpectedTokens", "class_php_parser_1_1_parser_abstract.html#a8173da8af0970201690971836798361e", null ],
+    [ "getTokens", "class_php_parser_1_1_parser_abstract.html#acf2f05f60b57bd67020d2259a2cf9982", null ],
+    [ "handleBuiltinTypes", "class_php_parser_1_1_parser_abstract.html#ae30f5e19a3714fab88ff95040580da32", null ],
+    [ "handleNamespaces", "class_php_parser_1_1_parser_abstract.html#a02955540c9cf4bca37dff2e4871be625", null ],
+    [ "initReduceCallbacks", "class_php_parser_1_1_parser_abstract.html#ae39f0682768f46865c153924fd431996", null ],
+    [ "maybeCreateZeroLengthNop", "class_php_parser_1_1_parser_abstract.html#aa5b320178d54e075c25008c7e8ce7133", null ],
+    [ "parse", "class_php_parser_1_1_parser_abstract.html#a856ec5b5ce53178781824e65ad7ab5cf", null ],
+    [ "parseDocString", "class_php_parser_1_1_parser_abstract.html#a4dd9ed0b66cc83563bde164b5889be46", null ],
+    [ "parseLNumber", "class_php_parser_1_1_parser_abstract.html#a15bf084be8384fc3674314bfa7abcfc4", null ],
+    [ "parseNumString", "class_php_parser_1_1_parser_abstract.html#a33861f18ee8daee896ee21386ffb561b", null ],
+    [ "stripIndentation", "class_php_parser_1_1_parser_abstract.html#a177b3477d63db2aa30062794d57cf1ec", null ],
+    [ "$actionCheck", "class_php_parser_1_1_parser_abstract.html#ae0a17c92e06c9a4bedba8e07932a6161", null ],
+    [ "$gotoCheck", "class_php_parser_1_1_parser_abstract.html#ab81217fe90f98c6565bac4b4217a72b7", null ]
+];

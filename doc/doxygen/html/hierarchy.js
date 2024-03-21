@@ -3,6 +3,10 @@ var hierarchy =
     [ "CommentController", "classapp_1_1controllers_1_1_comment_controller.html", null ],
     [ "DashboardController", "classapp_1_1controllers_1_1_dashboard_controller.html", null ],
     [ "Database", "classapp_1_1_database.html", null ],
+    [ "Exception", null, [
+      [ "BddException", "classapp_1_1_bdd_exception.html", null ],
+      [ "RouterException", "classapp_1_1_router_exception.html", null ]
+    ] ],
     [ "ExempleController", "classapp_1_1controllers_1_1_exemple_controller.html", null ],
     [ "Hash", "classapp_1_1_hash.html", null ],
     [ "IndexController", "classapp_1_1controllers_1_1_index_controller.html", null ],

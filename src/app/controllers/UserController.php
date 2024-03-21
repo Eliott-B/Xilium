@@ -44,6 +44,7 @@ class UserController
                 $_SESSION['error'] = "Erreur lors de la connexion";
                 header('Location: /login');
             }
+
         } else
         {
             $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
@@ -58,18 +59,13 @@ class UserController
      */
     public function account()
     {
-        if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "Vous n'êtes pas connecté";
-            header('Location: /login');
 
-        } else {
-            $user = new User();
-            $user = $user->find($_SESSION['id']);
-            $role = new Role();
-            $role = $role->find($user['role_id']);
+        $user = new User();
+        $user = $user->find($_SESSION['id']);
+        $role = new Role();
+        $role = $role->find($user['role_id']);
 
-            require 'views/account.php';
-        }
+        require 'views/account.php';
 
     }
 
@@ -123,8 +119,10 @@ class UserController
                 $_SESSION['error'] = "Le mot de passe entré est incorrect";
                 header('Location: /account');
             }
+
         } else{
             $_SESSION['error'] = "Les deux mots de passe ne correpondent pas";
+
             header('Location: /account');
         }
 

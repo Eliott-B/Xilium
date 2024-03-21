@@ -4,18 +4,37 @@ namespace app\models;
 
 use app\Database;
 
+/**
+ * Modèle abstrait de la base de données
+ */
 abstract class Model
 {
+    /**
+     * Instance de la base de données
+     * @var Database
+     */
     protected Database $db;
 
+    /**
+     * Le nom de la table associée à ce modèle
+     * @var string
+     */
     protected string $table;
+
     /**
      * @var array Les données du model qui peuvent être remplies sur la bdd
      */
     protected array $fillable = [];
+
+    /**
+     * L'identifiant de l'entité
+     * @var int
+     */
     protected int $id;
 
-
+    /**
+     * Initialise une nouvelle instance du modèle.
+     */
     public function __construct()
     {
         $instance = Database::getInstance();

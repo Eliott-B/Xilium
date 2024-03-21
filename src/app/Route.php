@@ -8,6 +8,10 @@ class Route
     private mixed $callable;
     private array $matches = [];
     private array $params = [];
+    /**
+     * @var true
+     */
+    private bool $needAuth;
 
     /**
      * @param string $path Le chemin de la route
@@ -71,6 +75,12 @@ class Route
      */
     public function call()
     {
+        if(isset($this->needAuth) && $this->needAuth) {
+            if (!isset($_SESSION['id'])){
+                $_SESSION['error'] = "Vous devez être connecté";
+                header('Location: /login');
+            }
+        }
         if (is_string($this->callable)) {
             $params = explode('#', $this->callable);
             $controller = "app\\controllers\\" . $params[0];
@@ -93,6 +103,12 @@ class Route
         $final = str_replace('(', '(?{', $final);
         $final = str_replace(')', '})?', $final);
         $this->params[$param] = $final;
+        return $this;
+    }
+
+    public function auth(){
+        $this->needAuth = true;
+
         return $this;
     }
 }

@@ -2,9 +2,21 @@
 
 namespace app\models;
 
+/**
+ * Model représentant un ticket
+ */
 class Ticket extends Model
 {
+    /**
+     * Le nom de la table associée à ce modèle
+     * @var string
+     */
     protected string $table = 'tickets';
+
+    /**
+     * Les attributs pouvant être remplis
+     * @var array
+     */
     protected array $fillable = [
         'tic_title',
         'tic_description',

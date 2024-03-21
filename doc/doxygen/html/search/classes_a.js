@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ticket_0',['Ticket',['../classapp_1_1models_1_1_ticket.html',1,'app::models']]],
-  ['ticketcontroller_1',['TicketController',['../classapp_1_1controllers_1_1_ticket_controller.html',1,'app::controllers']]],
-  ['tickettest_2',['TicketTest',['../classapp_1_1xiliumtest_1_1_ticket_test.html',1,'app::xiliumtest']]]
+  ['status_0',['Status',['../classapp_1_1models_1_1_status.html',1,'app::models']]],
+  ['statuscontroller_1',['StatusController',['../classapp_1_1controllers_1_1_status_controller.html',1,'app::controllers']]],
+  ['statustest_2',['StatusTest',['../classapp_1_1xiliumtest_1_1_status_test.html',1,'app::xiliumtest']]]
 ];

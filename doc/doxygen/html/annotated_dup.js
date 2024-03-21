@@ -15,15 +15,15 @@ var annotated_dup =
         [ "UserController", "classapp_1_1controllers_1_1_user_controller.html", "classapp_1_1controllers_1_1_user_controller" ]
       ] ],
       [ "models", null, [
-        [ "Category", "classapp_1_1models_1_1_category.html", null ],
+        [ "Category", "classapp_1_1models_1_1_category.html", "classapp_1_1models_1_1_category" ],
         [ "Comment", "classapp_1_1models_1_1_comment.html", null ],
         [ "Exemple", "classapp_1_1models_1_1_exemple.html", null ],
-        [ "Label", "classapp_1_1models_1_1_label.html", null ],
+        [ "Label", "classapp_1_1models_1_1_label.html", "classapp_1_1models_1_1_label" ],
         [ "Log", "classapp_1_1models_1_1_log.html", null ],
         [ "Model", "classapp_1_1models_1_1_model.html", "classapp_1_1models_1_1_model" ],
-        [ "Priority", "classapp_1_1models_1_1_priority.html", null ],
+        [ "Priority", "classapp_1_1models_1_1_priority.html", "classapp_1_1models_1_1_priority" ],
         [ "Role", "classapp_1_1models_1_1_role.html", null ],
-        [ "Status", "classapp_1_1models_1_1_status.html", null ],
+        [ "Status", "classapp_1_1models_1_1_status.html", "classapp_1_1models_1_1_status" ],
         [ "Ticket", "classapp_1_1models_1_1_ticket.html", null ],
         [ "User", "classapp_1_1models_1_1_user.html", null ]
       ] ],
@@ -35,9 +35,11 @@ var annotated_dup =
         [ "TicketTest", "classapp_1_1xiliumtest_1_1_ticket_test.html", null ],
         [ "UserTest", "classapp_1_1xiliumtest_1_1_user_test.html", null ]
       ] ],
+      [ "BddException", "classapp_1_1_bdd_exception.html", null ],
       [ "Database", "classapp_1_1_database.html", "classapp_1_1_database" ],
       [ "Hash", "classapp_1_1_hash.html", null ],
       [ "Route", "classapp_1_1_route.html", "classapp_1_1_route" ],
-      [ "Router", "classapp_1_1_router.html", "classapp_1_1_router" ]
+      [ "Router", "classapp_1_1_router.html", "classapp_1_1_router" ],
+      [ "RouterException", "classapp_1_1_router_exception.html", null ]
     ] ]
 ];

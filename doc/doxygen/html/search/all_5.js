@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['find_0',['find',['../classapp_1_1models_1_1_model.html#a79cc82436f3290ec078b1aa19589da20',1,'app::models::Model']]]
+  ['exemple_0',['Exemple',['../classapp_1_1models_1_1_exemple.html',1,'app::models']]],
+  ['exemplecontroller_1',['ExempleController',['../classapp_1_1controllers_1_1_exemple_controller.html',1,'app::controllers']]]
 ];
