@@ -20,7 +20,7 @@ class Database
      */
     private function __construct($config_path = "../config/bdd.json")
     {
-        if (!file_exists($config_path)) throw new \BddException("Le fichier de configuration n'existe pas");
+        if (!file_exists($config_path)) throw new BddException("Le fichier de configuration n'existe pas");
 
         $config_object = file_get_contents($config_path);
         $config_file = json_decode($config_object, true);
@@ -31,7 +31,11 @@ class Database
             (!empty($config_file['port']) ? (";port=" . $config_file['port']) : "") .
             ";dbname=" . $config_file['database'];
 
-        $this->db = new \PDO($dns, $config_file['username'], $config_file['password']);
+        try {
+            $this->db = new \PDO($dns, $config_file['username'], $config_file['password']);
+        } catch (PDOException $e) {
+            echo 'Erreur : '.$e->getMessage();
+        }
     }
 
     /**
@@ -86,9 +90,8 @@ class Database
         return $this->db->lastInsertId();
     }
 
-//    function __destruct()
-//    {
-//        $this->req = null;
-//        $this->db = null;
-//    }
+    function __destruct()
+    {
+        unset($this->db, $this->req);
+    }
 }

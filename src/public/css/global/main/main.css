@@ -54,3 +54,10 @@ html {
   background-color: #F9C8DE;
   border-radius: 9px;
 }
+
+.flex-wrapper {
+  display: flex;
+  min-height: 80vh;
+  flex-direction: column;
+  justify-content: space-between;
+}

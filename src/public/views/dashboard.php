@@ -1,12 +1,10 @@
 <?php require 'components/header.php'; ?>
 
-
 <main>
     <link rel="stylesheet" href="../css/dashboard.css">
     <div class="btns-selec">
         <button class="btn-primary openeds">En cours</button>
         <button class="btn-secondary closeds">Clos</button>
-
     </div>
     <?php foreach ($view_tickets as $v_ticket): ?>
         <?php
@@ -48,15 +46,15 @@
                 </p>
             </div>
             <!-- TODO -->
-            <!-- <div class="ticket-main-actions">
-                <button class="btn-primary">Commenter</button>
-                <button class="btn-primary">Modifier</button>
-                <button class="btn-tertiary">Fermer</button>
-                <button class="btn-secondary">Supprimer</button>
-            </div> -->
+            <div class="ticket-main-actions">
+                <!--                <button class="btn-primary">Commenter</button>-->
+                <button class="btn-primary" onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
+                <!--                <button class="btn-tertiary">Fermer</button>-->
+                <!--                <button class="btn-secondary">Supprimer</button>-->
+            </div>
             <div class="ticket-main-date">
                 <p>
-                    <?= $v_ticket['creation_date'] ?>
+                    <?= $v_ticket['update_date'] ?>
                 </p>
             </div>
             <!-- TODO -->
@@ -64,7 +62,7 @@
                 <img src="../imgs/icons/comments_off.svg" alt="comments off" class="comments-off-icon">
             </div> -->
         </div>
-    </div>
+        </div>
     <?php endforeach; ?>
     <div class="add-ticket">
         <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"

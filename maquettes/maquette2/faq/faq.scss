@@ -4,12 +4,9 @@
 .faq {
     display: flex;
     flex-direction: column;
-    margin: 30px;
-    padding: 10px 50px;
     height: auto;
     border-radius: 24px;
     .questions {
-        padding-top: 100px;
         padding-left: 125px;
         padding-right: 125px;
         details.question {

@@ -50,3 +50,5 @@
 
     </div>
 </header>
+<!-- Open main classs -->
+<div class='flex-wrapper'>

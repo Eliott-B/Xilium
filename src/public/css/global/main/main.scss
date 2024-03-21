@@ -63,3 +63,10 @@ html {
     background-color: $primary-1;
     border-radius: 9px;
 }
+
+.flex-wrapper {
+    display: flex;
+    min-height: 80vh;
+    flex-direction: column;
+    justify-content: space-between;
+}

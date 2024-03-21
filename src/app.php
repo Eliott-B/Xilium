@@ -15,5 +15,9 @@ require __DIR__ . '/routes/web.php';
 require __DIR__ . '/routes/route_test.php';
 
 // Dernier élément
-$router->run();
+try {
+    $router->run();
+} catch (\app\RouterException $e) {
+    $e->redirect();
+}
 
