@@ -2,7 +2,7 @@
 if (isset($router)){
     $router->get('/', 'IndexController#index');
 
-    $router->get('/dashboard', 'DashboardController#index');
+    $router->get('/dashboard', 'DashboardController#index')->auth();
 
     $router->get('/login', 'UserController#login_form');
     $router->post('/login', 'UserController#login');
@@ -10,15 +10,16 @@ if (isset($router)){
     $router->get('/register', 'UserController#register_form');
     $router->post('/register', 'UserController#register');
 
-    $router->get('/account', 'UserController#account');
-    $router->post('/account', 'UserController#update');
-    $router->get('/logout', 'UserController#logout');
+    $router->get('/account', 'UserController#account')->auth();
+    $router->post('/account', 'UserController#update')->auth();
 
-    $router->get('/create', 'TicketController#create_form');
-    $router->post('/create', 'TicketController#create');
+    $router->get('/logout', 'UserController#logout')->auth();
 
-    $router->get('/update/{id}', 'TicketController#update_form');
-    $router->post('/update/{id}', 'TicketController#update');
+    $router->get('/create', 'TicketController#create_form')->auth();
+    $router->post('/create', 'TicketController#create')->auth();
+
+    $router->get('/update/{id}', 'TicketController#update_form')->auth();
+    $router->post('/update/{id}', 'TicketController#update')->auth();
 
 
 
