@@ -6,14 +6,22 @@ use app\Hash;
 use app\models\Role;
 use app\models\User;
 
+/**
+ * Module du controleur des utilisateurs
+ */
 class UserController
 {
-
+    /**
+     * Redirige vers la page de connexion
+     */
     public function login_form()
     {
         require 'views/login.php';
     }
 
+    /**
+     * Connecte l'utilisateur
+     */
     public function login()
     {
         $user = new User();
@@ -39,6 +47,10 @@ class UserController
 
     }
 
+    /**
+     * Redirige vers la page du compte de l'utilisateur
+     * Redirige vers la page de connexion si l'utilisateur n'est pas connecté
+     */
     public function account()
     {
         if (!isset($_SESSION['id'])) {
@@ -56,12 +68,17 @@ class UserController
 
     }
 
-
+    /**
+     * Redirige vers la page d'inscription
+     */
     public function register_form()
     {
         require 'views/register.php';
     }
 
+    /**
+     * Enregistre l'utilisateur à partir des informations du formulaire
+     */
     public function register()
     {
         // enregistrer l'utilisateur dans la base
@@ -77,6 +94,9 @@ class UserController
         header('Location: /dashboard');
     }
 
+    /**
+     * Met à jour le mot de passe de l'utilisateur à partir des informations du formulaire
+     */
     public function update()
     {
         $user = new User();
@@ -101,6 +121,9 @@ class UserController
         header('Location: /account');
     }
 
+    /**
+     * Déconnecte l'utilisateur et le redirige vers la page d'accueil
+     */
     public function logout()
     {
         unset($_SESSION['id']);

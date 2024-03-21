@@ -5,12 +5,19 @@ namespace app;
 use PDO;
 use PDOException;
 
+/**
+ * Module de la base de données
+ */
 class Database
 {
     private static $instance = null;
     private PDO $db;
     private \PDOStatement|null $req;
 
+    /**
+     * Constructeur
+     * @param string chemin des configs defaut: "../config/bdd.json"
+     */
     private function __construct($config_path = "../config/bdd.json")
     {
         if (!file_exists($config_path)) throw new BddException("Le fichier de configuration n'existe pas");
@@ -31,6 +38,10 @@ class Database
         }
     }
 
+    /**
+     * Renvoi une instance de la classe
+     * @return Database 
+     */
     public static function getInstance(){
         if(!self::$instance){
             self::$instance = new Database();
@@ -39,10 +50,19 @@ class Database
         return self::$instance;
     }
 
+    /**
+     * Renvoi l'objet PDO de la base de données
+     * @return PDO
+     */
     public function getDb(){
         return $this->db;
     }
 
+    /**
+     * Execute une requête SQL
+     * @param string requête
+     * @param array arguments
+     */
     public function query(string $query, array $args = []){
         $this->req = $this->db->prepare($query); // on prepare la requete
         // pour chaque argument de la requete, on le bind avec la valeur correspondante
@@ -62,6 +82,10 @@ class Database
         return $this->req->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Renvoi l'identifiant de la dernière insertion SQL
+     * @return int
+     */
     public function getLastId(){
         return $this->db->lastInsertId();
     }

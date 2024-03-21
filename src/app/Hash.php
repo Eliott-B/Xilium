@@ -2,11 +2,19 @@
 
 namespace app;
 
+/**
+ * Module de cryptographie
+ */
 class Hash
 {
 
     protected static $key = 'Key';
 
+    /**
+     * Crypte et décrypte une chaine de caractère
+     * @param string $data chaine à crypter/décrypter
+     * @return string chaine crypté/décrypté
+     */
     public static function rc4($data) {
         $s = array();
         for ($i = 0; $i < 256; $i++) {

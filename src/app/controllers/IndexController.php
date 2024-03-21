@@ -4,8 +4,14 @@ namespace app\controllers;
 
 use app\models\Ticket;
 
+/**
+ * Module du controleur de la page d'accueil
+ */
 class IndexController
 {
+    /**
+     * Intègre les informations (10 derniers tickets) de la page d'accueil dans la vue
+     */
     public function index()
     {
         $ticket = new Ticket();

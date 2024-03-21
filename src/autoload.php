@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @param $class
- * @return void
+ * Autoloader PSR-4
+ * @param string $class Le nom de la classe à charger
  */
 function psr4_autoloader($class)
 {
