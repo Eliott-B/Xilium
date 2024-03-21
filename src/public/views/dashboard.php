@@ -48,12 +48,12 @@
                 </p>
             </div>
             <!-- TODO -->
-            <!-- <div class="ticket-main-actions">
-                <button class="btn-primary">Commenter</button>
-                <button class="btn-primary">Modifier</button>
-                <button class="btn-tertiary">Fermer</button>
-                <button class="btn-secondary">Supprimer</button>
-            </div> -->
+            <div class="ticket-main-actions">
+<!--                <button class="btn-primary">Commenter</button>-->
+                <button class="btn-primary"><a href="/update/<?= $v_ticket['tic_id'] ?>">Modifier</a></button>
+<!--                <button class="btn-tertiary">Fermer</button>-->
+<!--                <button class="btn-secondary">Supprimer</button>-->
+            </div>
             <div class="ticket-main-date">
                 <p>
                     <?= $v_ticket['creation_date'] ?>

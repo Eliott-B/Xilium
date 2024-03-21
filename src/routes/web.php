@@ -17,6 +17,11 @@ if (isset($router)){
     $router->get('/create', 'TicketController#create_form');
     $router->post('/create', 'TicketController#create');
 
+    $router->get('/update/{id}', 'TicketController#update_form');
+    $router->post('/update/{id}', 'TicketController#update');
+
+
+
     // PAGES STATIQUES
     $router->get('/about', function () {
         require "views/about.php";
