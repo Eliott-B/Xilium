@@ -48,6 +48,7 @@ class TicketController
         $labels = $label->all();
         $priority = new Priority();
         $priorities = $priority->all();
+
         require 'views/create.php';
     }
 
@@ -71,23 +72,38 @@ class TicketController
     }
 
     public function update_form($id){
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
-        echo "
-        <form action='./' method='post'>
-            <input type='hidden' name='id' value='$id'>
-            <label for='title'>Nom</label>
-            <input type='text' name='title' id='title' value='" . $ticket['tic_title'] . "'>
-            <input type='submit' value='Ajouter'>
-        </form>
-        ";
+        $category = new Category();
+        $categories = $category->all();
+        $label = new Label();
+        $labels = $label->all();
+        $priority = new Priority();
+        $priorities = $priority->all();
+
+        require 'views/update.php';
     }
 
-    public function update(){
+    public function update($id){
         $ticket = new Ticket();
-        $ticket = $ticket->find($_POST['id']);
-        var_dump($ticket);
-        $ticket->update(['tic_title' => $_POST['title']]);
+        $ticket->find($id);
+
+        $ticket->update([
+            'tic_title' => $_POST['title'],
+            'tic_description' => $_POST['description'],
+            'label_id' =>  $_POST['problem'],
+            'priority_id' =>  $_POST['priority'],
+            'category_id' => $_POST['category'],
+            'updater_id' => $_SESSION['id'],
+            'update_date' => date('Y-m-d H:i:s')
+        ]);
+
+        header('Location: /dashboard');
     }
 
 
