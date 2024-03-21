@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['status_0',['Status',['../classapp_1_1models_1_1_status.html',1,'app::models']]],
-  ['statuscontroller_1',['StatusController',['../classapp_1_1controllers_1_1_status_controller.html',1,'app::controllers']]],
-  ['statustest_2',['StatusTest',['../classapp_1_1xiliumtest_1_1_status_test.html',1,'app::xiliumtest']]]
+  ['role_0',['Role',['../classapp_1_1models_1_1_role.html',1,'app::models']]],
+  ['rolecontroller_1',['RoleController',['../classapp_1_1controllers_1_1_role_controller.html',1,'app::controllers']]],
+  ['route_2',['Route',['../classapp_1_1_route.html',1,'app']]],
+  ['router_3',['Router',['../classapp_1_1_router.html',1,'app']]],
+  ['routerexception_4',['RouterException',['../classapp_1_1_router_exception.html',1,'app']]]
 ];

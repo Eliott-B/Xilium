@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['exemple_0',['Exemple',['../classapp_1_1models_1_1_exemple.html',1,'app::models']]],
-  ['exemplecontroller_1',['ExempleController',['../classapp_1_1controllers_1_1_exemple_controller.html',1,'app::controllers']]]
+  ['dashboardcontroller_0',['DashboardController',['../classapp_1_1controllers_1_1_dashboard_controller.html',1,'app::controllers']]],
+  ['database_1',['Database',['../classapp_1_1_database.html',1,'app']]],
+  ['delete_2',['delete',['../classapp_1_1controllers_1_1_comment_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\CommentController\delete()'],['../classapp_1_1controllers_1_1_label_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\LabelController\delete()'],['../classapp_1_1controllers_1_1_log_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\LogController\delete()'],['../classapp_1_1controllers_1_1_priority_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\PriorityController\delete()'],['../classapp_1_1controllers_1_1_role_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\RoleController\delete()'],['../classapp_1_1controllers_1_1_status_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\StatusController\delete()'],['../classapp_1_1controllers_1_1_ticket_controller.html#a2f8258add505482d7f00ea26493a5723',1,'app\controllers\TicketController\delete()'],['../classapp_1_1models_1_1_model.html#a2f8258add505482d7f00ea26493a5723',1,'app\models\Model\delete()']]]
 ];
