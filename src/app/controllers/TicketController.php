@@ -52,10 +52,6 @@ class TicketController
      */
     public function create_form()
     {
-        if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous n'etes pas connecté";
-            header('Location: /login');
-        }
         $category = new Category();
         $categories = $category->all();
         $label = new Label();
@@ -93,10 +89,6 @@ class TicketController
      * @param int $id id du ticket à modifier
      */
     public function update_form($id){
-        if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous n'etes pas connecté";
-            header('Location: /login');
-        }
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
