@@ -1,5 +1,6 @@
 var classapp_1_1models_1_1_model =
 [
+    [ "__construct", "classapp_1_1models_1_1_model.html#a095c5d389db211932136b53f25f39685", null ],
     [ "all", "classapp_1_1models_1_1_model.html#af9d14e4ae6227970ad603987781573ca", null ],
     [ "create", "classapp_1_1models_1_1_model.html#a9e3621e3fce8b43995b3ab3b7caadaee", null ],
     [ "custom", "classapp_1_1models_1_1_model.html#a99a64db51694d1e2970eb4e0907e93df", null ],
