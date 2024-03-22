@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+    restart: always
+    volumes:
+      - ./src:/var/www/html
+      - ./config/xilium.conf:/etc/apache2/sites-enabled/000-default.conf
+      - .env:/var/www/html/.env
+    ports:
+      - "80:80"
+    networks:
+      - base
+
+  db:
+    image: mysql:5.7
+    restart: always
+    env_file:
+      - ./.env/database_pass
+    volumes:
+      - ./database/data:/var/lib/mysql
+      - ./database/database_creation.sql:/docker-entrypoint-initdb.d/init.sql
+    platform: linux/amd64
+    networks:
+      - base
+
+networks:
+  base:
+    driver: bridge
