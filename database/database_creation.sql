@@ -1,5 +1,5 @@
 -- DROP DATABASE IF EXISTS xiliumtick;
-CREATE DATABASE xiliumtick CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS xiliumtick CHARACTER SET utf8mb4;
 USE xiliumtick;
 
 CREATE TABLE roles

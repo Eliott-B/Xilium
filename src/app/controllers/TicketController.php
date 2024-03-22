@@ -7,11 +7,14 @@ use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
 
-
+/**
+ * Module du controleur des tickets
+ */
 class TicketController
 {
-
-
+    /**
+     * Liste les tickets
+     */
     public function list_tickets()
     {
         $tickets = new Ticket();
@@ -20,6 +23,10 @@ class TicketController
         var_dump($tickets);
     }
 
+    /**
+     * Affiche un ticket
+     * @param int $id identifiant du ticket
+     */
     public function show_ticket($id)
     {
         $ticket = new Ticket();
@@ -28,6 +35,10 @@ class TicketController
         var_dump($ticket);
     }
 
+    /**
+     * Supprime un ticket
+     * @param int $id identifiant du ticket
+     */
     public function delete($id)
     {
         $ticket = new Ticket();
@@ -36,21 +47,24 @@ class TicketController
         var_dump($ticket);
     }
 
+    /**
+     * Affiche le formulaire pour la création d'un ticket
+     */
     public function create_form()
     {
-        if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "vous n'etes pas connecté";
-            header('Location: /login');
-        }
         $category = new Category();
         $categories = $category->all();
         $label = new Label();
         $labels = $label->all();
         $priority = new Priority();
         $priorities = $priority->all();
+
         require 'views/create.php';
     }
 
+    /**
+     * Crée un ticket à partir des données du formulaire
+     */
     public function create()
     {
         $ticket = new Ticket();
@@ -70,25 +84,54 @@ class TicketController
         header('Location: /dashboard');
     }
 
+
+    /** Fonction pour afficher le formulaire de modification d'un ticket
+     * @param int $id id du ticket à modifier
+     */
     public function update_form($id){
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
-        echo "
-        <form action='./' method='post'>
-            <input type='hidden' name='id' value='$id'>
-            <label for='title'>Nom</label>
-            <input type='text' name='title' id='title' value='" . $ticket['tic_title'] . "'>
-            <input type='submit' value='Ajouter'>
-        </form>
-        ";
+        $ticket = (array) $ticket;
+        
+        if ($ticket['author_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+            header('Location: /dashboard');
+        } else {
+            $category = new Category();
+            $categories = $category->all();
+            $label = new Label();
+            $labels = $label->all();
+            $priority = new Priority();
+            $priorities = $priority->all();
+
+            require 'views/update.php';
+        }
     }
 
-    public function update(){
+    /** Fonction pour modifier un ticket
+     * @param int $id id du ticket à modifier
+     */
+    public function update($id){
         $ticket = new Ticket();
-        $ticket = $ticket->find($_POST['id']);
-        var_dump($ticket);
-        $ticket->update(['tic_title' => $_POST['title']]);
+        $ticket = $ticket->find($id);
+
+        $ticket = (array) $ticket;
+
+        if ($ticket['tic_title'] !== $_POST['title'] || $ticket['tic_description'] !== $_POST['description'] || $ticket['label_id'] !== $_POST['problem'] || $ticket['priority_id'] !== $_POST['priority'] || $ticket['category_id'] !== $_POST['category']) {
+            $ticket = new Ticket();
+            $ticket -> find($id);
+            $ticket->update([
+                'tic_title' => $_POST['title'],
+                'tic_description' => $_POST['description'],
+                'label_id' =>  $_POST['problem'],
+                'priority_id' =>  $_POST['priority'],
+                'category_id' => $_POST['category'],
+                'updater_id' => $_SESSION['id'],
+                'update_date' => date('Y-m-d H:i:s')
+            ]);
+        }
+
+        header('Location: /dashboard');
     }
-
-
 }

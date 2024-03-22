@@ -290,3 +290,5 @@ $RECYCLE.BIN/
 .idea/.gitignore
 *bdd.json
 src/tests/vendor
+database/data
+.env

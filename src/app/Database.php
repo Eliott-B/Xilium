@@ -5,15 +5,22 @@ namespace app;
 use PDO;
 use PDOException;
 
+/**
+ * Module de la base de données
+ */
 class Database
 {
     private static $instance = null;
     private PDO $db;
     private \PDOStatement|null $req;
 
+    /**
+     * Constructeur
+     * @param string chemin des configs defaut: "../config/bdd.json"
+     */
     private function __construct($config_path = "../config/bdd.json")
     {
-        if (!file_exists($config_path)) throw new \BddException("Le fichier de configuration n'existe pas");
+        if (!file_exists($config_path)) throw new BddException("Le fichier de configuration n'existe pas");
 
         $config_object = file_get_contents($config_path);
         $config_file = json_decode($config_object, true);
@@ -24,9 +31,17 @@ class Database
             (!empty($config_file['port']) ? (";port=" . $config_file['port']) : "") .
             ";dbname=" . $config_file['database'];
 
-        $this->db = new \PDO($dns, $config_file['username'], $config_file['password']);
+        try {
+            $this->db = new \PDO($dns, $config_file['username'], $config_file['password']);
+        } catch (PDOException $e) {
+            echo 'Erreur : '.$e->getMessage();
+        }
     }
 
+    /**
+     * Renvoi une instance de la classe
+     * @return Database 
+     */
     public static function getInstance(){
         if(!self::$instance){
             self::$instance = new Database();
@@ -35,10 +50,19 @@ class Database
         return self::$instance;
     }
 
+    /**
+     * Renvoi l'objet PDO de la base de données
+     * @return PDO
+     */
     public function getDb(){
         return $this->db;
     }
 
+    /**
+     * Execute une requête SQL
+     * @param string requête
+     * @param array arguments
+     */
     public function query(string $query, array $args = []){
         $this->req = $this->db->prepare($query); // on prepare la requete
         // pour chaque argument de la requete, on le bind avec la valeur correspondante
@@ -58,13 +82,16 @@ class Database
         return $this->req->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Renvoi l'identifiant de la dernière insertion SQL
+     * @return int
+     */
     public function getLastId(){
         return $this->db->lastInsertId();
     }
 
-//    function __destruct()
-//    {
-//        $this->req = null;
-//        $this->db = null;
-//    }
+    function __destruct()
+    {
+        unset($this->db, $this->req);
+    }
 }

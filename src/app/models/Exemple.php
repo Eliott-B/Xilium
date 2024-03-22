@@ -4,7 +4,7 @@ namespace app\models;
 
 class Exemple extends Model
 {
-    private string $table = 'exemples';
+    protected string $table = 'exemples';
 
 
 

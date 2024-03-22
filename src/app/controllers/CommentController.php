@@ -4,10 +4,14 @@ namespace app\controllers;
 
 use app\models\Comment;
 
+/**
+ * Module du controleur des commentaires des tickets
+ */
 class CommentController
 {
-
-
+    /**
+     * Liste les commentaires
+     */
     public function list_comments()
     {
         $comments = new Comment();
@@ -16,6 +20,10 @@ class CommentController
         var_dump($comments);
     }
 
+    /**
+     * Affiche un commentaire
+     * @param int $id identifiant du commentaire
+     */
     public function show_comment($id)
     {
         $comment = new Comment();
@@ -24,6 +32,10 @@ class CommentController
         var_dump($comment);
     }
 
+    /**
+     * Supprime un commentaire
+     * @param int $id identifiant du commentaire
+     */
     public function delete($id)
     {
         $comment = new Comment();
@@ -32,6 +44,9 @@ class CommentController
         var_dump($comment);
     }
 
+    /**
+     * Affiche le formulaire pour la création d'un commentaire
+     */
     public function create_form()
     {
         echo "
@@ -43,12 +58,19 @@ class CommentController
         ";
     }
 
+    /**
+     * Crée un commentaire grâce au formulaire
+     */
     public function create()
     {
         $comment = new Comment();
         $comment->create(['title' => $_POST['title']]);
     }
 
+    /**
+     * Affiche le formulaire de modification d'un commentaire
+     * @param int $id identifiant du commentaire
+     */
     public function update_form($id){
         $comment = new Comment();
         $comment = $comment->find($id);
@@ -62,12 +84,13 @@ class CommentController
         ";
     }
 
+    /**
+     * Modifie un commentaire grâce au formulaire
+     */
     public function update(){
         $comment = new Comment();
         $comment = $comment->find($_POST['id']);
         var_dump($comment);
         $comment->update(['com_title' => $_POST['title']]);
     }
-
-
 }
