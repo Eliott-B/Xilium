@@ -15,39 +15,36 @@
 <header>
     <a href="/" class="logo">
         <div class="logo">
-            <img alt="logo-xilium" src="../../imgs/logos/xilium.svg">
+            <img alt="logo-xilium" src="../../imgs/logos/white_text.svg">
         </div>
     </a>
     <div class="navbar">
         <ul>
-            <a href="/dashboard">
+            <a href="/">
                 <li>
-                    <h1>Tableau de bord</h1>
+                    <h1>Accueil</h1>
                 </li>
             </a>
-            <a href="/faq">
-                <li>
-                    <h1>Questions Frequentes</h1>
-                </li>
-            </a>
-            <a href="/about">
-                <li>
-                    <h1>A propos</h1>
-                </li>
-            </a>
-
+            <?php if (isset($_SESSION['id'])) : ?>
+                <a href="/dashboard">
+                    <li>
+                        <h1>Tableau de bord</h1>
+                    </li>
+                </a>
+                <a href="/account">
+                    <li>
+                        <h1>Mon compte</h1>
+                    </li>
+                </a>
+            <?php endif ?>
         </ul>
     </div>
     <div class="icons">
-
         <?php if (isset($_SESSION['id'])) : ?>
-            <img src="../../imgs/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='/account'">
+                <img src="../../imgs/icons/user.svg" alt="icon user" class="icon" onclick="window.location.href='/account'">
         <?php else : ?>
             <button><a href="./login">Connexion</a></button>
-        <?php endif
-        ?>
-
-
+        <?php endif ?>
     </div>
 </header>
 <!-- Open main classs -->
