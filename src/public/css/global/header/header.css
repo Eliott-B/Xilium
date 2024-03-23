@@ -6,16 +6,20 @@ header {
   height: 15%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #1c030e;
   color: white;
   padding: 0;
   margin: 0;
 }
+@media only screen and (hover: none) and (pointer: coarse) {
+  header {
+    display: none;
+  }
+}
 header .logo {
-  padding: 2%;
-  width: 15vw;
+  width: 10vw;
   display: flex;
   transition: ease-in-out 0.15s;
 }
@@ -30,14 +34,12 @@ header .logo :hover {
 header .navbar {
   width: 50%;
   text-decoration: none;
-  font-size: 1rem;
   margin: 0;
-  padding: 1%;
 }
 header .navbar ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -50,18 +52,34 @@ header .navbar ul :hover {
 header .navbar li {
   display: inline-flex;
   list-style-type: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
   padding-bottom: 15px;
   padding-top: 15px;
   color: white;
   text-decoration: none;
   transition: ease-in-out 0.15s;
 }
+@media screen and (max-width: 768px) {
+  header .navbar li h1 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  header .navbar li h1 {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1180px) {
+  header .navbar li h1 {
+    font-size: 1.5rem;
+  }
+}
 header .icons {
-  width: 23%;
+  width: 10vw;
   display: flex;
-  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  justify-content: space-around;
   font-size: 1.5rem;
 }
 header .icons img,
@@ -69,11 +87,7 @@ header .icons button {
   color: white;
 }
 header .icons img {
-  width: 15%;
-  display: inline;
-  list-style-type: none;
-  margin-left: 15px;
-  margin-right: 15px;
+  width: 3vw;
 }
 header .icons button {
   background: transparent;
