@@ -1,5 +1,9 @@
 @import "../colors/colors.scss";
 
+$background: $primary-2b;
+$color: white;
+$hover: $primary;
+
 header {
     // disable on mobile
     @media only screen and (hover: none) and (pointer: coarse) {
@@ -14,8 +18,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $primary-2b;
-    color: white;
+    background-color: $background;
+    color: $color;
     padding: 0;
     margin: 0;
     .logo {
@@ -33,7 +37,6 @@ header {
     }
     .navbar {
         width: 50%;
-        text-decoration: none;
         margin: 0;
         ul {
             display: flex;
@@ -42,11 +45,6 @@ header {
             margin: 0;
             padding: 0;
             height: 100%;
-            :hover {
-                cursor: pointer;
-                color: $primary;
-                transition: ease-in-out 0.15s;
-            }
         }
         li {
             h1{
@@ -60,14 +58,21 @@ header {
                     font-size: 1.5rem;
                 }
             }
+            a{
+                color: $color;
+                text-decoration: none;
+            }
+            a:hover {
+                cursor: pointer;
+                color: $hover;
+                transition: ease-in-out 0.15s;
+            }
             display: inline-flex;
             list-style-type: none;
             margin-left: 2rem;
             margin-right: 2rem;
             padding-bottom: 15px;
             padding-top: 15px;
-            color: white;
-            text-decoration: none;
             transition: ease-in-out 0.15s;
         }
     }
@@ -79,7 +84,7 @@ header {
         font-size: 1.5rem;
         img,
         button {
-            color: white;
+            color: $color;
         }
         img {
             width: 3vw;
