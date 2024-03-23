@@ -33,7 +33,6 @@ header .logo :hover {
 }
 header .navbar {
   width: 50%;
-  text-decoration: none;
   margin: 0;
 }
 header .navbar ul {
@@ -44,11 +43,6 @@ header .navbar ul {
   padding: 0;
   height: 100%;
 }
-header .navbar ul :hover {
-  cursor: pointer;
-  color: #EB4791;
-  transition: ease-in-out 0.15s;
-}
 header .navbar li {
   display: inline-flex;
   list-style-type: none;
@@ -56,8 +50,6 @@ header .navbar li {
   margin-right: 2rem;
   padding-bottom: 15px;
   padding-top: 15px;
-  color: white;
-  text-decoration: none;
   transition: ease-in-out 0.15s;
 }
 @media screen and (max-width: 768px) {
@@ -74,6 +66,15 @@ header .navbar li {
   header .navbar li h1 {
     font-size: 1.5rem;
   }
+}
+header .navbar li a {
+  color: white;
+  text-decoration: none;
+}
+header .navbar li a:hover {
+  cursor: pointer;
+  color: #EB4791;
+  transition: ease-in-out 0.15s;
 }
 header .icons {
   width: 10vw;
