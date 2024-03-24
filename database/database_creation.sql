@@ -91,7 +91,7 @@ CREATE TABLE comments
     com_date    TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ticket_id   INT         NOT NULL,
     user_id     INT         NOT NULL,
-    reply_to    INT         NOT NULL,
+    reply_to    INT         NULL,
     FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id),
     FOREIGN KEY (user_id) REFERENCES users (use_id),
     FOREIGN KEY (reply_to) REFERENCES comments (com_id)

@@ -7,6 +7,7 @@ use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
 use app\models\Status;
+use app\models\Comment;
 
 /**
  * Module du controleur des tickets
@@ -104,10 +105,21 @@ class TicketController
      */
     public function update($id)
     {
+
+        if(!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
 
         $ticket = (array) $ticket;
+
+        if ($ticket['author_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+            header('Location: /dashboard');
+        }
 
         if ($ticket['tic_title'] !== $_POST['title'] || $ticket['tic_description'] !== $_POST['description'] || $ticket['label_id'] !== $_POST['problem'] || $ticket['priority_id'] !== $_POST['priority'] || $ticket['category_id'] !== $_POST['category']) {
             $ticket = new Ticket();
@@ -140,6 +152,8 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
+        // TODO: Les techniciens peuvent aussi fermer les tickets
+
         if ($ticket['author_id'] !== $_SESSION['id']) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
@@ -158,7 +172,7 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($ticket['author_id'] == $_SESSION['id']) {
+            if ($ticket['author_id'] == $_SESSION['id']) { // TODO: Les techniciens peuvent aussi fermer les tickets
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $status = new Status();
@@ -175,5 +189,31 @@ class TicketController
         }
         header('Location: /dashboard');
 
+    }
+
+    /** Fonction permettant de commenter un ticket
+     *  @param int $id id du ticket à commenter
+     */
+    public function comment($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        // TODO: vérifier si l'utilisateur a le droit de commenter le ticket (auteur du ticket ou technicien)
+
+        $comment = new Comment();
+        $comment->create([
+            'com_title' => $_POST['title'],
+            'com_comment' => $_POST['comment'],
+            'com_date' => date('Y-m-d H:i:s'),
+            'ticket_id' => $id,
+            'user_id' => $_SESSION['id'],
+            // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
+            
+        ]);
+
+        // header('Location: /dashboard');
     }
 }

@@ -24,6 +24,8 @@ if (isset($router)){
     $router->get('/close/{id}', 'TicketController#close_form')->auth();
     $router->post('/close/{id}', 'TicketController#close')->auth();
 
+    $router->post('/comment/{id}', 'TicketController#comment')->auth();
+
 
 
     // PAGES STATIQUES

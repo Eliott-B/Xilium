@@ -2,6 +2,17 @@
 
 <main>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <dialog id='comment-dialog'>
+        <form action="" method="post">
+            <h1>Commentaire</h1>
+            <p id="response"></p>
+            <hr>
+            <label for="title"><b>Titre</b> <span class="required">*</span></label>
+            <input type="text" name="title" id="title" placeholder="Titre" required>
+            <label for="comment"><b>Commentaire</b> <span class="required">*</span></label>
+            <textarea name="comment" id="comment" placeholder="Commentaire" required></textarea>
+            <div class="btn-center"><button type="submit" class="btn-primary">Commenter</button></div>
+    </dialog>
     <div class="btns-selec">
         <button class="btn-primary openeds">En cours</button>
         <button class="btn-secondary closeds">Clos</button>
@@ -45,21 +56,26 @@
                     <?= $v_ticket['tic_description'] ?>
                 </p>
             </div>
+            <br />
             <!-- TODO -->
             <div class="ticket-main-actions">
-                <!--                <button class="btn-primary">Commenter</button>-->
+                <?php if ($v_ticket['status']['sta_name'] !== "Fermé"): ?>
+                <button class="btn-secondary"
+                    onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>&ensp;
                 <button class="btn-primary"
                     onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
                 <button class="btn-tertiary"
-                    onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>
+                    onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= $v_ticket['tic_title'] ?>')">
+                    Commenter</button>
+                <?php endif; ?>
                 <!--                <button class="btn-secondary">Supprimer</button>-->
             </div>
             <div class="ticket-main-date">
                 <p>
-                    <?= $v_ticket['update_date'] ?>
+                    <?= date('d/m/Y à H:i', strtotime($v_ticket['update_date'])) ?>
                 </p>
             </div>
-            
+
             <div class="ticket-icon-comments">
                 <img src="../imgs/icons/comments.svg" alt="comments on/off" class="comments-on-off-icon">
             </div>
@@ -72,12 +88,12 @@
                 <div class='comment'>
                     <div class='comment-title'>
                         <span>
-                            <?= $comment['com_title']?>
+                            <?= $comment['com_title'] ?>
                         </span>
                     </div>
                     <div class='comment-author'>
                         <span>
-                        <?= $comment['user']['use_firstname'] . ' ' . $comment['user']['use_name']?>
+                            <?= $comment['user']['use_firstname'] . ' ' . $comment['user']['use_name'] ?>
                         </span>
                     </div>
                     <div class='comment-message'>
@@ -87,7 +103,7 @@
                     </div>
                     <div class='comment-date'>
                         <p>
-                            <?= $comment['com_date'] ?>
+                            <?= date('d/m/Y à H:i', strtotime($comment['com_date'])) ?>
                         </p>
                     </div>
                 </div>
@@ -134,7 +150,7 @@
         const ticketComments = ticket.querySelector('.ticket-comments');
         if (ticketComments.children.length == 0) {
             comments_icon.style.display = 'none';
-            
+
         }
 
         comments_icon.addEventListener('click', () => {
@@ -142,6 +158,16 @@
             comments_icon.querySelector('.comments-on-off-icon').src = ticketComments.style.display === 'none' ? '../imgs/icons/comments.svg' : '../imgs/icons/comments_off.svg';
         });
     });
+
+    // Permets d'afficher le dialogue de commentaire
+
+    function comment_ticket(ticket_id, title) {
+        const dialog = document.getElementById('comment-dialog');
+        dialog.showModal();
+        dialog.querySelector('#response').textContent = title;
+        dialog.querySelector('form').action = '/comment/' + ticket_id;
+    }
+
 </script>
 
 <?php require 'components/footer.php'; ?>
