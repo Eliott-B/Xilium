@@ -214,6 +214,6 @@ class TicketController
             
         ]);
 
-        // header('Location: /dashboard');
+        header('Location: /dashboard');
     }
 }
