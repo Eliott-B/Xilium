@@ -106,9 +106,12 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+.ticket-comments .comment-title {
+  font-size: 30px;
+  font-weight: bold;
+}
 .ticket-comments .comment-author {
   font-size: 20px;
-  font-weight: bold;
 }
 .ticket-comments .comment-date {
   position: absolute;

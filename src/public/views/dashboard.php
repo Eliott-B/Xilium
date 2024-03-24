@@ -48,8 +48,10 @@
             <!-- TODO -->
             <div class="ticket-main-actions">
                 <!--                <button class="btn-primary">Commenter</button>-->
-                <button class="btn-primary" onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
-                <button class="btn-tertiary" onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>
+                <button class="btn-primary"
+                    onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
+                <button class="btn-tertiary"
+                    onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>
                 <!--                <button class="btn-secondary">Supprimer</button>-->
             </div>
             <div class="ticket-main-date">
@@ -57,12 +59,42 @@
                     <?= $v_ticket['update_date'] ?>
                 </p>
             </div>
-            <!-- TODO -->
-            <!-- <div class="ticket-icon-comments">
-                <img src="../imgs/icons/comments_off.svg" alt="comments off" class="comments-off-icon">
-            </div> -->
+            
+            <div class="ticket-icon-comments">
+                <img src="../imgs/icons/comments.svg" alt="comments on/off" class="comments-on-off-icon">
+            </div>
+            <?php if ($v_ticket['comments']): ?>
+            <?php endif; ?>
+        </div>
+        <!-- TODO -->
+        <div class='ticket-comments' style='display:none'>
+            <?php foreach ($v_ticket['comments'] as $comment): ?>
+                <div class='comment'>
+                    <div class='comment-title'>
+                        <span>
+                            <?= $comment['com_title']?>
+                        </span>
+                    </div>
+                    <div class='comment-author'>
+                        <span>
+                        <?= $comment['user']['use_firstname'] . ' ' . $comment['user']['use_name']?>
+                        </span>
+                    </div>
+                    <div class='comment-message'>
+                        <p>
+                            <?= $comment['com_comment'] ?>
+                        </p>
+                    </div>
+                    <div class='comment-date'>
+                        <p>
+                            <?= $comment['com_date'] ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
         </div>
+
     <?php endforeach; ?>
     <div class="add-ticket">
         <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"
@@ -94,6 +126,22 @@
     });
 
     btns[0].click();
+
+    // Permets d'afficher les commentaires
+
+    tickets.forEach(ticket => {
+        const comments_icon = ticket.querySelector('.ticket-icon-comments');
+        const ticketComments = ticket.querySelector('.ticket-comments');
+        if (ticketComments.children.length == 0) {
+            comments_icon.style.display = 'none';
+            
+        }
+
+        comments_icon.addEventListener('click', () => {
+            ticketComments.style.display = ticketComments.style.display === 'none' ? 'block' : 'none';
+            comments_icon.querySelector('.comments-on-off-icon').src = ticketComments.style.display === 'none' ? '../imgs/icons/comments.svg' : '../imgs/icons/comments_off.svg';
+        });
+    });
 </script>
 
 <?php require 'components/footer.php'; ?>
