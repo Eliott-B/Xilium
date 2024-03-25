@@ -106,9 +106,12 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+.ticket-comments .comment-title {
+  font-size: 30px;
+  font-weight: bold;
+}
 .ticket-comments .comment-author {
   font-size: 20px;
-  font-weight: bold;
 }
 .ticket-comments .comment-date {
   position: absolute;
@@ -134,4 +137,65 @@
 .ticket-icon-comments img:hover {
   cursor: pointer;
   filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+}
+
+:modal {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FEF6FA;
+}
+:modal form {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+:modal form h1, :modal form p {
+  margin-left: 30px;
+}
+:modal form input {
+  padding-left: 1rem;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+:modal form input::placeholder {
+  opacity: 0.5;
+}
+:modal form label {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+:modal form textarea {
+  padding: 1rem;
+  border-radius: 30px;
+  border: 1px solid black;
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+  resize: vertical;
+  min-height: 100px;
+}
+:modal form textarea::placeholder {
+  opacity: 0.5;
+}
+:modal form .required {
+  color: rgb(160, 0, 0);
+}
+:modal form .btn-center {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:modal form .btn-center button {
+  font-size: 1rem;
 }

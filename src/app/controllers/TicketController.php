@@ -6,6 +6,8 @@ use app\models\Ticket;
 use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
+use app\models\Status;
+use app\models\Comment;
 
 /**
  * Module du controleur des tickets
@@ -36,18 +38,6 @@ class TicketController
     }
 
     /**
-     * Supprime un ticket
-     * @param int $id identifiant du ticket
-     */
-    public function delete($id)
-    {
-        $ticket = new Ticket();
-        $ticket = $ticket->delete($id);
-
-        var_dump($ticket);
-    }
-
-    /**
      * Affiche le formulaire pour la création d'un ticket
      */
     public function create_form()
@@ -72,8 +62,8 @@ class TicketController
             'tic_title' => $_POST['title'],
             'tic_description' => $_POST['description'],
             'author_id' => $_SESSION['id'],
-            'label_id' =>  $_POST['problem'],
-            'priority_id' =>  $_POST['priority'],
+            'label_id' => $_POST['problem'],
+            'priority_id' => $_POST['priority'],
             'status_id' => 1,
             'category_id' => $_POST['category'],
             'updater_id' => $_SESSION['id'],
@@ -88,12 +78,13 @@ class TicketController
     /** Fonction pour afficher le formulaire de modification d'un ticket
      * @param int $id id du ticket à modifier
      */
-    public function update_form($id){
+    public function update_form($id)
+    {
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
-        
+
         if ($ticket['author_id'] !== $_SESSION['id']) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
@@ -112,25 +103,116 @@ class TicketController
     /** Fonction pour modifier un ticket
      * @param int $id id du ticket à modifier
      */
-    public function update($id){
+    public function update($id)
+    {
+
+        if(!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
 
         $ticket = (array) $ticket;
 
+        if ($ticket['author_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+            header('Location: /dashboard');
+        }
+
         if ($ticket['tic_title'] !== $_POST['title'] || $ticket['tic_description'] !== $_POST['description'] || $ticket['label_id'] !== $_POST['problem'] || $ticket['priority_id'] !== $_POST['priority'] || $ticket['category_id'] !== $_POST['category']) {
             $ticket = new Ticket();
-            $ticket -> find($id);
+            $ticket->find($id);
             $ticket->update([
                 'tic_title' => $_POST['title'],
                 'tic_description' => $_POST['description'],
-                'label_id' =>  $_POST['problem'],
-                'priority_id' =>  $_POST['priority'],
+                'label_id' => $_POST['problem'],
+                'priority_id' => $_POST['priority'],
                 'category_id' => $_POST['category'],
                 'updater_id' => $_SESSION['id'],
                 'update_date' => date('Y-m-d H:i:s')
             ]);
         }
+
+        header('Location: /dashboard');
+    }
+
+    /** Fonction permettant d'afficher la confirmation de fermeture d'un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function close_form($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        // TODO: Les techniciens peuvent aussi fermer les tickets
+
+        if ($ticket['author_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+            header('Location: /dashboard');
+        } else {
+            require 'views/close.php';
+        }
+    }
+
+    /** Fonction permettant de fermer un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function close($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_POST['response'] === 'yes') {
+            if ($ticket['author_id'] == $_SESSION['id']) { // TODO: Les techniciens peuvent aussi fermer les tickets
+                $ticket = new Ticket();
+                $ticket->find($id);
+                $status = new Status();
+                $status_close = 'Fermé';
+                $ticket->update([
+                    'status_id' => (int) $status->custom("select * from status where sta_name = :name", ['name' => $status_close])[0]['sta_id'],
+                    'updater_id' => $_SESSION['id'],
+                    'update_date' => date('Y-m-d H:i:s')
+                ]);
+            } else {
+                $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+
+            }
+        }
+        header('Location: /dashboard');
+
+    }
+
+    /** Fonction permettant de commenter un ticket
+     *  @param int $id id du ticket à commenter
+     */
+    public function comment($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        // TODO: vérifier si l'utilisateur a le droit de commenter le ticket (auteur du ticket ou technicien)
+
+        $comment = new Comment();
+        $comment->create([
+            'com_title' => $_POST['title'],
+            'com_comment' => $_POST['comment'],
+            'com_date' => date('Y-m-d H:i:s'),
+            'ticket_id' => $id,
+            'user_id' => $_SESSION['id'],
+            // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
+            
+        ]);
 
         header('Location: /dashboard');
     }
