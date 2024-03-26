@@ -72,7 +72,7 @@ abstract class Model
     public function custom($query, $args = NULL){
         if (isset($args)) {
             foreach ($args as $k => $v) {
-                $args[$k] = htmlspecialchars($v);
+                $args[$k] = htmlspecialchars(trim($v));
             }
         }
 
@@ -87,7 +87,7 @@ abstract class Model
         $values = [];
         foreach ($args as $k => $v){
             if (in_array($k, $this->fillable)){
-                $values = array_merge($values, [$k => htmlspecialchars($v)]);
+                $values = array_merge($values, [$k => htmlspecialchars(trim($v))]);
             }
         }
         $fillable_string = "";
@@ -119,7 +119,7 @@ abstract class Model
             if (in_array($k, $this->fillable)){
                 // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
                 // jour donc on l'ajoute dans values
-                $values = array_merge($values, [$k => htmlspecialchars($v)]);
+                $values = array_merge($values, [$k => htmlspecialchars(trim($v))]);
             }
         }
 
