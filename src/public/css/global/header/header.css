@@ -19,7 +19,7 @@ header {
   }
 }
 header .logo {
-  width: 10vw;
+  width: 7vw;
   display: flex;
   transition: ease-in-out 0.15s;
 }
@@ -77,7 +77,7 @@ header .navbar li a:hover {
   transition: ease-in-out 0.15s;
 }
 header .icons {
-  width: 10vw;
+  width: 7vw;
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -88,7 +88,7 @@ header .icons button {
   color: white;
 }
 header .icons img {
-  width: 3vw;
+  width: 2.5vw;
 }
 header .icons button {
   background: transparent;

@@ -37,11 +37,11 @@
                     </li>
 
 
-                    <li>
+                    <!-- <li>
                         <a href="/account">
                             <h1>Mon compte</h1>
                         </a>
-                    </li>
+                    </li> -->
                     </a>
                 <?php endif ?>
             </ul>
