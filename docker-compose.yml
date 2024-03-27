@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.8'
 
 services:
   app:
@@ -15,14 +15,13 @@ services:
       - base
 
   db:
-    image: mysql:5.7
+    image: mariadb:11.3
     restart: always
     env_file:
       - ./.env/database_pass
     volumes:
       - ./database/data:/var/lib/mysql
       - ./database/database_creation.sql:/docker-entrypoint-initdb.d/init.sql
-    platform: linux/amd64
     networks:
       - base
 
