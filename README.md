@@ -30,6 +30,7 @@ L'application a été testées sur les systèmes suivants :
 - Windows 10/11
 - Rasbian (Debian Bullseye 64 bits)
 - MacOS Sonoma
+- Ubuntu 22.04.4 (LTS)
 
 ⚠️ L'application n'est pas compatible avec les systèmes ARM 32 bits. MariaDB et MySQL sous Docker ne supporte pas cette architecture.
 
