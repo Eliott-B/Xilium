@@ -2,8 +2,12 @@
 
 <main>
     <link rel="stylesheet" href="../css/dashboard.css">
+
     <dialog id='comment-dialog'>
         <form action="" method="post">
+            <div class="modal-close" onclick="document.getElementById('comment-dialog').close();">
+                <img src="../imgs/icons/close.svg" alt="close" class="close-icon">
+            </div>
             <h1>Commentaire</h1>
             <p id="response"></p>
             <hr>
