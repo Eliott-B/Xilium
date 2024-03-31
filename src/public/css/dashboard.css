@@ -126,17 +126,46 @@
 }
 .ticket-icon-comments {
   position: absolute;
-  right: 10px;
-  bottom: 50px;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  right: 50%;
+}
+.ticket-icon-comments #icon-click {
+  display: flex;
+  align-content: center;
+}
+.ticket-icon-comments #icon-click:hover {
+  cursor: pointer;
+}
+.ticket-icon-comments #icon-click:hover img {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
 }
 .ticket-icon-comments img {
-  width: 30px;
+  width: 15px;
   filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
   transition: ease-in-out 0.3s;
 }
-.ticket-icon-comments img:hover {
-  cursor: pointer;
-  filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
+.ticket-icon-comments span {
+  margin: 2px;
+  font-size: 12px;
+  color: #696969;
+}
+
+.no-tickets {
+  height: 60vh;
+  align-content: center;
+}
+.no-tickets p {
+  font-size: 30px;
+  color: #1c030e;
+}
+.no-tickets .center {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 :modal {
