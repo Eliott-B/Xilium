@@ -9,7 +9,7 @@
   background-color: #F9C8DE;
   color: #6e0c38;
 }
-.btn-primary:hover, .btn-icon:hover {
+.btn-primary:hover, .btn-icon:hover, .btn-primary.active, .active.btn-icon {
   background-color: #6e0c38;
   color: #F9C8DE;
 }
@@ -17,7 +17,7 @@
   background-color: #EDC7F9;
   color: #560c6e;
 }
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary.active {
   background-color: #560c6e;
   color: #EDC7F9;
 }
@@ -25,7 +25,7 @@
   background-color: #C7F9E5;
   color: #0c6e46;
 }
-.btn-tertiary:hover {
+.btn-tertiary:hover, .btn-tertiary.active {
   background-color: #0c6e46;
   color: #C7F9E5;
 }

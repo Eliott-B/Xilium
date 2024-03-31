@@ -18,9 +18,40 @@
             <div class="btn-center"><button type="submit" class="btn-primary">Commenter</button></div>
     </dialog>
     <div class="btns-selec">
-        <button class="btn-primary openeds">En cours</button>
-        <button class="btn-secondary closeds">Clos</button>
+        <button class="btn-primary openeds" id='btn-open'>En cours</button>
+        <button class="btn-secondary closeds" id='btn-close'>Clos</button>
     </div>
+
+
+    <?php $is_0_openeds = sizeof(array_filter($view_tickets, function ($ticket) {
+        return $ticket['status']['sta_name'] !== "Fermé";
+    })) == 0;
+    // True si aucun ticket n'est ouvert   ?>
+    <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
+        return $ticket['status']['sta_name'] === "Fermé";
+    })) == 0;
+    // True si aucun ticket n'est fermé  ?>
+
+    <?php if ($is_0_openeds): ?>
+        <div class="no-tickets" id="no-openeds-text">
+            <div class='center'>
+                <p>Vous n'avez aucun ticket en cours.</p>
+                <button class="btn-icon" onclick="window.location.href='./create';">Ajouter un ticket</button>
+            </div>
+
+        </div>
+
+    <?php endif; ?>
+    <?php if ($is_0_closeds): ?>
+
+        <div class="no-tickets" id="no-closeds-text">
+            <div class='center'>
+                <p>Vous n'avez aucun ticket clos.</p>
+            </div>
+        </div>
+
+    <?php endif; ?>
+
     <?php foreach ($view_tickets as $v_ticket): ?>
         <?php
         if ($v_ticket['status']['sta_name'] === "Fermé") {
@@ -61,7 +92,6 @@
                 </p>
             </div>
             <br />
-            <!-- TODO -->
             <div class="ticket-main-actions">
                 <?php if ($v_ticket['status']['sta_name'] !== "Fermé"): ?>
                     <button class="btn-secondary"
@@ -72,7 +102,6 @@
                         onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= $v_ticket['tic_title'] ?>')">
                         Commenter</button>
                 <?php endif; ?>
-                <!--                <button class="btn-secondary">Supprimer</button>-->
             </div>
             <div class="ticket-main-date">
                 <p>
@@ -81,12 +110,12 @@
             </div>
 
             <div class="ticket-icon-comments">
-                <img src="../imgs/icons/comments.svg" alt="comments on/off" class="comments-on-off-icon">
+                <div id='icon-click'>
+                    <span><?= sizeof($v_ticket['comments']) ?> </span>
+                    <img src="../imgs/icons/comments.svg" alt="comments on/off" class="comments-on-off-icon">
+                </div>
             </div>
-            <?php if ($v_ticket['comments']): ?>
-            <?php endif; ?>
         </div>
-        <!-- TODO -->
         <div class='ticket-comments' style='display:none'>
             <?php foreach ($v_ticket['comments'] as $comment): ?>
                 <div class='comment'>
@@ -130,17 +159,34 @@
         btn.addEventListener('click', () => {
             const filter = btn.classList[1];
 
+            console.log(filter);
+            if (filter == 'openeds') {
+                document.getElementById('btn-open').classList.add('active');
+                document.getElementById('btn-close').classList.remove('active');
+            }
+            else {
+                document.getElementById('btn-close').classList.add('active');
+                document.getElementById('btn-open').classList.remove('active');
+            }
+
             tickets.forEach(ticket => {
                 ticket.style.display = 'none';
                 if (ticket.id === 'opened' && filter === 'openeds') {
-                    console.log(ticket);
                     ticket.style.display = 'block';
                 }
                 else if (ticket.id === 'closed' && filter === 'closeds') {
-                    console.log(ticket);
                     ticket.style.display = 'block';
                 }
             });
+
+            if (filter === 'openeds') {
+                document.getElementById('no-openeds-text').style.display = 'block';
+                document.getElementById('no-closeds-text').style.display = 'none';
+            }
+            else if (filter === 'closeds') {
+                document.getElementById('no-openeds-text').style.display = 'none';
+                document.getElementById('no-closeds-text').style.display = 'block';
+            }
         });
     });
 
@@ -149,11 +195,10 @@
     // Permets d'afficher les commentaires
 
     tickets.forEach(ticket => {
-        const comments_icon = ticket.querySelector('.ticket-icon-comments');
+        const comments_icon = ticket.querySelector('#icon-click');
         const ticketComments = ticket.querySelector('.ticket-comments');
         if (ticketComments.children.length == 0) {
             comments_icon.style.display = 'none';
-
         }
 
         comments_icon.addEventListener('click', () => {
