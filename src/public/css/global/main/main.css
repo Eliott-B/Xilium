@@ -24,7 +24,12 @@ button {
   font-size: 2rem;
 }
 
-textarea, ::placeholder, input, select, option, label {
+textarea,
+::placeholder,
+input,
+select,
+option,
+label {
   font-family: "Sloth", sans-serif;
   font-size: 1rem;
 }
@@ -60,4 +65,33 @@ html {
   min-height: 90vh;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.back {
+  margin-left: 2rem;
+}
+.back a {
+  text-decoration: none;
+  color: #1c030e;
+  font-size: 1.4rem;
+  transition: ease-in-out 0.2s;
+}
+.back .arrow {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transition: ease-in-out 0.2s;
+}
+.back .left {
+  transform: rotate(135deg);
+}
+.back:hover a {
+  color: #6e0c38;
+}
+.back:hover .arrow {
+  border-color: #6e0c38;
+  transform: rotate(495deg);
+  transition: ease-in-out 0.5s;
 }

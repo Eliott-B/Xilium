@@ -221,5 +221,20 @@ $label-orange: #f39c12;
                 font-size: 1rem;
             }
         }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: $primary-2b;
+            transition: 0.1s;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1571%) hue-rotate(285deg)
+                    brightness(112%) contrast(109%);
+            }
+            filter: brightness(0) saturate(100%) invert(11%) sepia(32%) saturate(7289%) hue-rotate(317deg)
+                brightness(88%) contrast(100%);
+        }
     }
 }

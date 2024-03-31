@@ -2,8 +2,12 @@
 
 <main>
     <link rel="stylesheet" href="../css/dashboard.css">
+
     <dialog id='comment-dialog'>
         <form action="" method="post">
+            <div class="modal-close" onclick="document.getElementById('comment-dialog').close();">
+                <img src="../imgs/icons/close.svg" alt="close" class="close-icon">
+            </div>
             <h1>Commentaire</h1>
             <p id="response"></p>
             <hr>
@@ -60,13 +64,13 @@
             <!-- TODO -->
             <div class="ticket-main-actions">
                 <?php if ($v_ticket['status']['sta_name'] !== "Fermé"): ?>
-                <button class="btn-secondary"
-                    onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>&ensp;
-                <button class="btn-primary"
-                    onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
-                <button class="btn-tertiary"
-                    onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= $v_ticket['tic_title'] ?>')">
-                    Commenter</button>
+                    <button class="btn-secondary"
+                        onclick="window.location.href='/close/<?= $v_ticket['tic_id'] ?>'">Fermer</button>&ensp;
+                    <button class="btn-primary"
+                        onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
+                    <button class="btn-tertiary"
+                        onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= $v_ticket['tic_title'] ?>')">
+                        Commenter</button>
                 <?php endif; ?>
                 <!--                <button class="btn-secondary">Supprimer</button>-->
             </div>
@@ -112,9 +116,8 @@
         </div>
 
     <?php endforeach; ?>
-    <div class="add-ticket">
-        <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"
-                onclick="window.location.href='./create';"></button>
+    <div class="add-ticket" onclick="window.location.href='./create';">
+        <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"></button>
     </div>
 </main>
 
