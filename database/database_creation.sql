@@ -112,10 +112,11 @@ VALUES (1, 'Faible', 1, '#2ecc71'),
        (4, 'Urgente', 4, '#e70000');
 
 INSERT INTO labels
-VALUES (1, 'Bug', '#e74c3c'),
-       (2, 'Amélioration', '#2ecc71'),
-       (3, 'Documentation', '#9b59b6'),
-       (4, 'Sécurité', '#808080');
+VALUES (1, 'Autre', '#d6d333'),
+       (2, 'Bug', '#e74c3c'),
+       (3, 'Amélioration', '#2ecc71'),
+       (4, 'Documentation', '#9b59b6'),
+       (5, 'Sécurité', '#808080');
 
 INSERT INTO status
 VALUES (1, 'Nouveau', '#3498db'),
@@ -124,10 +125,11 @@ VALUES (1, 'Nouveau', '#3498db'),
        (4, 'Fermé', '#808080');
 
 INSERT INTO categories
-VALUES (1, 'Logiciel', '#9b59b6'),
-       (2, 'Matériel', '#9b59b6'),
-       (3, 'Réseau', '#9b59b6'),
-       (4, 'Sécurité', '#9b59b6');
+VALUES (1, 'Autre', '#d6d333'),
+       (2, 'Logiciel', '#9b59b6'),
+       (3, 'Matériel', '#9b59b6'),
+       (4, 'Réseau', '#9b59b6'),
+       (5, 'Sécurité', '#9b59b6');
 
 INSERT INTO users
 VALUES (1, 'admin', '9ffa04f5', 'Admin', 'Admin', 100),
