@@ -26,6 +26,8 @@ $background-bottom: $primary-2b;
         justify-content: center;
         align-items: center;
         padding: 20px;
+        padding-left: 10rem;
+        padding-right: 10rem;
         margin: 20px;
         background-color: $primary-2;
         border-radius: 16px;
@@ -61,7 +63,6 @@ $background-bottom: $primary-2b;
                         font-weight: bold;
                     }
                 }
-            
             }
         }
         button {
@@ -108,6 +109,22 @@ $background-bottom: $primary-2b;
         border-collapse: collapse;
 
         tr {
+            &:not(:first-child) {
+                &:hover {
+                    filter: brightness(1.3);
+                    cursor: pointer;
+                }
+                &:nth-child(even) {
+                    background-color: $primary-2b;
+                    &:hover {
+                        filter: brightness(1.3);
+                    }
+                }
+            }
+            &:first-child {
+                filter:saturate(1.5);
+            }
+
             &:nth-child(odd) {
                 background-color: $primary-1b;
             }
