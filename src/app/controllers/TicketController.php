@@ -136,7 +136,7 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($ticket['author_id'] !== $_SESSION['id'] &&
-            $_SESSION['role'] !== 10 ||
+            $_SESSION['role'] !== 10 &&
             $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             header('Location: /dashboard');
@@ -280,7 +280,7 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 ||
+        if ($_SESSION['role'] !== 10 &&
             $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes pas technicien";
             header('Location: /dashboard');
@@ -288,7 +288,7 @@ class TicketController
             $status = new Status();
             $statuses = $status->all();
 
-            require 'views/update_status.php'; // TODO: créer la vue update_status.php @444chak
+            require 'views/update_status.php';
         }
     }
 
@@ -307,7 +307,7 @@ class TicketController
 
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 ||
+        if ($_SESSION['role'] !== 10 &&
             $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes pas technicien";
             header('Location: /dashboard');
@@ -339,12 +339,12 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 ||
+        if ($_SESSION['role'] !== 10 &&
             $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes pas un technicien";
             header('Location: /dashboard');
         } else {
-            require 'views/alocation.php'; // TODO: créer la vue alocation.php @444chak
+            require 'views/alocation.php';
         }
     }
 
@@ -358,7 +358,7 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($_SESSION['role'] == 10 ||
+            if ($_SESSION['role'] == 10 &&
                 $_SESSION['role'] == 50) {
                 $ticket = new Ticket();
                 $ticket->find($id);
