@@ -26,11 +26,11 @@
     <?php $is_0_openeds = sizeof(array_filter($view_tickets, function ($ticket) {
         return $ticket['status']['sta_name'] !== "Fermé";
     })) == 0;
-    // True si aucun ticket n'est ouvert   ?>
+    // True si aucun ticket n'est ouvert    ?>
     <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
         return $ticket['status']['sta_name'] === "Fermé";
     })) == 0;
-    // True si aucun ticket n'est fermé  ?>
+    // True si aucun ticket n'est fermé   ?>
 
     <?php if ($is_0_openeds): ?>
         <div class="no-tickets" id="no-openeds-text">
@@ -62,9 +62,9 @@
         ?>
         <div class="ticket-main" id=<?= $v_ticket['tic_id'] ?>>
             <div class="ticket-main-title">
-                <span>
+                <a href="/ticket/<?= $v_ticket['tic_id'] ?>">
                     <?= $v_ticket['tic_title'] ?>
-                </span>
+                </a>
             </div>
             <div class="ticket-main-author">
                 <span>
@@ -111,7 +111,9 @@
 
             <div class="ticket-icon-comments">
                 <div id='icon-click'>
-                    <span><?= sizeof($v_ticket['comments']) ?> </span>
+                    <span>
+                        <?= sizeof($v_ticket['comments']) ?>
+                    </span>
                     <img src="../imgs/icons/comments.svg" alt="comments on/off" class="comments-on-off-icon">
                 </div>
             </div>

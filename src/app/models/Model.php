@@ -57,6 +57,11 @@ abstract class Model
     public function find($id)
     {
         $res = $this->db->query("select * from $this->table where " . substr($this->table, 0, 3) . "_id = :id", ['id' => $id]);
+
+        if (sizeof($res) == 0) {
+            throw new \Exception("Aucun enregistrement trouvé");
+        }
+
         foreach ($res as $rep){
             $ret = $rep;
         }
