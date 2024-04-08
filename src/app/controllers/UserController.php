@@ -36,7 +36,7 @@ class UserController
 
         if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
-
+            $_SESSION['role'] = $user[0]['role_id'];
 
             if (isset($_SESSION['id'])) {
                 header('Location: /dashboard');
