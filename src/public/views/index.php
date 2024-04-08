@@ -26,7 +26,7 @@
                 In quam suscipit culpa quos. Ad, corporis quibusdam in culpa aperiam dolore consectetur vel odit
                 accusamus ea natus quis dolorum fugiat amet. Blanditiis inventore delectus aliquid a repellat enim quia.
             </p>
-            <?php if (isset($_SESSION['user'])): ?>
+            <?php if (isset($_SESSION['id'])): ?>
                 <button class="btn-primary" onclick="window.location.href='./dashboard'">Mes tickets</button>
             <?php else: ?>
                 <button class="btn-primary" onclick="window.location.href='./login'">Se connecter</button>
