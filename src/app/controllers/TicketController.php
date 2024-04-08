@@ -153,7 +153,8 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($ticket['author_id'] !== $_SESSION['id'] &&
-            $_SESSION['role'] !== 10) {
+            $_SESSION['role'] !== 10 ||
+            $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             header('Location: /dashboard');
         } else {
@@ -172,7 +173,8 @@ class TicketController
 
         if ($_POST['response'] === 'yes') {
             if ($ticket['author_id'] == $_SESSION['id'] ||
-                $_SESSION['role'] == 10) {
+                $_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50) {
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $status = new Status();
@@ -201,7 +203,8 @@ class TicketController
         }
 
         if ($ticket['author_id'] == $_SESSION['id'] ||
-            $_SESSION['role'] == 10) {    
+            $_SESSION['role'] == 10 ||
+            $_SESSION['role'] == 50) {    
             $comment = new Comment();
             $comment->create([
                 'com_title' => $_POST['title'],
@@ -228,7 +231,8 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10) {
+        if ($_SESSION['role'] !== 10 ||
+            $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes pas technicien";
             header('Location: /dashboard');
         } else {
@@ -254,7 +258,8 @@ class TicketController
 
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10) {
+        if ($_SESSION['role'] !== 10 ||
+            $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'êtes pas technicien";
             header('Location: /dashboard');
         }
@@ -270,5 +275,52 @@ class TicketController
         header('Location: /dashboard');
     }
 
-    // TODO: Technicien -> attribution
+
+    /** Fonction permettant d'afficher la confirmation d'attribution d'un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function alocation_form($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'êtes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10 ||
+            $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes pas un technicien";
+            header('Location: /dashboard');
+        } else {
+            require 'views/alocation.php'; // TODO: créer la vue alocation.php @444chak
+        }
+    }
+
+    /** Fonction permettant de s'attribuer un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function alocation($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_POST['response'] === 'yes') {
+            if ($_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50) {
+                $ticket = new Ticket();
+                $ticket->find($id);
+                $ticket->update([
+                    'tech_id' => $_SESSION['id']
+                ]);
+            } else {
+                $_SESSION['error'] = "vous n'êtes pas un technicien";
+            }
+        }
+        header('Location: /dashboard');
+
+    }
 }
