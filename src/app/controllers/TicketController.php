@@ -219,5 +219,56 @@ class TicketController
         header('Location: /dashboard');
     }
 
-    // TODO: Technicien -> changement du status du ticket + attribution
+    /** Fonction pour afficher le formulaire de modification du status d'un ticket
+     * @param int $id id du ticket à modifier
+     */
+    public function update_status_form($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10) {
+            $_SESSION['error'] = "vous n'êtes pas technicien";
+            header('Location: /dashboard');
+        } else {
+            $status = new Status();
+            $statuses = $status->all();
+
+            require 'views/update_status.php'; // TODO: créer la vue update_status.php @444chak
+        }
+    }
+
+    /** Fonction pour modifier le status d'un ticket
+     * @param int $id id du ticket à modifier
+     */
+    public function update_status($id)
+    {
+        if(!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10) {
+            $_SESSION['error'] = "vous n'êtes pas technicien";
+            header('Location: /dashboard');
+        }
+
+        if ($ticket['status_id'] !== $_POST['status']) {
+            $ticket = new Ticket();
+            $ticket->find($id);
+            $ticket->update([
+                'status_id' => $_POST['status']
+            ]);
+        }
+
+        header('Location: /dashboard');
+    }
+
+    // TODO: Technicien -> attribution
 }
