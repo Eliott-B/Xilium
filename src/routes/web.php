@@ -21,6 +21,12 @@ if (isset($router)){
     $router->get('/update/{id}', 'TicketController#update_form')->auth();
     $router->post('/update/{id}', 'TicketController#update')->auth();
 
+    $router->get('/update_status/{id}', 'TicketController#update_status_form')->auth();
+    $router->post('/update_status/{id}', 'TicketController#update_status')->auth();
+
+    $router->get('/alocation/{id}', 'TicketController#alocation_form')->auth();
+    $router->post('/alocation/{id}', 'TicketController#alocation')->auth();
+
     $router->get('/close/{id}', 'TicketController#close_form')->auth();
     $router->post('/close/{id}', 'TicketController#close')->auth();
 
