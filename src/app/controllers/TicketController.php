@@ -152,10 +152,9 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        // TODO: Les techniciens peuvent aussi fermer les tickets
-
-        if ($ticket['author_id'] !== $_SESSION['id']) {
-            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+        if ($ticket['author_id'] !== $_SESSION['id'] &&
+            $_SESSION['role'] !== 10) {
+            $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             header('Location: /dashboard');
         } else {
             require 'views/close.php';
@@ -172,7 +171,8 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($ticket['author_id'] == $_SESSION['id']) { // TODO: Les techniciens peuvent aussi fermer les tickets
+            if ($ticket['author_id'] == $_SESSION['id'] ||
+                $_SESSION['role'] == 10) {
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $status = new Status();
@@ -183,8 +183,7 @@ class TicketController
                     'update_date' => date('Y-m-d H:i:s')
                 ]);
             } else {
-                $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
-
+                $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             }
         }
         header('Location: /dashboard');
@@ -201,19 +200,24 @@ class TicketController
             header('Location: /login');
         }
 
-        // TODO: vérifier si l'utilisateur a le droit de commenter le ticket (auteur du ticket ou technicien)
-
-        $comment = new Comment();
-        $comment->create([
-            'com_title' => $_POST['title'],
-            'com_comment' => $_POST['comment'],
-            'com_date' => date('Y-m-d H:i:s'),
-            'ticket_id' => $id,
-            'user_id' => $_SESSION['id'],
-            // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
-            
-        ]);
+        if ($ticket['author_id'] == $_SESSION['id'] ||
+            $_SESSION['role'] == 10) {    
+            $comment = new Comment();
+            $comment->create([
+                'com_title' => $_POST['title'],
+                'com_comment' => $_POST['comment'],
+                'com_date' => date('Y-m-d H:i:s'),
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
+                
+            ]);
+        } else {
+            $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
+        }
 
         header('Location: /dashboard');
     }
+
+    // TODO: Technicien -> changement du status du ticket + attribution
 }
