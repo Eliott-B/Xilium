@@ -2,7 +2,6 @@
 
 <main>
     <link rel="stylesheet" href="../css/dashboard.css">
-
     <dialog id='comment-dialog'>
         <form action="" method="post">
             <div class="modal-close" onclick="document.getElementById('comment-dialog').close();">
@@ -16,6 +15,7 @@
             <label for="comment"><b>Commentaire</b> <span class="required">*</span></label>
             <textarea name="comment" id="comment" placeholder="Commentaire" required></textarea>
             <div class="btn-center"><button type="submit" class="btn-primary">Commenter</button></div>
+        </form>
     </dialog>
     <div class="btns-selec">
         <button class="btn-primary openeds" id='btn-open'>En cours</button>
@@ -159,7 +159,6 @@
         btn.addEventListener('click', () => {
             const filter = btn.classList[1];
 
-            console.log(filter);
             if (filter == 'openeds') {
                 document.getElementById('btn-open').classList.add('active');
                 document.getElementById('btn-close').classList.remove('active');
@@ -180,12 +179,20 @@
             });
 
             if (filter === 'openeds') {
-                document.getElementById('no-openeds-text').style.display = 'block';
-                document.getElementById('no-closeds-text').style.display = 'none';
+                <?php if ($is_0_openeds): ?>
+                    document.getElementById('no-openeds-text').style.display = 'block';
+                <?php endif; ?>
+                <?php if ($is_0_closeds): ?>
+                    document.getElementById('no-closeds-text').style.display = 'none';
+                <?php endif; ?>
             }
-            else if (filter === 'closeds') {
-                document.getElementById('no-openeds-text').style.display = 'none';
-                document.getElementById('no-closeds-text').style.display = 'block';
+            if (filter === 'closeds') {
+                <?php if ($is_0_openeds): ?>
+                    document.getElementById('no-openeds-text').style.display = 'none';
+                <?php endif; ?>
+                <?php if ($is_0_closeds): ?>
+                    document.getElementById('no-closeds-text').style.display = 'block';
+                <?php endif; ?>
             }
         });
     });
