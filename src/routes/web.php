@@ -26,6 +26,8 @@ if (isset($router)){
 
     $router->post('/comment/{id}', 'TicketController#comment')->auth();
 
+    $router->get('/ticket/{id}', 'TicketController#show')->auth();
+
 
 
     // PAGES STATIQUES
