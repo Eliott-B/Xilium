@@ -99,7 +99,7 @@
                     <button class="btn-primary"
                         onclick="window.location.href='/update/<?= $v_ticket['tic_id'] ?>'">Modifier</button>
                     <button class="btn-tertiary"
-                        onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= $v_ticket['tic_title'] ?>')">
+                        onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= addslashes($v_ticket['tic_title']) ?>')">
                         Commenter</button>
                 <?php endif; ?>
             </div>
