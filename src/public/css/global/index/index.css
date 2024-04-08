@@ -98,7 +98,6 @@
 }
 .table-tickets table tr:not(:first-child):hover {
   filter: brightness(1.3);
-  cursor: pointer;
 }
 .table-tickets table tr:not(:first-child):nth-child(even) {
   background-color: #1c030e;

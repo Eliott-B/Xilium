@@ -112,7 +112,6 @@ $background-bottom: $primary-2b;
             &:not(:first-child) {
                 &:hover {
                     filter: brightness(1.3);
-                    cursor: pointer;
                 }
                 &:nth-child(even) {
                     background-color: $primary-2b;

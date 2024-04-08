@@ -50,7 +50,7 @@
                 <th>Description</th>
             </tr>
             <?php foreach ($tickets as $ticket): ?>
-                <tr onclick="window.location.href='./ticket/<?= $ticket['tic_id'] ?>';">
+                <tr>
                     <td>
                         <?= $ticket['tic_title'] ?>
                     </td>
