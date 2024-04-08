@@ -231,8 +231,7 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 &&
-            $_SESSION['role'] !== 50) {
+        if ($ticket['tech_id'] !== $_SESSION['id']) {
             $_SESSION['error'] = "vous n'êtes pas technicien";
             header('Location: /dashboard');
         } else {
@@ -258,8 +257,7 @@ class TicketController
 
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 &&
-            $_SESSION['role'] !== 50) {
+        if ($ticket['tech_id'] !== $_SESSION['id']) {
             $_SESSION['error'] = "vous n'êtes pas technicien";
             header('Location: /dashboard');
         }
@@ -309,7 +307,7 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($_SESSION['role'] == 10 &&
+            if ($_SESSION['role'] == 10 ||
                 $_SESSION['role'] == 50) {
                 $ticket = new Ticket();
                 $ticket->find($id);
