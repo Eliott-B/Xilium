@@ -18,6 +18,9 @@ jobs:
     
     - uses: actions/checkout@v3
 
+    - name: Setup environment
+      run: mkdir database/data && echo MYSQL_DATABASE=xiliumtick\nMYSQL_USER=xilium\nMYSQL_PASSWORD=xilium\nMYSQL_ROOT_PASSWORD=xilium > .env/database_pass
+
     - name: Build the Docker image
       run: docker compose up -d
 
