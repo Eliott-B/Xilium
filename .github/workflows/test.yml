@@ -1,0 +1,25 @@
+name: Test App
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v3
+
+    - name: Build the Docker image
+      run: docker compose up -d
+
+    - name: Run test
+      run: docker exec -it xilium-app cd /var/www/html/src/tests && ./run_tests.sh
