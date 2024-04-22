@@ -101,19 +101,45 @@ class UserController
 
             if ($_POST['captcha'] == $_SESSION['expr_res']) {
 
+                $username = $_POST['username'];
+                $password = $_POST['psw'];
+                $lastname = $_POST['lname'];
+                $firstname = $_POST['fname'];
+
+                if (strlen($username) > 3 && strlen($username) < 50) {
+                    if (strlen($password) > 8){
+                        if (strlen($firstname) > 2 && strlen($firstname) < 50){
+                            if (strlen($lastname) > 2 && strlen($lastname) < 50) {
+                                // enregistrer l'utilisateur dans la base
+                                $user = new User();
+                                $user->create([
+                                    'use_username' => $username,
+                                    'use_password' => Hash::rc4($password),
+                                    'use_name' => $lastname,
+                                    'use_firstname' => $firstname,
+                                    'role_id' => 1
+                                ]);
+
+                                header('Location: /dashboard');
+                            } else {
+                                $_SESSION['error'] = "Longueur du prenom incorrecte";
+                                header('Location: /register');
+                            }
+                        } else {
+                            $_SESSION['error'] = "Longueur du nom de famille incorrecte";
+                            header('Location: /register');
+                        }
+                    } else {
+                        $_SESSION['error'] = "Longueur du mot de passe incorrecte";
+                        header('Location: /register');
+                    }
+                } else {
+                    $_SESSION['error'] = "Longueur du nom d'utilisateur incorrecte";
+                    header('Location: /register');
+                }
 
 
-                // enregistrer l'utilisateur dans la base
-                $user = new User();
-                $user->create([
-                    'use_username' => $_POST['username'],
-                    'use_password' => Hash::rc4($_POST['psw']),
-                    'use_name' => $_POST['lname'],
-                    'use_firstname' => $_POST['fname'],
-                    'role_id' => 1
-                ]);
 
-                header('Location: /dashboard');
 
             } else {
                 $_SESSION['error'] = "Captcha invalide";
