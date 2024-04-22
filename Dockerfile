@@ -16,4 +16,9 @@ RUN sed -i '/ServerTokens/c\ServerTokens Prod' /etc/apache2/conf-enabled/securit
 
 RUN sed -i '/ServerSignature/c\ServerSignature Off' /etc/apache2/conf-enabled/security.conf
 
+# INSTALL COMPOSER 
+RUN apt install -y wget php-cli php-zip unzip
+RUN wget -O composer-setup.php https://getcomposer.org/installer
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
 CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
