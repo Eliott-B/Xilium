@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Change directory to test
+      run: cd src/tests
+    
     - uses: actions/checkout@v3
 
     - name: Validate composer.json and composer.lock
