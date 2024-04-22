@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Change directory to test
-      run: cd src/tests
+      run: cd /src/tests
     
     - uses: actions/checkout@v3
 
