@@ -25,4 +25,4 @@ jobs:
       run: docker compose up -d
 
     - name: Run test
-      run: docker exec xilium-app-1 bash -c "cd /var/www/html/tests && ./run_tests.sh"
+      run: docker exec xilium-app-1 bash -c "cd /var/www/html/tests && ./run_test.sh"
