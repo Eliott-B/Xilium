@@ -15,12 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Change directory to test
-      run: cd /src/tests
     
     - uses: actions/checkout@v3
 
     - name: Validate composer.json and composer.lock
+      working-directory: ./src/tests
       run: composer validate --strict
 
     - name: Cache Composer packages
@@ -33,10 +32,12 @@ jobs:
           ${{ runner.os }}-php-
 
     - name: Install dependencies
+      working-directory: ./src/tests
       run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run test
+      working-directory: ./src/tests
       run: ./vendor/bin/phpunit src/*.php
