@@ -2,7 +2,7 @@ FROM debian:latest
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y apache2 php libapache2-mod-php php-mysql libapache2-mod-security2 python3
+    apt-get install -y apache2 php libapache2-mod-php php-mysql libapache2-mod-security2 python3 curl php-cli php-fpm php-json php-pdo php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath phpunit
 
 RUN chown -R www-data:www-data /var/www/html
 
@@ -16,9 +16,8 @@ RUN sed -i '/ServerTokens/c\ServerTokens Prod' /etc/apache2/conf-enabled/securit
 
 RUN sed -i '/ServerSignature/c\ServerSignature Off' /etc/apache2/conf-enabled/security.conf
 
-# INSTALL COMPOSER 
-RUN apt install -y wget php-cli php-zip unzip
-RUN wget -O composer-setup.php https://getcomposer.org/installer
-RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+# INSTALL COMPOSER
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=bin --filename=composer
 
 CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
