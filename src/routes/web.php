@@ -35,6 +35,10 @@ if (isset($router)){
         require "views/about.php";
     });
 
+    $router->get('/contact', function () {
+        require "views/contact.php";
+    });
+
     $router->get('/faq', function () {
         require "views/faq.php";
     });

@@ -3,18 +3,8 @@
 <main>
     <link rel="stylesheet" href="../css/about.css">
 
-
-    <form action="" method="post">
-        <label for="fname">Prénom</label>
-        <input type="text" name="fname" id="fname">
-        <label for="lname">Nom</label>
-        <input type="text" name="lname" id="lname">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-
-        <label for="msg">Message</label>
-        <textarea id="msg" name="msg"></textarea>
-    </form>
+    <h2>Contact</h2>
+    <pre>Pour nous contacter envoyez un mail sur <a href="mailto:contact@xilium.net">contact@xilium.net</a> </pre>
 </main>
 
 <?php require "components/footer.php"; ?>
