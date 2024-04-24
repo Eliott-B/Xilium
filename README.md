@@ -34,6 +34,14 @@ L'application a été testées sur les systèmes suivants :
 
 ⚠️ L'application n'est pas compatible avec les systèmes ARM 32 bits. MariaDB et MySQL sous Docker ne supporte pas cette architecture.
 
+## 💿 Logiciels et versions
+
+- Docker : 26.0.0 [Raspberry]
+- Debian : 11 (Bullseye) [Raspberry]
+- php-apache : 8.2 [Docker]
+- mariadb : 11.3 [Docker]
+- Python : 3.xx [Docker]
+
 ## 🤝 Contributeurs
 
 - [Eliott BARKER](https://github.com/Eliott-B)
