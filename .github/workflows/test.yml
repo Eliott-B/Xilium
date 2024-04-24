@@ -1,0 +1,31 @@
+name: Test App
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v3
+
+    - name: Setup environment
+      run: mkdir database/data && mkdir .env && touch .env/database_pass && echo -e "MYSQL_DATABASE=xiliumtick\nMYSQL_USER=xilium\nMYSQL_PASSWORD=xilium\nMYSQL_ROOT_PASSWORD=xilium" > .env/database_pass
+
+    - name: Build the Docker image
+      run: docker compose up -d
+
+    - name: Load environment variables
+      run: sleep 5 && docker exec xilium-app-1 bash -c "cd /var/www/html && python3 config/config.py"
+
+    - name: Run test
+      run: docker exec xilium-app-1 bash -c "cd /var/www/html/tests && ./run_test.sh"

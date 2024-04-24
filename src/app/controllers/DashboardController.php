@@ -8,6 +8,7 @@ use app\models\Status;
 use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
+use app\models\Comment;
 
 /**
  * Module du controleur du tableau de bord
@@ -27,7 +28,23 @@ class DashboardController
         $users = $users[0];
 
         $view_tickets = [];
+
+
         foreach ($tickets as $ticket) {
+
+            $comments = new Comment();
+            $comments = $comments->get_comments($ticket['tic_id']);
+
+            $view_comments = [];
+            foreach ($comments as $comment) {
+                $user = new User();
+                $user = $user->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $comment['user_id']])[0];
+                $comment['user'] = $user;
+                $view_comments[] = $comment;
+            }
+            // var_dump($view_comments);
+            $ticket['comments'] = $view_comments;
+            
             $status = new Status();
             $status = $status->get_status($ticket['status_id']);
             $ticket['status'] = $status;

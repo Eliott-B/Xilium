@@ -32,7 +32,12 @@ button {
     font-size: 2rem;
 }
 
-textarea, ::placeholder, input, select, option, label{
+textarea,
+::placeholder,
+input,
+select,
+option,
+label {
     font-family: "Sloth", sans-serif;
     font-size: 1rem;
 }
@@ -43,7 +48,6 @@ hr {
     background: $primary-1b;
     opacity: 0.2;
     margin: 1rem;
-
 }
 
 html {
@@ -66,7 +70,42 @@ html {
 
 .flex-wrapper {
     display: flex;
-    min-height: 80vh;
+    min-height: 90vh;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.back {
+    margin-left: 2rem;
+
+    a {
+        text-decoration: none;
+        color: $primary-2b;
+        font-size: 1.4rem;
+        transition: ease-in-out 0.2s;
+    }
+
+    .arrow {
+        width: 0.7rem;
+        height: 0.7rem;
+        border: solid black;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        transition: ease-in-out 0.2s;
+    }
+
+    .left {
+        transform: rotate(135deg);
+    }
+
+    &:hover {
+        a {
+            color: $primary-1b;
+        }
+        .arrow {
+            border-color: $primary-1b;
+            transform: rotate(135+360deg);
+            transition: ease-in-out 0.5s;
+        }
+    }
 }

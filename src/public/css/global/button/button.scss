@@ -5,7 +5,7 @@
         @extend .btn;
         background-color: $primary-1;
         color: $primary-1b;
-        &:hover {
+        &:hover,&.active {
             background-color: $primary-1b;
             color: $primary-1;
         }
@@ -14,7 +14,7 @@
         @extend .btn;
         background-color: $secondary-1;
         color: $secondary-1b;
-        &:hover {
+        &:hover,&.active {
             background-color: $secondary-1b;
             color: $secondary-1;
         }
@@ -23,7 +23,7 @@
         @extend .btn;
         background-color: $tertiary-1;
         color: $tertiary-1b;
-        &:hover {
+        &:hover,&.active {
             background-color: $tertiary-1b;
             color: $tertiary-1;
         }

@@ -45,8 +45,7 @@ class UserController
                 header('Location: /login');
             }
 
-        } else
-        {
+        } else {
             $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
             header('Location: /login');
         }
@@ -78,6 +77,17 @@ class UserController
             $_SESSION['error'] = "Vous êtes déjà connecté";
             header('Location: /');
         } else {
+            $v1 = rand(1, 10);
+            $v2 = rand(1, 10);
+            $v3 = rand(1, 10);
+
+            $signe = rand(0, 1);
+
+            $expr = "$v1 * $v2 " . ($signe ? "-" : "+") . " $v3";
+            $expr_res = $signe ? ($v1 * $v2) - $v3 : ($v1 * $v2) + $v3;
+
+            $_SESSION['expr_res'] = $expr_res;
+
             require 'views/register.php';
         }
     }
@@ -87,17 +97,55 @@ class UserController
      */
     public function register()
     {
-        // enregistrer l'utilisateur dans la base
-        $user = new User();
-        $user->create([
-            'use_username' => $_POST['username'],
-            'use_password' => Hash::rc4($_POST['psw']),
-            'use_name' => $_POST['lname'],
-            'use_firstname' => $_POST['fname'],
-            'role_id' => 1
-        ]);
+        if ($_POST['psw'] == $_POST['psw-repeat']) {
 
-        header('Location: /dashboard');
+            if ($_POST['captcha'] == $_SESSION['expr_res']) {
+
+                $username = $_POST['username'];
+                $password = $_POST['psw'];
+                $lastname = $_POST['lname'];
+                $firstname = $_POST['fname'];
+
+                if (strlen($username) > 3 && strlen($username) < 50) {
+                    if (strlen($password) > 8){
+                        if (strlen($firstname) > 2 && strlen($firstname) < 50){
+                            if (strlen($lastname) > 2 && strlen($lastname) < 50) {
+                                // enregistrer l'utilisateur dans la base
+                                $user = new User();
+                                $user->create([
+                                    'use_username' => $username,
+                                    'use_password' => Hash::rc4($password),
+                                    'use_name' => $lastname,
+                                    'use_firstname' => $firstname,
+                                    'role_id' => 1
+                                ]);
+
+                                header('Location: /dashboard');
+                            } else {
+                                $_SESSION['error'] = "Longueur du prenom incorrecte";
+                                header('Location: /register');
+                            }
+                        } else {
+                            $_SESSION['error'] = "Longueur du nom de famille incorrecte";
+                            header('Location: /register');
+                        }
+                    } else {
+                        $_SESSION['error'] = "Longueur du mot de passe incorrecte";
+                        header('Location: /register');
+                    }
+                } else {
+                    $_SESSION['error'] = "Longueur du nom d'utilisateur incorrecte";
+                    header('Location: /register');
+                }
+
+
+
+
+            } else {
+                $_SESSION['error'] = "Captcha invalide";
+                header('Location: /register');
+            }
+        }
     }
 
     /**
@@ -120,7 +168,7 @@ class UserController
                 header('Location: /account');
             }
 
-        } else{
+        } else {
             $_SESSION['error'] = "Les deux mots de passe ne correpondent pas";
 
             header('Location: /account');

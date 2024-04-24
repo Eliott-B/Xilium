@@ -1,0 +1,30 @@
+@import "global/colors/colors.scss";
+
+.box-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        border: 1px solid black;
+        border-radius: 24px;
+
+        .btns-confirm {
+            margin: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            button {
+                font-size: 2rem;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+}

@@ -21,6 +21,13 @@ if (isset($router)){
     $router->get('/update/{id}', 'TicketController#update_form')->auth();
     $router->post('/update/{id}', 'TicketController#update')->auth();
 
+    $router->get('/close/{id}', 'TicketController#close_form')->auth();
+    $router->post('/close/{id}', 'TicketController#close')->auth();
+
+    $router->post('/comment/{id}', 'TicketController#comment')->auth();
+
+    $router->get('/ticket/{id}', 'TicketController#show')->auth();
+
 
 
     // PAGES STATIQUES

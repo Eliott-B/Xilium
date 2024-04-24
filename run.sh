@@ -17,4 +17,9 @@ sleep 5
 
 docker exec -it xilium-app-1 bash -c "cd /var/www/html && python3 config/config.py"
 
-echo "Application is running on http://localhost:8080"
+if [ $? = 0 ] ; then
+    echo "L'application est disponible à l'adresse http://localhost/"
+    exit 0
+else
+    exit 1
+fi
