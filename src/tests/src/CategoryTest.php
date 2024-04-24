@@ -40,4 +40,19 @@ final class CategoryTest extends TestCase
         $this->assertSame('#000000', $cat["cat_css_color"]);
         $category->delete($cat["cat_id"]);
     }
+
+    public function testDelete()
+    {
+        $category = new Category();
+        $category->create(["cat_id" => 0]);
+        $categories = $category->all();
+        $id = end($categories)["cat_id"];
+        $category->find($id);
+
+        $category->delete(["cat_id" => 0]);
+        $cat = $category->find($id);
+        $this->assertNull($category->find($id));
+
+        $category->delete($cat["cat_id"]);
+    }
 }
