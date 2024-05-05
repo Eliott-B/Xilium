@@ -39,12 +39,13 @@ class Category extends Model
      * @return array Les données de la catégorie récupérée
      */
     public function delete_category($id){
-        // vérifier si get_categorty($id) != "Autre"
 
         if ($this->get_category($id) == 'Autre') {
             return null;
-        } else {
+        }
+        else {
             $this->delete($id);
+            return $this[0];
         }
     }
 }

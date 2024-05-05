@@ -44,12 +44,16 @@ final class CategoryTest extends TestCase
     public function testDelete()
     {
         $category = new Category();
-        $category->create(["cat_id" => 0]);
+
+        $category->create([
+            'cat_name' => "Autre",
+            'cat_css_color' => '#707070']);
         $categories = $category->all();
+
         $id = end($categories)["cat_id"];
         $category->find($id);
 
-        $category->delete(["cat_id" => 0]);
+        $category->delete(["cat_name" => "Autre"]);
         $cat = $category->find($id);
         $this->assertNull($category->find($id));
 
