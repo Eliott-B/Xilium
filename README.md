@@ -26,6 +26,7 @@ Pour lancer les tests sur l'application, il suffit de lancer la commande suivant
 ```bash
 docker exec -it xilium-app-1 bash -c "cd /var/www/html/tests && ./run_test.sh"
 ```
+⚠️ `xilium-app-1` est le nom du container de l'application. Il peut être différent en fonction de votre installation. Faite un `docker ps` pour obtenir le nom du container.  
 Tous les tests sont automatiquements exécutés lors des merges et push sur les branches `main` et `develop`.  
 
 ⚠️ Il faut être administrateur pour lancer les commandes Docker. (sudo ou root). Sinon il faut ajouter l'utilisateur au groupe Docker.  
