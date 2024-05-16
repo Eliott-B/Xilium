@@ -319,7 +319,7 @@ class TicketController
             ]);
         }
 
-        header('Location: /dashboard');
+        header('Location: /techniciens-dashboard');
     }
 
 
@@ -367,7 +367,7 @@ class TicketController
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
             }
         }
-        header('Location: /dashboard');
+        header('Location: /technicens-dashboard');
 
     }
 }

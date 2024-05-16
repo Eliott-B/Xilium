@@ -36,6 +36,13 @@
                         </a>
                     </li>
 
+                    <?php if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
+                        <li>
+                            <a href="/techniciens-dashboard">
+                                <h1>Techniciens</h1>
+                            </a>
+                        </li>
+                    <?php endif ?>
 
                     <!-- <li>
                         <a href="/account">

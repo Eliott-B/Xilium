@@ -4,6 +4,8 @@ if (isset($router)){
 
     $router->get('/dashboard', 'DashboardController#index')->auth();
 
+    $router->get('/techniciens-dashboard', 'TechnicienDashboardController#index')->auth();
+
     $router->get('/login', 'UserController#login_form');
     $router->post('/login', 'UserController#login');
 
