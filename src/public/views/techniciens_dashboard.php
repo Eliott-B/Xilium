@@ -120,10 +120,15 @@
                         <button class="btn-primary"
                             onclick="window.location.href='/update_status/<?= $v_ticket[1]['tic_id'] ?>'">Modifier le status</button>
                     <?php endif; if (($_SESSION['role'] == 10 ||
-                                        $_SESSION['role'] == 50) &&
-                                        $v_ticket[1]['tech_id'] !== $_SESSION['id']): ?>
+                                $_SESSION['role'] == 50) &&
+                                $v_ticket[1]['tech_id'] !== $_SESSION['id']): ?>
                         <button class="btn-tertiary"
                             onclick="window.location.href='/alocation/<?= $v_ticket[1]['tic_id'] ?>'">Attribuer</button>
+                    <?php endif; if (($_SESSION['role'] == 10 ||
+                                        $_SESSION['role'] == 50) &&
+                                        $v_ticket[1]['tech_id'] === $_SESSION['id']): ?>
+                        <button class="btn-tertiary"
+                            onclick="window.location.href='/desalocation/<?= $v_ticket[1]['tic_id'] ?>'">Désattribuer</button>
                     <?php endif; ?>
                     <button class="btn-tertiary"
                         onclick="comment_ticket(<?= $v_ticket[1]['tic_id'] ?>, '<?= addslashes($v_ticket[1]['tic_title']) ?>')">

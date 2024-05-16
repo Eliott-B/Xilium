@@ -322,7 +322,6 @@ class TicketController
         header('Location: /techniciens-dashboard');
     }
 
-
     /** Fonction permettant d'afficher la confirmation d'attribution d'un ticket
      *  @param int $id id du ticket à fermer
      */
@@ -367,7 +366,55 @@ class TicketController
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
             }
         }
-        header('Location: /technicens-dashboard');
+        header('Location: /techniciens-dashboard');
+
+    }
+
+    /** Fonction permettant d'afficher la confirmation de désattribution d'un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function desalocation_form($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'êtes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10 &&
+            $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes pas un technicien";
+            header('Location: /dashboard');
+        } else {
+            require 'views/desalocation.php';
+        }
+    }
+
+    /** Fonction permettant de se désattribuer un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function desalocation($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_POST['response'] === 'yes') {
+            if ($_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50) {
+                $ticket = new Ticket();
+                $ticket->find($id);
+                $ticket->update([
+                    'tech_id' => NULL
+                ]);
+            } else {
+                $_SESSION['error'] = "vous n'êtes pas un technicien";
+            }
+        }
+        header('Location: /techniciens-dashboard');
 
     }
 }
