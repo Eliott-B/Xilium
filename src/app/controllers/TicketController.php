@@ -66,7 +66,8 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id']) {
+        if ($ticket['author_id'] !== $_SESSION['id'] &&
+            $_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         } else {
@@ -77,7 +78,12 @@ class TicketController
             $priority = new Priority();
             $priorities = $priority->all();
 
-            require 'views/update.php';
+            if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50) {
+                require 'views/update_technicien.php';
+            }
+            else {
+                require 'views/update.php';
+            }
         }
     }
 
@@ -98,6 +104,11 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($ticket['author_id'] !== $_SESSION['id']) {
+            if ($_SESSION['role'] === 10 || $_SESSION['role'] === 50) {
+                $this->update_technicien($id);
+                exit();
+            }
+
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         }
@@ -117,6 +128,42 @@ class TicketController
         }
 
         header('Location: ' . $_SESSION['previous_url']);
+    }
+
+    /** Fonction pour modifier un ticket (technicien)
+     * @param int $id id du ticket à modifier
+     */
+    public function update_technicien($id)
+    {
+
+        if(!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'etes pas technicien";
+            header('Location: /');
+        }
+
+        if ($ticket['label_id'] !== $_POST['problem'] || $ticket['priority_id'] !== $_POST['priority'] || $ticket['category_id'] !== $_POST['category']) {
+            $ticket = new Ticket();
+            $ticket->find($id);
+            $ticket->update([
+                'label_id' => $_POST['problem'],
+                'priority_id' => $_POST['priority'],
+                'category_id' => $_POST['category'],
+                'updater_id' => $_SESSION['id'],
+                'update_date' => date('Y-m-d H:i:s')
+            ]);
+        }
+
+        header('Location: /ticket/' . $id);
     }
 
     /** Fonction permettant d'afficher la confirmation de fermeture d'un ticket

@@ -2,7 +2,7 @@
 <main>
     <link rel="stylesheet" href="../css/create.css">
     <span class="back">
-        <a href="/dashboard"><i class="arrow left"></i>Retour</a>
+        <a href="/techniciens-dashboard"><i class="arrow left"></i>Retour</a>
     </span>
     <div class="box-new-ticket">
         <form action="" method="post">
