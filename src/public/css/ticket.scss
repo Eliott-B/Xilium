@@ -1,4 +1,4 @@
-@import "global/colors/colors.scss";
+@import 'global/colors/colors.scss';
 
 $date-color: #696969;
 $label-red: #e74c3c;
@@ -31,15 +31,8 @@ $label-orange: #f39c12;
         &-title {
             font-size: 30px;
             margin-top: 40px;
+
             font-weight: bold;
-            a {
-                color: black;
-                text-decoration: none;
-                transition: ease-in-out 0.2s;
-                &:hover {
-                    color: $primary-1b;
-                }
-            }
         }
         &-author {
             font-size: 25px;
@@ -153,28 +146,26 @@ $label-orange: #f39c12;
     }
     &-icon {
         &-comments {
-            position: absolute;
+            position:absolute;
             bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             left: 50%;
             right: 50%;
-            #icon-click {
+            #icon-click{
                 display: flex;
                 align-content: center;
                 &:hover {
                     cursor: pointer;
-                    img {
-                        filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg)
-                            brightness(90%) contrast(98%);
+                    img{
+                        filter: brightness(0) saturate(100%) invert(9%) sepia(50%) saturate(5616%) hue-rotate(319deg) brightness(90%) contrast(98%);
                     }
                 }
             }
             img {
                 width: 15px;
-                filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg)
-                    brightness(96%) contrast(91%);
+                filter: brightness(0) saturate(100%) invert(53%) sepia(67%) saturate(5140%) hue-rotate(307deg) brightness(96%) contrast(91%);
                 transition: ease-in-out 0.3s;
             }
             span {
@@ -183,20 +174,6 @@ $label-orange: #f39c12;
                 color: $date-color;
             }
         }
-    }
-}
-
-.no-tickets {
-    height: 60vh;
-    align-content: center;
-    p {
-        font-size: 30px;
-        color: $primary-2b;
-    }
-    .center {
-        display: grid;
-        justify-content: center;
-        align-items: center;
     }
 }
 
@@ -212,8 +189,7 @@ $label-orange: #f39c12;
         display: flex;
         flex-direction: column;
         width: 30vw;
-        h1,
-        p {
+        h1, p {
             margin-left: 30px;
         }
         input {
@@ -221,14 +197,14 @@ $label-orange: #f39c12;
             border-radius: 30px;
             height: 30px;
             border: 1px solid black;
-            display: block;
+            display :block;
             margin-left: 20px;
             margin-right: 20px;
-            &::placeholder {
+            &::placeholder{
                 opacity: 0.5;
             }
         }
-        label {
+        label{
             // margin: 30px;
             margin-left: 30px;
             margin-right: 30px;

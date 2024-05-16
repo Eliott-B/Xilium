@@ -32,11 +32,17 @@ if (isset($router)){
 
     $router->post('/comment/{id}', 'TicketController#comment')->auth();
 
+    $router->get('/ticket/{id}', 'TicketController#show')->auth();
+
 
 
     // PAGES STATIQUES
     $router->get('/about', function () {
         require "views/about.php";
+    });
+
+    $router->get('/contact', function () {
+        require "views/contact.php";
     });
 
     $router->get('/faq', function () {

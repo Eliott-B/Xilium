@@ -2,7 +2,6 @@
 
 <main>
     <link rel="stylesheet" href="../css/dashboard.css">
-
     <dialog id='comment-dialog'>
         <form action="" method="post">
             <div class="modal-close" onclick="document.getElementById('comment-dialog').close();">
@@ -16,6 +15,7 @@
             <label for="comment"><b>Commentaire</b> <span class="required">*</span></label>
             <textarea name="comment" id="comment" placeholder="Commentaire" required></textarea>
             <div class="btn-center"><button type="submit" class="btn-primary">Commenter</button></div>
+        </form>
     </dialog>
     <div class="btns-selec">
         <button class="btn-primary openeds" id='btn-open'>En cours</button>
@@ -26,11 +26,11 @@
     <?php $is_0_openeds = sizeof(array_filter($view_tickets, function ($ticket) {
         return $ticket['status']['sta_name'] !== "Fermé";
     })) == 0;
-    // True si aucun ticket n'est ouvert   ?>
+    // True si aucun ticket n'est ouvert    ?>
     <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
         return $ticket['status']['sta_name'] === "Fermé";
     })) == 0;
-    // True si aucun ticket n'est fermé  ?>
+    // True si aucun ticket n'est fermé   ?>
 
     <?php if ($is_0_openeds): ?>
         <div class="no-tickets" id="no-openeds-text">
@@ -62,9 +62,9 @@
         ?>
         <div class="ticket-main" id=<?= $v_ticket['tic_id'] ?>>
             <div class="ticket-main-title">
-                <span>
+                <a href="/ticket/<?= $v_ticket['tic_id'] ?>">
                     <?= $v_ticket['tic_title'] ?>
-                </span>
+                </a>
             </div>
             <div class="ticket-main-author">
                 <span>
@@ -108,7 +108,7 @@
                             onclick="window.location.href='/alocation/<?= $v_ticket['tic_id'] ?>'">Attribuer</button>
                     <?php endif; ?>
                     <button class="btn-tertiary"
-                        onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= $v_ticket['tic_title'] ?>')">
+                        onclick="comment_ticket(<?= $v_ticket['tic_id'] ?>, '<?= addslashes($v_ticket['tic_title']) ?>')">
                         Commenter</button>
                 <?php endif; ?>
             </div>
@@ -120,7 +120,9 @@
 
             <div class="ticket-icon-comments">
                 <div id='icon-click'>
-                    <span><?= sizeof($v_ticket['comments']) ?> </span>
+                    <span>
+                        <?= sizeof($v_ticket['comments']) ?>
+                    </span>
                     <img src="../imgs/icons/comments.svg" alt="comments on/off" class="comments-on-off-icon">
                 </div>
             </div>
@@ -168,7 +170,6 @@
         btn.addEventListener('click', () => {
             const filter = btn.classList[1];
 
-            console.log(filter);
             if (filter == 'openeds') {
                 document.getElementById('btn-open').classList.add('active');
                 document.getElementById('btn-close').classList.remove('active');
@@ -189,12 +190,20 @@
             });
 
             if (filter === 'openeds') {
-                document.getElementById('no-openeds-text').style.display = 'block';
-                document.getElementById('no-closeds-text').style.display = 'none';
+                <?php if ($is_0_openeds): ?>
+                    document.getElementById('no-openeds-text').style.display = 'block';
+                <?php endif; ?>
+                <?php if ($is_0_closeds): ?>
+                    document.getElementById('no-closeds-text').style.display = 'none';
+                <?php endif; ?>
             }
-            else if (filter === 'closeds') {
-                document.getElementById('no-openeds-text').style.display = 'none';
-                document.getElementById('no-closeds-text').style.display = 'block';
+            if (filter === 'closeds') {
+                <?php if ($is_0_openeds): ?>
+                    document.getElementById('no-openeds-text').style.display = 'none';
+                <?php endif; ?>
+                <?php if ($is_0_closeds): ?>
+                    document.getElementById('no-closeds-text').style.display = 'block';
+                <?php endif; ?>
             }
         });
     });

@@ -23,14 +23,6 @@
   margin-top: 40px;
   font-weight: bold;
 }
-.ticket-main-title a {
-  color: black;
-  text-decoration: none;
-  transition: ease-in-out 0.2s;
-}
-.ticket-main-title a:hover {
-  color: #6e0c38;
-}
 .ticket-main-author {
   font-size: 25px;
 }
@@ -162,20 +154,6 @@
   color: #696969;
 }
 
-.no-tickets {
-  height: 60vh;
-  align-content: center;
-}
-.no-tickets p {
-  font-size: 30px;
-  color: #1c030e;
-}
-.no-tickets .center {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-
 :modal {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border: 1px solid black;
@@ -190,8 +168,7 @@
   flex-direction: column;
   width: 30vw;
 }
-:modal form h1,
-:modal form p {
+:modal form h1, :modal form p {
   margin-left: 30px;
 }
 :modal form input {

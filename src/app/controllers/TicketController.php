@@ -8,34 +8,13 @@ use app\models\Label;
 use app\models\Priority;
 use app\models\Status;
 use app\models\Comment;
+use app\models\User;
 
 /**
  * Module du controleur des tickets
  */
 class TicketController
 {
-    /**
-     * Liste les tickets
-     */
-    public function list_tickets()
-    {
-        $tickets = new Ticket();
-        $tickets = $tickets->all();
-
-        var_dump($tickets);
-    }
-
-    /**
-     * Affiche un ticket
-     * @param int $id identifiant du ticket
-     */
-    public function show_ticket($id)
-    {
-        $ticket = new Ticket();
-        $ticket = $ticket->find($id);
-
-        var_dump($ticket);
-    }
 
     /**
      * Affiche le formulaire pour la création d'un ticket
@@ -80,6 +59,8 @@ class TicketController
      */
     public function update_form($id)
     {
+
+        $_SESSION['previous_url'] = $_SERVER['HTTP_REFERER'];
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
@@ -135,7 +116,7 @@ class TicketController
             ]);
         }
 
-        header('Location: /dashboard');
+        header('Location: ' . $_SESSION['previous_url']);
     }
 
     /** Fonction permettant d'afficher la confirmation de fermeture d'un ticket
@@ -143,6 +124,8 @@ class TicketController
      */
     public function close_form($id)
     {
+        $_SESSION['previous_url'] = $_SERVER['HTTP_REFERER'];
+
         if (!isset ($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
@@ -188,7 +171,10 @@ class TicketController
                 $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             }
         }
-        header('Location: /dashboard');
+
+
+
+        header('Location: ' . $_SESSION['previous_url']);
 
     }
 
@@ -219,7 +205,70 @@ class TicketController
             $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
         }
 
-        header('Location: /dashboard');
+        $previous_url = $_SERVER['HTTP_REFERER'];
+        header('Location: ' . $previous_url);
+
+    }
+    
+
+    /** Fonction permettant d'afficher un ticket
+     *  @param int $id id du ticket à afficher
+     */
+    public function show($id)
+    {
+
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        try {
+            
+            $ticket = $ticket->find($id);
+            
+        } catch (\Exception $e) {
+            $_SESSION['error'] = "Ce ticket n'existe pas";
+            header('Location: /dashboard');
+        }
+
+        $ticket = (array) $ticket;
+
+        if ($ticket['author_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+            header('Location: /dashboard');
+        }
+
+
+        $comments = new Comment();
+        $comments = $comments->get_comments($ticket['tic_id']);
+
+        $view_comments = [];
+        foreach ($comments as $comment) {
+            $user = new User();
+            $user = $user->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $comment['user_id']])[0];
+            $comment['user'] = $user;
+            $view_comments[] = $comment;
+        }
+        $comments = $view_comments;
+
+        $status = new Status();
+        $status = $status->get_status($ticket['status_id']);
+
+        $category = new Category();
+        $category = $category->get_category($ticket['category_id']);
+
+        $label = new Label();
+        $label = $label->get_label($ticket['label_id']);
+
+        $priority = new Priority();
+        $priority = $priority->get_priority($ticket['priority_id']);
+
+
+        $users = new User();
+        $users = $users->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['author_id']])[0];
+
+        require 'views/ticket.php';
     }
 
     /** Fonction pour afficher le formulaire de modification du status d'un ticket

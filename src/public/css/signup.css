@@ -49,3 +49,21 @@
 .box-su .required {
   color: rgb(160, 0, 0);
 }
+
+#inscription:disabled {
+
+  background-color: lightgrey;
+  transition: none;
+}
+
+#inscription:disabled:hover {
+  color: #6e0c38;
+}
+
+#inscription:active{
+  transform: none;
+}
+
+#message {
+  color: red;
+}

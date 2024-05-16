@@ -2,7 +2,6 @@
   --gradient: linear-gradient(to right, #eb479188, #c246ebaa, #46eba888);
 }
 
-/*#33242B, #2F2433*/
 @keyframes bg-button {
   0% {
     background-position: left;
@@ -11,69 +10,125 @@
     background-position: right;
   }
 }
-.create-ticket {
+.first-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.first-box .video,
+.first-box .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-top: 5%;
-  box-sizing: border-box;
-  width: 100%;
-  height: 200px;
-  background-image: var(--gradient);
-  background-size: 500%;
-  background-position: left;
-  border-top: 1px solid #6e0c38;
-  border-bottom: 1px solid #6e0c38;
-  animation: bg-button 12s infinite alternate;
-  transition: ease-in-out 0.5s;
-}
-
-.box-tickets {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin: 20px;
   background-color: #FEF6FA;
-}
-.box-tickets .tickets-title a {
-  color: #031c12;
-  text-decoration: #031c12 underline;
-  transition: ease-in-out 0.1s;
-}
-.box-tickets .tickets-title a:hover {
-  font-weight: bolder;
-  color: #6e0c38;
-  text-decoration: #031c12 underline;
-}
-.box-tickets .list-tickets {
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  flex-flow: row nowrap;
-  display: flex;
-  background-color: #FEF6FA;
-  overflow-x: scroll;
-  float: none;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
-}
-.box-tickets .list-tickets .ticket {
-  width: 30%;
-  height: auto;
-  margin: 18px 30px;
-  padding: 0px 30px;
-  background-color: #FEF6FA;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+}
+.first-box .video p,
+.first-box .content p {
+  color: #1c030e;
+}
+.first-box .video iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+}
+.first-box .video p {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+.first-box .content p {
+  text-align: justify;
+}
+.first-box .content p.register {
+  margin: 5px;
+  font-size: 0.9rem;
+}
+.first-box .content p.register a {
+  color: #1c030e;
+  transition: ease-in-out 0.1s;
+  text-decoration: underline;
+}
+.first-box .content p.register a:hover {
+  color: #6e0c38;
+  font-weight: bold;
+}
+.first-box .content button {
+  font-size: 1rem;
+}
+.first-box * {
   transition: ease-in-out 0.2s;
 }
-.box-tickets .list-tickets .ticket .ticket-title {
-  font-size: 2rem;
-  margin-top: 10px;
+.first-box > div > * {
+  z-index: 2;
 }
-.box-tickets .list-tickets .ticket .ticket-content {
-  white-space: normal;
+
+.wave {
+  display: block;
+  position: relative;
+  margin-top: -10dvw;
+  z-index: 1;
 }
-.box-tickets .list-tickets .ticket:hover {
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.wave path {
+  fill: #1c030e;
+}
+
+.table-tickets {
+  z-index: 2;
+  position: relative;
+  margin-top: -10vh;
+  padding: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: #1c030e;
+  padding-bottom: 15vh;
+  letter-spacing: 1px;
+}
+.table-tickets h2 {
+  color: #FEF6FA;
+  text-align: center;
+}
+.table-tickets table {
+  width: 100%;
+  color: #FEF6FA;
+  border-collapse: collapse;
+}
+.table-tickets table tr:not(:first-child):hover {
+  filter: brightness(1.3);
+}
+.table-tickets table tr:not(:first-child):nth-child(even) {
+  background-color: #1c030e;
+}
+.table-tickets table tr:not(:first-child):nth-child(even):hover {
+  filter: brightness(1.3);
+}
+.table-tickets table tr:first-child {
+  filter: saturate(1.5);
+}
+.table-tickets table tr:nth-child(odd) {
+  background-color: #6e0c38;
+}
+.table-tickets table tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+.table-tickets table tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+.table-tickets table th:first-child {
+  border-top-left-radius: 16px;
+}
+.table-tickets table th:last-child {
+  border-top-right-radius: 16px;
+}
+.table-tickets table th,
+.table-tickets table td {
+  padding: 10px;
+  text-align: center;
+}
+.table-tickets table th:first-child,
+.table-tickets table td:first-child {
+  border-right: 1px solid #1c030e;
 }
