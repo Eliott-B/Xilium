@@ -5,7 +5,11 @@
 
 <link rel="stylesheet" href="../css/ticket.css">
 <span class="back">
-        <a href="/dashboard"><i class="arrow left"></i>Retour</a>
+        <? if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
+            <a href="/techniciens-dashboard"><i class="arrow left"></i>Retour</a>
+        <? else: ?>
+            <a href="/dashboard"><i class="arrow left"></i>Retour</a>
+        <? endif; ?>
     </span>
     <dialog id='comment-dialog'>
         <form action="" method="post">
@@ -53,6 +57,9 @@
                 <p>
                     <?= $ticket['tic_description'] ?>
                 </p>
+                <p>
+                    <b>Technicien en charge :</b> <?= $tech['use_firstname'] . ' ' . $tech['use_name'] ?>
+                </p>
             </div>
             <br />
             <div class="ticket-main-actions">
@@ -61,6 +68,20 @@
                         onclick="window.location.href='/close/<?= $ticket['tic_id'] ?>'">Fermer</button>&ensp;
                     <button class="btn-primary"
                         onclick="window.location.href='/update/<?= $ticket['tic_id'] ?>'">Modifier</button>
+                    <?php if ($ticket['tech_id'] == $_SESSION['id']): ?>
+                        <button class="btn-primary"
+                            onclick="window.location.href='/update_status/<?= $ticket['tic_id'] ?>'">Modifier le status</button>
+                    <?php endif; if (($_SESSION['role'] == 10 ||
+                                $_SESSION['role'] == 50) &&
+                                $ticket['tech_id'] !== $_SESSION['id']): ?>
+                        <button class="btn-tertiary"
+                            onclick="window.location.href='/alocation/<?= $ticket['tic_id'] ?>'">Attribuer</button>
+                    <?php endif; if (($_SESSION['role'] == 10 ||
+                                        $_SESSION['role'] == 50) &&
+                                        $ticket['tech_id'] === $_SESSION['id']): ?>
+                        <button class="btn-tertiary"
+                            onclick="window.location.href='/desalocation/<?= $ticket['tic_id'] ?>'">Désattribuer</button>
+                    <?php endif; ?>
                     <button class="btn-tertiary"
                         onclick="comment_ticket(<?= $ticket['tic_id'] ?>, '<?= $ticket['tic_title'] ?>')">
                         Commenter</button>

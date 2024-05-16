@@ -234,7 +234,9 @@ class TicketController
 
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id']) {
+        if ($ticket['author_id'] !== $_SESSION['id'] && 
+            $ticket['tech_id'] !== $_SESSION['id'] &&
+            ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50 || $ticket['tech_id'] !== NULL)) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         }
@@ -267,6 +269,9 @@ class TicketController
 
         $users = new User();
         $users = $users->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['author_id']])[0];
+
+        $tech = new User();
+        $tech = $tech->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['tech_id']])[0];
 
         require 'views/ticket.php';
     }
@@ -319,7 +324,7 @@ class TicketController
             ]);
         }
 
-        header('Location: /techniciens-dashboard');
+        header('Location: /ticket/' . $id);
     }
 
     /** Fonction permettant d'afficher la confirmation d'attribution d'un ticket
@@ -366,7 +371,7 @@ class TicketController
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
             }
         }
-        header('Location: /techniciens-dashboard');
+        header('Location: /ticket/' . $id);
 
     }
 
