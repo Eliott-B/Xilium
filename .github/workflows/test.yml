@@ -25,7 +25,7 @@ jobs:
       run: docker compose up -d
 
     - name: Load environment variables
-      run: sleep 5 && docker exec xilium-app-1 bash -c "cd /var/www/html && python3 config/config.py"
+      run: sleep 5 && docker exec xilium-app-1 bash -c "cd /var/www/html && python3 config/config.py" && sleep 2
 
     - name: Run test
       run: docker exec xilium-app-1 bash -c "cd /var/www/html/tests && ./run_test.sh"
