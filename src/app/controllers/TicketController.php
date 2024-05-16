@@ -317,9 +317,13 @@ class TicketController
         $users = new User();
         $users = $users->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['author_id']])[0];
 
-        $tech = new User();
-        $tech = $tech->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['tech_id']])[0];
-
+        if ($ticket['tech_id'] != null) {
+            $tech = new User();
+            $tech = $tech->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['tech_id']])[0];    
+        } else {
+            $tech = null;
+        }
+        
         require 'views/ticket.php';
     }
 

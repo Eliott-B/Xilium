@@ -58,7 +58,9 @@
                     <?= $ticket['tic_description'] ?>
                 </p>
                 <p>
-                    <b>Technicien en charge :</b> <?= $tech['use_firstname'] . ' ' . $tech['use_name'] ?>
+                    <? if ($ticket['tech_id'] !== NULL): ?>
+                        <b>Technicien en charge :</b> <?= $tech['use_firstname'] . ' ' . $tech['use_name'] ?>
+                    <? endif; ?>
                 </p>
             </div>
             <br />
