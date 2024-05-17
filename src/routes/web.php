@@ -4,6 +4,8 @@ if (isset($router)){
 
     $router->get('/dashboard', 'DashboardController#index')->auth();
 
+    $router->get('/techniciens-dashboard', 'TechnicienDashboardController#index')->auth();
+
     $router->get('/login', 'UserController#login_form');
     $router->post('/login', 'UserController#login');
 
@@ -21,6 +23,15 @@ if (isset($router)){
     $router->get('/update/{id}', 'TicketController#update_form')->auth();
     $router->post('/update/{id}', 'TicketController#update')->auth();
 
+    $router->get('/update-status/{id}', 'TicketController#update_status_form')->auth();
+    $router->post('/update-status/{id}', 'TicketController#update_status')->auth();
+
+    $router->get('/assignation/{id}', 'TicketController#assignation_form')->auth();
+    $router->post('/assignation/{id}', 'TicketController#assignation')->auth();
+
+    $router->get('/desassignation/{id}', 'TicketController#desassignation_form')->auth();
+    $router->post('/desassignation/{id}', 'TicketController#desassignation')->auth();
+
     $router->get('/close/{id}', 'TicketController#close_form')->auth();
     $router->post('/close/{id}', 'TicketController#close')->auth();
 
@@ -33,6 +44,10 @@ if (isset($router)){
     // PAGES STATIQUES
     $router->get('/about', function () {
         require "views/about.php";
+    });
+
+    $router->get('/contact', function () {
+        require "views/contact.php";
     });
 
     $router->get('/faq', function () {

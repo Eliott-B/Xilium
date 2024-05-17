@@ -13,12 +13,12 @@ if not dirExists:
 #########################################
 with open(DATABASE_ENV_PATH, 'w') as f:
     database = input("Database: ")
-    f.write("MYSQL_DATABASE=" + database + "\r\n")
+    f.write("MYSQL_DATABASE=" + database + "\n")
     user = input("Database user: ")
-    f.write("MYSQL_USER=" + user + "\r\n")
+    f.write("MYSQL_USER=" + user + "\n")
     password = input("Database password: ")
-    f.write("MYSQL_PASSWORD=" + password + "\r\n")
+    f.write("MYSQL_PASSWORD=" + password + "\n")
     passwordroot = input("Database root password: ")
-    f.write("MYSQL_ROOT_PASSWORD=" + passwordroot + "\r\n")
+    f.write("MYSQL_ROOT_PASSWORD=" + passwordroot + "\n")
     f.close()
     
