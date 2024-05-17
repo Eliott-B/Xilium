@@ -381,7 +381,7 @@ class TicketController
     /** Fonction permettant d'afficher la confirmation d'attribution d'un ticket
      *  @param int $id id du ticket à fermer
      */
-    public function alocation_form($id)
+    public function assignation_form($id)
     {
         if (!isset ($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'êtes pas connecté";
@@ -397,14 +397,14 @@ class TicketController
             $_SESSION['error'] = "vous n'êtes pas un technicien";
             header('Location: /dashboard');
         } else {
-            require 'views/alocation.php';
+            require 'views/assignation.php';
         }
     }
 
     /** Fonction permettant de s'attribuer un ticket
      *  @param int $id id du ticket à fermer
      */
-    public function alocation($id)
+    public function assignation($id)
     {
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
@@ -429,7 +429,7 @@ class TicketController
     /** Fonction permettant d'afficher la confirmation de désattribution d'un ticket
      *  @param int $id id du ticket à fermer
      */
-    public function desalocation_form($id)
+    public function desassignation_form($id)
     {
         if (!isset ($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'êtes pas connecté";
@@ -445,14 +445,14 @@ class TicketController
             $_SESSION['error'] = "vous n'êtes pas un technicien";
             header('Location: /dashboard');
         } else {
-            require 'views/desalocation.php';
+            require 'views/desassignation.php';
         }
     }
 
     /** Fonction permettant de se désattribuer un ticket
      *  @param int $id id du ticket à fermer
      */
-    public function desalocation($id)
+    public function desassignation($id)
     {
         $ticket = new Ticket();
         $ticket = $ticket->find($id);

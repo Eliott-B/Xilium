@@ -26,11 +26,11 @@ if (isset($router)){
     $router->get('/update-status/{id}', 'TicketController#update_status_form')->auth();
     $router->post('/update-status/{id}', 'TicketController#update_status')->auth();
 
-    $router->get('/alocation/{id}', 'TicketController#alocation_form')->auth();
-    $router->post('/alocation/{id}', 'TicketController#alocation')->auth();
+    $router->get('/assignation/{id}', 'TicketController#assignation_form')->auth();
+    $router->post('/assignation/{id}', 'TicketController#assignation')->auth();
 
-    $router->get('/desalocation/{id}', 'TicketController#desalocation_form')->auth();
-    $router->post('/desalocation/{id}', 'TicketController#desalocation')->auth();
+    $router->get('/desassignation/{id}', 'TicketController#desassignation_form')->auth();
+    $router->post('/desassignation/{id}', 'TicketController#desassignation')->auth();
 
     $router->get('/close/{id}', 'TicketController#close_form')->auth();
     $router->post('/close/{id}', 'TicketController#close')->auth();

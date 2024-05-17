@@ -77,12 +77,12 @@
                                 $_SESSION['role'] == 50) &&
                                 $ticket['tech_id'] !== $_SESSION['id']): ?>
                         <button class="btn-tertiary"
-                            onclick="window.location.href='/alocation/<?= $ticket['tic_id'] ?>'">Attribuer</button>
+                            onclick="window.location.href='/assignation/<?= $ticket['tic_id'] ?>'">Attribuer</button>
                     <?php endif; if (($_SESSION['role'] == 10 ||
                                         $_SESSION['role'] == 50) &&
                                         $ticket['tech_id'] === $_SESSION['id']): ?>
                         <button class="btn-tertiary"
-                            onclick="window.location.href='/desalocation/<?= $ticket['tic_id'] ?>'">Désattribuer</button>
+                            onclick="window.location.href='/desassignation/<?= $ticket['tic_id'] ?>'">Désattribuer</button>
                     <?php endif; ?>
                     <button class="btn-tertiary"
                         onclick="comment_ticket(<?= $ticket['tic_id'] ?>, '<?= $ticket['tic_title'] ?>')">
