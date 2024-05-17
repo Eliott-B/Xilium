@@ -124,7 +124,11 @@ abstract class Model
             if (in_array($k, $this->fillable)){
                 // Si le champ est dans fillable c'est qu'on a le droit de le mettre à
                 // jour donc on l'ajoute dans values
-                $values = array_merge($values, [$k => htmlspecialchars(trim($v))]);
+                if ($v != NULL) {
+                    $values = array_merge($values, [$k => htmlspecialchars(trim($v))]);
+                } else {
+                    $values = array_merge($values, [$k => NULL]);
+                }
             }
         }
 

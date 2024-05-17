@@ -66,7 +66,8 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id']) {
+        if ($ticket['author_id'] !== $_SESSION['id'] &&
+            $_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         } else {
@@ -77,7 +78,12 @@ class TicketController
             $priority = new Priority();
             $priorities = $priority->all();
 
-            require 'views/update.php';
+            if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50) {
+                require 'views/update_technicien.php';
+            }
+            else {
+                require 'views/update.php';
+            }
         }
     }
 
@@ -98,6 +104,11 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($ticket['author_id'] !== $_SESSION['id']) {
+            if ($_SESSION['role'] === 10 || $_SESSION['role'] === 50) {
+                $this->update_technicien($id);
+                exit();
+            }
+
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         }
@@ -119,6 +130,42 @@ class TicketController
         header('Location: ' . $_SESSION['previous_url']);
     }
 
+    /** Fonction pour modifier un ticket (technicien)
+     * @param int $id id du ticket à modifier
+     */
+    public function update_technicien($id)
+    {
+
+        if(!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'etes pas technicien";
+            header('Location: /');
+        }
+
+        if ($ticket['label_id'] !== $_POST['problem'] || $ticket['priority_id'] !== $_POST['priority'] || $ticket['category_id'] !== $_POST['category']) {
+            $ticket = new Ticket();
+            $ticket->find($id);
+            $ticket->update([
+                'label_id' => $_POST['problem'],
+                'priority_id' => $_POST['priority'],
+                'category_id' => $_POST['category'],
+                'updater_id' => $_SESSION['id'],
+                'update_date' => date('Y-m-d H:i:s')
+            ]);
+        }
+
+        header('Location: /ticket/' . $id);
+    }
+
     /** Fonction permettant d'afficher la confirmation de fermeture d'un ticket
      *  @param int $id id du ticket à fermer
      */
@@ -135,10 +182,10 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        // TODO: Les techniciens peuvent aussi fermer les tickets
-
-        if ($ticket['author_id'] !== $_SESSION['id']) {
-            $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
+        if ($ticket['author_id'] !== $_SESSION['id'] &&
+            $_SESSION['role'] !== 10 &&
+            $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             header('Location: /dashboard');
         } else {
             require 'views/close.php';
@@ -155,7 +202,9 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($ticket['author_id'] == $_SESSION['id']) { // TODO: Les techniciens peuvent aussi fermer les tickets
+            if ($ticket['author_id'] == $_SESSION['id'] ||
+                $_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50) {
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $status = new Status();
@@ -166,8 +215,7 @@ class TicketController
                     'update_date' => date('Y-m-d H:i:s')
                 ]);
             } else {
-                $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
-
+                $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             }
         }
 
@@ -187,18 +235,22 @@ class TicketController
             header('Location: /login');
         }
 
-        // TODO: vérifier si l'utilisateur a le droit de commenter le ticket (auteur du ticket ou technicien)
-
-        $comment = new Comment();
-        $comment->create([
-            'com_title' => $_POST['title'],
-            'com_comment' => $_POST['comment'],
-            'com_date' => date('Y-m-d H:i:s'),
-            'ticket_id' => $id,
-            'user_id' => $_SESSION['id'],
-            // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
-            
-        ]);
+        if ($ticket['author_id'] == $_SESSION['id'] ||
+            $_SESSION['role'] == 10 ||
+            $_SESSION['role'] == 50) {    
+            $comment = new Comment();
+            $comment->create([
+                'com_title' => $_POST['title'],
+                'com_comment' => $_POST['comment'],
+                'com_date' => date('Y-m-d H:i:s'),
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
+                
+            ]);
+        } else {
+            $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
+        }
 
         $previous_url = $_SERVER['HTTP_REFERER'];
         header('Location: ' . $previous_url);
@@ -229,7 +281,9 @@ class TicketController
 
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id']) {
+        if ($ticket['author_id'] !== $_SESSION['id'] && 
+            $ticket['tech_id'] !== $_SESSION['id'] &&
+            ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50 || $ticket['tech_id'] !== NULL)) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         }
@@ -263,6 +317,160 @@ class TicketController
         $users = new User();
         $users = $users->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['author_id']])[0];
 
+        if ($ticket['tech_id'] != null) {
+            $tech = new User();
+            $tech = $tech->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['tech_id']])[0];    
+        } else {
+            $tech = null;
+        }
+        
         require 'views/ticket.php';
+    }
+
+    /** Fonction pour afficher le formulaire de modification du status d'un ticket
+     * @param int $id id du ticket à modifier
+     */
+    public function update_status_form($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($ticket['tech_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'êtes pas technicien";
+            header('Location: /dashboard');
+        } else {
+            $status = new Status();
+            $statuses = $status->all();
+
+            require 'views/update_status.php';
+        }
+    }
+
+    /** Fonction pour modifier le status d'un ticket
+     * @param int $id id du ticket à modifier
+     */
+    public function update_status($id)
+    {
+        if(!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+
+        $ticket = (array) $ticket;
+
+        if ($ticket['tech_id'] !== $_SESSION['id']) {
+            $_SESSION['error'] = "vous n'êtes pas technicien";
+            header('Location: /dashboard');
+        }
+
+        if ($ticket['status_id'] !== $_POST['status']) {
+            $ticket = new Ticket();
+            $ticket->find($id);
+            $ticket->update([
+                'status_id' => $_POST['status']
+            ]);
+        }
+
+        header('Location: /ticket/' . $id);
+    }
+
+    /** Fonction permettant d'afficher la confirmation d'attribution d'un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function assignation_form($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'êtes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10 &&
+            $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes pas un technicien";
+            header('Location: /dashboard');
+        } else {
+            require 'views/assignation.php';
+        }
+    }
+
+    /** Fonction permettant de s'attribuer un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function assignation($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_POST['response'] === 'yes') {
+            if ($_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50) {
+                $ticket = new Ticket();
+                $ticket->find($id);
+                $ticket->update([
+                    'tech_id' => $_SESSION['id']
+                ]);
+            } else {
+                $_SESSION['error'] = "vous n'êtes pas un technicien";
+            }
+        }
+        header('Location: /ticket/' . $id);
+
+    }
+
+    /** Fonction permettant d'afficher la confirmation de désattribution d'un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function desassignation_form($id)
+    {
+        if (!isset ($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'êtes pas connecté";
+            header('Location: /login');
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_SESSION['role'] !== 10 &&
+            $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes pas un technicien";
+            header('Location: /dashboard');
+        } else {
+            require 'views/desassignation.php';
+        }
+    }
+
+    /** Fonction permettant de se désattribuer un ticket
+     *  @param int $id id du ticket à fermer
+     */
+    public function desassignation($id)
+    {
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
+        if ($_POST['response'] === 'yes') {
+            if ($_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50) {
+                $ticket = new Ticket();
+                $ticket->find($id);
+                $ticket->update([
+                    'tech_id' => NULL
+                ]);
+            } else {
+                $_SESSION['error'] = "vous n'êtes pas un technicien";
+            }
+        }
+        header('Location: /techniciens-dashboard');
+
     }
 }

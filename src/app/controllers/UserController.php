@@ -36,10 +36,14 @@ class UserController
 
         if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
-
+            $_SESSION['role'] = $user[0]['role_id'];
 
             if (isset($_SESSION['id'])) {
-                header('Location: /dashboard');
+                if ($_SESSION['role'] == 1) {
+                    header('Location: /dashboard');
+                } else {
+                    header('Location: /techniciens-dashboard');
+                }
             } else {
                 $_SESSION['error'] = "Erreur lors de la connexion";
                 header('Location: /login');
