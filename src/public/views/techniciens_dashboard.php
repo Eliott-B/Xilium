@@ -118,7 +118,7 @@
                         onclick="window.location.href='/update/<?= $v_ticket[1]['tic_id'] ?>'">Modifier</button>
                     <?php if ($v_ticket[1]['tech_id'] == $_SESSION['id']): ?>
                         <button class="btn-primary"
-                            onclick="window.location.href='/update_status/<?= $v_ticket[1]['tic_id'] ?>'">Modifier le status</button>
+                            onclick="window.location.href='/update-status/<?= $v_ticket[1]['tic_id'] ?>'">Modifier le status</button>
                     <?php endif; if (($_SESSION['role'] == 10 ||
                                 $_SESSION['role'] == 50) &&
                                 $v_ticket[1]['tech_id'] !== $_SESSION['id']): ?>
