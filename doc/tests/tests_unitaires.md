@@ -146,8 +146,39 @@
 
 ---
 
-TICKET HERE
+| PARTITION D'ÉQUIVALENCE | ENTRÉES            |                    |                 |                 |                 |                 |                 |                 |             |               |              | RÉSULTAT ATTENDU |
+|-------------------------|--------------------|--------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-------------|---------------|--------------|------------------|
+| Classe                  | tic_title          | tic_description    | author_id       | label_id        | category_id     | priority_id     | status_id       | updater_id      | tech_id     | creation_date | update_date  | RÉSULTAT ATTENDU |
+| ----------              | TYPE               | ----------         | ----------      | ----------      | ----------      | ----------      | ----------      | ----------      | ----------  | ----------    | ----------   | ----------       |
+| Ticket                  | string             | string             | int             | int             | int             | int             | int             | int             | int ou null | date ou null  | date ou null | créé             |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | not date     | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | not date      | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | not int     | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | not int ou null | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | not int ou null | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | peu importe     | not int ou null | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | peu importe     | not int ou null | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | peu importe     | not int ou null | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | peu importe        | not int ou null | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | peu importe        | not string ou null | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
+| Ticket                  | not string ou null | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
 
+| PARTITION D'ÉQUIVALENCE | ENTRÉES       |                 |               |               |               |               |               |               |             |                            |                            | RÉSULTAT ATTENDU |
+|-------------------------|---------------|-----------------|---------------|---------------|---------------|---------------|---------------|---------------|-------------|----------------------------|----------------------------|------------------|
+| Classe                  | tic_title     | tic_description | author_id     | label_id      | category_id   | priority_id   | status_id     | updater_id    | tech_id     | creation_date              | update_date                | RÉSULTAT ATTENDU |
+| ----------              | TYPE          | ----------      | ----------    | ----------    | ----------    | ----------    | ----------    | ----------    | ----------  | ----------                 | ----------                 | ----------       |
+| Ticket                  | 'titre'       | 'description'   | '2'           | '1'           | '3'           | '6'           | '1'           | '9'           | '2' ou null | '2024-08-15-14-52' ou null | '2024-08-15-14-52' ou null | créé             |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe | peu importe                | 646                        | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe | 22                         | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | 'qfd'       | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | 'qdc' ou null | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | peu importe   | peu importe   | 'qds' ou null | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | peu importe   | 'qds' ou null | peu importe   | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | peu importe   | 'qdf' ou null | peu importe   | peu importe   | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | peu importe   | 'eds' ou null | peu importe   | peu importe   | peu importe   | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | peu importe     | 'qsd' ou null | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | peu importe   | 'qds' ou null   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
+| Ticket                  | 'rgq' ou null | peu importe     | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe   | peu importe | peu importe                | peu importe                | pas créé         |
 
 ---
 
@@ -172,7 +203,6 @@ TICKET HERE
 | Users           | peu importe  | peu importe     | 844 ou null | peu importe   | peu importe  | pas créé         |
 | Users           | peu importe  | 541 ou null     | peu importe | peu importe   | peu importe  | pas créé         |
 | Users           | 451 ou null  | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
-
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
 
