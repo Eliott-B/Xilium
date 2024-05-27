@@ -26,7 +26,10 @@ Le dernier fichier décrit les tests unitaires permettant de tester directement
 chaque fonctionnalité comme défini dans la conception détaillée et on vérifie
 qu'aucun bug ne soit présent.
 
+## Procédures
 
+&emsp;Les tests sont d'abord conçu dans ces dossiers, puis sont codés ou réalisés.  
+&emsp;Chaque test doit passer avant de publier les mises à jour sur la branche de production (`main`).  
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
 </div>

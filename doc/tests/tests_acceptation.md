@@ -62,18 +62,20 @@ est bien le résultat obtenu.
 | 10     | un commentaire est ajouté                   | OK              |
 | 11     | le ticket est attribué                      | OK              |
 | 12     | l'état du ticket a changé                   | OK              |
-| 13     | un libellé est ajouté                       | OK              |
-| 14     | un libellé est modifié                      | OK              |
-| 15     | un libellé est supprimé                     | OK              |
+| 13     | un libellé est ajouté                       | KO              |
+| 14     | un libellé est modifié                      | KO              |
+| 15     | un libellé est supprimé                     | KO              |
 | 16     | le statut du ticket a changé                | OK              |
 | 17     | le niveau d'urgence du ticket a changé      | OK              |
-| 18     | un niveau d'urgence est ajouté              | OK              |
-| 19     | un niveau d'urgence est supprimé            | OK              |
-| 20     | un ticket est attribué par l'administrateur | OK              |
-| 21     | un technicien est créé                      | OK              |
-| 22     | un technicien est supprimé                  | OK              |
-| 23     | Accéder aux journaux d'activités            | OK              |
-| 24     | Accéder aux statistiques de l'application   | OK              |
+| 18     | un niveau d'urgence est ajouté              | KO              |
+| 19     | un niveau d'urgence est supprimé            | KO              |
+| 20     | un ticket est attribué par l'administrateur | KO              |
+| 21     | un technicien est créé                      | KO              |
+| 22     | un technicien est supprimé                  | KO              |
+| 23     | Accéder aux journaux d'activités            | KO              |
+| 24     | Accéder aux statistiques de l'application   | KO              |
+
+*&emsp;Les tests en KO sont des cas d'utilisation qui ne sont pas encore implémenté dans l'application.*
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
 </div>
