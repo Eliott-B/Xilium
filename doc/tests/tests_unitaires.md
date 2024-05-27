@@ -8,50 +8,72 @@
 
 - [TESTS UNITAIRES](#tests-unitaires)
     - [Sommaire](#sommaire)
-        - [Test de création](#test-de-création)
-            - [Catégorie](#catégorie)
-            - [Comment](#comment)
-            - [Label](#label)
-            - [Log](#log)
-            - [Priority](#priority)
-            - [Role](#role)
-            - [Statut](#statut)
-            - [Ticket](#ticket)
-            - [Utilisateur](#utilisateur)
-        - [Test de mise à jour](#test-de-mise-à-jour)
-            - [Catégorie](#catégorie-1)
-            - [Comment](#comment-1)
-            - [Label](#label-1)
-            - [Log](#log-1)
-            - [Priority](#priority-1)
-            - [Role](#role-1)
-            - [Statut](#statut-1)
-            - [Ticket](#ticket-1)
-            - [Utilisateur](#utilisateur-1)
-        - [Test de lecture](#test-de-lecture)
-            - [Catégorie](#catégorie-2)
-            - [Comment](#comment-2)
-            - [Label](#label-2)
-            - [Log](#log-2)
-            - [Priority](#priority-2)
-            - [Role](#role-2)
-            - [Statut](#statut-2)
-            - [Ticket](#ticket-2)
-            - [Utilisateur](#utilisateur-2)
-        - [Test de suppression](#test-de-suppression)
-            - [Catégorie](#catégorie-3)
-            - [Comment](#comment-3)
-            - [Label](#label-3)
-            - [Log](#log-3)
-            - [Priority](#priority-3)
-            - [Role](#role-3)
-            - [Statut](#statut-3)
-            - [Ticket](#ticket-3)
-            - [Utilisateur](#utilisateur-3)
+    - [Procédures](#procédures)
+    - [Test de création](#test-de-création)
+        - [Catégorie](#catégorie)
+        - [Comment](#comment)
+        - [Label](#label)
+        - [Log](#log)
+        - [Priority](#priority)
+        - [Role](#role)
+        - [Statut](#statut)
+        - [Ticket](#ticket)
+        - [Utilisateur](#utilisateur)
+    - [Test de mise à jour](#test-de-mise-à-jour)
+        - [Catégorie](#catégorie-1)
+        - [Comment](#comment-1)
+        - [Label](#label-1)
+        - [Log](#log-1)
+        - [Priority](#priority-1)
+        - [Role](#role-1)
+        - [Statut](#statut-1)
+        - [Ticket](#ticket-1)
+        - [Utilisateur](#utilisateur-1)
+    - [Test de lecture](#test-de-lecture)
+        - [Catégorie](#catégorie-2)
+        - [Comment](#comment-2)
+        - [Label](#label-2)
+        - [Log](#log-2)
+        - [Priority](#priority-2)
+        - [Role](#role-2)
+        - [Statut](#statut-2)
+        - [Ticket](#ticket-2)
+        - [Utilisateur](#utilisateur-2)
+    - [Test de suppression](#test-de-suppression)
+        - [Catégorie](#catégorie-3)
+        - [Comment](#comment-3)
+        - [Label](#label-3)
+        - [Log](#log-3)
+        - [Priority](#priority-3)
+        - [Role](#role-3)
+        - [Statut](#statut-3)
+        - [Ticket](#ticket-3)
+        - [Utilisateur](#utilisateur-3)
 
-### Test de création
+## Procédures
 
-#### Catégorie
+&emsp;Les tests unitaires suivent la procédure générale décrite dans le fichier précédent.  
+&emsp;Les tests doivent être exécutés grâce au Docker afin d'avoir accès à la base de donnée.
+Pour cela, il faut lancer le conteneur avec la commande suivante :
+
+```bash
+./run.sh
+```
+
+&emsp;Ensuite, nous devons exécuter la commande suivante pour que les tests unitaires se lancent sur le Docker :
+
+```bash
+docker exec xilium-app-1 bash -c "cd /var/www/html/tests && ./run_test.sh"
+```
+
+&emsp;Les résultats apparaitront en sorti.  
+
+&emsp;Les tests unitaires sont automatiquement exécutés à chaque demande de merge sur les branches `dev`et `main`.
+Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu'à correction de celui-ci.
+
+## Test de création
+
+### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|----------------|------------------|
@@ -71,7 +93,7 @@
 
 --- 
 
-#### Comment
+### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                |                  |                 |                 |             | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|----------------|------------------|-----------------|-----------------|-------------|------------------|
@@ -99,7 +121,7 @@
 
 ---
 
-#### Label
+### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|----------------|------------------|
@@ -119,7 +141,7 @@
 
 ---
 
-#### Log
+### Log
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES          |                    |                    |                 |                 | RÉSULTAT ATTENDU |    
 |-------------------------|------------------|--------------------|--------------------|-----------------|-----------------|------------------|
@@ -145,7 +167,7 @@
 
 ---
 
-#### Priority
+### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                 |                | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|-----------------|----------------|------------------|
@@ -167,7 +189,7 @@
 
 ---
 
-#### Role
+### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|------------------|
@@ -185,7 +207,7 @@
 
 ---
 
-#### Statut
+### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|----------------|------------------|
@@ -205,7 +227,7 @@
 
 ---
 
-#### Ticket
+### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                    |                 |                 |                 |                 |                 |                 |             |               |              | RÉSULTAT ATTENDU |
 |-------------------------|--------------------|--------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-------------|---------------|--------------|------------------|
@@ -243,7 +265,7 @@
 
 ---
 
-#### Utilisateur
+### Utilisateur
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                    |                    |                    |                 | RÉSULTAT ATTENDU |    
 |-------------------------|--------------------|--------------------|--------------------|--------------------|-----------------|------------------|
@@ -269,9 +291,9 @@
 
 ----------
 
-### Test de mise à jour
+## Test de mise à jour
 
-#### Catégorie
+### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|----------------|------------------|
@@ -295,7 +317,7 @@
 
 --- 
 
-#### Comment
+### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                |                  |                 |                 |             | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|----------------|------------------|-----------------|-----------------|-------------|------------------|
@@ -327,7 +349,7 @@
 
 ---
 
-#### Label
+### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|----------------|------------------|
@@ -351,7 +373,7 @@
 
 ---
 
-#### Log
+### Log
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                  |                    |                    |                 |                 | RÉSULTAT ATTENDU |    
 |-------------------------|-----------------|------------------|--------------------|--------------------|-----------------|-----------------|------------------|
@@ -381,7 +403,7 @@
 
 ---
 
-#### Priority
+### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                 |                | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|-----------------|----------------|------------------|
@@ -407,7 +429,7 @@
 
 ---
 
-#### Role
+### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|------------------|
@@ -429,7 +451,7 @@
 
 ---
 
-#### Statut
+### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|----------------|------------------|
@@ -453,7 +475,7 @@
 
 ---
 
-#### Ticket
+### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                    |                 |                 |                 |                 |                 |                 |             |               |              | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|--------------------|--------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-------------|---------------|--------------|------------------|
@@ -494,7 +516,7 @@
 
 ---
 
-#### Utilisateur
+### Utilisateur
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                    |                    |                    |                 | RÉSULTAT ATTENDU |    
 |-------------------------|-----------------|--------------------|--------------------|--------------------|--------------------|-----------------|------------------|
@@ -522,9 +544,9 @@
 | Users           | 1             | peu importe  | 541 ou null     | peu importe | peu importe   | peu importe  | pas modifié      |
 | Users           | 1             | 451 ou null  | peu importe     | peu importe | peu importe   | peu importe  | pas modifié      |
 
-### Test de lecture
+## Test de lecture
 
-#### Catégorie
+### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -544,7 +566,7 @@
 
 --- 
 
-#### Comment
+### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -564,7 +586,7 @@
 
 ---
 
-#### Label
+### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -584,7 +606,7 @@
 
 ---
 
-#### Log
+### Log
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |    
 |-------------------------|-----------------|------------------|
@@ -604,7 +626,7 @@
 
 ---
 
-#### Priority
+### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -624,7 +646,7 @@
 
 ---
 
-#### Role
+### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -644,7 +666,7 @@
 
 ---
 
-#### Statut
+### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -664,7 +686,7 @@
 
 ---
 
-#### Ticket
+### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -684,7 +706,7 @@
 
 ---
 
-#### Utilisateur
+### Utilisateur
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -702,9 +724,9 @@
 | Users           | n'existe pas  | pas afficher     |
 | Users           | 'ada' ou null | pas afficher     |
 
-### Test de suppression
+## Test de suppression
 
-#### Catégorie
+### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -724,7 +746,7 @@
 
 --- 
 
-#### Comment
+### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -744,7 +766,7 @@
 
 ---
 
-#### Label
+### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -764,7 +786,7 @@
 
 ---
 
-#### Log
+### Log
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |    
 |-------------------------|-----------------|------------------|
@@ -784,7 +806,7 @@
 
 ---
 
-#### Priority
+### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -804,7 +826,7 @@
 
 ---
 
-#### Role
+### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -824,7 +846,7 @@
 
 ---
 
-#### Statut
+### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -844,7 +866,7 @@
 
 ---
 
-#### Ticket
+### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
@@ -864,7 +886,7 @@
 
 ---
 
-#### Utilisateur
+### Utilisateur
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
 |-------------------------|-----------------|------------------|
