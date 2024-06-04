@@ -34,7 +34,7 @@ class UserController
             'SELECT * FROM users WHERE use_username=:username',
             ['username' => $_POST['username']]);
 
-        if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
+        if (sizeof($user) > 0 && $user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
             $_SESSION['role'] = $user[0]['role_id'];
 
