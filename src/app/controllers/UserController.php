@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\Hash;
 use app\models\Role;
 use app\models\User;
+use app\models\Log;
 
 /**
  * Module du controleur des utilisateurs
@@ -50,6 +51,18 @@ class UserController
             }
 
         } else {
+            if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                $ip = $_SERVER['HTTP_CLIENT_IP'];
+            } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            $logs = new Log();
+            $logs = $logs->create([
+                'log_ip' => "$ip",
+                'log_content' => "Tentative de connexion avec le nom d'utilisateur " . $_POST['username']
+            ]);
             $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
             header('Location: /login');
         }

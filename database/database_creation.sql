@@ -74,11 +74,11 @@ CREATE TABLE tickets
 CREATE TABLE logs
 (
     log_id      INT PRIMARY KEY AUTO_INCREMENT,
-    log_date    TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     log_ip      VARCHAR(15)  NOT NULL,
     log_content VARCHAR(255) NOT NULL,
-    ticket_id   INT          NOT NULL,
-    user_id     INT          NOT NULL,
+    ticket_id   INT,
+    user_id     INT,
+    log_date    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id),
     FOREIGN KEY (user_id) REFERENCES users (use_id)
 );
