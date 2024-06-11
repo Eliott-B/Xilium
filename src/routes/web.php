@@ -39,6 +39,7 @@ if (isset($router)){
 
     $router->get('/ticket/{id}', 'TicketController#show')->auth();
 
+    $router->get('/system-dashboard', 'SystemDashboardController#index')->auth();
 
 
     // PAGES STATIQUES

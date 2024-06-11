@@ -51,6 +51,13 @@
                     </li> -->
                     </a>
                 <?php endif ?>
+                <?php if (isset ($_SESSION['id']) && $_SESSION['role'] == 100): ?>
+                    <li>
+                        <a href="/system-dashboard">
+                            <h1>Administrateur système</h1>
+                        </a>
+                    </li>
+                <?php endif ?>
             </ul>
         </div>
         <div class="icons">
