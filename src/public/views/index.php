@@ -26,9 +26,9 @@
                 In quam suscipit culpa quos. Ad, corporis quibusdam in culpa aperiam dolore consectetur vel odit
                 accusamus ea natus quis dolorum fugiat amet. Blanditiis inventore delectus aliquid a repellat enim quia.
             </p>
-            <?php if (isset($_SESSION['id'])): ?>
+            <?php if (isset($_SESSION['id']) && $_SESSION['role'] != 100): ?>
                 <button class="btn-primary" onclick="window.location.href='./dashboard'">Mes tickets</button>
-            <?php else: ?>
+            <?php elseif ($_SESSION['role'] != 100): ?>
                 <button class="btn-primary" onclick="window.location.href='./login'">Se connecter</button>
                 <p class="register">Vous n'avez pas de compte ? <a href="./register">Inscrivez-vous</a></p>
             <?php endif ?>
@@ -42,6 +42,7 @@
         </path>
     </svg>
 
+    <?php if ($_SESSION['role'] != 100): ?>
     <section class="table-tickets">
         <h2>Tickets en cours dans Xilium</h2>
         <table>
@@ -61,6 +62,7 @@
             <?php endforeach ?>
         </table>
     </section>
+    <?php endif ?>
 </main>
 
 

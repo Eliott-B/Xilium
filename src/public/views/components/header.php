@@ -28,7 +28,7 @@
                     </a>
                 </li>
 
-                <?php if (isset ($_SESSION['id'])): ?>
+                <?php if (isset ($_SESSION['id']) && $_SESSION['role'] != 100): ?>
 
                     <li>
                         <a href="/dashboard">
