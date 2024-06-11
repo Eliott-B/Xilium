@@ -26,6 +26,17 @@ class TechnicienDashboardController
             exit();
         }
 
+        if ($_SESSION['role'] != 10 && $_SESSION['role'] != 50) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /dashboard');
+            exit();
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
 
         $ticket = new Ticket();
         $tickets = $ticket->custom("select * from tickets order by creation_date desc", []);
