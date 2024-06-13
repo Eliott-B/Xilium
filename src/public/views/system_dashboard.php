@@ -13,7 +13,7 @@
                     <option value="file2.xml">File 2</option>
                     <option value="file3.xml">File 3</option>
                 </select>
-                <input type="submit" value="Submit" name="submit">
+                <button type="submit" class="btn-primary">Charger</button>
             </form>
 
             </div>
