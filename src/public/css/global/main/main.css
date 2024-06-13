@@ -95,3 +95,20 @@ html {
   transform: rotate(495deg);
   transition: ease-in-out 0.5s;
 }
+
+.error {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  background-color: rgb(255, 172, 172);
+  border: 1px solid darkred;
+  border-radius: 15px;
+}
+.error p {
+  margin-left: 1rem;
+  color: darkred;
+}
+.error p img {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(67%) saturate(4099%) hue-rotate(354deg) brightness(93%) contrast(120%);
+  margin-bottom: -5px;
+}

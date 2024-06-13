@@ -19,4 +19,16 @@ class Role extends Model
     protected array $fillable = [
         'rol_name'
     ];
+
+    /**
+     * Récupère le role d'un utilisateur
+     * @param int $id
+     * @return int
+     */
+    public static function getRoleIdByUserId(int $id): int
+    {
+        $role = new Role();
+        $role=$role->custom("SELECT * FROM roles WHERE rol_id = (SELECT role_id FROM users WHERE use_id = :id)", ['id' => $id]);
+        return intval($role[0]['rol_id']);
+    }
 }

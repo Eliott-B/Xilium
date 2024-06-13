@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Role;
 use app\models\Ticket;
 use app\models\Category;
 use app\models\Label;
@@ -235,9 +236,11 @@ class TicketController
             header('Location: /login');
         }
 
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
         if ($ticket['author_id'] == $_SESSION['id'] ||
             $_SESSION['role'] == 10 ||
-            $_SESSION['role'] == 50) {    
+            $_SESSION['role'] == 50) {      
             $comment = new Comment();
             $comment->create([
                 'com_title' => $_POST['title'],
@@ -392,9 +395,11 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 &&
-            $_SESSION['role'] !== 50) {
-            $_SESSION['error'] = "vous n'êtes pas un technicien";
+        $user_role_id = Role::getRoleIdByUserId($_SESSION['id']);
+
+        if ($user_role_id !== 10 &&
+            $user_role_id !== 50) {
+            $user_role_id = "vous n'êtes pas un technicien";
             header('Location: /dashboard');
         } else {
             require 'views/assignation.php';

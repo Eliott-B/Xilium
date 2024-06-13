@@ -4,12 +4,13 @@
 <main>
 
 <link rel="stylesheet" href="../css/ticket.css">
+
 <span class="back">
-        <? if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
+        <?php if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
             <a href="/techniciens-dashboard"><i class="arrow left"></i>Retour</a>
-        <? else: ?>
+        <?php else: ?>
             <a href="/dashboard"><i class="arrow left"></i>Retour</a>
-        <? endif; ?>
+        <?php endif ?>
     </span>
     <dialog id='comment-dialog'>
         <form action="" method="post">
