@@ -292,3 +292,5 @@ $RECYCLE.BIN/
 src/tests/vendor
 database/data
 .env
+src/data/*
+!src/data/log_template.xml

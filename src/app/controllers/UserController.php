@@ -59,9 +59,9 @@ class UserController
                 $ip = $_SERVER['REMOTE_ADDR'];
             }
             $logs = new Log();
-            $logs = $logs->create([
+            $logs = $logs->custom("INSERT INTO logs (log_ip, log_content) VALUES (:log_ip,:log_content)", [
                 'log_ip' => "$ip",
-                'log_content' => "Tentative de connexion avec le nom d'utilisateur " . $_POST['username']
+                'log_content' => "Tentative de connexion avec l'username " . $_POST['username'],
             ]);
             $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
             header('Location: /login');
