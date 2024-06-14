@@ -28,7 +28,7 @@
             </p>
             <?php if (isset($_SESSION['id']) && $_SESSION['role'] != 100): ?>
                 <button class="btn-primary" onclick="window.location.href='./dashboard'">Mes tickets</button>
-            <?php elseif ($_SESSION['role'] != 100): ?>
+            <?php elseif (isset($_SESSION['id']) && $_SESSION['role'] != 100): ?>
                 <button class="btn-primary" onclick="window.location.href='./login'">Se connecter</button>
                 <p class="register">Vous n'avez pas de compte ? <a href="./register">Inscrivez-vous</a></p>
             <?php endif ?>
