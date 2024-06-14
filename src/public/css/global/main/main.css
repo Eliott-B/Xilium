@@ -112,3 +112,10 @@ html {
   filter: brightness(0) saturate(100%) invert(12%) sepia(67%) saturate(4099%) hue-rotate(354deg) brightness(93%) contrast(120%);
   margin-bottom: -5px;
 }
+
+.add-ticket {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+}
