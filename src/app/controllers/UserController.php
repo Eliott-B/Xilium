@@ -33,6 +33,12 @@ class UserController
         $user = $user->custom(
             'SELECT * FROM users WHERE use_username=:username',
             ['username' => $_POST['username']]);
+        
+        if (count($user) == 0) {
+            $_SESSION['error'] = "Cet utilisateur n'existe pas.";
+            header('Location: /login');
+            return;
+        }
 
         if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
@@ -41,17 +47,21 @@ class UserController
             if (isset($_SESSION['id'])) {
                 if ($_SESSION['role'] == 1) {
                     header('Location: /dashboard');
+                    return;
                 } else {
                     header('Location: /techniciens-dashboard');
+                    return;
                 }
             } else {
                 $_SESSION['error'] = "Erreur lors de la connexion";
                 header('Location: /login');
+                return;
             }
 
         } else {
-            $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
+            $_SESSION['error'] = "Mot de passe incorrect.";
             header('Location: /login');
+            return;
         }
 
     }
