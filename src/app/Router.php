@@ -37,12 +37,14 @@ class Router
     }
 
     public function manageErrors(){
-        if ($_SESSION['error'] != ""){
-            $_SESSION['pagechangecounter'] ++;
-        }
-        if ($_SESSION['pagechangecounter'] > 1){
-            $_SESSION['error'] = "";
-            $_SESSION['pagechangecounter'] = 0;
+        if(isset($_SESSION['pagechangecounter'])){
+            if ($_SESSION['error'] != ""){
+                $_SESSION['pagechangecounter'] ++;
+            }
+            if ($_SESSION['pagechangecounter'] > 1){
+                $_SESSION['error'] = "";
+                $_SESSION['pagechangecounter'] = 0;
+            }
         }
     }
 
