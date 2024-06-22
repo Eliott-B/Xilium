@@ -1,7 +1,37 @@
 #!/bin/bash
+# Script pour lancer l'application
+# Usage: ./run.sh [-it] [-y] [-n] [-h]
+# -it: pour lancer l'application en mode interactif
+# -y: pour créer les fichiers d'environnement
+# -n: pour ne pas créer les fichiers d'environnement
+# -h: pour afficher l'aide
+# Auteur: Eliott BARKER
+# Application: Xilium
 
-echo "Voulez-vous créer les fichiers d'environnement ? (y/n)"
-read response
+startOption=""
+response=""
+if [ $# -gt 0 ] ; then
+    for arg in $@ ; do
+        if [ $arg = "-it" ] ; then
+            startOption=$arg
+        elif [ $arg = "-h" ] ; then
+            echo "Usage: ./run.sh [-it] [-y/-n]"
+            exit 0
+        elif [ $arg = "y" ]; then
+            response=$arg
+        elif [ $arg = "n" ]; then
+            response=$arg
+        else
+            echo "Usage: ./run.sh [-h]"
+            exit 1
+        fi
+    done
+fi
+
+if [ $response = "" ]; then
+    echo "Voulez-vous créer les fichiers d'environnement ? (y/n)"
+    read response
+fi
 
 if [ $response = "y" ] ; then
     python3 setup_env.py
@@ -19,7 +49,14 @@ if [ ! -d shiny-server/logs ] ; then
     mkdir shiny-server/logs
 fi
 
-docker compose up -d
+if [ $startOption = "-it" ] ; then
+    echo "Ctrl+C pour arrêter"
+    sleep 1
+    docker compose up
+else
+    docker compose up -d
+    echo "'docker compose down' pour arrêter"
+fi
 
 # sleep 5
 
