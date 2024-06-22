@@ -25,7 +25,7 @@
 
 
     <?php $is_0_openeds = sizeof(array_filter($view_tickets, function ($ticket) {
-        return $ticket[1]['status']['sta_name'] !== "Fermé";
+        return $ticket[1]['status']['sta_name'] !== "Fermé" && $ticket[1]['tech_id'] === "";
     })) == 0;
     // True si aucun ticket n'est ouvert    ?>
     <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
@@ -221,39 +221,15 @@
                 }
             });
 
-            if (filter === 'openeds') {
-                <?php if ($is_0_openeds): ?>
-                    document.getElementById('no-openeds-text').style.display = 'block';
-                <?php endif; ?>
-                <?php if ($is_0_closeds): ?>
-                    document.getElementById('no-closeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_alocateds): ?>
-                    document.getElementById('no-alocated-text').style.display = 'none';
-                <?php endif; ?>
-            }
-            if (filter === 'closeds') {
-                <?php if ($is_0_openeds): ?>
-                    document.getElementById('no-openeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_closeds): ?>
-                    document.getElementById('no-closeds-text').style.display = 'block';
-                <?php endif; ?>
-                <?php if ($is_0_alocateds): ?>
-                    document.getElementById('no-alocated-text').style.display = 'none';
-                <?php endif; ?>
-            }
-            if (filter === 'alocated') {
-                <?php if ($is_0_openeds): ?>
-                    document.getElementById('no-openeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_closeds): ?>
-                    document.getElementById('no-closeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_alocateds): ?>
-                    document.getElementById('no-alocated-text').style.display = 'block';
-                <?php endif; ?>
-            }
+            <?php if ($is_0_openeds): ?>
+                document.getElementById('no-openeds-text').style.display = filter === 'openeds' ? 'block' : 'none';
+            <?php endif; ?>
+            <?php if ($is_0_closeds): ?>
+                document.getElementById('no-closeds-text').style.display = filter === 'closeds' ? 'block' : 'none';
+            <?php endif; ?>
+            <?php if ($is_0_alocateds): ?>
+                document.getElementById('no-alocated-text').style.display = filter === 'alocated' ? 'block' : 'none';
+            <?php endif; ?>
         });
     });
 
