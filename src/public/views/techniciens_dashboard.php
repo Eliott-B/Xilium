@@ -25,11 +25,11 @@
 
 
     <?php $is_0_openeds = sizeof(array_filter($view_tickets, function ($ticket) {
-        return $ticket[1]['status']['sta_name'] !== "Fermé" && $ticket[1]['tech_id'] === "";
+        return $ticket[1]['tech_id'] === null;
     })) == 0;
     // True si aucun ticket n'est ouvert    ?>
     <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
-        return $ticket[1]['status']['sta_name'] === "Fermé";
+        return $ticket[1]['status']['sta_name'] === "Fermé" && $ticket[1]['tech_id'] === $_SESSION['id'];
     })) == 0;
     // True si aucun ticket n'est fermé   ?>
     <?php $is_0_alocateds = sizeof(array_filter($view_tickets, function ($ticket) {
@@ -67,7 +67,10 @@
 
     <?php foreach ($view_tickets as $v_ticket): ?>
         <?php
-        if ($v_ticket[1]['status']['sta_name'] === "Fermé") {
+
+        
+
+        if ($v_ticket[1]['status']['sta_name'] === "Fermé" && $v_ticket[1]['tech_id'] === $_SESSION['id']) {
             echo "<div class='ticket' id='closed'>";
         } else {
             if ($v_ticket[1]['tech_id'] == $_SESSION['id']) {
@@ -75,6 +78,9 @@
             }
             else if ($v_ticket[1]['tech_id'] == "") {
                 echo "<div class='ticket' id='opened'>";
+            }
+            else {
+                continue;
             }
         }
         ?>
