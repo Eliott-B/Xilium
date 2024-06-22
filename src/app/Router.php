@@ -34,6 +34,10 @@ class Router
         throw new RouterException('Pas de route correspondante !');
     }
 
+    /**
+     * Gestion des erreurs
+     * @return void
+     */
     public function manageErrors(){
         if (!isset($_SESSION['pagechangecounter'])){
             $_SESSION['pagechangecounter'] = 0;
