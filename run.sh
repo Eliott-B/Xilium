@@ -15,6 +15,10 @@ if [ ! -d database/data ] ; then
     cd ../../
 fi
 
+if [ ! -d shiny-server/logs ] ; then
+    mkdir shiny-server/logs
+fi
+
 docker compose up -d
 
 # sleep 5
