@@ -56,7 +56,7 @@ CREATE TABLE tickets
     author_id       INT         NOT NULL,
     label_id        INT         NOT NULL,
     category_id     INT         NOT NULL,
-    priority_id     INT         NOT NULL,
+    priority_id     INT         ,
     status_id       INT         NOT NULL,
     updater_id      INT         NOT NULL,
     tech_id INT NULL,

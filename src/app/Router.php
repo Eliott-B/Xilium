@@ -28,8 +28,6 @@ class Router
         foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
             if ($route->match($this->url)) {
                 Router::manageErrors();
-
-                
                 return $route->call();
             }
         }
@@ -37,7 +35,10 @@ class Router
     }
 
     public function manageErrors(){
-        if(isset($_SESSION['pagechangecounter'])){
+        if (!isset($_SESSION['pagechangecounter'])){
+            $_SESSION['pagechangecounter'] = 0;
+        }
+        else {
             if ($_SESSION['error'] != ""){
                 $_SESSION['pagechangecounter'] ++;
             }

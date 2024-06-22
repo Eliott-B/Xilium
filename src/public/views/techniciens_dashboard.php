@@ -97,9 +97,11 @@
                 <span class="ticket-problem" style="background-color: <?= $v_ticket[1]['label']['lab_css_color'] ?>">
                     <?= $v_ticket[1]['label']['lab_name'] ?>
                 </span>
-                <span class="ticket-priority" style="background-color: <?= $v_ticket[1]['priority']['pri_css_color'] ?>">
-                    <?= $v_ticket[1]['priority']['pri_name'] ?>
-                </span>
+                <? if($v_ticket[1]['priority'] !== null): ?>
+                    <span class="ticket-priority" style="background-color: <?= $v_ticket[1]['priority']['pri_css_color'] ?>">
+                        <?= $v_ticket[1]['priority']['pri_name'] ?>
+                    </span>
+                <? endif; ?>
             </div>
             <div class="ticket-main-status" style="background-color: <?= $v_ticket[1]['status']['sta_css_color'] ?>">
                 <?= $v_ticket[1]['status']['sta_name'] ?>
