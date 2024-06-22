@@ -77,7 +77,9 @@ abstract class Model
     public function custom($query, $args = NULL){
         if (isset($args)) {
             foreach ($args as $k => $v) {
-                $args[$k] = htmlspecialchars(trim($v));
+                if (!is_null($v)) {
+                    $args[$k] = htmlspecialchars(trim($v));
+                } 
             }
         }
 

@@ -9,6 +9,7 @@ use app\models\Category;
 use app\models\Label;
 use app\models\Priority;
 use app\models\Comment;
+use app\models\Role;
 
 /**
  * Module du controleur du tableau de bord des techniciens
@@ -22,10 +23,16 @@ class TechnicienDashboardController
     public function index()
     {
         if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "Vous devez être connecté pour accéder à cette page";	
             header('Location: /login');
             exit();
         }
 
+        if (!in_array(Role::getRoleIdByUserId($_SESSION['id']), [10, 50])) {
+            $_SESSION['error'] = "Vous n'avez pas les droits pour accéder à cette page";
+            header('Location: /dashboard');
+            exit();
+        }
 
         $ticket = new Ticket();
         $tickets = $ticket->custom("select * from tickets order by creation_date desc", []);

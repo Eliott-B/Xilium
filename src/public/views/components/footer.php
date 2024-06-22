@@ -1,3 +1,6 @@
+<div class="add-ticket" onclick="window.location.href='./create';">
+    <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"></button>
+</div>
 <!-- FOOTER -->
 <footer>
     <div class="footer">

@@ -1,5 +1,11 @@
 <?php
 if (isset($router)){
+
+    // catch un changement de page quelconque
+    // $router->get('/{page}', function ($page) {
+    //     $_SESSION['error'] = "$page";
+    // });
+
     $router->get('/', 'IndexController#index');
 
     $router->get('/dashboard', 'DashboardController#index')->auth();
@@ -57,4 +63,7 @@ if (isset($router)){
     $router->get('/privacy', function (){
         require 'views/privacy.php';
     });
+
+
+    
 }

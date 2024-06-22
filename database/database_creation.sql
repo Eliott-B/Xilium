@@ -56,7 +56,7 @@ CREATE TABLE tickets
     author_id       INT         NOT NULL,
     label_id        INT         NOT NULL,
     category_id     INT         NOT NULL,
-    priority_id     INT         NOT NULL,
+    priority_id     INT         ,
     status_id       INT         NOT NULL,
     updater_id      INT         NOT NULL,
     tech_id INT NULL,
@@ -131,4 +131,6 @@ VALUES (1, 'Logiciel', '#9b59b6'),
 
 INSERT INTO users
 VALUES (1, 'admin', '9ffa04f5', 'Admin', 'Admin', 100),
-       (2, 'user', '9ffa04f5', 'User', 'User', 1);
+       (2, 'user', '9ffa04f5', 'User', 'User', 1),
+       (3, 'tech', '9ffa04f5', 'Tech', 'Tech', 10),
+       (4, 'webadmin', '9ffa04f5', 'WebAdmin', 'WebAdmin', 50);

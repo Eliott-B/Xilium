@@ -4,12 +4,13 @@
 <main>
 
 <link rel="stylesheet" href="../css/ticket.css">
+
 <span class="back">
-        <? if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
+        <?php if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
             <a href="/techniciens-dashboard"><i class="arrow left"></i>Retour</a>
-        <? else: ?>
+        <?php else: ?>
             <a href="/dashboard"><i class="arrow left"></i>Retour</a>
-        <? endif; ?>
+        <?php endif ?>
     </span>
     <dialog id='comment-dialog'>
         <form action="" method="post">
@@ -46,9 +47,11 @@
                 <span class="ticket-problem" style="background-color: <?= $label['lab_css_color'] ?>">
                     <?= $label['lab_name'] ?>
                 </span>
-                <span class="ticket-priority" style="background-color: <?= $priority['pri_css_color'] ?>">
-                    <?= $priority['pri_name'] ?>
-                </span>
+                <? if($priority !== null): ?>
+                    <span class="ticket-priority" style="background-color: <?= $priority['pri_css_color'] ?>">
+                        <?= $priority['pri_name'] ?>
+                    </span>
+                <? endif; ?>
             </div>
             <div class="ticket-main-status" style="background-color: <?= $status['sta_css_color'] ?>">
                 <?= $status['sta_name'] ?>
@@ -72,7 +75,7 @@
                         onclick="window.location.href='/update/<?= $ticket['tic_id'] ?>'">Modifier</button>
                     <?php if ($ticket['tech_id'] == $_SESSION['id']): ?>
                         <button class="btn-primary"
-                            onclick="window.location.href='/update_status/<?= $ticket['tic_id'] ?>'">Modifier le status</button>
+                            onclick="window.location.href='/update-status/<?= $ticket['tic_id'] ?>'">Modifier le status</button>
                     <?php endif; if (($_SESSION['role'] == 10 ||
                                 $_SESSION['role'] == 50) &&
                                 $ticket['tech_id'] !== $_SESSION['id']): ?>

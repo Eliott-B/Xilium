@@ -79,9 +79,11 @@
                 <span class="ticket-problem" style="background-color: <?= $v_ticket['label']['lab_css_color'] ?>">
                     <?= $v_ticket['label']['lab_name'] ?>
                 </span>
+                <? if($v_ticket['priority'] !== null): ?>
                 <span class="ticket-priority" style="background-color: <?= $v_ticket['priority']['pri_css_color'] ?>">
                     <?= $v_ticket['priority']['pri_name'] ?>
                 </span>
+                <? endif; ?>
             </div>
             <div class="ticket-main-status" style="background-color: <?= $v_ticket['status']['sta_css_color'] ?>">
                 <?= $v_ticket['status']['sta_name'] ?>
@@ -147,9 +149,6 @@
         </div>
 
     <?php endforeach; ?>
-    <div class="add-ticket" onclick="window.location.href='./create';">
-        <button class="btn-icon"><img src="../imgs/icons/add.svg" alt="add" class="add-icon"></button>
-    </div>
 </main>
 
 <script>

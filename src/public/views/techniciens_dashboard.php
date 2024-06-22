@@ -25,11 +25,11 @@
 
 
     <?php $is_0_openeds = sizeof(array_filter($view_tickets, function ($ticket) {
-        return $ticket[1]['status']['sta_name'] !== "Fermé";
+        return $ticket[1]['tech_id'] === null;
     })) == 0;
     // True si aucun ticket n'est ouvert    ?>
     <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
-        return $ticket[1]['status']['sta_name'] === "Fermé";
+        return $ticket[1]['status']['sta_name'] === "Fermé" && $ticket[1]['tech_id'] === $_SESSION['id'];
     })) == 0;
     // True si aucun ticket n'est fermé   ?>
     <?php $is_0_alocateds = sizeof(array_filter($view_tickets, function ($ticket) {
@@ -67,7 +67,10 @@
 
     <?php foreach ($view_tickets as $v_ticket): ?>
         <?php
-        if ($v_ticket[1]['status']['sta_name'] === "Fermé") {
+
+        
+
+        if ($v_ticket[1]['status']['sta_name'] === "Fermé" && $v_ticket[1]['tech_id'] === $_SESSION['id']) {
             echo "<div class='ticket' id='closed'>";
         } else {
             if ($v_ticket[1]['tech_id'] == $_SESSION['id']) {
@@ -75,6 +78,9 @@
             }
             else if ($v_ticket[1]['tech_id'] == "") {
                 echo "<div class='ticket' id='opened'>";
+            }
+            else {
+                continue;
             }
         }
         ?>
@@ -97,9 +103,11 @@
                 <span class="ticket-problem" style="background-color: <?= $v_ticket[1]['label']['lab_css_color'] ?>">
                     <?= $v_ticket[1]['label']['lab_name'] ?>
                 </span>
-                <span class="ticket-priority" style="background-color: <?= $v_ticket[1]['priority']['pri_css_color'] ?>">
-                    <?= $v_ticket[1]['priority']['pri_name'] ?>
-                </span>
+                <? if($v_ticket[1]['priority'] !== null): ?>
+                    <span class="ticket-priority" style="background-color: <?= $v_ticket[1]['priority']['pri_css_color'] ?>">
+                        <?= $v_ticket[1]['priority']['pri_name'] ?>
+                    </span>
+                <? endif; ?>
             </div>
             <div class="ticket-main-status" style="background-color: <?= $v_ticket[1]['status']['sta_css_color'] ?>">
                 <?= $v_ticket[1]['status']['sta_name'] ?>
@@ -219,39 +227,15 @@
                 }
             });
 
-            if (filter === 'openeds') {
-                <?php if ($is_0_openeds): ?>
-                    document.getElementById('no-openeds-text').style.display = 'block';
-                <?php endif; ?>
-                <?php if ($is_0_closeds): ?>
-                    document.getElementById('no-closeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_alocateds): ?>
-                    document.getElementById('no-alocated-text').style.display = 'none';
-                <?php endif; ?>
-            }
-            if (filter === 'closeds') {
-                <?php if ($is_0_openeds): ?>
-                    document.getElementById('no-openeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_closeds): ?>
-                    document.getElementById('no-closeds-text').style.display = 'block';
-                <?php endif; ?>
-                <?php if ($is_0_alocateds): ?>
-                    document.getElementById('no-alocated-text').style.display = 'none';
-                <?php endif; ?>
-            }
-            if (filter === 'alocated') {
-                <?php if ($is_0_openeds): ?>
-                    document.getElementById('no-openeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_closeds): ?>
-                    document.getElementById('no-closeds-text').style.display = 'none';
-                <?php endif; ?>
-                <?php if ($is_0_alocateds): ?>
-                    document.getElementById('no-alocated-text').style.display = 'block';
-                <?php endif; ?>
-            }
+            <?php if ($is_0_openeds): ?>
+                document.getElementById('no-openeds-text').style.display = filter === 'openeds' ? 'block' : 'none';
+            <?php endif; ?>
+            <?php if ($is_0_closeds): ?>
+                document.getElementById('no-closeds-text').style.display = filter === 'closeds' ? 'block' : 'none';
+            <?php endif; ?>
+            <?php if ($is_0_alocateds): ?>
+                document.getElementById('no-alocated-text').style.display = filter === 'alocated' ? 'block' : 'none';
+            <?php endif; ?>
         });
     });
 

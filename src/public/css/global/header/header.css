@@ -52,6 +52,9 @@ header .navbar li {
   padding-top: 15px;
   transition: ease-in-out 0.15s;
 }
+header .navbar li .active {
+  filter: brightness(0.7);
+}
 @media screen and (max-width: 768px) {
   header .navbar li h1 {
     font-size: 0.6rem;

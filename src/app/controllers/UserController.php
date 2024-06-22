@@ -32,7 +32,14 @@ class UserController
         $user = new User();
         $user = $user->custom(
             'SELECT * FROM users WHERE use_username=:username',
-            ['username' => $_POST['username']]);
+            ['username' => $_POST['username']]
+        );
+
+        if (count($user) == 0) {
+            $_SESSION['error'] = "Cet utilisateur n'existe pas.";
+            header('Location: /login');
+            return;
+        }
 
         if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
@@ -41,17 +48,21 @@ class UserController
             if (isset($_SESSION['id'])) {
                 if ($_SESSION['role'] == 1) {
                     header('Location: /dashboard');
+                    return;
                 } else {
                     header('Location: /techniciens-dashboard');
+                    return;
                 }
             } else {
                 $_SESSION['error'] = "Erreur lors de la connexion";
                 header('Location: /login');
+                return;
             }
 
         } else {
-            $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
+            $_SESSION['error'] = "Mot de passe incorrect.";
             header('Location: /login');
+            return;
         }
 
     }
@@ -62,14 +73,12 @@ class UserController
      */
     public function account()
     {
-
         $user = new User();
-        $user = $user->find($_SESSION['id']);
+        $user = (array) $user->find($_SESSION['id']);
         $role = new Role();
         $role = $role->find($user['role_id']);
 
         require 'views/account.php';
-
     }
 
     /**
@@ -111,8 +120,8 @@ class UserController
                 $firstname = $_POST['fname'];
 
                 if (strlen($username) > 3 && strlen($username) < 50) {
-                    if (strlen($password) > 8){
-                        if (strlen($firstname) > 2 && strlen($firstname) < 50){
+                    if (strlen($password) > 8) {
+                        if (strlen($firstname) > 2 && strlen($firstname) < 50) {
                             if (strlen($lastname) > 2 && strlen($lastname) < 50) {
                                 // enregistrer l'utilisateur dans la base
                                 $user = new User();
@@ -141,9 +150,6 @@ class UserController
                     $_SESSION['error'] = "Longueur du nom d'utilisateur incorrecte";
                     header('Location: /register');
                 }
-
-
-
 
             } else {
                 $_SESSION['error'] = "Captcha invalide";
@@ -191,6 +197,7 @@ class UserController
             header('Location: /');
         } else {
             unset($_SESSION['id']);
+            unset($_SESSION['role']);
             header('Location: /');
         }
     }
