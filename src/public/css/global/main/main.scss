@@ -3,6 +3,15 @@
 @font-face {
     font-family: "Lena";
     src:
+        local("Lena2"),
+        url("../fonts/lena/LenaAccents.woff") format("woff");
+        unicode-range: U+00E9,U+00C9,U+00C8,U+00E8,U+00E0,U+00C0
+}
+
+
+@font-face {
+    font-family: "Lena";
+    src:
         local("Lena"),
         url("../fonts/lena/Lena.woff") format("woff");
 }
@@ -13,6 +22,8 @@
         local("Sloth"),
         url("../fonts/Sloth/Sloth-Regular.woff") format("woff");
 }
+
+
 
 body {
     background-color: #fef6fa;
