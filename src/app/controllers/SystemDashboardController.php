@@ -35,7 +35,7 @@ class SystemDashboardController
         $logs_text = "";
         foreach ($xml->log as $log) {
             if (strpos($log->log_content, "Tentative de connexion") !== false) {
-                $logs_text .= "<p style='color:red'>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
+                $logs_text .= "<p style='color:#a10000'>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
             }
             else {
                 $logs_text .= "<p>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
