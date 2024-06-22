@@ -47,7 +47,7 @@
                 <span class="ticket-problem" style="background-color: <?= $label['lab_css_color'] ?>">
                     <?= $label['lab_name'] ?>
                 </span>
-                <? if($v_ticket[1]['priority'] !== null): ?>
+                <? if($priority !== null): ?>
                     <span class="ticket-priority" style="background-color: <?= $priority['pri_css_color'] ?>">
                         <?= $priority['pri_name'] ?>
                     </span>
