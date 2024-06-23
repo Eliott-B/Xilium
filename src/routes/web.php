@@ -40,6 +40,39 @@ if (isset($router)){
 
     $router->get('/ticket/{id}', 'TicketController#show')->auth();
 
+    $router->get('/admin/labels/list', 'LabelController#list')->auth();
+
+    $router->get('/admin/labels/add', 'LabelController#create_form')->auth();
+    $router->post('/admin/labels/add', 'LabelController#create')->auth();
+
+    $router->get('/admin/labels/update/{id}', 'LabelController#update_form')->auth();
+    $router->post('/admin/labels/update/{id}', 'LabelController#update')->auth();
+
+    $router->get('/admin/labels/delete/{id}', 'LabelController#delete')->auth();
+
+    $router->get('/admin/categories/list', 'CategoryController#list')->auth();
+
+    $router->get('/admin/categories/add', 'CategoryController#create_form')->auth();
+    $router->post('/admin/categories/add', 'CategoryController#create')->auth();
+
+    $router->get('/admin/categories/update/{id}', 'CategoryController#update_form')->auth();
+    $router->post('/admin/categories/update/{id}', 'CategoryController#update')->auth();
+
+    $router->get('/admin/categories/delete/{id}', 'CategoryController#delete')->auth();
+
+    $router->get('/admin/users/list', 'AdminController#list')->auth();
+
+    $router->get('/admin/users/create', 'AdminController#create_form')->auth();
+    $router->post('/admin/users/create', 'AdminController#create')->auth();
+
+    $router->get('/admin/users/update/{id}', 'AdminController#update_form')->auth();
+    $router->post('/admin/users/update/{id}', 'AdminController#update')->auth();
+
+    $router->get('/admin/users/delete/{id}', 'AdminController#delete')->auth();
+
+
+
+
     $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
 
     // PAGES STATIQUES
