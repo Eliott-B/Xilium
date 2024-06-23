@@ -1,0 +1,738 @@
+type_ticket,description,niveau_urgence,categorie
+matériel,Imprimante en panne dans la salle informatique,élevé,matériel
+logiciel,Problème de connexion au logiciel de gestion des notes,moyen,logiciel
+réseau,Connexion internet instable dans le bâtiment principal,élevé,réseau
+sécurité,Alertes de sécurité répétées sur le serveur de l'université,élevé,sécurité
+matériel,Ordinateurs portables défectueux pour les étudiants,moyen,matériel
+logiciel,Erreur dans le logiciel de soumission de devoirs en ligne,faible,logiciel
+réseau,Mauvaise couverture Wi-Fi dans la bibliothèque,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour le compte administrateur,élevé,sécurité
+matériel,Projecteur défectueux dans l'amphithéâtre,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de visioconférence,élevé,logiciel
+réseau,Pas de connexion internet dans le hall d'entrée,faible,réseau
+sécurité,Tentatives de phishing signalées par des étudiants,moyen,sécurité
+matériel,Clavier défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel antivirus,moyen,logiciel
+réseau,Débit internet lent dans les résidences étudiantes,moyen,réseau
+sécurité,Détection de logiciels malveillants sur un ordinateur de l'université,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème d'affichage avec le logiciel de présentation,faible,logiciel
+réseau,Problème de configuration du réseau sans fil,élevé,réseau
+sécurité,Demande d'accès VPN pour un étudiant,moyen,sécurité
+matériel,Écran défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'enregistrement de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Détection d'une intrusion dans le système informatique,élevé,sécurité
+matériel,Imprimante hors service dans le bureau administratif,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion de la bibliothèque,moyen,logiciel
+réseau,Problème de configuration du routeur,élevé,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Scanner défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi invité,faible,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Ordinateur de bureau défectueux dans le laboratoire de langues,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Casque audio défectueux dans la salle multimédia,faible,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Vidéoprojecteur défectueux dans la salle de conférence,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tablette tactile défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Caméra défectueuse dans la salle de visioconférence,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Demande de blocage d'une adresse IP,moyen,sécurité
+matériel,Microphone défectueux dans l'amphithéâtre,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Clé USB défectueuse dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Disque dur défectueux dans l'ordinateur du bureau administratif,élevé,matériel
+logiciel,Problème de connexion au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des emplois du temps,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de blocage d'une adresse IP,moyen,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des emplois du temps,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de suppression de compte utilisateur pour un employé partant,faible,sécurité
+matériel,Tablette graphique défectueuse dans la salle de dessin,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Micro-casque défectueux dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des absences,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel employé,faible,sécurité
+matériel,Lecteur de code-barres défectueux dans la bibliothèque,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des stages,élevé,sécurité
+matériel,Vidéoprojecteur interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'impression avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les bureaux,élevé,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Écran tactile défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème de connexion au logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de fichiers,élevé,sécurité
+matériel,Imprimante laser défectueuse dans le bureau administratif,moyen,matériel
+logiciel,Problème de sauvegarde de fichiers avec le logiciel de traitement de texte,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Clavier sans fil défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'installation du logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les résidences étudiantes,faible,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Souris sans fil défectueuse dans la salle de cours,faible,matériel
+logiciel,Problème de compatibilité avec le logiciel de montage vidéo,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Demande de création de compte utilisateur pour un nouvel étudiant,faible,sécurité
+matériel,Webcam défectueuse dans la salle de visioconférence,faible,matériel
+logiciel,Problème d'accès au logiciel de gestion des stages,faible,logiciel
+réseau,Problème de connexion au réseau VPN,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des absences,élevé,sécurité
+matériel,Enceintes défectueuses dans l'amphithéâtre,faible,matériel
+logiciel,Problème de mise à jour du logiciel de gestion des notes,faible,logiciel
+réseau,Problème de connexion au réseau sans fil dans les espaces communs,faible,réseau
+sécurité,Demande de suppression de compte utilisateur pour un étudiant partant,faible,sécurité
+matériel,Lecteur de carte défectueux dans la salle informatique,faible,matériel
+logiciel,Problème d'importation de données avec le logiciel de gestion des stages,faible,logiciel
+réseau,Problème de configuration du commutateur réseau,élevé,réseau
+sécurité,Détection d'une tentative d'intrusion sur le serveur de messagerie,élevé,sécurité
+matériel,Imprimante 3D défectueuse dans le laboratoire de fabrication,moyen,matériel
+logiciel,Problème de compatibilité avec le logiciel de présentation,faible,logiciel
+réseau,Problème de connexion au réseau filaire dans les salles de réunion,moyen,réseau
+sécurité,Demande de modification de droits d'accès pour un utilisateur,faible,sécurité
+matériel,Tableau blanc interactif défectueux dans la salle de cours,moyen,matériel
+logiciel,Problème d'exportation de données avec le logiciel de gestion de la scolarité,faible,logiciel
+réseau,Problème de configuration du pare-feu,élevé,réseau
+sécurité,Détection d'un virus sur un ordinateur du personnel,élevé,sécurité
+matériel,Ordinateur portable défectueux dans la salle de réunion,moyen,matériel
+logiciel,Problème d'accès au logiciel de gestion des emplois du temps,faible,logiciel
+réseau,Problème de connexion au réseau Wi-Fi dans les salles de cours,moyen,réseau
+sécurité,Demande de réinitialisation de mot de passe pour un compte utilisateur,faible,sécurité
+matériel,Scanner de documents défectueux dans le centre de reprographie,moyen,matériel
+logiciel,Problème d'installation du logiciel de gestion des absences,faible,logiciel
+réseau,Problème de configuration du routeur sans fil,moyen,réseau
+sécurité,Détection d'une faille de sécurité dans le système de gestion des notes,élevé,sécurité
+matériel,Caméscope défectueux dans la salle de montage vidéo,faible,matériel
