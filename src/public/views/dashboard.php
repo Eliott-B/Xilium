@@ -1,6 +1,11 @@
 <?php require 'components/header.php'; ?>
 
 <main>
+    <div class="new-ticket">
+        <button class="btn-primary" onclick="window.location.href='./create';">
+            Nouveau ticket
+        </button>
+    </div>
     <link rel="stylesheet" href="../css/dashboard.css">
     <dialog id='comment-dialog'>
         <form action="" method="post">

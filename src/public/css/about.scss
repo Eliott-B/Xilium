@@ -1,0 +1,42 @@
+@import 'global/colors/colors.scss';
+
+.about {
+    padding: 20px;
+    margin: 20px 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    h1 {
+        color: $primary-2b;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: $primary-1b;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    a {
+        color: $tertiary-2b;
+        text-decoration: $tertiary-2b underline;
+        transition: ease-in-out 0.1s;
+        &:hover {
+            font-weight: bolder;
+            color: $primary-1b;
+            text-decoration: $tertiary-2b underline;
+        }
+    }
+    ul {
+        list-style-type: none;
+        li {
+            margin-bottom: 10px;
+            &:before {
+                font-weight: bold;
+                content: '>';
+                color: $primary-1b;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+    }
+}
