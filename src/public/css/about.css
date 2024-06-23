@@ -1,16 +1,40 @@
-@font-face {
-  font-family: "Lena";
-  src: local("Lena"), url("./global/fonts/lena/Lena.woff") format("woff");
+.about {
+  padding: 20px;
+  margin: 20px 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-@font-face {
-  font-family: "Sloth";
-  src: local("Sloth"), url("./global/fonts/Sloth/Sloth-Regular.woff") format("woff");
+.about h1 {
+  color: #1c030e;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
-pre {
-  font-family: "Sloth", sans-serif;
-  margin-left: 5%;
-  margin-right: 5%;
+.about h2 {
+  color: #6e0c38;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
-h2{
-  margin-left: 2rem;
+.about a {
+  color: #031c12;
+  text-decoration: #031c12 underline;
+  transition: ease-in-out 0.1s;
+}
+.about a:hover {
+  font-weight: bolder;
+  color: #6e0c38;
+  text-decoration: #031c12 underline;
+}
+.about ul {
+  list-style-type: none;
+}
+.about ul li {
+  margin-bottom: 10px;
+}
+.about ul li:before {
+  font-weight: bold;
+  content: ">";
+  color: #6e0c38;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }

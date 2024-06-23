@@ -12,8 +12,6 @@ $router = new \app\Router($_SERVER['REQUEST_URI']);
 require __DIR__ . '/routes/web.php';
 
 
-require __DIR__ . '/routes/route_test.php';
-
 // Dernier élément
 try {
     $router->run();

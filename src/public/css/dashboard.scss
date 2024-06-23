@@ -179,6 +179,15 @@ $label-orange: #f39c12;
     }
 }
 
+.new-ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        font-size: 1rem;
+    }
+}
+
 .no-tickets {
     height: 60vh;
     align-content: center;

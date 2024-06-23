@@ -58,3 +58,12 @@
                 </p>
             </div>
         <?php endif ?>
+        <?php if (isset($_SESSION['success']) && $_SESSION['success'] != ""): ?>
+            <div class="success">
+                <p>
+                    <img src="../../imgs/icons/success.svg" alt="success" class="icon">
+                        <?= $_SESSION['success'] ?>
+                </p>
+            </div>
+        <?php endif ?>
+

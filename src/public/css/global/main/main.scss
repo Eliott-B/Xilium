@@ -140,6 +140,24 @@ html {
     }
 }
 
+.success {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    background-color: rgb(172, 255, 172);
+    border: 1px solid darkgreen;
+    border-radius: 15px;
+    
+    p {
+        img {
+            filter: brightness(0) saturate(100%) invert(20%) sepia(84%) saturate(1683%) hue-rotate(99deg) brightness(97%) contrast(106%);
+            margin-bottom: -5px;
+        }
+        margin-left: 1rem;
+        color: darkgreen;
+    }
+}
+
 .add-ticket {
     position: fixed;
     bottom: 20px;

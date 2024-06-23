@@ -43,12 +43,23 @@ class Router
             $_SESSION['pagechangecounter'] = 0;
         }
         else {
-            if ($_SESSION['error'] != ""){
-                $_SESSION['pagechangecounter'] ++;
+            if(isset($_SESSION['error'])){
+                if ($_SESSION['error'] != ""){
+                    $_SESSION['pagechangecounter'] ++;
+                }
+                if ($_SESSION['pagechangecounter'] > 1){
+                    $_SESSION['error'] = "";
+                    $_SESSION['pagechangecounter'] = 0;
+                }
             }
-            if ($_SESSION['pagechangecounter'] > 1){
-                $_SESSION['error'] = "";
-                $_SESSION['pagechangecounter'] = 0;
+            if(isset($_SESSION['success'])){
+                if ($_SESSION['success'] != ""){
+                    $_SESSION['pagechangecounter'] ++;
+                }
+                if ($_SESSION['pagechangecounter'] > 1){
+                    $_SESSION['success'] = "";
+                    $_SESSION['pagechangecounter'] = 0;
+                }
             }
         }
     }

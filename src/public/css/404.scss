@@ -1,0 +1,30 @@
+@import 'global/colors/colors.scss';
+
+.err404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        color: $primary-2b;
+        font-size: 10em;
+        margin-bottom: 10px;
+    }
+    p {
+        color: $primary-2b;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    a {
+        color: $tertiary-2b;
+        text-decoration: $tertiary-2b underline;
+        transition: ease-in-out 0.1s;
+        &:hover {
+            font-weight: bolder;
+            color: $primary-1b;
+            text-decoration: $tertiary-2b underline;
+        }
+    }
+
+} 
+

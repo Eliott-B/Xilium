@@ -184,6 +184,7 @@ class UserController
             header('Location: /account');
         }
 
+        $_SESSION['success'] = "Mot de passe modifié avec succès";
         header('Location: /account');
     }
 
@@ -198,6 +199,7 @@ class UserController
         } else {
             unset($_SESSION['id']);
             unset($_SESSION['role']);
+            $_SESSION['success'] = "Vous avez été déconnecté";
             header('Location: /');
         }
     }
