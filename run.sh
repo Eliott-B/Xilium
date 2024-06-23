@@ -15,7 +15,11 @@ if [ $# -gt 0 ] ; then
         if [ $arg = "-it" ] ; then
             startOption=$arg
         elif [ $arg = "-h" ] ; then
+            echo "Script pour lancer l'application Xilium"
             echo "Usage: ./run.sh [-it] [-y/-n]"
+            echo "-it: pour lancer l'application en mode interactif"
+            echo "-y: pour créer les fichiers d'environnement"
+            echo "-n: pour ne pas créer les fichiers d'environnement"
             exit 0
         elif [ $arg = "y" ]; then
             response=$arg
