@@ -32,4 +32,24 @@ class Label extends Model
         $label = $label->custom("select * from labels where lab_id = :id", ['id' => $id]);
         return $label[0];
     }
+
+    /**
+     * Supprime un label à partir de son id
+     * sauf si le nom du label est 'Autre'
+     * @param int $id l'id du label
+     * @return null
+     */
+    public function delete($id)
+    {
+        $labelToDelete = $this->get_label($id);
+
+        if ($labelToDelete !== null) {
+            if ($labelToDelete['lab_name'] == 'Autre') {
+                return false;
+            } else {
+                parent::delete($id);
+                return true;
+            }
+        }
+    }
 }
