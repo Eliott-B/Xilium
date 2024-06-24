@@ -37,7 +37,7 @@ class LabelController
      */
     public function create_form()
     {
-        // TODO : require la vue
+        require 'views/adminweb_labels_create.php';
     }
 
     /**
@@ -47,11 +47,11 @@ class LabelController
     {
         $label = new Label();
         $label->create([
-            'lab_name' => $_POST['name'],
-            'lab_css_color' => $_POST['color']
+            'lab_name' => $_POST['lab_name'],
+            'lab_css_color' => $_POST['lab_css_color']
         ]);
 
-        header('Location: /admin/labels/list');
+        header('Location: /admin/labels');
     }
 
     /**
@@ -60,20 +60,20 @@ class LabelController
     public function update_form($id){
         $label = new Label();
         $label = $label->find($id);
-        // todo : require la vue
+        require 'views/adminweb_labels_update.php';
     }
 
     /**
      * Modifie un label grâce au formulaire
      */
-    public function update(){
+    public function update($id){
         $label = new Label();
-        $label->find($_POST['id']);
+        $label->find($id);
         $label->update([
-            'lab_name' => $_POST['name'],
-            'lab_css_color' => $_POST['color']
+            'lab_name' => $_POST['lab_name'],
+            'lab_css_color' => $_POST['lab_css_color']
         ]);
 
-        header('Location: /admin/labels/list');
+        header('Location: /admin/labels');
     }
 }
