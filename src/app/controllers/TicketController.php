@@ -342,6 +342,18 @@ class TicketController
             $tech = null;
         }
 
+        if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50) {
+            $python_exit = shell_exec("python3 /var/www/html/app/ai/predict.py '" . $ticket['tic_description'] . "'");
+            $suggestion_category = new Category();
+            $suggest = $suggestion_category->custom("select cat_id, cat_name from categories where cat_name = :name", ['name' => $python_exit])[0];
+            $suggestion_category = $suggest['cat_name'];
+            $suggestion_category_id = $suggest['cat_id'];
+            
+            if ($suggestion_category == null) {
+                $suggestion_category = "Aucune suggestion";
+            }
+        }
+
         require 'views/ticket.php';
     }
 
@@ -500,5 +512,30 @@ class TicketController
         }
         header('Location: /techniciens-dashboard');
 
+    }
+
+    /** Fonction pour accepter la suggestion de catégorie
+     * @param int $id id du ticket à modifier
+     * @param int $category_id id de la catégorie à attribuer
+     */
+    public function accept_suggestion($id, $category_id)
+    {
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        if ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes pas technicien";
+            header('Location: /dashboard');
+        }
+
+        $ticket = new Ticket();
+        $ticket->find($id);
+        $ticket->update([
+            'category_id' => $category_id
+        ]);
+
+        header('Location: /ticket/' . $id);
     }
 }

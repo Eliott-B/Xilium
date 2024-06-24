@@ -180,6 +180,9 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+:modal form input::-moz-placeholder {
+  opacity: 0.5;
+}
 :modal form input::placeholder {
   opacity: 0.5;
 }
@@ -198,6 +201,9 @@
   margin-right: 20px;
   resize: vertical;
   min-height: 100px;
+}
+:modal form textarea::-moz-placeholder {
+  opacity: 0.5;
 }
 :modal form textarea::placeholder {
   opacity: 0.5;
@@ -227,3 +233,25 @@
   cursor: pointer;
   filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1571%) hue-rotate(285deg) brightness(112%) contrast(109%);
 }
+
+.btn-suggestion {
+  background-color: #C7F9E5;
+  color: #0c6e46;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 0.9rem;
+  transition: ease-in-out 0.4s;
+}
+.btn-suggestion:hover, .btn-suggestion.active {
+  background-color: #0c6e46;
+  color: #C7F9E5;
+}
+.btn-suggestion:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+.btn-suggestion:active {
+  transform: scale(0.5);
+  transition: ease-in-out 0.4s;
+}/*# sourceMappingURL=ticket.css.map */
