@@ -61,6 +61,10 @@
                     <?= $ticket['tic_description'] ?>
                 </p>
                 <p>
+                    <? if (($_SESSION['role'] == 10 || $_SESSION['role'] == 50) && $suggestion_category !== $category['cat_name']): ?>
+                        <b>Xilium IA - Suggestion de catégorie :</b> <?= $suggestion_category ?>  <button class="btn-suggestion"
+                            onclick="window.location.href='/accept-suggestion/<?= $ticket['tic_id'] ?>/<?= $suggestion_category_id ?>'">&#x2705;</button>
+                    <? endif; ?>
                     <? if ($ticket['tech_id'] !== NULL): ?>
                         <b>Technicien en charge :</b> <?= $tech['use_firstname'] . ' ' . $tech['use_name'] ?>
                     <? endif; ?>

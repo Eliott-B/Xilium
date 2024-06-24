@@ -40,7 +40,7 @@ if (isset($router)){
 
     $router->get('/ticket/{id}', 'TicketController#show')->auth();
 
-
+    $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
 
     // PAGES STATIQUES
     $router->get('/about', function () {
