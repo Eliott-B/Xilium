@@ -295,3 +295,150 @@
   margin: 0.5rem;
   font-size: 1rem;
 }
+
+.gestion-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gestion-categories button.create-category {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+.gestion-categories .category {
+  margin: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 3rem;
+}
+.gestion-categories .category-main-name, .gestion-categories .category-main-actions, .gestion-categories .category-main-color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gestion-categories .category-main-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.gestion-categories .category-main-color ::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.gestion-categories .category-main-actions {
+  margin-top: 1rem;
+}
+.gestion-categories .category-main-actions button {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.update-categories-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.update-categories-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 24px;
+}
+.update-categories-form input {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.update-categories-form input::placeholder {
+  opacity: 0.5;
+}
+.update-categories-form label {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.update-categories-form select {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.update-categories-form select::placeholder {
+  opacity: 0.5;
+}
+.update-categories-form-actions {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.update-categories-form-actions button {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.create-categories-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.create-categories-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 24px;
+}
+.create-categories-form input {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.create-categories-form input::placeholder {
+  opacity: 0.5;
+}
+.create-categories-form label {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.create-categories-form select {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.create-categories-form select::placeholder {
+  opacity: 0.5;
+}
+.create-categories-form-actions {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-categories-form-actions button {
+  margin: 0.5rem;
+  font-size: 1rem;
+}

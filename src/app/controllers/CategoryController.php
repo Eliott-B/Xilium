@@ -14,8 +14,8 @@ class CategoryController
      */
     public function list()
     {
-        $category = new Category();
-        $category = $category->all();
+        $categories = new Category();
+        $categories = $categories->all();
 
         require 'views/adminweb_categories.php';
 
@@ -27,10 +27,10 @@ class CategoryController
      */
     public function delete($id)
     {
-        $category = new Category();
-        $category = $category->delete($id);
+        $categories = new Category();
+        $categories = $categories->delete($id);
 
-        header('Location: /admin/categories/list');
+        header('Location: /admin/categories');
     }
 
     /**
@@ -38,7 +38,7 @@ class CategoryController
      */
     public function create_form()
     {
-        // TODO : require la vue
+        require 'views/adminweb_categories_create.php';
     }
 
     /**
@@ -46,13 +46,13 @@ class CategoryController
      */
     public function create()
     {
-        $category = new Category();
-        $category->create([
-            'cat_name' => $_POST['name'],
-            'cat_css_color' => $_POST['color']
+        $categories = new Category();
+        $categories->create([
+            'cat_name' => $_POST['cat_name'],
+            'cat_css_color' => $_POST['cat_css_color']
         ]);
 
-        header('Location: /admin/categories/list');
+        header('Location: /admin/categories');
     }
 
     /**
@@ -61,20 +61,20 @@ class CategoryController
     public function update_form($id){
         $category = new Category();
         $category = $category->find($id);
-        // todo : require la vue
+        require 'views/adminweb_categories_update.php';
     }
 
     /**
      * Modifie une categorie grâce au formulaire
      */
-    public function update(){
+    public function update($id){
         $category = new Category();
-        $category->find($_POST['id']);
+        $category->find($id);
         $category->update([
-            'cat_name' => $_POST['name'],
-            'cat_css_color' => $_POST['color']
+            'cat_name' => $_POST['cat_name'],
+            'cat_css_color' => $_POST['cat_css_color']
         ]);
 
-        header('Location: /admin/categories/list');
+        header('Location: /admin/categories');
     }
 }
