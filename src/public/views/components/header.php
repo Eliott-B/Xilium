@@ -25,7 +25,8 @@
                 $header_arrays = [
                     ['Accueil', '/', true],
                     ['Tableau de bord', '/dashboard', isset($_SESSION['id'])],
-                    ['Techniciens', '/techniciens-dashboard', isset($_SESSION['id']) && ($_SESSION['role'] == 10 || $_SESSION['role'] == 50)]
+                    ['Techniciens', '/techniciens-dashboard', isset($_SESSION['id']) && ($_SESSION['role'] == 10 || $_SESSION['role'] == 50)],
+                    ['Administrateur', '/admin', isset($_SESSION['id']) && $_SESSION['role'] == 50]
                 ];
 
                 foreach ($header_arrays as $header_array) {
