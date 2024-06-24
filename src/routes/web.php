@@ -52,10 +52,10 @@ if (isset($router)){
 
     $router->get('/admin/labels/delete/{id}', 'LabelController#delete')->auth();
 
-    $router->get('/admin/categories/list', 'CategoryController#list')->auth();
+    $router->get('/admin/categories', 'CategoryController#list')->auth();
 
-    $router->get('/admin/categories/add', 'CategoryController#create_form')->auth();
-    $router->post('/admin/categories/add', 'CategoryController#create')->auth();
+    $router->get('/admin/categories/create', 'CategoryController#create_form')->auth();
+    $router->post('/admin/categories/create', 'CategoryController#create')->auth();
 
     $router->get('/admin/categories/update/{id}', 'CategoryController#update_form')->auth();
     $router->post('/admin/categories/update/{id}', 'CategoryController#update')->auth();
