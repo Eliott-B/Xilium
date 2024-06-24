@@ -253,3 +253,25 @@ $label-orange: #f39c12;
         }
     }
 }
+
+.btn-suggestion {
+    background-color: $tertiary-1;
+    color: $tertiary-1b;
+    &:hover,&.active {
+        background-color: $tertiary-1b;
+        color: $tertiary-1;
+    }
+    padding: 0.25rem 0.5rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 0.9rem;
+    transition: ease-in-out 0.4s;
+    &:hover {
+        cursor: pointer;
+        transition: ease-in-out 0.4s;
+    }
+    &:active {
+        transform: scale(0.5);
+        transition: ease-in-out 0.4s;
+    }
+}    
