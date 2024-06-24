@@ -4,18 +4,25 @@ namespace app\controllers;
 
 use app\Hash;
 use app\models\User;
+use app\models\Role;
 
 class AdminController
 {
+
+    public function index()
+    {
+        require 'views/adminweb.php';
+    }
     /**
      * Affiche la liste des utilisateurs
      */
     public function list()
     {
         $user = new User();
-        $users = $user->all();
-
-        // todo : appelle la vue
+        $users = $user->custom("select * from users order by role_id", []);
+        $role = new Role();
+        $roles = $role->all();
+        require 'views/adminweb_users.php';
     }
 
     /**
@@ -24,7 +31,9 @@ class AdminController
     public function create_form()
     {
 
-        // todo :  appelle la vue
+        $role = new Role();
+        $roles = $role->all();
+        require 'views/adminweb_users_create.php';
     }
 
     /**
@@ -32,57 +41,60 @@ class AdminController
      */
     public function create()
     {
-        if ($_POST['psw'] == $_POST['psw-repeat']) {
-
-
-            $username = $_POST['username'];
-            $password = $_POST['psw'];
-            $lastname = $_POST['lname'];
-            $firstname = $_POST['fname'];
+        if ($_POST['use_password'] == $_POST['use_password_confirm']) {
+            $username = $_POST['use_username'];
+            $password = $_POST['use_password'];
+            $lastname = $_POST['use_name'];
+            $firstname = $_POST['use_firstname'];
 
             if (strlen($username) > 3 && strlen($username) < 50) {
                 if (strlen($password) > 8) {
                     if (strlen($firstname) > 2 && strlen($firstname) < 50) {
                         if (strlen($lastname) > 2 && strlen($lastname) < 50) {
-                            // enregistrer l'utilisateur dans la base
-                            $user = new User();
-                            $user->create([
-                                'use_username' => $username,
-                                'use_password' => Hash::rc4($password),
-                                'use_name' => $lastname,
-                                'use_firstname' => $firstname,
-                                'role_id' => $_POST['role']
-                            ]);
 
-                            header('Location: /dashboard');
+                            $users = new User();
+                            $users = $users->custom("select * from users where use_username = :username", ['username' => $username]);
+                            if (count($users) == 0) {
+                                $user = new User();
+                                $user->create([
+                                    'use_username' => $username,
+                                    'use_password' => Hash::rc4($password),
+                                    'use_name' => $lastname,
+                                    'use_firstname' => $firstname,
+                                    'role_id' => $_POST['role_id']
+                                ]);
+                                $_SESSION['success'] = "Utilisateur créé avec succès";
+
+                            } else {
+                                $_SESSION['error'] = "Nom d'utilisateur déjà utilisé";
+                            }
+                            
                         } else {
                             $_SESSION['error'] = "Longueur du prenom incorrecte";
-                            header('Location: /admin/users/create');
                         }
                     } else {
                         $_SESSION['error'] = "Longueur du nom de famille incorrecte";
-                        header('Location: /admin/users/create');
                     }
                 } else {
                     $_SESSION['error'] = "Longueur du mot de passe incorrecte";
-                    header('Location: /admin/users/create');
                 }
             } else {
                 $_SESSION['error'] = "Longueur du nom d'utilisateur incorrecte";
-                header('Location: /admin/users/create');
             }
-
-
+        } else {
+            $_SESSION['error'] = "Les mots de passe ne correspondent pas";
         }
 
-        header('Location: /admin/users/list');
-
+        $location = (isset($_SESSION['error'])) ? '/admin/users/create' : '/admin/users';
+        header('Location: ' . $location);
     }
 
     public function update_form($id){
         $user = new User();
         $user = $user->find($id);
-        // todo : require la vue
+        $role = new Role();
+        $roles = $role->all();
+        require 'views/adminweb_users_update.php';
     }
 
     /**
@@ -91,32 +103,36 @@ class AdminController
     public function update($id)
     {
         $user = new User();
-        $user = $user->find($id);
+        $user = (array) $user->find($id);
 
-        if ($_POST['psw'] == $_POST['psw-repeat']) {
-            if ($user['use_password'] == Hash::rc4($_POST['old-psw'])) {
-                $user = new User();
-                $user->find($_SESSION['id']);
-                $user->update([
-                    'use_username' => $_POST['username'],
-                    'use_password' => Hash::rc4($_POST['psw']),
-                    'use_name' => $_POST['lname'],
-                    'use_firstname' => $_POST['fname'],
-                    'role_id' => $_POST['role']
-                ]);
-            } else {
-                $_SESSION['error'] = "Le mot de passe entré est incorrect";
-                header('Location: /admin/users/update/' . $id);
-            }
+        $updatables = [
+            'use_username' => $_POST['use_username'],
+            'use_name' => $_POST['use_name'],
+            'use_firstname' => $_POST['use_firstname'],
+            'role_id' => $_POST['role_id']
+        ];
 
+        $adminuser = new User();
+        $adminuser = (array) $adminuser->find($_SESSION['id']);
+
+
+        if ($adminuser['role_id'] < $user['role_id']) {
+            $_SESSION['error'] = "Vous n'avez pas les droits pour effectuer cette action";
+            header('Location: /admin/users');
         } else {
-            $_SESSION['error'] = "Les deux mots de passe ne correpondent pas";
-
-            header('Location: /admin/users/update/' . $id);
+            foreach ($updatables as $key => $value) {
+                if ($value == null) {
+                    unset($updatables[$key]);
+                }
+            }
+            $user = new User();
+            $user->find($id);
+            $user->update($updatables);
+    
+            $_SESSION['success'] = "Utilisateur modifié avec succès";
+            header('Location: /admin/users');
         }
 
-        $_SESSION['success'] = "Utilisateur modifié avec succès";
-        header('Location: /admin/users/list');
     }
 
     /**
@@ -125,10 +141,21 @@ class AdminController
      */
     public function delete($id)
     {
-        $user = new User();
-        $user = $user->delete($id);
 
-        header('Location: /admin/users/list');
+
+        $user = new User();
+        $user = (array) $user->find($id);
+        $adminuser = new User();
+        $adminuser = (array) $adminuser->find($_SESSION['id']);
+
+        if ($adminuser['role_id'] < $user['role_id'] || $adminuser['use_id'] == $user['use_id']) {
+            $_SESSION['error'] = "Vous n'avez pas les droits pour effectuer cette action";
+        } else {
+            $user = new User();
+            $user = $user->delete($id);
+        }
+
+        header('Location: /admin/users');
     }
 
 }

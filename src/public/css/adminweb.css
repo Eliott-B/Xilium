@@ -1,0 +1,150 @@
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.gestion-users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gestion-users button.create-user {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+.gestion-users .user {
+  margin: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 3rem;
+}
+.gestion-users .user-main-name, .gestion-users .user-main-role, .gestion-users .user-main-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gestion-users .user-main-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.gestion-users .user-main-role {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #560c6e;
+}
+.gestion-users .user-main-actions {
+  margin-top: 1rem;
+}
+.gestion-users .user-main-actions button {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.update-user-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.update-user-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 24px;
+}
+.update-user-form input {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.update-user-form input::placeholder {
+  opacity: 0.5;
+}
+.update-user-form label {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.update-user-form select {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.update-user-form select::placeholder {
+  opacity: 0.5;
+}
+.update-user-form-actions {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.update-user-form-actions button {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.create-user-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.create-user-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 24px;
+}
+.create-user-form input {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.create-user-form input::placeholder {
+  opacity: 0.5;
+}
+.create-user-form label {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.create-user-form select {
+  padding-left: 1rem;
+  width: 80%;
+  border-radius: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: block;
+  margin: 20px;
+}
+.create-user-form select::placeholder {
+  opacity: 0.5;
+}
+.create-user-form-actions {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-user-form-actions button {
+  margin: 0.5rem;
+  font-size: 1rem;
+}

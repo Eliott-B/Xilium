@@ -17,7 +17,7 @@ class LabelController
         $labels = new Label();
         $labels = $labels->all();
 
-        // todo : require la vue
+        require 'views/adminweb_labels.php';
     }
 
     /**

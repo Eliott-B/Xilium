@@ -18,6 +18,7 @@ class CategoryController
         $category = $category->all();
 
         // todo : require la vue
+        
     }
 
     /**

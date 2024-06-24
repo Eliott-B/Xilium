@@ -40,6 +40,8 @@ if (isset($router)){
 
     $router->get('/ticket/{id}', 'TicketController#show')->auth();
 
+    $router->get('/admin', 'AdminController#index')->auth();
+
     $router->get('/admin/labels/list', 'LabelController#list')->auth();
 
     $router->get('/admin/labels/add', 'LabelController#create_form')->auth();
@@ -60,7 +62,7 @@ if (isset($router)){
 
     $router->get('/admin/categories/delete/{id}', 'CategoryController#delete')->auth();
 
-    $router->get('/admin/users/list', 'AdminController#list')->auth();
+    $router->get('/admin/users', 'AdminController#list')->auth();
 
     $router->get('/admin/users/create', 'AdminController#create_form')->auth();
     $router->post('/admin/users/create', 'AdminController#create')->auth();
