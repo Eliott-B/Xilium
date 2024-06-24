@@ -40,4 +40,24 @@ final class LabelTest extends TestCase
         $this->assertSame('#000000', $lab["lab_css_color"]);
         $label->delete($lab["lab_id"]);
     }
+
+    public function testDelete()
+    {
+        $lab = new Label();
+
+        $lab->find(1);
+        # tentative de suppression du label
+        $resultAutre = $lab->delete(1);
+        # Vérifier que le label n'a pas été supprimé
+        $this->assertFalse($resultAutre);
+
+        $lab->create([
+            'lab_name' => "test",
+            'lab_css_color' => '#ffffff'
+        ]);
+        $labels = $lab->all();
+        $id = end($labels)["lab_id"];
+        $resultOther = $lab->delete($id);
+        $this->assertTrue($resultOther);
+    }
 }

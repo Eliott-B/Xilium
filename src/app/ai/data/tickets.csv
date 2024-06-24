@@ -1,0 +1,310 @@
+type,description,priorite,categorie
+Demande,Installation de Python sur le poste de travail,Faible,Logiciel
+Incident,Erreur de connexion au réseau Wi-Fi,Élevée,Réseau
+Demande,Mise à jour de la documentation du projet de développement web,Moyenne,Documentation
+Incident,Panne du serveur de développement,Très élevée,Matériel
+Demande,Aide pour la résolution d'un problème de programmation en Java,Moyenne,Logiciel
+Incident,Problème de connexion à la base de données,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement,Faible,Logiciel
+Incident,Problème de sécurité sur le réseau,Élevée,Réseau
+Demande,Aide pour la mise en place d'un projet de développement mobile,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du framework de développement web,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de compilation du code JavaScript,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code C#,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code JavaScript,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C#,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code C#,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code C#,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code C#,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code Java,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code C#,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Incident,Erreur de compilation du code C++,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
+Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
+Incident,Panne du système de gestion de version,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
+Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
+Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
+Incident,Erreur de compilation du code Python,Moyenne,Logiciel
+Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
+Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
+Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
+Incident,Panne du système de sauvegarde,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
+Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
+Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
+Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
+Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
