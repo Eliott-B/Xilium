@@ -17,8 +17,8 @@ class CategoryController
         $category = new Category();
         $category = $category->all();
 
-        // todo : require la vue
-        
+        require 'views/adminweb_categories.php';
+
     }
 
     /**

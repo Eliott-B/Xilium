@@ -42,10 +42,10 @@ if (isset($router)){
 
     $router->get('/admin', 'AdminController#index')->auth();
 
-    $router->get('/admin/labels/list', 'LabelController#list')->auth();
+    $router->get('/admin/labels', 'LabelController#list')->auth();
 
-    $router->get('/admin/labels/add', 'LabelController#create_form')->auth();
-    $router->post('/admin/labels/add', 'LabelController#create')->auth();
+    $router->get('/admin/labels/create', 'LabelController#create_form')->auth();
+    $router->post('/admin/labels/create', 'LabelController#create')->auth();
 
     $router->get('/admin/labels/update/{id}', 'LabelController#update_form')->auth();
     $router->post('/admin/labels/update/{id}', 'LabelController#update')->auth();
