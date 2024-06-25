@@ -11,12 +11,12 @@ explicative du site
 - Un bouton accueil pour vous rendre à l'accueil du site
 - Un bouton de connexion et d'inscription si vous n'êtes pas connecté
 
-![Page d'accueil](img/page_accueil_update.png)
+![Page d'accueil](img/page_accueil.png)
 
 En défilant, vous pouvez créer des tickets et voir les dix derniers tickets.  
 Pour voir, vos tickets en cours, il vous suffit de cliquer sur le bouton "Mes tickets".
 
-![Page d'accueil ticket](img/page_accueil_tickets_update.png)
+![Page d'accueil ticket](img/page_accueil_tickets.png)
 
 ## Page création de ticket
 
@@ -28,14 +28,14 @@ Vous retrouverez de haut en bas :
 - Un champ vous permettant de décrire votre problème dans les moindres détails
 - Un bouton pour valider l'envoi de votre ticket  
 
-![Page creation ticket](img/page_creation_ticket_update.png)
+![Page creation ticket](img/page_creation_ticket.png)
 
 ## Page de Tableau de bord
 
 Dans cet onglet, vous retrouverez vos tickets personnels en cours et clos avec les 
 réponses apportées par les techniciens.
 
-![Page Tableau de bord](img/page_dashboard_update.png)
+![Page Tableau de bord](img/page_dashboard.png)
 
 ## Page Questions Fréquentes
 
@@ -44,25 +44,25 @@ Il vous suffit de cliquer sur les questions pour voir la réponse s'afficher jus
 Cette section vous permet de pouvoir répondre à une potentielle question sans devoir créer un ticket 
 et de devoir attendre. 
 
-![Page Questions Frequentes](img/page_FAQ_update.png)
+![Page Questions Frequentes](img/page_FAQ.png)
 
 ## Page À propos
 
 Sur cette page, vous retrouvez les valeurs de Xilium et nos objectifs. 
 
-![Page A Propos](img/page_a_propos_update.png)
+![Page A Propos](img/page_a_propos.png)
 
 ## Page compte
 
 En cliquant sur le bonhomme, vous pourrez accéder à la modification de votre mot de passe
 ainsi que la déconnexion. 
-![Page compte](img/page_compte_update.png)
+![Page compte](img/page_compte.png)
 
 ## Page de connexion 
 
 Le bouton "connexion" vous permet de vous inscrire ou vous connecter à votre compte.
 
-![Page de connexion](img/page_connexion_update.png)
+![Page de connexion](img/page_connexion.png)
 
 ## Page d'inscription
 
@@ -75,13 +75,13 @@ et de renseigner vos informations de connexion.
 
 En bas de toutes les pages, vous retrouverez les mentions légales.
 
-![Mentions legales](img/page_mentions_legales_update.png) 
+![Mentions legales](img/page_mentions_legales.png) 
 
 ## Page de Tableau de bord Admin Web
 
 Sur cette page, l'administrateur Web peut affecter des tickets à des techniciens afin de prendre en charge les 
 problèmes des utilisateurs.   
 
-![Page Tableau de bord Admin Web](img/page_dashboard_adminWeb_update.png)
+![Page Tableau de bord Admin Web](img/page_dashboard_adminWeb.png)
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
