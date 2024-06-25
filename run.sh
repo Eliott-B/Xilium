@@ -53,6 +53,8 @@ if [ ! -d shiny-server/logs ]; then
     mkdir shiny-server/logs
 fi
 
+chmod -R 755 shiny-server
+
 if [[ $startOption = "-it" ]]; then
     echo "Ctrl+C pour arrêter"
     sleep 1
