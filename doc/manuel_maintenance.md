@@ -161,6 +161,15 @@ Le Docker sauvegarde la base de donnée dans le répertoire `/opt/Xilium/databas
 
 Les tests sont dans le répertoire `/opt/Xilium/src/tests`.
 
+Pour regénérer la documentation, il suffit de lancer la commande suivante :
+
+```bash
+cd /opt/Xilium
+doxygen Doxyfile
+```
+
+Ensuite la documentation est disponible ici : [file:///opt/Xilium/doc/doxygen/html/index.html](file:///opt/Xilium/doc/doxygen/html/index.html).
+
 ## Contact
 
 En cas de problème, vous pouvez contacter les développeurs de l'application Xilium :  

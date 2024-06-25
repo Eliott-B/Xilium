@@ -39,6 +39,20 @@ Tous les tests sont automatiquements exécutés lors des merges et push sur les 
 
 ⚠️ Il faut être administrateur pour lancer les commandes Docker. (sudo ou root). Sinon il faut ajouter l'utilisateur au groupe Docker.  
 
+## 🦺 Maintenance
+
+Un manuel de maintenance est disponible dans le dossier [doc/manuel_maintenance.md](doc/manuel_maintenance.md).
+
+## 📚 Documentation
+
+Pour générer la documentation, il suffit de lancer la commande suivante :
+
+```bash
+doxygen Doxyfile
+```
+
+La documentation sera disponible ici : [doc/doxygen/html/index.html](doc/doxygen/html/index.html)
+
 ## 💻 Compatabilités
 
 L'application a été testées sur les systèmes suivants :  
