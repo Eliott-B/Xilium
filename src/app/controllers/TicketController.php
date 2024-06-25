@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\Database;
 use app\models\Role;
 use app\models\Ticket;
 use app\models\Category;
@@ -10,6 +11,8 @@ use app\models\Priority;
 use app\models\Status;
 use app\models\Comment;
 use app\models\User;
+use app\models\Log;
+use app\Database\getLastId;
 
 /**
  * Module du controleur des tickets
@@ -68,6 +71,13 @@ class TicketController
         }
         $ticket = new Ticket();
         $ticket->create($values_to_create);
+
+        $logs = new Log();
+        $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+            'ticket_id' => Database::getInstance()-> getLastId(),
+            'user_id' => $_SESSION['id'],
+            'log_content' => "Nouveau ticket",
+        ]);
 
         header('Location: /dashboard');
     }
@@ -154,6 +164,12 @@ class TicketController
                 'category_id' => $_POST['category'],
                 'updater_id' => $_SESSION['id'],
                 'update_date' => date('Y-m-d H:i:s')
+            ]);
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                'log_content' => "Mise à jour du ticket",
             ]);
         }
 
@@ -264,6 +280,12 @@ class TicketController
                     'updater_id' => $_SESSION['id'],
                     'update_date' => date('Y-m-d H:i:s')
                 ]);
+                $logs = new Log();
+                $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                    'ticket_id' => $id,
+                    'user_id' => $_SESSION['id'],
+                    'log_content' => "Ticket fermé",
+                ]);
             } else {
                 $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             }
@@ -305,6 +327,12 @@ class TicketController
                 'user_id' => $_SESSION['id'],
                 // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
 
+            ]);
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                'log_content' => "Nouveau commentaire",
             ]);
         } else {
             $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
@@ -462,6 +490,12 @@ class TicketController
             $ticket->update([
                 'status_id' => $_POST['status']
             ]);
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                'log_content' => "Mise à jour du statut du ticket",
+            ]);
         }
 
         header('Location: /ticket/' . $id);
@@ -518,6 +552,12 @@ class TicketController
                 $ticket->find($id);
                 $ticket->update([
                     'tech_id' => $_SESSION['id']
+                ]);
+                $logs = new Log();
+                $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                    'ticket_id' => $id,
+                    'user_id' => $_SESSION['id'],
+                    'log_content' => "Assignation du ticket",
                 ]);
             } else {
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
@@ -582,6 +622,12 @@ class TicketController
                 $ticket->find($id);
                 $ticket->update([
                     'tech_id' => NULL
+                ]);
+                $logs = new Log();
+                $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                    'ticket_id' => $id,
+                    'user_id' => $_SESSION['id'],
+                    'log_content' => "Desassignation du ticket",
                 ]);
             } else {
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
