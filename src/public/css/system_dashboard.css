@@ -47,4 +47,10 @@
   padding: 24px;
   overflow: scroll;
   height: 500px;
-}/*# sourceMappingURL=system_dashboard.css.map */
+}
+
+iframe.iframe-shiny {
+  display: block;
+  width: 100%;
+  height: 25rem;
+}

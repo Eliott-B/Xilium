@@ -24,7 +24,7 @@
             </div>
         </div>
     </section>
-    <iframe src="http://localhost:3838" frameborder="0" class="iframe"></iframe>
+    <iframe src="http://localhost:3838" frameborder="0" class="iframe-shiny"></iframe>
 </main>
 
 <?php require 'components/footer.php'; ?>
