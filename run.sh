@@ -10,20 +10,20 @@
 
 startOption=""
 response=""
-if [ $# -gt 0 ] ; then
-    for arg in $@ ; do
-        if [ $arg = "-it" ] ; then
+if [ $# -gt 0 ]; then
+    for arg in "$@"; do
+        if [[ $arg = "-it" ]]; then
             startOption=$arg
-        elif [ $arg = "-h" ] ; then
+        elif [[ $arg = "-h" ]]; then
             echo "Script pour lancer l'application Xilium"
             echo "Usage: ./run.sh [-it] [-y/-n]"
             echo "-it: pour lancer l'application en mode interactif"
             echo "-y: pour créer les fichiers d'environnement"
             echo "-n: pour ne pas créer les fichiers d'environnement"
             exit 0
-        elif [ $arg = "y" ]; then
+        elif [[ $arg = "-y" ]]; then
             response=$arg
-        elif [ $arg = "n" ]; then
+        elif [[ $arg = "-n" ]]; then
             response=$arg
         else
             echo "Usage: ./run.sh [-h]"
@@ -32,28 +32,28 @@ if [ $# -gt 0 ] ; then
     done
 fi
 
-if [ $response = "" ]; then
+if [[ $response = "" ]]; then
     echo "Voulez-vous créer les fichiers d'environnement ? (y/n)"
     read response
 fi
 
-if [ $response = "y" ] ; then
+if [[ $response = "y" ]]; then
     python3 setup_env.py
     cd ./src/config && python3 config/config.py >> /dev/null
     cd ../../
 fi
 
-if [ ! -d database/data ] ; then
+if [ ! -d database/data ]; then
     mkdir database/data
     cd ./src/config && python3 config/config.py >> /dev/null
     cd ../../
 fi
 
-if [ ! -d shiny-server/logs ] ; then
+if [ ! -d shiny-server/logs ]; then
     mkdir shiny-server/logs
 fi
 
-if [ $startOption = "-it" ] ; then
+if [[ $startOption = "-it" ]]; then
     echo "Ctrl+C pour arrêter"
     sleep 1
     docker compose up
@@ -68,7 +68,7 @@ fi
 
 # docker exec -it $package-app-1 bash -c "cd /var/www/html && python3 config/config.py"
 
-if [ $? = 0 ] ; then
+if [ $? = 0 ]; then
     echo "L'application est disponible à l'adresse http://localhost/"
     exit 0
 else
