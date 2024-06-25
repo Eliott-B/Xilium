@@ -14,6 +14,17 @@ services:
     networks:
       - base
 
+  shiny-server:
+    image: hvalev/shiny-server-arm:latest
+    container_name: shiny-server-arm
+    ports:
+      - 3838:3838
+    volumes:
+      - ./shiny-server/apps:/srv/shiny-server/
+      - ./shiny-server/logs:/var/log/shiny-server/
+      - ./shiny-server/conf:/etc/shiny-server/
+    restart: always
+
   db:
     image: mariadb:11.3
     restart: always
