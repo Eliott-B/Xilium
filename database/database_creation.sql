@@ -62,13 +62,13 @@ CREATE TABLE tickets
     tech_id         INT         NULL,
     creation_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     update_date     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (author_id) REFERENCES users (use_id),
-    FOREIGN KEY (label_id) REFERENCES labels (lab_id),
+    FOREIGN KEY (author_id) REFERENCES users (use_id) ON DELETE CASCADE ,
+    FOREIGN KEY (label_id) REFERENCES labels (lab_id) ON DELETE SET NULL ,
     FOREIGN KEY (priority_id) REFERENCES priorities (pri_id),
     FOREIGN KEY (status_id) REFERENCES status (sta_id),
-    FOREIGN KEY (category_id) REFERENCES categories (cat_id),
-    FOREIGN KEY (updater_id) REFERENCES users (use_id),
-    FOREIGN KEY (tech_id) REFERENCES users (use_id)
+    FOREIGN KEY (category_id) REFERENCES categories (cat_id) ON DELETE SET NULL,
+    FOREIGN KEY (updater_id) REFERENCES users (use_id) ON DELETE SET NULL,
+    FOREIGN KEY (tech_id) REFERENCES users (use_id) ON DELETE SET NULL
 );
 
 CREATE TABLE logs
@@ -79,8 +79,8 @@ CREATE TABLE logs
     log_content VARCHAR(255) NOT NULL,
     ticket_id   INT          NOT NULL,
     user_id     INT          NOT NULL,
-    FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id),
-    FOREIGN KEY (user_id) REFERENCES users (use_id)
+    FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id) ON DELETE SET NULL ,
+    FOREIGN KEY (user_id) REFERENCES users (use_id) ON DELETE SET NULL
 );
 
 CREATE TABLE comments
@@ -92,9 +92,9 @@ CREATE TABLE comments
     ticket_id   INT         NOT NULL,
     user_id     INT         NOT NULL,
     reply_to    INT         NULL,
-    FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id),
-    FOREIGN KEY (user_id) REFERENCES users (use_id),
-    FOREIGN KEY (reply_to) REFERENCES comments (com_id)
+    FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id) ON DELETE CASCADE ,
+    FOREIGN KEY (user_id) REFERENCES users (use_id) ON DELETE SET NULL ,
+    FOREIGN KEY (reply_to) REFERENCES comments (com_id) ON DELETE CASCADE
 );
 
 -- JDD

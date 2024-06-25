@@ -74,6 +74,9 @@ if (isset($router)){
 
     $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
 
+    $router->get('/admin/give-ticket/{ticket_id}', 'TechnicienDashboardController#give_ticket_form')->auth();
+    $router->post('/admin/give-ticket/{ticket_id}', 'TechnicienDashboardController#give_ticket')->auth();
+
     // PAGES STATIQUES
     $router->get('/about', function () {
         require "views/about.php";
