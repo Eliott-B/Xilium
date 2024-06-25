@@ -4,27 +4,19 @@
 <main>
     <div class="first-box">
         <div class="video">
-            <iframe src="" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+            <iframe src="../video/presentation.mp4" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen>
             </iframe>
             <p>Guide de présentation</p>
         </div>
 
         <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis quae esse eaque,
-                reprehenderit ut laboriosam ipsam assumenda modi et quo accusantium? Minus et sunt tempore explicabo
-                debitis perferendis illo.
-                Est nisi, doloremque, enim harum adipisci molestias exercitationem unde natus amet possimus ipsum
-                facilis fuga voluptates repellat nostrum quis provident tenetur nam? Itaque delectus quisquam nulla,
-                blanditiis unde magni libero.
-                Aliquid inventore quaerat nisi provident soluta, est placeat molestiae dolorem nihil, voluptas earum
-                facilis magni, iste laboriosam ipsa exercitationem eos voluptatem vitae mollitia cumque. Consectetur
-                quis beatae autem esse sit.
-                Voluptates quos, inventore reprehenderit ad omnis quod, dolore esse, quaerat repellat dolor delectus
-                possimus at dolores magnam vero? Totam quisquam quo numquam nam tempore fugit nihil laboriosam sed, quis
-                voluptas.
-                In quam suscipit culpa quos. Ad, corporis quibusdam in culpa aperiam dolore consectetur vel odit
-                accusamus ea natus quis dolorum fugiat amet. Blanditiis inventore delectus aliquid a repellat enim quia.
+            <p>
+                Xilium : Votre solution de ticketing interne<br>
+                Bienvenue sur Xilium, la plateforme de ticketing dédiée à notre Institut Universitaire de Technologie (IUT). Conçue pour simplifier la vie de tous les utilisateurs, qu'ils soient étudiants ou professeurs, Xilium est votre allié pour résoudre rapidement et efficacement tous vos problèmes techniques.<br>
+                Avec Xilium, fini les longues attentes et les procédures complexes pour joindre le service technique. Il vous suffit de créer un ticket en quelques clics, en décrivant précisément votre problème. Une fois votre ticket envoyé, notre équipe de techniciens qualifiés prendra en charge votre demande dans les plus brefs délais.<br>
+                Xilium vous permet également de suivre l'avancement de votre ticket en temps réel, et d'échanger avec les techniciens si besoin. Plus besoin de relancer constamment le service technique : vous êtes informé à chaque étape de la résolution de votre problème.<br>
+                En plus de faciliter la résolution des problèmes techniques, Xilium contribue à améliorer la qualité de nos services. Grâce aux statistiques générées par la plateforme, nous pouvons identifier les problèmes récurrents et mettre en place des actions préventives pour les éviter à l'avenir.
             </p>
             <?php if (isset($_SESSION['id']) && $_SESSION['role'] != 100): ?>
                 <button class="btn-primary" onclick="window.location.href='./dashboard'">Mes tickets</button>

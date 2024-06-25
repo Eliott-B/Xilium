@@ -12,7 +12,6 @@ use app\models\Status;
 use app\models\Comment;
 use app\models\User;
 use app\models\Log;
-use app\Database\getLastId;
 
 /**
  * Module du controleur des tickets
@@ -558,7 +557,7 @@ class TicketController
                     'tech_id' => $_SESSION['id']
                 ]);
                 $logs = new Log();
-                $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id:,:user_id:,:log_content)", [
+                $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
                     'log_ip' => $_SERVER['REMOTE_ADDR'],
                     'ticket_id' => $id,
                     'user_id' => $_SESSION['id'],

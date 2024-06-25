@@ -134,5 +134,6 @@ VALUES (1, 'Autre', '#d6d333'),
 INSERT INTO users
 VALUES (1, 'admin', '9ffa04f5', 'Admin', 'Admin', 100),
        (2, 'user', '9ffa04f5', 'User', 'User', 1),
-       (3, 'tech', '9ffa04f5', 'Tech', 'Tech', 10),
-       (4, 'webadmin', '9ffa04f5', 'WebAdmin', 'WebAdmin', 50);
+       (3, 'tec1', '9ffa14', 'Tech', 'Tech', 10),
+       (4, 'tec2', '9ffa14', 'Tech', 'Tech', 10),
+       (5, 'gestion', '9ffa04f5', 'WebAdmin', 'WebAdmin', 50);
