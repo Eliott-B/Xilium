@@ -24,14 +24,4 @@ class Comment extends Model
         'user_id',
         'reply_to'
     ];
-
-    /**
-     * Récupère les commentaires d'un ticket
-     * @param int $ticket_id
-     * @return array
-     */
-    public function get_comments(int $ticket_id): array
-    {
-        return $this->custom("select * from comments where ticket_id = :id", ['id' => $ticket_id]);
-    }
 }
