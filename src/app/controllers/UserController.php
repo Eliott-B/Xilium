@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\Hash;
 use app\models\Role;
 use app\models\User;
+use app\models\Log;
 
 /**
  * Module du controleur des utilisateurs
@@ -41,7 +42,7 @@ class UserController
             return;
         }
 
-        if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
+        if (sizeof($user) > 0 && $user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
             $_SESSION['role'] = $user[0]['role_id'];
 
@@ -60,7 +61,19 @@ class UserController
             }
 
         } else {
-            $_SESSION['error'] = "Mot de passe incorrect.";
+            if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                $ip = $_SERVER['HTTP_CLIENT_IP'];
+            } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (log_ip, log_content) VALUES (:log_ip,:log_content)", [
+                'log_ip' => "$ip",
+                'log_content' => "Tentative de connexion avec l'username " . $_POST['username'],
+            ]);
+            $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
             header('Location: /login');
             return;
         }

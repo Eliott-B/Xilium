@@ -20,6 +20,9 @@ jobs:
 
     - name: Setup environment
       run: mkdir database/data && mkdir .env && touch .env/database_pass && echo -e "MYSQL_DATABASE=xiliumtick\nMYSQL_USER=xilium\nMYSQL_PASSWORD=xilium\nMYSQL_ROOT_PASSWORD=xilium" > .env/database_pass
+    
+    - name: Set permissions for R Shiny
+      run: chmod -R 755 shiny-server
 
     - name: Build the Docker image
       run: docker compose up -d

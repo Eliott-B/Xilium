@@ -41,7 +41,7 @@ class Label extends Model
      */
     public function delete($id)
     {
-        $labelToDelete = $this->get_label($id);
+        $labelToDelete = $this->find($id);
 
         if ($labelToDelete !== null) {
             if ($labelToDelete['lab_name'] == 'Autre') {

@@ -47,13 +47,13 @@
     border-radius: 2rem;
     border: none;
     font-weight: bold;
-    transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.2s;
     &:hover {
         cursor: pointer;
-        transition: ease-in-out 0.4s;
+        transition: ease-in-out 0.2s;
     }
     &:active {
         transform: scale(0.5);
-        transition: ease-in-out 0.4s;
+        transition: ease-in-out 0.2s;
     }
 }
