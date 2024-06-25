@@ -84,4 +84,22 @@ problèmes des utilisateurs.
 
 ![Page Tableau de bord Admin Web](img/page_dashboard_adminWeb.png)
 
+## Page de log
+
+Sur cette page, l'administrateur peut consulter les logs des modifications sur l'application.
+Il peut charger un fichier de données.
+
+![Page de log](img/page_log.PNG)
+
+## Page de la gestion des users, labels et catégorie
+
+Sur cette page, l'administrateur web peut manipuler les utilisateurs, les labels ainsi que les 
+catégories. Il peut en modifier et en supprimer.
+
+![Page de gestion utilisateur](img/page_gestion_user.PNG)
+  
+![Page de gestion label ](img/page_gestion_label.PNG)
+  
+![Page de gestion categorie](img/page_gestion_category.PNG)
+
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
