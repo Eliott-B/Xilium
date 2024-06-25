@@ -84,4 +84,11 @@ problèmes des utilisateurs.
 
 ![Page Tableau de bord Admin Web](img/page_dashboard_adminWeb.png)
 
+## Page de log
+
+Sur cette page, l'administrateur peut consulter les logs des modifications sur l'application.
+Il peut charger un fichier de données.
+
+![Page de log](img/page_log.PNG)
+
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  
