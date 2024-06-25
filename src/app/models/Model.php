@@ -83,7 +83,7 @@ abstract class Model
             }
         }
 
-        return $this->db->query($query, $args);
+        return $this->db->query($query, $args ?? []);
     }
 
     /** Fonction qui permet d'insérer une nouvelle ligne dans la table

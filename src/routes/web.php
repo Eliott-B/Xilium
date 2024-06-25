@@ -40,10 +40,46 @@ if (isset($router)){
 
     $router->get('/ticket/{id}', 'TicketController#show')->auth();
 
+    $router->get('/admin', 'AdminController#index')->auth();
+
+    $router->get('/admin/labels', 'LabelController#list')->auth();
+
+    $router->get('/admin/labels/create', 'LabelController#create_form')->auth();
+    $router->post('/admin/labels/create', 'LabelController#create')->auth();
+
+    $router->get('/admin/labels/update/{id}', 'LabelController#update_form')->auth();
+    $router->post('/admin/labels/update/{id}', 'LabelController#update')->auth();
+
+    $router->get('/admin/labels/delete/{id}', 'LabelController#delete')->auth();
+
+    $router->get('/admin/categories', 'CategoryController#list')->auth();
+
+    $router->get('/admin/categories/create', 'CategoryController#create_form')->auth();
+    $router->post('/admin/categories/create', 'CategoryController#create')->auth();
+
+    $router->get('/admin/categories/update/{id}', 'CategoryController#update_form')->auth();
+    $router->post('/admin/categories/update/{id}', 'CategoryController#update')->auth();
+
+    $router->get('/admin/categories/delete/{id}', 'CategoryController#delete')->auth();
+
+    $router->get('/admin/users', 'AdminController#list')->auth();
+
+    $router->get('/admin/users/create', 'AdminController#create_form')->auth();
+    $router->post('/admin/users/create', 'AdminController#create')->auth();
+
+    $router->get('/admin/users/update/{id}', 'AdminController#update_form')->auth();
+    $router->post('/admin/users/update/{id}', 'AdminController#update')->auth();
+
+    $router->get('/admin/users/delete/{id}', 'AdminController#delete')->auth();
+
     $router->get('/system-dashboard', 'SystemDashboardController#index')->auth();
     $router->post('/system-dashboard', 'SystemDashboardController#read_file')->auth();
 
+
     $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
+
+    $router->get('/admin/give-ticket/{ticket_id}', 'TechnicienDashboardController#give_ticket_form')->auth();
+    $router->post('/admin/give-ticket/{ticket_id}', 'TechnicienDashboardController#give_ticket')->auth();
 
     // PAGES STATIQUES
     $router->get('/about', function () {

@@ -12,24 +12,12 @@ class LabelController
     /**
      * Liste les labels
      */
-    public function list_labels()
+    public function list()
     {
         $labels = new Label();
         $labels = $labels->all();
 
-        var_dump($labels);
-    }
-
-    /**
-     * Affiche un label
-     * @param int $id identifiant du label
-     */
-    public function show_label($id)
-    {
-        $label = new Label();
-        $label = $label->find($id);
-
-        var_dump($label);
+        require 'views/adminweb_labels.php';
     }
 
     /**
@@ -41,7 +29,7 @@ class LabelController
         $label = new Label();
         $label = $label->delete($id);
 
-        var_dump($label);
+        header('Location: /admin/labels');
     }
 
     /**
@@ -49,13 +37,7 @@ class LabelController
      */
     public function create_form()
     {
-        echo "
-        <form action='' method='post'>
-            <label for='name'>Nom</label>
-            <input type='text' name='name' id='name'>
-            <input type='submit' value='Ajouter'>
-        </form>
-        ";
+        require 'views/adminweb_labels_create.php';
     }
 
     /**
@@ -64,7 +46,12 @@ class LabelController
     public function create()
     {
         $label = new Label();
-        $label->create(['lab_name' => $_POST['name']]);
+        $label->create([
+            'lab_name' => $_POST['lab_name'],
+            'lab_css_color' => $_POST['lab_css_color']
+        ]);
+
+        header('Location: /admin/labels');
     }
 
     /**
@@ -73,23 +60,20 @@ class LabelController
     public function update_form($id){
         $label = new Label();
         $label = $label->find($id);
-        var_dump($label);
-        echo "
-        <form action='' method='post'>
-            <input type='hidden' name='id' value='$id'>
-            <label for='name'>Nom</label>
-            <input type='text' name='name' id='name' value='" . $label['lab_name'] . "'>
-            <input type='submit' value='Ajouter'>
-        </form>
-        ";
+        require 'views/adminweb_labels_update.php';
     }
 
     /**
      * Modifie un label grâce au formulaire
      */
-    public function update(){
+    public function update($id){
         $label = new Label();
-        $label->find($_POST['id']);
-        $label->update(['lab_name' => $_POST['name']]);
+        $label->find($id);
+        $label->update([
+            'lab_name' => $_POST['lab_name'],
+            'lab_css_color' => $_POST['lab_css_color']
+        ]);
+
+        header('Location: /admin/labels');
     }
 }

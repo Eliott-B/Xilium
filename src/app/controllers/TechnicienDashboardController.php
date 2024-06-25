@@ -23,7 +23,7 @@ class TechnicienDashboardController
     public function index()
     {
         if (!isset($_SESSION['id'])) {
-            $_SESSION['error'] = "Vous devez être connecté pour accéder à cette page";	
+            $_SESSION['error'] = "Vous devez être connecté pour accéder à cette page";
             header('Location: /login');
             exit();
         }
@@ -55,7 +55,7 @@ class TechnicienDashboardController
             }
             // var_dump($view_comments);
             $ticket['comments'] = $view_comments;
-            
+
             $status = new Status();
             $status = $status->find($ticket['status_id']);
             $ticket['status'] = $status;
@@ -72,10 +72,34 @@ class TechnicienDashboardController
 
             $user = new User();
             $user = $user->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['author_id']])[0];
-            
+
             $view_tickets[] = [$user, $ticket];
         }
 
         require 'views/techniciens_dashboard.php';
+    }
+
+    public function give_ticket_form($ticket_id)
+    {
+        $user =
+
+        $techs = new User();
+        $techs = $techs->custom("SELECT * FROM users WHERE role_id IN ( 10, 50)");
+
+
+        require 'views/give_ticket.php';
+    }
+
+    public function give_ticket($ticket_id){
+        $ticket = new Ticket();
+        $ticket->find($ticket_id);
+
+        if (!empty($_POST['tech_id'])) {
+            $ticket->update(['tech_id' => $_POST['tech_id']]);
+        } else {
+            $ticket->update(['tech_id' => NULL]);
+        }
+
+        header('Location: /techniciens-dashboard');
     }
 }
