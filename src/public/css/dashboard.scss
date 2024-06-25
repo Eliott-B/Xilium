@@ -13,13 +13,6 @@ $label-orange: #f39c12;
     justify-content: space-evenly;
 }
 
-.add-ticket {
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 100;
-}
-
 .ticket {
     &-main {
         background-color: $primary-2;
@@ -183,6 +176,15 @@ $label-orange: #f39c12;
                 color: $date-color;
             }
         }
+    }
+}
+
+.new-ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        font-size: 1rem;
     }
 }
 

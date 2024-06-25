@@ -4,7 +4,6 @@
   align-items: center;
 }
 
-
 .role {
   font-weight: lighter;
 }
@@ -61,6 +60,9 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+}
+.logout button {
+  font-size: 1rem;
 }
 
 .admin-link {

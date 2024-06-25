@@ -1,5 +1,6 @@
 <?php
 if (isset($router)){
+
     $router->get('/', 'IndexController#index');
 
     $router->get('/dashboard', 'DashboardController#index')->auth();
@@ -42,6 +43,7 @@ if (isset($router)){
     $router->get('/system-dashboard', 'SystemDashboardController#index')->auth();
     $router->post('/system-dashboard', 'SystemDashboardController#read_file')->auth();
 
+    $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
 
     // PAGES STATIQUES
     $router->get('/about', function () {
@@ -57,6 +59,15 @@ if (isset($router)){
     });
 
     $router->get('/privacy', function (){
-        require 'views/privacy.php';
+        header('Location: 404');
+    });
+
+    $router->get('/terms', function (){
+        header('Location: 404');
+    });
+
+
+    $router->get('/404', function (){
+        require 'views/404.php';
     });
 }

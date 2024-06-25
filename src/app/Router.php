@@ -27,10 +27,41 @@ class Router
         }
         foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
             if ($route->match($this->url)) {
+                Router::manageErrors();
                 return $route->call();
             }
         }
         throw new RouterException('Pas de route correspondante !');
+    }
+
+    /**
+     * Gestion des erreurs
+     * @return void
+     */
+    public function manageErrors(){
+        if (!isset($_SESSION['pagechangecounter'])){
+            $_SESSION['pagechangecounter'] = 0;
+        }
+        else {
+            if(isset($_SESSION['error'])){
+                if ($_SESSION['error'] != ""){
+                    $_SESSION['pagechangecounter'] ++;
+                }
+                if ($_SESSION['pagechangecounter'] > 1){
+                    $_SESSION['error'] = "";
+                    $_SESSION['pagechangecounter'] = 0;
+                }
+            }
+            if(isset($_SESSION['success'])){
+                if ($_SESSION['success'] != ""){
+                    $_SESSION['pagechangecounter'] ++;
+                }
+                if ($_SESSION['pagechangecounter'] > 1){
+                    $_SESSION['success'] = "";
+                    $_SESSION['pagechangecounter'] = 0;
+                }
+            }
+        }
     }
 
     /**

@@ -1,7 +1,7 @@
 FROM php:8.2-apache
 
 RUN apt-get update && \
-    apt-get install -y libapache2-mod-security2 python3 curl git unzip
+    apt-get install -y libapache2-mod-security2 python3 python3-pip curl git unzip
 
 RUN docker-php-ext-install pdo_mysql
 
@@ -16,6 +16,8 @@ RUN mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurit
 RUN sed -i '/ServerTokens/c\ServerTokens Prod' /etc/apache2/conf-enabled/security.conf
 
 RUN sed -i '/ServerSignature/c\ServerSignature Off' /etc/apache2/conf-enabled/security.conf
+
+RUN pip install scikit-learn --break-system-packages
 
 # INSTALL COMPOSER
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php

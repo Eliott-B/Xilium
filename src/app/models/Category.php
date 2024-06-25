@@ -32,4 +32,24 @@ class Category extends Model
         $category = $category->custom("select * from categories where cat_id = :id", ['id' => $id]);
         return $category[0];
     }
+
+    /**
+     * Supprime une catégorie à partir de son id
+     * sauf si le nom de la catégorie est 'Autre'
+     * @param $id
+     * @return null
+     */
+    public function delete($id)
+    {
+        $categoryToDelete = $this->get_category($id);
+
+        if ($categoryToDelete !== null) {
+            if ($categoryToDelete['cat_name'] == 'Autre') {
+                return false;
+            } else {
+                parent::delete($id);
+                return true;
+            }
+        }
+    }
 }
