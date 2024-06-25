@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\Hash;
 use app\models\Role;
 use app\models\User;
+use app\models\Log;
 
 /**
  * Module du controleur des utilisateurs
@@ -32,26 +33,49 @@ class UserController
         $user = new User();
         $user = $user->custom(
             'SELECT * FROM users WHERE use_username=:username',
-            ['username' => $_POST['username']]);
+            ['username' => $_POST['username']]
+        );
 
-        if ($user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
+        if (count($user) == 0) {
+            $_SESSION['error'] = "Cet utilisateur n'existe pas.";
+            header('Location: /login');
+            return;
+        }
+
+        if (sizeof($user) > 0 && $user[0]['use_password'] == Hash::rc4($_POST['psw'])) {
             $_SESSION['id'] = $user[0]['use_id'];
             $_SESSION['role'] = $user[0]['role_id'];
 
             if (isset($_SESSION['id'])) {
                 if ($_SESSION['role'] == 1) {
                     header('Location: /dashboard');
+                    return;
                 } else {
                     header('Location: /techniciens-dashboard');
+                    return;
                 }
             } else {
                 $_SESSION['error'] = "Erreur lors de la connexion";
                 header('Location: /login');
+                return;
             }
 
         } else {
+            if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                $ip = $_SERVER['HTTP_CLIENT_IP'];
+            } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (log_ip, log_content) VALUES (:log_ip,:log_content)", [
+                'log_ip' => "$ip",
+                'log_content' => "Tentative de connexion avec l'username " . $_POST['username'],
+            ]);
             $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrecte";
             header('Location: /login');
+            return;
         }
 
     }
@@ -62,14 +86,12 @@ class UserController
      */
     public function account()
     {
-
         $user = new User();
-        $user = $user->find($_SESSION['id']);
+        $user = (array) $user->find($_SESSION['id']);
         $role = new Role();
         $role = $role->find($user['role_id']);
 
         require 'views/account.php';
-
     }
 
     /**
@@ -111,8 +133,8 @@ class UserController
                 $firstname = $_POST['fname'];
 
                 if (strlen($username) > 3 && strlen($username) < 50) {
-                    if (strlen($password) > 8){
-                        if (strlen($firstname) > 2 && strlen($firstname) < 50){
+                    if (strlen($password) > 8) {
+                        if (strlen($firstname) > 2 && strlen($firstname) < 50) {
                             if (strlen($lastname) > 2 && strlen($lastname) < 50) {
                                 // enregistrer l'utilisateur dans la base
                                 $user = new User();
@@ -141,9 +163,6 @@ class UserController
                     $_SESSION['error'] = "Longueur du nom d'utilisateur incorrecte";
                     header('Location: /register');
                 }
-
-
-
 
             } else {
                 $_SESSION['error'] = "Captcha invalide";
@@ -178,6 +197,7 @@ class UserController
             header('Location: /account');
         }
 
+        $_SESSION['success'] = "Mot de passe modifié avec succès";
         header('Location: /account');
     }
 
@@ -191,6 +211,8 @@ class UserController
             header('Location: /');
         } else {
             unset($_SESSION['id']);
+            unset($_SESSION['role']);
+            $_SESSION['success'] = "Vous avez été déconnecté";
             header('Location: /');
         }
     }

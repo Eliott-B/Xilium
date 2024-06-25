@@ -77,11 +77,13 @@ abstract class Model
     public function custom($query, $args = NULL){
         if (isset($args)) {
             foreach ($args as $k => $v) {
-                $args[$k] = htmlspecialchars(trim($v));
+                if (!is_null($v)) {
+                    $args[$k] = htmlspecialchars(trim($v));
+                } 
             }
         }
 
-        return $this->db->query($query, $args);
+        return $this->db->query($query, $args ?? []);
     }
 
     /** Fonction qui permet d'insérer une nouvelle ligne dans la table
@@ -148,5 +150,9 @@ abstract class Model
      */
     public function delete($id){
         $this->db->query("DELETE FROM $this->table WHERE " . substr($this->table, 0, 3) . "_id = $id");
+    }
+
+    public function getId(){
+        return $this->id;
     }
 }

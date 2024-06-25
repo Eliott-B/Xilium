@@ -8,15 +8,13 @@
 De gauche à droite, sont répertoriés : 
 - Un bouton pour vous rendre au menu principal du site au clic sur le logo Xilium ainsi qu'une vidéo 
 explicative du site
-- Un lot de trois onglets pour vous déplacer respectivement dans le tableau de bord, la FAQ et les informations 
-de Xilium
-- Un bouton pour voir les informations de votre profil
-- Un bouton de connexion et d'inscription si vous n'êtes pas connecté 
+- Un bouton accueil pour vous rendre à l'accueil du site
+- Un bouton de connexion et d'inscription si vous n'êtes pas connecté
 
 ![Page d'accueil](img/page_accueil.png)
 
 En défilant, vous pouvez créer des tickets et voir les dix derniers tickets.  
-Pour voir, vos tickets en cours, il vous suffit de cliquer sur le bouton "Mes tickets en cours".
+Pour voir, vos tickets en cours, il vous suffit de cliquer sur le bouton "Mes tickets".
 
 ![Page d'accueil ticket](img/page_accueil_tickets.png)
 
@@ -36,6 +34,8 @@ Vous retrouverez de haut en bas :
 
 Dans cet onglet, vous retrouverez vos tickets personnels en cours et clos avec les 
 réponses apportées par les techniciens.
+
+![Page Tableau de bord](img/page_dashboard.png)
 
 ## Page Questions Fréquentes
 
@@ -77,5 +77,11 @@ En bas de toutes les pages, vous retrouverez les mentions légales.
 
 ![Mentions legales](img/page_mentions_legales.png) 
 
+## Page de Tableau de bord Admin Web
+
+Sur cette page, l'administrateur Web peut affecter des tickets à des techniciens afin de prendre en charge les 
+problèmes des utilisateurs.   
+
+![Page Tableau de bord Admin Web](img/page_dashboard_adminWeb.png)
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON  

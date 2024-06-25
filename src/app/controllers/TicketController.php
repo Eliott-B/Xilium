@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\Database;
+use app\models\Role;
 use app\models\Ticket;
 use app\models\Category;
 use app\models\Label;
@@ -9,6 +11,7 @@ use app\models\Priority;
 use app\models\Status;
 use app\models\Comment;
 use app\models\User;
+use app\models\Log;
 
 /**
  * Module du controleur des tickets
@@ -21,6 +24,12 @@ class TicketController
      */
     public function create_form()
     {
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
         $category = new Category();
         $categories = $category->all();
         $label = new Label();
@@ -36,18 +45,39 @@ class TicketController
      */
     public function create()
     {
-        $ticket = new Ticket();
-        $ticket->create([
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
+        $values_to_create = [
             'tic_title' => $_POST['title'],
             'tic_description' => $_POST['description'],
             'author_id' => $_SESSION['id'],
             'label_id' => $_POST['problem'],
-            'priority_id' => $_POST['priority'],
+            'priority_id' => (isset($_POST['priority'])) ? $_POST['priority'] : null,
             'status_id' => 1,
             'category_id' => $_POST['category'],
             'updater_id' => $_SESSION['id'],
             'creation_date' => date('Y-m-d H:i:s'),
             'update_date' => date('Y-m-d H:i:s')
+        ];
+        foreach ($values_to_create as $key => $value) {
+            if ($value == null) {
+                unset($values_to_create[$key]);
+            }
+        }
+        $ticket = new Ticket();
+        $ticket->create($values_to_create);
+
+        $logs = new Log();
+
+        $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+            'log_ip' => $_SERVER['REMOTE_ADDR'],
+            'ticket_id' => $ticket->getId(),
+            'user_id' => $_SESSION['id'],
+            'log_content' => "Nouveau ticket",
         ]);
 
         header('Location: /dashboard');
@@ -59,6 +89,11 @@ class TicketController
      */
     public function update_form($id)
     {
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
 
         $_SESSION['previous_url'] = $_SERVER['HTTP_REFERER'];
 
@@ -66,8 +101,10 @@ class TicketController
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id'] &&
-            $_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
+        if (
+            $ticket['author_id'] !== $_SESSION['id'] &&
+            $_SESSION['role'] !== 10 && $_SESSION['role'] !== 50
+        ) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         } else {
@@ -80,8 +117,7 @@ class TicketController
 
             if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50) {
                 require 'views/update_technicien.php';
-            }
-            else {
+            } else {
                 require 'views/update.php';
             }
         }
@@ -92,10 +128,15 @@ class TicketController
      */
     public function update($id)
     {
-
-        if(!isset($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
         }
 
         $ticket = new Ticket();
@@ -125,6 +166,13 @@ class TicketController
                 'updater_id' => $_SESSION['id'],
                 'update_date' => date('Y-m-d H:i:s')
             ]);
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                'log_ip' => $_SERVER['REMOTE_ADDR'],
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                'log_content' => "Mise à jour du ticket",
+            ]);
         }
 
         header('Location: ' . $_SESSION['previous_url']);
@@ -135,10 +183,15 @@ class TicketController
      */
     public function update_technicien($id)
     {
-
-        if(!isset($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
         }
 
         $ticket = new Ticket();
@@ -173,18 +226,26 @@ class TicketController
     {
         $_SESSION['previous_url'] = $_SERVER['HTTP_REFERER'];
 
-        if (!isset ($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
         }
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id'] &&
+        if (
+            $ticket['author_id'] !== $_SESSION['id'] &&
             $_SESSION['role'] !== 10 &&
-            $_SESSION['role'] !== 50) {
+            $_SESSION['role'] !== 50
+        ) {
             $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             header('Location: /dashboard');
         } else {
@@ -197,14 +258,21 @@ class TicketController
      */
     public function close($id)
     {
+        if ($_SESSION['role'] == 100) {
+            header('Location: ' . $_SESSION['previous_url']);
+            exit();
+        }
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($ticket['author_id'] == $_SESSION['id'] ||
+            if (
+                $ticket['author_id'] == $_SESSION['id'] ||
                 $_SESSION['role'] == 10 ||
-                $_SESSION['role'] == 50) {
+                $_SESSION['role'] == 50
+            ) {
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $status = new Status();
@@ -214,15 +282,19 @@ class TicketController
                     'updater_id' => $_SESSION['id'],
                     'update_date' => date('Y-m-d H:i:s')
                 ]);
+                $logs = new Log();
+                $logs = $logs->custom("INSERT INTO logs (log_ip,ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                    'log_ip' => $_SERVER['REMOTE_ADDR'],
+                    'ticket_id' => $id,
+                    'user_id' => $_SESSION['id'],
+                    'log_content' => "Ticket fermé",
+                ]);
             } else {
                 $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
             }
         }
 
-
-
         header('Location: ' . $_SESSION['previous_url']);
-
     }
 
     /** Fonction permettant de commenter un ticket
@@ -230,14 +302,25 @@ class TicketController
      */
     public function comment($id)
     {
-        if (!isset ($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
         }
 
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
+        $ticket = new Ticket();
+        $ticket = $ticket->find($id);
+        $ticket = (array) $ticket;
+
         if ($ticket['author_id'] == $_SESSION['id'] ||
             $_SESSION['role'] == 10 ||
-            $_SESSION['role'] == 50) {    
+            $_SESSION['role'] == 50
+        ) {
             $comment = new Comment();
             $comment->create([
                 'com_title' => $_POST['title'],
@@ -245,8 +328,13 @@ class TicketController
                 'com_date' => date('Y-m-d H:i:s'),
                 'ticket_id' => $id,
                 'user_id' => $_SESSION['id'],
-                // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
-                
+            ]);
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                'log_ip' => $_SERVER['REMOTE_ADDR'],
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                'log_content' => "Nouveau commentaire",
             ]);
         } else {
             $_SESSION['error'] = "vous n'êtes ni l'auteur de ce ticket ni un technicien";
@@ -256,24 +344,29 @@ class TicketController
         header('Location: ' . $previous_url);
 
     }
-    
+
 
     /** Fonction permettant d'afficher un ticket
      *  @param int $id id du ticket à afficher
      */
     public function show($id)
     {
-
-        if (!isset ($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
         }
 
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
         $ticket = new Ticket();
         try {
-            
+
             $ticket = $ticket->find($id);
-            
+
         } catch (\Exception $e) {
             $_SESSION['error'] = "Ce ticket n'existe pas";
             header('Location: /dashboard');
@@ -281,9 +374,11 @@ class TicketController
 
         $ticket = (array) $ticket;
 
-        if ($ticket['author_id'] !== $_SESSION['id'] && 
+        if (
+            $ticket['author_id'] !== $_SESSION['id'] &&
             $ticket['tech_id'] !== $_SESSION['id'] &&
-            ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50 || $ticket['tech_id'] !== NULL)) {
+            ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50 || $ticket['tech_id'] !== NULL)
+        ) {
             $_SESSION['error'] = "vous n'etes pas l'auteur de ce ticket";
             header('Location: /dashboard');
         }
@@ -319,11 +414,23 @@ class TicketController
 
         if ($ticket['tech_id'] != null) {
             $tech = new User();
-            $tech = $tech->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['tech_id']])[0];    
+            $tech = $tech->custom("select use_name, use_firstname from users where use_id = :id", ['id' => $ticket['tech_id']])[0];
         } else {
             $tech = null;
         }
-        
+
+        if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50) {
+            $python_exit = shell_exec("python3 /var/www/html/app/ai/predict.py '" . $ticket['tic_description'] . "'");
+            $suggestion_category = new Category();
+            $suggest = $suggestion_category->custom("select cat_id, cat_name from categories where cat_name = :name", ['name' => $python_exit])[0];
+            $suggestion_category = $suggest['cat_name'];
+            $suggestion_category_id = $suggest['cat_id'];
+            
+            if ($suggestion_category == null) {
+                $suggestion_category = "Aucune suggestion";
+            }
+        }
+
         require 'views/ticket.php';
     }
 
@@ -332,6 +439,12 @@ class TicketController
      */
     public function update_status_form($id)
     {
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
@@ -352,9 +465,15 @@ class TicketController
      */
     public function update_status($id)
     {
-        if(!isset($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'etes pas connecté";
             header('Location: /login');
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
         }
 
         $ticket = new Ticket();
@@ -373,6 +492,13 @@ class TicketController
             $ticket->update([
                 'status_id' => $_POST['status']
             ]);
+            $logs = new Log();
+            $logs = $logs->custom("INSERT INTO logs (log_ip,ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                'log_ip' => $_SERVER['REMOTE_ADDR'],
+                'ticket_id' => $id,
+                'user_id' => $_SESSION['id'],
+                'log_content' => "Mise à jour du statut du ticket",
+            ]);
         }
 
         header('Location: /ticket/' . $id);
@@ -383,18 +509,28 @@ class TicketController
      */
     public function assignation_form($id)
     {
-        if (!isset ($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'êtes pas connecté";
             header('Location: /login');
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
         }
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 &&
-            $_SESSION['role'] !== 50) {
-            $_SESSION['error'] = "vous n'êtes pas un technicien";
+        $user_role_id = Role::getRoleIdByUserId($_SESSION['id']);
+
+        if (
+            $user_role_id !== 10 &&
+            $user_role_id !== 50
+        ) {
+            $user_role_id = "vous n'êtes pas un technicien";
             header('Location: /dashboard');
         } else {
             require 'views/assignation.php';
@@ -411,12 +547,21 @@ class TicketController
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($_SESSION['role'] == 10 ||
-                $_SESSION['role'] == 50) {
+            if (
+                $_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50
+            ) {
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $ticket->update([
                     'tech_id' => $_SESSION['id']
+                ]);
+                $logs = new Log();
+                $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                    'log_ip' => $_SERVER['REMOTE_ADDR'],
+                    'ticket_id' => $id,
+                    'user_id' => $_SESSION['id'],
+                    'log_content' => "Assignation du ticket",
                 ]);
             } else {
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
@@ -431,17 +576,25 @@ class TicketController
      */
     public function desassignation_form($id)
     {
-        if (!isset ($_SESSION['id'])) {
+        if (!isset($_SESSION['id'])) {
             $_SESSION['error'] = "vous n'êtes pas connecté";
             header('Location: /login');
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
         }
 
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
-        if ($_SESSION['role'] !== 10 &&
-            $_SESSION['role'] !== 50) {
+        if (
+            $_SESSION['role'] !== 10 &&
+            $_SESSION['role'] !== 50
+        ) {
             $_SESSION['error'] = "vous n'êtes pas un technicien";
             header('Location: /dashboard');
         } else {
@@ -454,23 +607,62 @@ class TicketController
      */
     public function desassignation($id)
     {
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
         $ticket = new Ticket();
         $ticket = $ticket->find($id);
         $ticket = (array) $ticket;
 
         if ($_POST['response'] === 'yes') {
-            if ($_SESSION['role'] == 10 ||
-                $_SESSION['role'] == 50) {
+            if (
+                $_SESSION['role'] == 10 ||
+                $_SESSION['role'] == 50
+            ) {
                 $ticket = new Ticket();
                 $ticket->find($id);
                 $ticket->update([
                     'tech_id' => NULL
+                ]);
+                $logs = new Log();
+                $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                    'log_ip' => $_SERVER['REMOTE_ADDR'],
+                    'ticket_id' => $id,
+                    'user_id' => $_SESSION['id'],
+                    'log_content' => "Desassignation du ticket",
                 ]);
             } else {
                 $_SESSION['error'] = "vous n'êtes pas un technicien";
             }
         }
         header('Location: /techniciens-dashboard');
+    }
 
+    /** Fonction pour accepter la suggestion de catégorie
+     * @param int $id id du ticket à modifier
+     * @param int $category_id id de la catégorie à attribuer
+     */
+    public function accept_suggestion($id, $category_id)
+    {
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['error'] = "vous n'etes pas connecté";
+            header('Location: /login');
+        }
+
+        if ($_SESSION['role'] !== 10 && $_SESSION['role'] !== 50) {
+            $_SESSION['error'] = "vous n'êtes pas technicien";
+            header('Location: /dashboard');
+        }
+
+        $ticket = new Ticket();
+        $ticket->find($id);
+        $ticket->update([
+            'category_id' => $category_id
+        ]);
+
+        header('Location: /ticket/' . $id);
     }
 }

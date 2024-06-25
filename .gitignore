@@ -292,3 +292,7 @@ $RECYCLE.BIN/
 src/tests/vendor
 database/data
 .env
+doc/doxygen
+src/data/*
+!src/data/log_template.xml
+shiny-server/logs

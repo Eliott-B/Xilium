@@ -1,0 +1,26 @@
+.err404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.err404 h1 {
+  color: #1c030e;
+  font-size: 10em;
+  margin-bottom: 10px;
+}
+.err404 p {
+  color: #1c030e;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.err404 a {
+  color: #031c12;
+  text-decoration: #031c12 underline;
+  transition: ease-in-out 0.1s;
+}
+.err404 a:hover {
+  font-weight: bolder;
+  color: #6e0c38;
+  text-decoration: #031c12 underline;
+}

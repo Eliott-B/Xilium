@@ -3,6 +3,15 @@
 @font-face {
     font-family: "Lena";
     src:
+        local("Lena2"),
+        url("../fonts/lena/LenaAccents.woff") format("woff");
+        unicode-range: U+00E9,U+00C9,U+00C8,U+00E8,U+00E0,U+00C0
+}
+
+
+@font-face {
+    font-family: "Lena";
+    src:
         local("Lena"),
         url("../fonts/lena/Lena.woff") format("woff");
 }
@@ -13,6 +22,8 @@
         local("Sloth"),
         url("../fonts/Sloth/Sloth-Regular.woff") format("woff");
 }
+
+
 
 body {
     background-color: #fef6fa;
@@ -79,6 +90,7 @@ html {
     margin-left: 2rem;
 
     a {
+        padding: 1rem;
         text-decoration: none;
         color: $primary-2b;
         font-size: 1.4rem;
@@ -108,4 +120,47 @@ html {
             transition: ease-in-out 0.5s;
         }
     }
+}
+
+.error {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 172, 172);
+    border: 1px solid darkred;
+    border-radius: 15px;
+    
+    p {
+        img {
+            filter: brightness(0) saturate(100%) invert(12%) sepia(67%) saturate(4099%) hue-rotate(354deg) brightness(93%) contrast(120%);
+            margin-bottom: -5px;
+        }
+        margin-left: 1rem;
+        color: darkred;
+    }
+}
+
+.success {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    background-color: rgb(172, 255, 172);
+    border: 1px solid darkgreen;
+    border-radius: 15px;
+    
+    p {
+        img {
+            filter: brightness(0) saturate(100%) invert(20%) sepia(84%) saturate(1683%) hue-rotate(99deg) brightness(97%) contrast(106%);
+            margin-bottom: -5px;
+        }
+        margin-left: 1rem;
+        color: darkgreen;
+    }
+}
+
+.add-ticket {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 100;
 }
