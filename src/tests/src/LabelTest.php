@@ -11,14 +11,33 @@ final class LabelTest extends TestCase
     public function testCreation()
     {
         $label = new Label();
-        $label->create([
-            'lab_name' => "test",
-            'lab_css_color' => '#ffffff'
+        $result = $label->create([
+            'lab_name' => "Amelioration",
+            'lab_css_color' => '#9b59b6'
         ]);
         $labels = $label->all();
-        $this->assertSame('test', end($labels)["lab_name"]);
-        $this->assertSame('#ffffff', end($labels)["lab_css_color"]);
+        $this->assertTrue($result);
+        $this->assertSame('Amelioration', end($labels)["lab_name"]);
+        $this->assertSame('#9b59b6', end($labels)["lab_css_color"]);
         $label->delete(end($labels)["lab_id"]);
+
+        $label = new Label();
+        $result = $label->create([
+            'lab_name' => "Amelioration",
+            'lab_css_color' => 123
+        ]);
+        $labels = $label->all();
+        $this->assertFalse($result);
+        $this->assertNotEquals(123, end($labels)["lab_css_color"]);
+
+        $label = new Label();
+        $result = $label->create([
+            'lab_name' => 56,
+            'lab_css_color' => '#9b59b6'
+        ]);
+        $labels = $label->all();
+        $this->assertFalse($result);
+        $this->assertNotEquals(56, end($labels)["lab_name"]);
     }
 
     public function testUpdate()

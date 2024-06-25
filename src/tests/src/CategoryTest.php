@@ -11,14 +11,33 @@ final class CategoryTest extends TestCase
     public function testCreation()
     {
         $category = new Category();
-        $category->create([
-            'cat_name' => "test",
-            'cat_css_color' => '#ffffff'
+        $result = $category->create([
+            'cat_name' => "Materiel",
+            'cat_css_color' => '#9b59b6'
         ]);
         $categories = $category->all();
-        $this->assertSame('test', end($categories)["cat_name"]);
-        $this->assertSame('#ffffff', end($categories)["cat_css_color"]);
+        $this->assertTrue($result);
+        $this->assertSame('Materiel', end($categories)["cat_name"]);
+        $this->assertSame('#9b59b6', end($categories)["cat_css_color"]);
         $category->delete(end($categories)["cat_id"]);
+
+        $category = new Category();
+        $result = $category->create([
+            'cat_name' => "Materiel",
+            'cat_css_color' => 123
+        ]);
+        $categories = $category->all();
+        $this->assertFalse($result);
+        $this->assertNotEquals(123, end($categories)["cat_css_color"]);
+
+        $category = new Category();
+        $result = $category->create([
+            'cat_name' => 56,
+            'cat_css_color' => '#9b59b6'
+        ]);
+        $categories = $category->all();
+        $this->assertFalse($result);
+        $this->assertNotEquals(56, end($categories)["cat_name"]);
     }
 
     public function testUpdate()

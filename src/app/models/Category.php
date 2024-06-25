@@ -37,7 +37,7 @@ class Category extends Model
      * Supprime une catégorie à partir de son id
      * sauf si le nom de la catégorie est 'Autre'
      * @param $id
-     * @return null
+     * @return bool
      */
     public function delete($id)
     {
@@ -50,6 +50,25 @@ class Category extends Model
                 parent::delete($id);
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    /**
+     * Créé une catégorie à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     * @return bool
+     */
+    public function create(array $args)
+    {
+        if (gettype($args['cat_name']) != "string" ||
+            ($args['cat_css_color'] != null && gettype($args['cat_css_color']) != "string")) {
+            return false;
+        } else {
+            parent::create($args);
+            return true;
         }
     }
 }

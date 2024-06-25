@@ -31,4 +31,20 @@ class Role extends Model
         $role=$role->custom("SELECT * FROM roles WHERE rol_id = (SELECT role_id FROM users WHERE use_id = :id)", ['id' => $id]);
         return intval($role[0]['rol_id']);
     }
+
+    /**
+     * Créé un role à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     * @return bool
+     */
+    public function create(array $args)
+    {
+        if (gettype($args['rol_name']) != "string") {
+            return false;
+        } else {
+            parent::create($args);
+            return true;
+        }
+    }
 }
