@@ -68,7 +68,9 @@
     <?php foreach ($view_tickets as $v_ticket): ?>
         <?php
 
-        
+        if ($v_ticket[1]['status']['sta_name'] === "Fermé"&& $v_ticket[1]['tech_id'] !== $_SESSION['id']) {
+            continue;
+        }
 
         if ($v_ticket[1]['status']['sta_name'] === "Fermé" && $v_ticket[1]['tech_id'] === $_SESSION['id']) {
             echo "<div class='ticket' id='closed'>";

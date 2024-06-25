@@ -29,7 +29,7 @@ class LabelController
         $label = new Label();
         $label = $label->delete($id);
 
-        header('Location: /admin/labels/list');
+        header('Location: /admin/labels');
     }
 
     /**

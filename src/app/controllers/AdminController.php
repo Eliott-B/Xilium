@@ -48,7 +48,7 @@ class AdminController
             $firstname = $_POST['use_firstname'];
 
             if (strlen($username) > 3 && strlen($username) < 50) {
-                if (strlen($password) > 8) {
+                if (strlen($password) >= 8) {
                     if (strlen($firstname) > 2 && strlen($firstname) < 50) {
                         if (strlen($lastname) > 2 && strlen($lastname) < 50) {
 
