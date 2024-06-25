@@ -7,48 +7,50 @@
 ## Sommaire
 
 - [TESTS UNITAIRES](#tests-unitaires)
-  - [Sommaire](#sommaire)
-  - [Procédures](#procédures)
-  - [Test de création](#test-de-création)
-    - [Catégorie](#catégorie)
-    - [Comment](#comment)
-    - [Label](#label)
-    - [Log](#log)
-    - [Priority](#priority)
-    - [Role](#role)
-    - [Statut](#statut)
-    - [Ticket](#ticket)
-    - [Utilisateur](#utilisateur)
-  - [Test de mise à jour](#test-de-mise-à-jour)
-    - [Catégorie](#catégorie-1)
-    - [Comment](#comment-1)
-    - [Label](#label-1)
-    - [Log](#log-1)
-    - [Priority](#priority-1)
-    - [Role](#role-1)
-    - [Statut](#statut-1)
-    - [Ticket](#ticket-1)
-    - [Utilisateur](#utilisateur-1)
-  - [Test de lecture](#test-de-lecture)
-    - [Catégorie](#catégorie-2)
-    - [Comment](#comment-2)
-    - [Label](#label-2)
-    - [Log](#log-2)
-    - [Priority](#priority-2)
-    - [Role](#role-2)
-    - [Statut](#statut-2)
-    - [Ticket](#ticket-2)
-    - [Utilisateur](#utilisateur-2)
-  - [Test de suppression](#test-de-suppression)
-    - [Catégorie](#catégorie-3)
-    - [Comment](#comment-3)
-    - [Label](#label-3)
-    - [Log](#log-3)
-    - [Priority](#priority-3)
-    - [Role](#role-3)
-    - [Statut](#statut-3)
-    - [Ticket](#ticket-3)
-    - [Utilisateur](#utilisateur-3)
+    - [Sommaire](#sommaire)
+    - [Procédures](#procédures)
+    - [Test de création](#test-de-création)
+        - [Catégorie](#catégorie)
+        - [Comment](#comment)
+        - [Label](#label)
+        - [Log](#log)
+        - [Priority](#priority)
+        - [Role](#role)
+        - [Statut](#statut)
+        - [Ticket](#ticket)
+        - [Utilisateur](#utilisateur)
+    - [Test de mise à jour](#test-de-mise-à-jour)
+        - [Catégorie](#catégorie-1)
+        - [Comment](#comment-1)
+        - [Label](#label-1)
+        - [Log](#log-1)
+        - [Priority](#priority-1)
+        - [Role](#role-1)
+        - [Statut](#statut-1)
+        - [Ticket](#ticket-1)
+        - [Utilisateur](#utilisateur-1)
+    - [Test de lecture](#test-de-lecture)
+        - [Catégorie](#catégorie-2)
+        - [Comment](#comment-2)
+        - [Label](#label-2)
+        - [Log](#log-2)
+        - [Priority](#priority-2)
+        - [Role](#role-2)
+        - [Statut](#statut-2)
+        - [Ticket](#ticket-2)
+        - [Utilisateur](#utilisateur-2)
+    - [Test de suppression](#test-de-suppression)
+        - [Catégorie](#catégorie-3)
+        - [Comment](#comment-3)
+        - [Label](#label-3)
+        - [Log](#log-3)
+        - [Priority](#priority-3)
+        - [Role](#role-3)
+        - [Statut](#statut-3)
+        - [Ticket](#ticket-3)
+        - [Utilisateur](#utilisateur-3)
+    - [Test Hash](#test-hash)
+        - [Hash](#hash)
 
 ## Procédures
 
@@ -66,7 +68,7 @@ Pour cela, il faut lancer le conteneur avec la commande suivante :
 docker exec xilium-app-1 bash -c "cd /var/www/html/tests && ./run_test.sh"
 ```
 
-&emsp;Les résultats apparaitront en sorti.  
+&emsp;Les résultats apparaitront en sorti.
 
 &emsp;Les tests unitaires sont automatiquement exécutés à chaque demande de merge sur les branches `dev`et `main`.
 Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu'à correction de celui-ci.
@@ -903,6 +905,44 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Users           | 2             | supprimé         |
 | Users           | n'existe pas  | pas supprimé     |
 | Users           | 'ada' ou null | pas supprimé     |
+
+---
+
+## Test Hash
+
+### Crypter
+
+| PARTITION D'ÉQUIVALENCE | ENTRÉES     |              | RÉSULTAT ATTENDU |
+|-------------------------|-------------|--------------|------------------|
+| Classe                  | clé         | Mot_de_passe | RÉSULTAT ATTENDU |
+| ----------              | TYPE        | --------     | ----------       |
+| Hash                    | string      | string       | crypté           |
+| Hash                    | peu importe | peu importe  | pas crypté       |
+
+| DONNÉES DE TEST | ENTRÉES     |                    | RÉSULTAT ATTENDU                 |
+|-----------------|-------------|--------------------|----------------------------------|
+| Classe          | clé         | mot_de_passe       | RÉSULTAT ATTENDU                 |
+| ----------      | -----       | ----------         | ----------                       |
+| Hash            | 'Secret'    | 'Attack at dawn45' | 45a01f645fc35b383552544b9bf58da7 |
+| Hash            | peu importe | peu importe        | pas crypté                       |
+
+---
+
+### Décrypter
+
+| PARTITION D'ÉQUIVALENCE | ENTRÉES                 |                    | RÉSULTAT ATTENDU |
+|-------------------------|-------------------------|--------------------|------------------|
+| Classe                  | clé                     | Mot_de_passe       | RÉSULTAT ATTENDU |
+| ----------              | TYPE                    | --------           | ----------       |
+| Hash                    | string                  | string             | décrypté         |
+| Hash                    | not hexadecimal ou null | not string ou null | pas décrypté     |
+
+| DONNÉES DE TEST | ENTRÉES     |                                  | RÉSULTAT ATTENDU   |
+|-----------------|-------------|----------------------------------|--------------------|
+| Classe          | clé         | Mot_de_passe                     | RÉSULTAT ATTENDU   |
+| ----------      | --------    | ----------                       | ----------         |
+| Hash            | 'Secret'    | 45a01f645fc35b383552544b9bf58da7 | 'Attack at dawn45' |
+| Hash            | peu importe | peu importe                      | pas décrypté       |
 
 > FA2 | BARKER, OUALI, GUILLERAY, GRAVIER, LEMOUTON
 

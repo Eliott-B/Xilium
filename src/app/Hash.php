@@ -11,6 +11,15 @@ class Hash
     protected static $key = 'Key';
 
     /**
+     * Défini la clé de chiffrage pour la méthode rc4
+     * @param string $key la clé à utiliser pour le chiffrage
+     * @return void
+     */
+    public static function setKey($key) {
+        self::$key = $key;
+    }
+
+    /**
      * Crypte et décrypte une chaine de caractère
      * @param string $data chaine à crypter/décrypter
      * @return string chaine crypté/décrypté
