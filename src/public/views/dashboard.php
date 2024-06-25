@@ -84,11 +84,11 @@
                 <span class="ticket-problem" style="background-color: <?= $v_ticket['label']['lab_css_color'] ?>">
                     <?= $v_ticket['label']['lab_name'] ?>
                 </span>
-                <? if($v_ticket['priority'] !== null): ?>
+                <?php if($v_ticket['priority'] !== null): ?>
                 <span class="ticket-priority" style="background-color: <?= $v_ticket['priority']['pri_css_color'] ?>">
                     <?= $v_ticket['priority']['pri_name'] ?>
                 </span>
-                <? endif; ?>
+                <?php endif; ?>
             </div>
             <div class="ticket-main-status" style="background-color: <?= $v_ticket['status']['sta_css_color'] ?>">
                 <?= $v_ticket['status']['sta_name'] ?>
