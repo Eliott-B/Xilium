@@ -39,13 +39,13 @@ fi
 
 if [[ $response = "y" ]]; then
     python3 setup_env.py
-    cd ./src/config && python3 config/config.py >> /dev/null
+    cd ./src/config && python3 config.py >> /dev/null
     cd ../../
 fi
 
 if [ ! -d database/data ]; then
     mkdir database/data
-    cd ./src/config && python3 config/config.py >> /dev/null
+    cd ./src/config && python3 config.py >> /dev/null
     cd ../../
 fi
 
