@@ -107,28 +107,28 @@
                           style="background-color: <?= $v_ticket[1]['label']['lab_css_color'] ?>">
                     <?= $v_ticket[1]['label']['lab_name'] ?>
                 </span>
-                    <? if ($v_ticket[1]['priority'] !== null): ?>
-                        <span class="ticket-priority"
-                              style="background-color: <?= $v_ticket[1]['priority']['pri_css_color'] ?>">
+                <?php if($v_ticket[1]['priority'] !== null): ?>
+                    <span class="ticket-priority" style="background-color: <?= $v_ticket[1]['priority']['pri_css_color'] ?>">
                         <?= $v_ticket[1]['priority']['pri_name'] ?>
                     </span>
-                    <? endif; ?>
-                </div>
-                <div class="ticket-main-status"
-                     style="background-color: <?= $v_ticket[1]['status']['sta_css_color'] ?>">
-                    <?= $v_ticket[1]['status']['sta_name'] ?>
-                </div>
-                <div class="ticket-main-message">
-                    <p>
-                        <?= $v_ticket[1]['tic_description'] ?>
-                    </p>
-                </div>
-                <br/>
-                <div class="ticket-main-actions">
-                    <?php if ($v_ticket[1]['status']['sta_name'] !== "Fermé"): ?>
-                        <button class="btn-secondary"
-                                onclick="window.location.href='/close/<?= $v_ticket[1]['tic_id'] ?>'">Fermer
-                        </button>&ensp;
+                <?php endif; ?>
+            </div>
+            <div class="ticket-main-status" style="background-color: <?= $v_ticket[1]['status']['sta_css_color'] ?>">
+                <?= $v_ticket[1]['status']['sta_name'] ?>
+            </div>
+            <div class="ticket-main-message">
+                <p>
+                    <?= $v_ticket[1]['tic_description'] ?>
+                </p>
+            </div>
+            <br />
+            <div class="ticket-main-actions">
+                <?php if ($v_ticket[1]['status']['sta_name'] !== "Fermé"): ?>
+                    <button class="btn-secondary"
+                        onclick="window.location.href='/close/<?= $v_ticket[1]['tic_id'] ?>'">Fermer</button>&ensp;
+                    <button class="btn-primary"
+                        onclick="window.location.href='/update/<?= $v_ticket[1]['tic_id'] ?>'">Modifier</button>
+                    <?php if ($v_ticket[1]['tech_id'] == $_SESSION['id']): ?>
                         <button class="btn-primary"
                                 onclick="window.location.href='/update/<?= $v_ticket[1]['tic_id'] ?>'">Modifier
                         </button>
