@@ -30,17 +30,20 @@ class SystemDashboardController
         $files = array_diff($files, ['.', '..', 'log_template.xml']);
         $files = array_reverse($files);
 
-        $filename = __DIR__."/../../data/".$files[0];
-        $xml = simplexml_load_file($filename);
         $logs_text = "";
-        foreach ($xml->log as $log) {
-            if (strpos($log->log_content, "Tentative de connexion") !== false) {
-                $logs_text .= "<p style='color:#a10000'>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
-            }
-            else {
-                $logs_text .= "<p>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
+        if (count($files) != 0) {
+            $filename = __DIR__."/../../data/".$files[0];
+            $xml = simplexml_load_file($filename);
+            foreach ($xml->log as $log) {
+                if (strpos($log->log_content, "Tentative de connexion") !== false) {
+                    $logs_text .= "<p style='color:#a10000'>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
+                }
+                else {
+                    $logs_text .= "<p>".$log->log_content." - ".$log->log_date." - ".$log->log_ip." - ".$log->ticket_id." - ".$log->user_id."</p>";
+                }
             }
         }
+        
 
         require 'views/system_dashboard.php';
     }
