@@ -86,15 +86,15 @@ problèmes des utilisateurs.
 
 ## Page de log
 
-Sur cette page, l'administrateur peut consulter les logs des modifications sur l'application.
-Il peut charger un fichier de données.
+Sur cette page, l'administrateur peut consulter les logs des modifications sur l'application qui sont découpées par semaine.
+Il peut ainsi basculer de semaine en semaine grâce à la liste déroulante et en appuyant sur charger.
 
 ![Page de log](img/page_log.PNG)
 
-## Page de la gestion des users, labels et catégorie
+## Page de la gestion des users, labels et catégories
 
 Sur cette page, l'administrateur web peut manipuler les utilisateurs, les labels ainsi que les 
-catégories. Il peut en modifier et en supprimer.
+catégories. Il peut en ajouter, en modifier et en supprimer.
 
 ![Page de gestion utilisateur](img/page_gestion_user.PNG)
   
