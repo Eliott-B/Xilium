@@ -22,18 +22,6 @@ class Category extends Model
     ];
 
     /**
-     * Récupère une catégorie à partir de son identifiant
-     * @param $id
-     * @return array Les données de la catégorie récupérée
-     */
-    public function get_category($id)
-    {
-        $category = new Category();
-        $category = $category->custom("select * from categories where cat_id = :id", ['id' => $id]);
-        return $category[0];
-    }
-
-    /**
      * Supprime une catégorie à partir de son id
      * sauf si le nom de la catégorie est 'Autre'
      * @param $id
@@ -41,7 +29,7 @@ class Category extends Model
      */
     public function delete($id)
     {
-        $categoryToDelete = $this->get_category($id);
+        $categoryToDelete = $this->find($id);
 
         if ($categoryToDelete !== null) {
             if ($categoryToDelete['cat_name'] == 'Autre') {
