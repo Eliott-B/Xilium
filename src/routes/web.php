@@ -72,9 +72,6 @@ if (isset($router)){
 
     $router->get('/admin/users/delete/{id}', 'AdminController#delete')->auth();
 
-
-
-
     $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
 
     // PAGES STATIQUES
