@@ -1,4 +1,0 @@
-var class_p_h_p_unit_1_1_metadata_1_1_metadata_collection =
-[
-    [ "asArray", "class_p_h_p_unit_1_1_metadata_1_1_metadata_collection.html#a12b8efb717cb31322bfa4d1d75146979", null ]
-];
