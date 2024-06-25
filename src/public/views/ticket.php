@@ -47,11 +47,11 @@
                 <span class="ticket-problem" style="background-color: <?= $label['lab_css_color'] ?>">
                     <?= $label['lab_name'] ?>
                 </span>
-                <? if($priority !== null): ?>
+                <?php if($priority !== null): ?>
                     <span class="ticket-priority" style="background-color: <?= $priority['pri_css_color'] ?>">
                         <?= $priority['pri_name'] ?>
                     </span>
-                <? endif; ?>
+                <?php endif; ?>
             </div>
             <div class="ticket-main-status" style="background-color: <?= $status['sta_css_color'] ?>">
                 <?= $status['sta_name'] ?>
@@ -61,13 +61,13 @@
                     <?= $ticket['tic_description'] ?>
                 </p>
                 <p>
-                    <? if (($_SESSION['role'] == 10 || $_SESSION['role'] == 50) && $suggestion_category !== $category['cat_name']): ?>
+                    <?php if (($_SESSION['role'] == 10 || $_SESSION['role'] == 50) && $suggestion_category !== $category['cat_name']): ?>
                         <b>Xilium IA - Suggestion de catégorie :</b> <?= $suggestion_category ?>  <button class="btn-suggestion"
                             onclick="window.location.href='/accept-suggestion/<?= $ticket['tic_id'] ?>/<?= $suggestion_category_id ?>'">&#x2705;</button>
-                    <? endif; ?>
-                    <? if ($ticket['tech_id'] !== NULL): ?>
+                    <?php endif; ?>
+                    <?php if ($ticket['tech_id'] !== NULL): ?>
                         <b>Technicien en charge :</b> <?= $tech['use_firstname'] . ' ' . $tech['use_name'] ?>
-                    <? endif; ?>
+                    <?php endif; ?>
                 </p>
             </div>
             <br />
