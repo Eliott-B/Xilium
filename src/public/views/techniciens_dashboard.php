@@ -31,7 +31,7 @@
             })) == 0;
         // True si aucun ticket n'est ouvert    ?>
         <?php $is_0_closeds = sizeof(array_filter($view_tickets, function ($ticket) {
-                return $ticket[1]['status']['sta_name'] === "Fermé" && $ticket[1]['tech_id'] === $_SESSION['id'];
+                return $ticket[1]['status']['sta_name'] === "Fermé" ;
             })) == 0;
         // True si aucun ticket n'est fermé   ?>
         <?php $is_0_alocateds = sizeof(array_filter($view_tickets, function ($ticket) {
@@ -70,11 +70,8 @@
         <?php foreach ($view_tickets as $v_ticket): ?>
             <?php
 
-            if ($v_ticket[1]['status']['sta_name'] === "Fermé" && $v_ticket[1]['tech_id'] !== $_SESSION['id']) {
-                continue;
-            }
 
-            if ($v_ticket[1]['status']['sta_name'] === "Fermé" && $v_ticket[1]['tech_id'] === $_SESSION['id']) {
+            if ($v_ticket[1]['status']['sta_name'] === "Fermé") {
                 echo "<div class='ticket' id='closed'>";
             } else {
                 if ($v_ticket[1]['tech_id'] == $_SESSION['id']) {
@@ -128,10 +125,14 @@
                         onclick="window.location.href='/close/<?= $v_ticket[1]['tic_id'] ?>'">Fermer</button>&ensp;
                     <button class="btn-primary"
                         onclick="window.location.href='/update/<?= $v_ticket[1]['tic_id'] ?>'">Modifier</button>
-                    <?php if ($v_ticket[1]['tech_id'] == $_SESSION['id']): ?>
-                        <button class="btn-primary"
-                                onclick="window.location.href='/update/<?= $v_ticket[1]['tic_id'] ?>'">Modifier
-                        </button>
+                        <?php if (($_SESSION['role'] == 10 ||
+                                $_SESSION['role'] == 50) &&
+                            $v_ticket[1]['tech_id'] !== $_SESSION['id']): ?>
+                            <button class="btn-tertiary"
+                                    onclick="window.location.href='/assignation/<?= $v_ticket[1]['tic_id'] ?>'">
+                                Attribuer
+                            </button>
+                        <?php endif; ?>
                         <?php if ($v_ticket[1]['tech_id'] == $_SESSION['id']): ?>
                             <button class="btn-primary"
                                     onclick="window.location.href='/update-status/<?= $v_ticket[1]['tic_id'] ?>'">
@@ -139,14 +140,7 @@
                                 status
                             </button>
                         <?php endif; 
-                        if (($_SESSION['role'] == 10 ||
-                                $_SESSION['role'] == 50) &&
-                            $v_ticket[1]['tech_id'] !== $_SESSION['id']): ?>
-                            <button class="btn-tertiary"
-                                    onclick="window.location.href='/assignation/<?= $v_ticket[1]['tic_id'] ?>'">
-                                Attribuer
-                            </button>
-                        <?php endif;
+                        
                         if (($_SESSION['role'] == 10 ||
                                 $_SESSION['role'] == 50) &&
                             $v_ticket[1]['tech_id'] === $_SESSION['id']): ?>
@@ -166,7 +160,6 @@
                                 onclick="comment_ticket(<?= $v_ticket[1]['tic_id'] ?>, '<?= addslashes($v_ticket[1]['tic_title']) ?>')">
                             Commenter
                         </button>
-                    <?php endif; ?>
                     <?php endif; ?>
                 </div>
                 <div class="ticket-main-date">
