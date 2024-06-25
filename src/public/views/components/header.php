@@ -27,7 +27,42 @@
                     ['Tableau de bord', '/dashboard', isset($_SESSION['id'])],
                     ['Techniciens', '/techniciens-dashboard', isset($_SESSION['id']) && ($_SESSION['role'] == 10 || $_SESSION['role'] == 50)]
                 ];
+                <li>
+                    <a href="/">
+                        <h1>Accueil</h1>
+                    </a>
+                </li>
 
+                <?php if (isset ($_SESSION['id']) && $_SESSION['role'] != 100): ?>
+
+                    <li>
+                        <a href="/dashboard">
+                            <h1>Tableau de bord</h1>
+                        </a>
+                    </li>
+
+                    <?php if ($_SESSION['role'] == 10 || $_SESSION['role'] == 50): ?>
+                        <li>
+                            <a href="/techniciens-dashboard">
+                                <h1>Techniciens</h1>
+                            </a>
+                        </li>
+                    <?php endif ?>
+
+                    <!-- <li>
+                        <a href="/account">
+                            <h1>Mon compte</h1>
+                        </a>
+                    </li> -->
+                    </a>
+                <?php endif ?>
+                <?php if (isset ($_SESSION['id']) && $_SESSION['role'] == 100): ?>
+                    <li>
+                        <a href="/system-dashboard">
+                            <h1>Administrateur système</h1>
+                        </a>
+                    </li>
+                <?php endif ?>
                 foreach ($header_arrays as $header_array) {
                     if ($header_array[2]) {
                         echo "<li><a";

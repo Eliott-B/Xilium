@@ -21,6 +21,17 @@ class DashboardController
      */
     public function index()
     {
+        if (!isset($_SESSION['id'])) {
+            header('Location: /login');
+            exit();
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
         $ticket = new Ticket();
         $tickets = $ticket->custom("select * from tickets where author_id = :id order by update_date desc", ['id' => $_SESSION['id']]);
         $user = new User();

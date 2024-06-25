@@ -28,11 +28,13 @@ class TechnicienDashboardController
             exit();
         }
 
+
         if (!in_array(Role::getRoleIdByUserId($_SESSION['id']), [10, 50])) {
             $_SESSION['error'] = "Vous n'avez pas les droits pour accéder à cette page";
             header('Location: /dashboard');
             exit();
         }
+
 
         $ticket = new Ticket();
         $tickets = $ticket->custom("select * from tickets order by creation_date desc", []);
