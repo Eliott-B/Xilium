@@ -1,22 +1,13 @@
 library(shiny)
 
-# Define UI for application that plots random distributions 
-shinyUI(pageWithSidebar(
-  
+# Define UI for application that plots random distributions
+shinyUI(fluidPage(
+
   # Application title
-  headerPanel("It's Alive!"),
-  
-  # Sidebar with a slider input for number of observations
-  sidebarPanel(
-    sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
-  ),
-  
+  headerPanel("Shiny statistiques de connexion infructueuses"),
+
   # Show a plot of the generated distribution
   mainPanel(
-    plotOutput("distPlot", height=250)
+    plotOutput("distPlot", height = 250)
   )
 ))
