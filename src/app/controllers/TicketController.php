@@ -383,7 +383,7 @@ class TicketController
 
 
         $comments = new Comment();
-        $comments = $comments->find($ticket['tic_id']);
+        $comments = $comments->get_comments($ticket['tic_id']);
 
         $view_comments = [];
         foreach ($comments as $comment) {
@@ -395,16 +395,16 @@ class TicketController
         $comments = $view_comments;
 
         $status = new Status();
-        $status = $status->find($ticket['status_id']);
+        $status = $status->get_status($ticket['status_id']);
 
         $category = new Category();
-        $category = $category->find($ticket['category_id']);
+        $category = $category->get_category($ticket['category_id']);
 
         $label = new Label();
-        $label = $label->find($ticket['label_id']);
+        $label = $label->get_label($ticket['label_id']);
 
         $priority = new Priority();
-        $priority = $priority->find($ticket['priority_id']);
+        $priority = $priority->get_priority($ticket['priority_id']);
 
 
         $users = new User();

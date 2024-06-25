@@ -21,4 +21,16 @@ class Status extends Model
         'sta_name',
         'sta_css_color'
     ];
+
+    /**
+     * Récupère un status à partir de son id
+     * @param int $id L'id du status à récupérer
+     * @return array Les données du status récupéré
+     */
+    public function get_status($id)
+    {
+        $status = new Status();
+        $status = $status->custom("select * from status where sta_id = :id", ['id' => $id]);
+        return $status[0];
+    }
 }
