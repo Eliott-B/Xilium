@@ -1,4 +1,4 @@
--- DROP DATABASE IF EXISTS xiliumtick;
+DROP DATABASE IF EXISTS xiliumtick;
 CREATE DATABASE IF NOT EXISTS xiliumtick CHARACTER SET utf8mb4;
 USE xiliumtick;
 
@@ -54,11 +54,11 @@ CREATE TABLE tickets
     tic_title       VARCHAR(50) NOT NULL,
     tic_description TEXT        NOT NULL,
     author_id       INT         NOT NULL,
-    label_id        INT         NOT NULL,
-    category_id     INT         NOT NULL,
+    label_id        INT         ,
+    category_id     INT         ,
     priority_id     INT         ,
     status_id       INT         NOT NULL,
-    updater_id      INT         NOT NULL,
+    updater_id      INT         ,
     tech_id         INT         NULL,
     creation_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     update_date     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -90,7 +90,7 @@ CREATE TABLE comments
     com_comment TEXT        NULL,
     com_date    TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ticket_id   INT         NOT NULL,
-    user_id     INT         NOT NULL,
+    user_id     INT         ,
     reply_to    INT         NULL,
     FOREIGN KEY (ticket_id) REFERENCES tickets (tic_id) ON DELETE CASCADE ,
     FOREIGN KEY (user_id) REFERENCES users (use_id) ON DELETE SET NULL ,
