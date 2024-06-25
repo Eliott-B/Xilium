@@ -138,7 +138,7 @@
                                 Modifier le
                                 status
                             </button>
-                        <?php endif;
+                        <?php endif; 
                         if (($_SESSION['role'] == 10 ||
                                 $_SESSION['role'] == 50) &&
                             $v_ticket[1]['tech_id'] !== $_SESSION['id']): ?>
@@ -166,6 +166,7 @@
                                 onclick="comment_ticket(<?= $v_ticket[1]['tic_id'] ?>, '<?= addslashes($v_ticket[1]['tic_title']) ?>')">
                             Commenter
                         </button>
+                    <?php endif; ?>
                     <?php endif; ?>
                 </div>
                 <div class="ticket-main-date">

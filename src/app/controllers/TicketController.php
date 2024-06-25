@@ -73,8 +73,10 @@ class TicketController
         $ticket->create($values_to_create);
 
         $logs = new Log();
-        $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
-            'ticket_id' => Database::getInstance()-> getLastId(),
+
+        $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+            'log_ip' => $_SERVER['REMOTE_ADDR'],
+            'ticket_id' => $ticket->getId(),
             'user_id' => $_SESSION['id'],
             'log_content' => "Nouveau ticket",
         ]);
@@ -166,7 +168,8 @@ class TicketController
                 'update_date' => date('Y-m-d H:i:s')
             ]);
             $logs = new Log();
-            $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+            $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                'log_ip' => $_SERVER['REMOTE_ADDR'],
                 'ticket_id' => $id,
                 'user_id' => $_SESSION['id'],
                 'log_content' => "Mise à jour du ticket",
@@ -281,7 +284,8 @@ class TicketController
                     'update_date' => date('Y-m-d H:i:s')
                 ]);
                 $logs = new Log();
-                $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                $logs = $logs->custom("INSERT INTO logs (log_ip,ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                    'log_ip' => $_SERVER['REMOTE_ADDR'],
                     'ticket_id' => $id,
                     'user_id' => $_SESSION['id'],
                     'log_content' => "Ticket fermé",
@@ -325,11 +329,10 @@ class TicketController
                 'com_date' => date('Y-m-d H:i:s'),
                 'ticket_id' => $id,
                 'user_id' => $_SESSION['id'],
-                // TODO: 'reply to' -> à voir si on peut répondre à un commentaire (actuellement tous les commentaires sont des réponses à un ticket)
-
             ]);
             $logs = new Log();
-            $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+            $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                'log_ip' => $_SERVER['REMOTE_ADDR'],
                 'ticket_id' => $id,
                 'user_id' => $_SESSION['id'],
                 'log_content' => "Nouveau commentaire",
@@ -491,7 +494,8 @@ class TicketController
                 'status_id' => $_POST['status']
             ]);
             $logs = new Log();
-            $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+            $logs = $logs->custom("INSERT INTO logs (log_ip,ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                'log_ip' => $_SERVER['REMOTE_ADDR'],
                 'ticket_id' => $id,
                 'user_id' => $_SESSION['id'],
                 'log_content' => "Mise à jour du statut du ticket",
@@ -554,7 +558,8 @@ class TicketController
                     'tech_id' => $_SESSION['id']
                 ]);
                 $logs = new Log();
-                $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id:,:user_id:,:log_content)", [
+                    'log_ip' => $_SERVER['REMOTE_ADDR'],
                     'ticket_id' => $id,
                     'user_id' => $_SESSION['id'],
                     'log_content' => "Assignation du ticket",
@@ -624,7 +629,8 @@ class TicketController
                     'tech_id' => NULL
                 ]);
                 $logs = new Log();
-                $logs = $logs->custom("INSERT INTO logs (ticket_id, user_id, log_content) VALUES (:ticket_id:,:user_id:,:log_content)", [
+                $logs = $logs->custom("INSERT INTO logs (log_ip, ticket_id, user_id, log_content) VALUES (:log_ip,:ticket_id,:user_id,:log_content)", [
+                    'log_ip' => $_SERVER['REMOTE_ADDR'],
                     'ticket_id' => $id,
                     'user_id' => $_SESSION['id'],
                     'log_content' => "Desassignation du ticket",

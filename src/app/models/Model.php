@@ -151,4 +151,8 @@ abstract class Model
     public function delete($id){
         $this->db->query("DELETE FROM $this->table WHERE " . substr($this->table, 0, 3) . "_id = $id");
     }
+
+    public function getId(){
+        return $this->id;
+    }
 }
