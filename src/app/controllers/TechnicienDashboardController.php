@@ -44,7 +44,7 @@ class TechnicienDashboardController
         foreach ($tickets as $ticket) {
 
             $comments = new Comment();
-            $comments = $comments->find($ticket['tic_id']);
+            $comments = $comments->get_comments($ticket['tic_id']);
 
             $view_comments = [];
             foreach ($comments as $comment) {
@@ -57,17 +57,17 @@ class TechnicienDashboardController
             $ticket['comments'] = $view_comments;
 
             $status = new Status();
-            $status = $status->find($ticket['status_id']);
+            $status = $status->get_status($ticket['status_id']);
             $ticket['status'] = $status;
 
             $category = new Category();
-            $category = $category->find($ticket['category_id']);
+            $category = $category->get_category($ticket['category_id']);
             $ticket['category'] = $category;
             $label = new Label();
-            $label = $label->find($ticket['label_id']);
+            $label = $label->get_label($ticket['label_id']);
             $ticket['label'] = $label;
             $priority = new Priority();
-            $priority = $priority->find($ticket['priority_id']);
+            $priority = $priority->get_priority($ticket['priority_id']);
             $ticket['priority'] = $priority;
 
             $user = new User();
