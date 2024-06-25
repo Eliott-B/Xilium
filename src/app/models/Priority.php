@@ -22,19 +22,4 @@ class Priority extends Model
         'pri_index',
         'pri_css_color'
     ];
-
-    /**
-     * Récupère une priorité à partir de son id
-     * @param int $id L'id de la priorité à récupérer
-     * @return array | null Les données de la priorité récupérée
-     */
-    public function get_priority($id)
-    {
-        $priority = new Priority();
-        $priority = $priority->custom("select * from priorities where pri_id = :id", ['id' => $id]);
-        if (empty($priority)) {
-            return null;
-        }
-        return $priority[0];
-    }
 }

@@ -72,6 +72,10 @@ if (isset($router)){
 
     $router->get('/admin/users/delete/{id}', 'AdminController#delete')->auth();
 
+    $router->get('/system-dashboard', 'SystemDashboardController#index')->auth();
+    $router->post('/system-dashboard', 'SystemDashboardController#read_file')->auth();
+
+
     $router->get('/accept-suggestion/{id}/{category_id}', 'TicketController#accept_suggestion')->auth();
 
     $router->get('/admin/give-ticket/{ticket_id}', 'TechnicienDashboardController#give_ticket_form')->auth();

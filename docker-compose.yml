@@ -25,6 +25,19 @@ services:
     networks:
       - base
 
+  shiny-server:
+    build:
+      context: ./shiny-server
+    container_name: shiny-server-arm
+    ports:
+      - 3838:3838
+    volumes:
+       - ./shiny-server/apps:/srv/shiny-server/
+       - ./shiny-server/logs:/var/log/shiny-server/
+       - ./shiny-server/conf:/etc/shiny-server/
+       - ./src/data:/var/lib/data/
+    restart: always
+
 networks:
   base:
     driver: bridge

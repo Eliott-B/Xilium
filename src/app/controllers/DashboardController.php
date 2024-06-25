@@ -21,6 +21,17 @@ class DashboardController
      */
     public function index()
     {
+        if (!isset($_SESSION['id'])) {
+            header('Location: /login');
+            exit();
+        }
+
+        if ($_SESSION['role'] == 100) {
+            $_SESSION['error'] = "vous n'avez pas l'accès à cette page";
+            header('Location: /');
+            exit();
+        }
+
         $ticket = new Ticket();
         $tickets = $ticket->custom("select * from tickets where author_id = :id order by update_date desc", ['id' => $_SESSION['id']]);
         $user = new User();
@@ -33,7 +44,7 @@ class DashboardController
         foreach ($tickets as $ticket) {
 
             $comments = new Comment();
-            $comments = $comments->get_comments($ticket['tic_id']);
+            $comments = $comments->find($ticket['tic_id']);
 
             $view_comments = [];
             foreach ($comments as $comment) {
@@ -46,17 +57,17 @@ class DashboardController
             $ticket['comments'] = $view_comments;
             
             $status = new Status();
-            $status = $status->get_status($ticket['status_id']);
+            $status = $status->find($ticket['status_id']);
             $ticket['status'] = $status;
 
             $category = new Category();
-            $category = $category->get_category($ticket['category_id']);
+            $category = $category->find($ticket['category_id']);
             $ticket['category'] = $category;
             $label = new Label();
-            $label = $label->get_label($ticket['label_id']);
+            $label = $label->find($ticket['label_id']);
             $ticket['label'] = $label;
             $priority = new Priority();
-            $priority = $priority->get_priority($ticket['priority_id']);
+            $priority = $priority->find($ticket['priority_id']);
             $ticket['priority'] = $priority;
             $view_tickets[] = $ticket;
         }

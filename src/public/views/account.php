@@ -24,7 +24,7 @@
             </div>
         </form>
     </div>
-    <?php if ($user['role_id'] == 50 or $user['role_id'] == 100): ?>
+    <?php if ($user['role_id'] == 50): ?>
         <div class="admin-link">
             <a href="/admin">Accéder à l'interface administrateur/technicien</a>
         </div>

@@ -3,7 +3,7 @@
   border-radius: 2rem;
   border: none;
   font-weight: bold;
-  transition: ease-in-out 0.4s;
+  transition: ease-in-out 200ms;
 }
 .btn-primary, .btn-icon {
   background-color: #F9C8DE;
@@ -40,9 +40,9 @@
 }
 .btn:hover, .btn-primary:hover, .btn-secondary:hover, .btn-tertiary:hover, .btn-icon:hover {
   cursor: pointer;
-  transition: ease-in-out 0.4s;
+  transition: ease-in-out 200ms;
 }
 .btn:active, .btn-primary:active, .btn-secondary:active, .btn-tertiary:active, .btn-icon:active {
   transform: scale(0.5);
-  transition: ease-in-out 0.4s;
+  transition: ease-in-out 200ms;
 }
