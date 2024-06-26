@@ -37,7 +37,7 @@ class Label extends Model
      * Supprime un label à partir de son id
      * sauf si le nom du label est 'Autre'
      * @param int $id l'id du label
-     * @return null
+     * @return bool
      */
     public function delete($id)
     {
@@ -50,6 +50,25 @@ class Label extends Model
                 parent::delete($id);
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    /**
+     * Créé un label à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     * @return bool
+     */
+    public function create(array $args)
+    {
+        if (gettype($args['lab_name']) != "string" ||
+            ($args['lab_css_color'] != null && gettype($args['lab_css_color']) != "string")) {
+            return false;
+        } else {
+            parent::create($args);
+            return true;
         }
     }
 }

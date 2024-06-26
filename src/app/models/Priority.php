@@ -37,4 +37,22 @@ class Priority extends Model
         }
         return $priority[0];
     }
+
+    /**
+     * Créé une priorité à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     * @return bool
+     */
+    public function create(array $args)
+    {
+        if (gettype($args['pri_name']) != "string" ||
+            gettype($args['pri_index']) != "integer" ||
+            ($args['pri_css_color'] != null && gettype($args['pri_css_color']) != "string")) {
+            return false;
+        } else {
+            parent::create($args);
+            return true;
+        }
+    }
 }

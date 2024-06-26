@@ -37,7 +37,7 @@ class Category extends Model
      * Supprime une catégorie à partir de son id
      * sauf si le nom de la catégorie est 'Autre'
      * @param $id
-     * @return null
+     * @return bool
      */
     public function delete($id)
     {
@@ -50,6 +50,42 @@ class Category extends Model
                 parent::delete($id);
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    /**
+     * Créé une catégorie à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     */
+    public function create(array $args)
+    {
+        if (gettype($args['cat_name']) != "string") {
+            throw new \Exception("Le nom de la catégorie doit être une chaine de caractère");
+        }
+        else if (array_key_exists('cat_css_color', $args) && gettype($args['cat_css_color']) != "string") {
+            throw new \Exception("La couleur de la catégorie doit être une chaine de caractère");
+        } else {
+            parent::create($args);
+        }
+    }
+
+    /**
+     * Update une category à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     */
+    public function update(array $args)
+    {
+        if (gettype($args['cat_name']) != "string") {
+            throw new \Exception("Le nom de la catégorie doit être une chaine de caractère");
+        }
+        else if (array_key_exists('cat_css_color', $args) && gettype($args['cat_css_color']) != "string") {
+            throw new \Exception("La couleur de la catégorie doit être une chaine de caractère");
+        } else {
+            parent::update($args);
         }
     }
 }
