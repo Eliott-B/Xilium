@@ -1,4 +1,4 @@
-<div align='justify'> 
+<div align='justify'>
 
 # TESTS UNITAIRES
 
@@ -7,50 +7,51 @@
 ## Sommaire
 
 - [TESTS UNITAIRES](#tests-unitaires)
-    - [Sommaire](#sommaire)
-    - [Procédures](#procédures)
-    - [Test de création](#test-de-création)
-        - [Catégorie](#catégorie)
-        - [Comment](#comment)
-        - [Label](#label)
-        - [Log](#log)
-        - [Priority](#priority)
-        - [Role](#role)
-        - [Statut](#statut)
-        - [Ticket](#ticket)
-        - [Utilisateur](#utilisateur)
-    - [Test de mise à jour](#test-de-mise-à-jour)
-        - [Catégorie](#catégorie-1)
-        - [Comment](#comment-1)
-        - [Label](#label-1)
-        - [Log](#log-1)
-        - [Priority](#priority-1)
-        - [Role](#role-1)
-        - [Statut](#statut-1)
-        - [Ticket](#ticket-1)
-        - [Utilisateur](#utilisateur-1)
-    - [Test de lecture](#test-de-lecture)
-        - [Catégorie](#catégorie-2)
-        - [Comment](#comment-2)
-        - [Label](#label-2)
-        - [Log](#log-2)
-        - [Priority](#priority-2)
-        - [Role](#role-2)
-        - [Statut](#statut-2)
-        - [Ticket](#ticket-2)
-        - [Utilisateur](#utilisateur-2)
-    - [Test de suppression](#test-de-suppression)
-        - [Catégorie](#catégorie-3)
-        - [Comment](#comment-3)
-        - [Label](#label-3)
-        - [Log](#log-3)
-        - [Priority](#priority-3)
-        - [Role](#role-3)
-        - [Statut](#statut-3)
-        - [Ticket](#ticket-3)
-        - [Utilisateur](#utilisateur-3)
-    - [Test Hash](#test-hash)
-        - [Hash](#hash)
+  - [Sommaire](#sommaire)
+  - [Procédures](#procédures)
+  - [Test de création](#test-de-création)
+    - [Catégorie](#catégorie)
+    - [Comment](#comment)
+    - [Label](#label)
+    - [Log](#log)
+    - [Priority](#priority)
+    - [Role](#role)
+    - [Statut](#statut)
+    - [Ticket](#ticket)
+    - [Utilisateur](#utilisateur)
+  - [Test de mise à jour](#test-de-mise-à-jour)
+    - [Catégorie](#catégorie-1)
+    - [Comment](#comment-1)
+    - [Label](#label-1)
+    - [Log](#log-1)
+    - [Priority](#priority-1)
+    - [Role](#role-1)
+    - [Statut](#statut-1)
+    - [Ticket](#ticket-1)
+    - [Utilisateur](#utilisateur-1)
+  - [Test de lecture](#test-de-lecture)
+    - [Catégorie](#catégorie-2)
+    - [Comment](#comment-2)
+    - [Label](#label-2)
+    - [Log](#log-2)
+    - [Priority](#priority-2)
+    - [Role](#role-2)
+    - [Statut](#statut-2)
+    - [Ticket](#ticket-2)
+    - [Utilisateur](#utilisateur-2)
+  - [Test de suppression](#test-de-suppression)
+    - [Catégorie](#catégorie-3)
+    - [Comment](#comment-3)
+    - [Label](#label-3)
+    - [Log](#log-3)
+    - [Priority](#priority-3)
+    - [Role](#role-3)
+    - [Statut](#statut-3)
+    - [Ticket](#ticket-3)
+    - [Utilisateur](#utilisateur-3)
+  - [Test Hash](#test-hash)
+    - [Crypter](#crypter)
+    - [Décrypter](#décrypter)
 
 ## Procédures
 
@@ -78,27 +79,27 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|----------------|------------------|
+| ----------------------- | ------------------ | -------------- | ---------------- |
 | Classe                  | cat_name           | cat_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------     | ----------       |
 | Categories              | string             | string ou null | créée            |
 | Categories              | peu importe        | not string     | pas créée        |
 | Categories              | Not string ou null | peu importe    | pas créée        |
 
-| DONNÉES DE TEST | ENTRÉES     |                   | RÉSULTAT ATTENDU |       
-|-----------------|-------------|-------------------|------------------|
+| DONNÉES DE TEST | ENTRÉES     |                   | RÉSULTAT ATTENDU |
+| --------------- | ----------- | ----------------- | ---------------- |
 | Classe          | cat_name    | cat_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------  | ----------        | ----------       |
 | Categories      | 'Matériel'  | '#9b59b6' ou null | créée            |
-| Categories      | peu importe | #9b5b6            | pas créée        |
+| Categories      | peu importe | 123               | pas créée        |
 | Categories      | 56 ou null  | peu importe       | pas créée        |
 
---- 
+---
 
 ### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                |                  |                 |                 |             | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|----------------|------------------|-----------------|-----------------|-------------|------------------|
+| ----------------------- | ------------------ | -------------- | ---------------- | --------------- | --------------- | ----------- | ---------------- |
 | Classe                  | com_title          | com_comment    | com_date         | ticket_id       | user_id         | reply_to    | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------     | ----------       | ----------      | ----------      | ----------  | ----------       |
 | Comments                | string             | string ou null | date             | int             | int             | int ou null | créé             |
@@ -110,9 +111,9 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Comments                | not string ou null | peu importe    | peu importe      | peu importe     | peu importe     | peu importe | pas créé         |
 
 | DONNÉES DE TEST | ENTRÉES            |                    |                    |                 |                 |             | RÉSULTAT ATTENDU |
-|-----------------|--------------------|--------------------|--------------------|-----------------|-----------------|-------------|------------------|
+| --------------- | ------------------ | ------------------ | ------------------ | --------------- | --------------- | ----------- | ---------------- |
 | Classe          | com_title          | com_comment        | com_date           | ticket_id       | user_id         | reply_to    | RÉSULTAT ATTENDU |
-| ----------      | ----------         | ----------         | ----------         | ----------      | ----------      | ----------  | ----------       |    
+| ----------      | ----------         | ----------         | ----------         | ----------      | ----------      | ----------  | ----------       |
 | Comments        | 'toto'             | 'taratata' ou null | '2024-08-15-14-52' | 5               | 2               | 3 ou null   | créé             |
 | Comments        | peu importe        | peu importe        | peu importe        | peu importe     | peu importe     | not int     | pas créé         |
 | Comments        | peu importe        | peu importe        | peu importe        | peu importe     | not int ou null | peu importe | pas créé         |
@@ -126,27 +127,27 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|----------------|------------------|
+| ----------------------- | ------------------ | -------------- | ---------------- |
 | Classe                  | lab_name           | lab_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------     | ----------       |
 | Labels                  | string             | string ou null | créé             |
 | Labels                  | peu importe        | not string     | pas créé         |
 | Labels                  | Not string ou null | peu importe    | pas créé         |
 
-| DONNÉES DE TEST | ENTRÉES        |                   | RÉSULTAT ATTENDU |       
-|-----------------|----------------|-------------------|------------------|
+| DONNÉES DE TEST | ENTRÉES        |                   | RÉSULTAT ATTENDU |
+| --------------- | -------------- | ----------------- | ---------------- |
 | Classe          | lab_name       | lab_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------     | ----------        | ----------       |
 | Labels          | 'Amélioration' | '#9b59b6' ou null | créé             |
-| Labels          | peu importe    | #9b5b6            | pas créé         |
+| Labels          | peu importe    | 123               | pas créé         |
 | Labels          | 56 ou null     | peu importe       | pas créé         |
 
 ---
 
 ### Log
 
-| PARTITION D'ÉQUIVALENCE | ENTRÉES          |                    |                    |                 |                 | RÉSULTAT ATTENDU |    
-|-------------------------|------------------|--------------------|--------------------|-----------------|-----------------|------------------|
+| PARTITION D'ÉQUIVALENCE | ENTRÉES          |                    |                    |                 |                 | RÉSULTAT ATTENDU |
+| ----------------------- | ---------------- | ------------------ | ------------------ | --------------- | --------------- | ---------------- |
 | Classe                  | log_date         | log_ip             | log_content        | ticket_id       | user_id         | RÉSULTAT ATTENDU |
 | ----------              | TYPE             | ----------         | ----------         | ----------      | ----------      | ----------       |
 | Logs                    | date             | string             | string             | int             | int             | créé             |
@@ -156,8 +157,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Logs                    | peu importe      | not string ou null | peu importe        | peu importe     | peu importe     | pas créé         |
 | Logs                    | not date ou null | peu importe        | peu importe        | peu importe     | peu importe     | pas créé         |
 
-| DONNÉES DE TEST | ENTRÉES            |                   |                  |              |              | RÉSULTAT ATTENDU |       
-|-----------------|--------------------|-------------------|------------------|--------------|--------------|------------------|
+| DONNÉES DE TEST | ENTRÉES            |                   |                  |              |              | RÉSULTAT ATTENDU |
+| --------------- | ------------------ | ----------------- | ---------------- | ------------ | ------------ | ---------------- |
 | Classe          | log_date           | log_ip            | log_content      | ticket_id    | user_id      | RÉSULTAT ATTENDU |
 | ----------      | ----------         | ----------        | ----------       | ----------   | ----------   | ----------       |
 | Logs            | '2024-08-15-14-52' | '192.168.123.132' | 'aze.rt*ra9ae!z' | 3            | 5            | créé             |
@@ -172,7 +173,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                 |                | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|-----------------|----------------|------------------|
+| ----------------------- | ------------------ | --------------- | -------------- | ---------------- |
 | Classe                  | pri_name           | pri_index       | pri_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------      | ----------     | ----------       |
 | Priorities              | string             | int             | string ou null | créée            |
@@ -181,11 +182,11 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Priorities              | not string ou null | peu importe     | peu importe    | pas créée        |
 
 | DONNÉES DE TEST | ENTRÉES     |             |                   | RÉSULTAT ATTENDU |
-|-----------------|-------------|-------------|-------------------|------------------|
+| --------------- | ----------- | ----------- | ----------------- | ---------------- |
 | Classe          | pri_name    | pri_index   | pri_css_color     | RÉSULTAT ATTENDU |
 | ----------      | --------    | ----------  | ----------        | ----------       |
 | Priorities      | 'nom'       | 2           | '#2ecc71' ou null | créée            |
-| Priorities      | peu importe | peu importe | 2ec71             | pas créée        |
+| Priorities      | peu importe | peu importe | 123               | pas créée        |
 | Priorities      | peu importe | 1.5 ou null | peu importe       | pas créée        |
 | Priorities      | 41 ou null  | peu importe | peu importe       | pas créée        |
 
@@ -194,14 +195,14 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|------------------|
+| ----------------------- | ------------------ | ---------------- |
 | Classe                  | rol_name           | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------       |
 | Roles                   | string             | créé             |
 | Roles                   | not string ou null | pas créé         |
 
 | DONNÉES DE TEST | ENTRÉES      | RÉSULTAT ATTENDU |
-|-----------------|--------------|------------------|
+| --------------- | ------------ | ---------------- |
 | Classe          | rol_name     | RÉSULTAT ATTENDU |
 | ----------      | -------      | ----------       |
 | Roles           | 'text'       | créé             |
@@ -212,15 +213,15 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|----------------|------------------|
+| ----------------------- | ------------------ | -------------- | ---------------- |
 | Classe                  | sta_name           | sta_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------     | ----------       |
 | Status                  | string             | string ou null | créé             |
 | Status                  | peu importe        | not string     | pas créé         |
 | Status                  | Not string ou null | peu importe    | pas créé         |
 
-| DONNÉES DE TEST | ENTRÉES     |                   | RÉSULTAT ATTENDU |       
-|-----------------|-------------|-------------------|------------------|
+| DONNÉES DE TEST | ENTRÉES     |                   | RÉSULTAT ATTENDU |
+| --------------- | ----------- | ----------------- | ---------------- |
 | Classe          | sta_name    | sta_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------  | ----------        | ----------       |
 | Status          | 'Résolu'    | '#f39c12' ou null | créé             |
@@ -232,7 +233,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES            |                    |                 |                 |                 |                 |                 |                 |             |               |              | RÉSULTAT ATTENDU |
-|-------------------------|--------------------|--------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-------------|---------------|--------------|------------------|
+| ----------------------- | ------------------ | ------------------ | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | ----------- | ------------- | ------------ | ---------------- |
 | Classe                  | tic_title          | tic_description    | author_id       | label_id        | category_id     | priority_id     | status_id       | updater_id      | tech_id     | creation_date | update_date  | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------         | ----------      | ----------      | ----------      | ----------      | ----------      | ----------      | ----------  | ----------    | ----------   | ----------       |
 | Tickets                 | string             | string             | int             | int             | int             | int             | int             | int             | int ou null | date ou null  | date ou null | créé             |
@@ -249,7 +250,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Tickets                 | not string ou null | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas créé         |
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES       |                 |               |               |               |               |               |               |             |                            |                            | RÉSULTAT ATTENDU |
-|-------------------------|---------------|-----------------|---------------|---------------|---------------|---------------|---------------|---------------|-------------|----------------------------|----------------------------|------------------|
+| ----------------------- | ------------- | --------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ----------- | -------------------------- | -------------------------- | ---------------- |
 | Classe                  | tic_title     | tic_description | author_id     | label_id      | category_id   | priority_id   | status_id     | updater_id    | tech_id     | creation_date              | update_date                | RÉSULTAT ATTENDU |
 | ----------              | ---------     | ----------      | ----------    | ----------    | ----------    | ----------    | ----------    | ----------    | ----------  | ----------                 | ----------                 | ----------       |
 | Tickets                 | 'titre'       | 'description'   | '2'           | '1'           | '3'           | '6'           | '1'           | '9'           | '2' ou null | '2024-08-15-14-52' ou null | '2024-08-15-14-52' ou null | créé             |
@@ -269,8 +270,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 
 ### Utilisateur
 
-| PARTITION D'ÉQUIVALENCE | ENTRÉES            |                    |                    |                    |                 | RÉSULTAT ATTENDU |    
-|-------------------------|--------------------|--------------------|--------------------|--------------------|-----------------|------------------|
+| PARTITION D'ÉQUIVALENCE | ENTRÉES            |                    |                    |                    |                 | RÉSULTAT ATTENDU |
+| ----------------------- | ------------------ | ------------------ | ------------------ | ------------------ | --------------- | ---------------- |
 | Classe                  | use_username       | use_password       | use_name           | use_firstname      | role_id         | RÉSULTAT ATTENDU |
 | ----------              | TYPE               | ----------         | ----------         | ----------         | ----------      | ----------       |
 | Users                   | string             | string             | string             | string             | int             | créé             |
@@ -280,8 +281,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Users                   | peu importe        | not string ou null | peu importe        | peu importe        | peu importe     | pas créé         |
 | Users                   | not string ou null | peu importe        | peu importe        | peu importe        | peu importe     | pas créé         |
 
-| DONNÉES DE TEST | ENTRÉES      |                 |             |               |              | RÉSULTAT ATTENDU |       
-|-----------------|--------------|-----------------|-------------|---------------|--------------|------------------|
+| DONNÉES DE TEST | ENTRÉES      |                 |             |               |              | RÉSULTAT ATTENDU |
+| --------------- | ------------ | --------------- | ----------- | ------------- | ------------ | ---------------- |
 | Classe          | use_username | use_password    | use_name    | use_firstname | role_id      | RÉSULTAT ATTENDU |
 | ----------      | ----------   | ----------      | ----------  | ----------    | ----------   | ----------       |
 | Users           | 'user'       | 'kjd!qv65a2ff,' | 'Dupont'    | 'Pierre'      | 5            | créé             |
@@ -298,7 +299,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|----------------|------------------|
+| ----------------------- | --------------- | ------------------ | -------------- | ---------------- |
 | Classe                  | cat_id          | cat_name           | cat_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------         | ----------     | ----------       |
 | Categories              | int             | string             | string ou null | modifiée         |
@@ -307,22 +308,22 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Categories              | int             | peu importe        | not string     | pas modifiée     |
 | Categories              | int             | Not string ou null | peu importe    | pas modifiée     |
 
-| DONNÉES DE TEST | ENTRÉES       |             |                   | RÉSULTAT ATTENDU |       
-|-----------------|---------------|-------------|-------------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       |             |                   | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ----------- | ----------------- | ---------------- |
 | Classe          | cat_id        | cat_name    | cat_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------  | ----------        | ----------       |
 | Categories      | 1             | 'Matériel'  | '#9b59b6' ou null | modifiée         |
 | Categories      | 'asd' ou null | peu importe | peu importe       | pas modifiée     |
 | Categories      | n'existe pas  | peu importe | peu importe       | pas modifiée     |
-| Categories      | 1             | peu importe | #9b5b6            | pas modifiée     |
+| Categories      | 1             | peu importe | 123               | pas modifiée     |
 | Categories      | 1             | 56 ou null  | peu importe       | pas modifiée     |
 
---- 
+---
 
 ### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                |                  |                 |                 |             | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|----------------|------------------|-----------------|-----------------|-------------|------------------|
+| ----------------------- | --------------- | ------------------ | -------------- | ---------------- | --------------- | --------------- | ----------- | ---------------- |
 | Classe                  | com_id          | com_title          | com_comment    | com_date         | ticket_id       | user_id         | reply_to    | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------         | ----------     | ----------       | ----------      | ----------      | ----------  | ----------       |
 | Comments                | int             | string             | string ou null | date             | int             | int             | int ou null | modifié          |
@@ -336,9 +337,9 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Comments                | int             | not string ou null | peu importe    | peu importe      | peu importe     | peu importe     | peu importe | pas modifié      |
 
 | DONNÉES DE TEST | ENTRÉES       |                    |                    |                    |                 |                 |             | RÉSULTAT ATTENDU |
-|-----------------|---------------|--------------------|--------------------|--------------------|-----------------|-----------------|-------------|------------------|
+| --------------- | ------------- | ------------------ | ------------------ | ------------------ | --------------- | --------------- | ----------- | ---------------- |
 | Classe          | com_id        | com_title          | com_comment        | com_date           | ticket_id       | user_id         | reply_to    | RÉSULTAT ATTENDU |
-| ----------      | ----------    | ----------         | ----------         | ----------         | ----------      | ----------      | ----------  | ----------       |    
+| ----------      | ----------    | ----------         | ----------         | ----------         | ----------      | ----------      | ----------  | ----------       |
 | Comments        | 1             | 'toto'             | 'taratata' ou null | '2024-08-15-14-52' | 5               | 2               | 3 ou null   | modifié          |
 | Comments        | 'asd' ou null | peu importe        | peu importe        | peu importe        | peu importe     | peu importe     | peu importe | pas modifié      |
 | Comments        | n'existe pas  | peu importe        | peu importe        | peu importe        | peu importe     | peu importe     | peu importe | pas modifié      |
@@ -354,7 +355,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|----------------|------------------|
+| ----------------------- | --------------- | ------------------ | -------------- | ---------------- |
 | Classe                  | lab_id          | lab_name           | lab_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------         | ----------     | ----------       |
 | Labels                  | int             | string             | string ou null | modifié          |
@@ -363,8 +364,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Labels                  | int             | peu importe        | not string     | pas modifié      |
 | Labels                  | int             | Not string ou null | peu importe    | pas modifié      |
 
-| DONNÉES DE TEST | ENTRÉES       |                |                   | RÉSULTAT ATTENDU |   
-|-----------------|---------------|----------------|-------------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       |                |                   | RÉSULTAT ATTENDU |
+| --------------- | ------------- | -------------- | ----------------- | ---------------- |
 | Classe          | lab_id        | lab_name       | lab_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------     | ----------        | ----------       |
 | Labels          | 1             | 'Amélioration' | '#9b59b6' ou null | modifié          |
@@ -377,8 +378,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 
 ### Log
 
-| PARTITION D'ÉQUIVALENCE | ENTRÉES         |                  |                    |                    |                 |                 | RÉSULTAT ATTENDU |    
-|-------------------------|-----------------|------------------|--------------------|--------------------|-----------------|-----------------|------------------|
+| PARTITION D'ÉQUIVALENCE | ENTRÉES         |                  |                    |                    |                 |                 | RÉSULTAT ATTENDU |
+| ----------------------- | --------------- | ---------------- | ------------------ | ------------------ | --------------- | --------------- | ---------------- |
 | Classe                  | log_id          | log_date         | log_ip             | log_content        | ticket_id       | user_id         | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       | ----------         | ----------         | ----------      | ----------      | ----------       |
 | Logs                    | int             | date             | string             | string             | int             | int             | modifié          |
@@ -390,8 +391,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Logs                    | int             | peu importe      | not string ou null | peu importe        | peu importe     | peu importe     | pas modifié      |
 | Logs                    | int             | not date ou null | peu importe        | peu importe        | peu importe     | peu importe     | pas modifié      |
 
-| DONNÉES DE TEST | ENTRÉES       |                    |                   |                  |              |              | RÉSULTAT ATTENDU |       
-|-----------------|---------------|--------------------|-------------------|------------------|--------------|--------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       |                    |                   |                  |              |              | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ------------------ | ----------------- | ---------------- | ------------ | ------------ | ---------------- |
 | Classe          | log_id        | log_date           | log_ip            | log_content      | ticket_id    | user_id      | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------         | ----------        | ----------       | ----------   | ----------   | ----------       |
 | Logs            | 1             | '2024-08-15-14-52' | '192.168.123.132' | 'aze.rt*ra9ae!z' | 3            | 5            | modifié          |
@@ -408,7 +409,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                 |                | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|-----------------|----------------|------------------|
+| ----------------------- | --------------- | ------------------ | --------------- | -------------- | ---------------- |
 | Classe                  | pri_id          | pri_name           | pri_index       | pri_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------         | ----------      | ----------     | ----------       |
 | Priorities              | int             | string             | int             | string ou null | modifiée         |
@@ -419,7 +420,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Priorities              | int             | not string ou null | peu importe     | peu importe    | pas modifiée     |
 
 | DONNÉES DE TEST | ENTRÉES       |             |             |                   | RÉSULTAT ATTENDU |
-|-----------------|---------------|-------------|-------------|-------------------|------------------|
+| --------------- | ------------- | ----------- | ----------- | ----------------- | ---------------- |
 | Classe          | pri_id        | pri_name    | pri_index   | pri_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------  | ----------  | ----------        | ----------       |
 | Priorities      | 1             | 'nom'       | 2           | '#2ecc71' ou null | modifiée         |
@@ -434,7 +435,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|------------------|
+| ----------------------- | --------------- | ------------------ | ---------------- |
 | Classe                  | rol_id          | rol_name           | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | -----------        | ----------       |
 | Roles                   | int             | string             | modifié          |
@@ -443,7 +444,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Roles                   | int             | not string ou null | pas modifié      |
 
 | DONNÉES DE TEST | ENTRÉES         |              | RÉSULTAT ATTENDU |
-|-----------------|-----------------|--------------|------------------|
+| --------------- | --------------- | ------------ | ---------------- |
 | Classe          | rol_id          | rol_name     | RÉSULTAT ATTENDU |
 | ----------      | ----------      | ----------   | ----------       |
 | Roles           | int             | 'text'       | modifié          |
@@ -456,7 +457,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|----------------|------------------|
+| ----------------------- | --------------- | ------------------ | -------------- | ---------------- |
 | Classe                  | sta_id          | sta_name           | sta_css_color  | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | -----------        | ----------     | ----------       |
 | Status                  | int             | string             | string ou null | modifié          |
@@ -465,8 +466,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Status                  | int             | peu importe        | not string     | pas modifié      |
 | Status                  | int             | Not string ou null | peu importe    | pas modifié      |
 
-| DONNÉES DE TEST | ENTRÉES       |             |                   | RÉSULTAT ATTENDU |       
-|-----------------|---------------|-------------|-------------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       |             |                   | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ----------- | ----------------- | ---------------- |
 | Classe          | sta_id        | sta_name    | sta_css_color     | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------- | ----------        | ----------       |
 | Status          | 1             | 'Résolu'    | '#f39c12' ou null | modifié          |
@@ -480,7 +481,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                    |                 |                 |                 |                 |                 |                 |             |               |              | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|--------------------|--------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-------------|---------------|--------------|------------------|
+| ----------------------- | --------------- | ------------------ | ------------------ | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | ----------- | ------------- | ------------ | ---------------- |
 | Classe                  | tic_id          | tic_title          | tic_description    | author_id       | label_id        | category_id     | priority_id     | status_id       | updater_id      | tech_id     | creation_date | update_date  | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------         | ----------         | ----------      | ----------      | ----------      | ----------      | ----------      | ----------      | ----------  | ----------    | ----------   | ----------       |
 | Ticket                  | int             | string             | string             | int             | int             | int             | int             | int             | int             | int ou null | date ou null  | date ou null | modifié          |
@@ -499,7 +500,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Ticket                  | int             | not string ou null | peu importe        | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe     | peu importe | peu importe   | peu importe  | pas modifié      |
 
 | DONNÉES DE TEST | ENTRÉES       |             |                 |               |               |               |               |               |               |             |                            |                            | RÉSULTAT ATTENDU |
-|-----------------|---------------|-------------|-----------------|---------------|---------------|---------------|---------------|---------------|---------------|-------------|----------------------------|----------------------------|------------------|
+| --------------- | ------------- | ----------- | --------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ----------- | -------------------------- | -------------------------- | ---------------- |
 | Classe          | tic_id        | tic_title   | tic_description | author_id     | label_id      | category_id   | priority_id   | status_id     | updater_id    | tech_id     | creation_date              | update_date                | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------  | ----------      | ----------    | ----------    | ----------    | ----------    | ----------    | ----------    | ----------  | ----------                 | ----------                 | ----------       |
 | Ticket          | 1             | 'titre'     | 'description'   | '2'           | '1'           | '3'           | '6'           | '1'           | '9'           | '2' ou null | '2024-08-15-14-52' ou null | '2024-08-15-14-52' ou null | modifié          |
@@ -520,8 +521,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 
 ### Utilisateur
 
-| PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                    |                    |                    |                 | RÉSULTAT ATTENDU |    
-|-------------------------|-----------------|--------------------|--------------------|--------------------|--------------------|-----------------|------------------|
+| PARTITION D'ÉQUIVALENCE | ENTRÉES         |                    |                    |                    |                    |                 | RÉSULTAT ATTENDU |
+| ----------------------- | --------------- | ------------------ | ------------------ | ------------------ | ------------------ | --------------- | ---------------- |
 | Classe                  | use_id          | use_username       | use_password       | use_name           | use_firstname      | role_id         | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | -----------        | ----------         | ----------         | ----------         | ----------      | ----------       |
 | Users                   | int             | string             | string             | string             | string             | int             | modifié          |
@@ -533,8 +534,8 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Users                   | int             | peu importe        | not string ou null | peu importe        | peu importe        | peu importe     | pas modifié      |
 | Users                   | int             | not string ou null | peu importe        | peu importe        | peu importe        | peu importe     | pas modifié      |
 
-| DONNÉES DE TEST | ENTRÉES       |              |                 |             |               |              | RÉSULTAT ATTENDU |       
-|-----------------|---------------|--------------|-----------------|-------------|---------------|--------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       |              |                 |             |               |              | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ------------ | --------------- | ----------- | ------------- | ------------ | ---------------- |
 | Classe          | use_id        | use_username | use_password    | use_name    | use_firstname | role_id      | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------   | ----------      | ----------  | ----------    | ----------   | ----------       |
 | Users           | 1             | 'user'       | 'kjd!qv65a2ff,' | 'Dupont'    | 'Pierre'      | 5            | modifié          |
@@ -551,27 +552,27 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | cat_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Categories              | int             | tout afficher    |
 | Categories              | n'existe pas    | pas afficher     |
 | Categories              | not int ou null | pas afficher     |
 
-| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |       
-|-----------------|---------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ---------------- |
 | Classe          | cat_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Categories      | 2             | tout afficher    |
 | Categories      | n'existe pas  | pas afficher     |
 | Categories      | 'ada' ou null | pas afficher     |
 
---- 
+---
 
 ### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | com_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Comments                | int             | tout afficher    |
@@ -579,7 +580,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Comments                | not int ou null | pas afficher     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | com_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Comments        | 2             | tout afficher    |
@@ -591,15 +592,15 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | lab_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Labels                  | int             | tout afficher    |
 | Labels                  | n'existe pas    | pas afficher     |
 | Labels                  | not int ou null | pas afficher     |
 
-| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |       
-|-----------------|---------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ---------------- |
 | Classe          | lab_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Labels          | 2             | tout afficher    |
@@ -610,28 +611,28 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 
 ### Log
 
-| PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |    
-|-------------------------|-----------------|------------------|
+| PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | log_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Logs                    | int             | tout afficher    |
 | Logs                    | n'existe pas    | pas afficher     |
 | Logs                    | not int ou null | pas afficher     |
 
-| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |       
-|-----------------|---------------|------------------|
-| Classe          | log_id        | RÉSULTAT ATTENDU | 
-| ----------      | ----------    | ----------       | 
-| Logs            | 2             | tout afficher    | 
+| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ---------------- |
+| Classe          | log_id        | RÉSULTAT ATTENDU |
+| ----------      | ----------    | ----------       |
+| Logs            | 2             | tout afficher    |
 | Logs            | n'existe pas  | pas afficher     |
-| Logs            | 'ada' ou null | pas afficher     | 
+| Logs            | 'ada' ou null | pas afficher     |
 
 ---
 
 ### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | pri_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Priorities              | int             | tout afficher    |
@@ -639,19 +640,19 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Priorities              | not int ou null | pas afficher     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | pri_id        | RÉSULTAT ATTENDU |
-| ----------      | ----------    | ----------       | 
-| Priorities      | 2             | tout afficher    | 
+| ----------      | ----------    | ----------       |
+| Priorities      | 2             | tout afficher    |
 | Priorities      | n'existe pas  | pas afficher     |
-| Priorities      | 'ada' ou null | pas afficher     | 
+| Priorities      | 'ada' ou null | pas afficher     |
 
 ---
 
 ### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | rol_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Roles                   | int             | tout afficher    |
@@ -659,7 +660,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Roles                   | not int ou null | pas afficher     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | rol_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Roles           | 2             | tout afficher    |
@@ -671,7 +672,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | sta_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Status                  | int             | tout afficher    |
@@ -679,7 +680,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Status                  | not int ou null | pas afficher     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | sta_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Status          | 2             | tout afficher    |
@@ -691,7 +692,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | tic_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Tickets                 | int             | tout afficher    |
@@ -699,7 +700,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Tickets                 | not int ou null | pas afficher     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | tic_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Tickets         | 2             | tout afficher    |
@@ -711,7 +712,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Utilisateur
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | use_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Users                   | int             | tout afficher    |
@@ -719,7 +720,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Users                   | not int ou null | pas afficher     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | use_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Users           | 2             | tout afficher    |
@@ -731,27 +732,27 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Catégorie
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | cat_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Categories              | int             | supprimée        |
 | Categories              | n'existe pas    | pas supprimée    |
 | Categories              | Not int ou null | pas supprimée    |
 
-| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |       
-|-----------------|---------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ---------------- |
 | Classe          | cat_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Categories      | 2             | supprimée        |
 | Categories      | n'existe pas  | pas supprimée    |
 | Categories      | 'ada' ou null | pas supprimée    |
 
---- 
+---
 
 ### Comment
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | com_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Comments                | int             | supprimé         |
@@ -759,7 +760,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Comments                | Not int ou null | pas supprimé     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | com_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Comments        | 2             | supprimé         |
@@ -771,15 +772,15 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Label
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | lab_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Labels                  | int             | supprimé         |
 | Labels                  | n'existe pas    | pas supprimé     |
 | Labels                  | not int ou null | pas supprimé     |
 
-| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |       
-|-----------------|---------------|------------------|
+| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ---------------- |
 | Classe          | lab_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Labels          | 2             | supprimé         |
@@ -790,28 +791,28 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 
 ### Log
 
-| PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |    
-|-------------------------|-----------------|------------------|
+| PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | log_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Logs                    | int             | supprimé         |
 | Logs                    | n'existe pas    | pas supprimé     |
 | Logs                    | not int ou null | pas supprimé     |
 
-| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |       
-|-----------------|---------------|------------------|
-| Classe          | log_id        | RÉSULTAT ATTENDU | 
-| ----------      | ----------    | ----------       | 
-| Logs            | 2             | supprimé         | 
+| DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
+| --------------- | ------------- | ---------------- |
+| Classe          | log_id        | RÉSULTAT ATTENDU |
+| ----------      | ----------    | ----------       |
+| Logs            | 2             | supprimé         |
 | Logs            | n'existe pas  | pas supprimé     |
-| Logs            | 'ada' ou null | pas supprimé     | 
+| Logs            | 'ada' ou null | pas supprimé     |
 
 ---
 
 ### Priority
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | pri_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Priorities              | int             | supprimée        |
@@ -819,19 +820,19 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Priorities              | not int ou null | pas supprimée    |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | pri_id        | RÉSULTAT ATTENDU |
-| ----------      | ----------    | ----------       | 
-| Priorities      | 2             | supprimée        | 
+| ----------      | ----------    | ----------       |
+| Priorities      | 2             | supprimée        |
 | Priorities      | n'existe pas  | pas supprimée    |
-| Priorities      | 'ada' ou null | pas supprimée    | 
+| Priorities      | 'ada' ou null | pas supprimée    |
 
 ---
 
 ### Role
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | rol_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Roles                   | int             | supprimé         |
@@ -839,7 +840,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Roles                   | not int ou null | pas supprimé     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | rol_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Roles           | 2             | supprimé         |
@@ -851,7 +852,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Statut
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | sta_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Status                  | int             | supprimé         |
@@ -859,7 +860,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Status                  | not int ou null | pas supprimé     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | sta_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Status          | 2             | supprimé         |
@@ -871,7 +872,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Ticket
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | tic_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Tickets                 | int             | supprimé         |
@@ -879,7 +880,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Tickets                 | not int ou null | pas supprimé     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | tic_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Tickets         | 2             | supprimé         |
@@ -891,7 +892,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Utilisateur
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES         | RÉSULTAT ATTENDU |
-|-------------------------|-----------------|------------------|
+| ----------------------- | --------------- | ---------------- |
 | Classe                  | use_id          | RÉSULTAT ATTENDU |
 | ----------              | TYPE            | ----------       |
 | Users                   | int             | supprimé         |
@@ -899,7 +900,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Users                   | not int ou null | pas supprimé     |
 
 | DONNÉES DE TEST | ENTRÉES       | RÉSULTAT ATTENDU |
-|-----------------|---------------|------------------|
+| --------------- | ------------- | ---------------- |
 | Classe          | use_id        | RÉSULTAT ATTENDU |
 | ----------      | ----------    | ----------       |
 | Users           | 2             | supprimé         |
@@ -913,14 +914,14 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Crypter
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES     |              | RÉSULTAT ATTENDU |
-|-------------------------|-------------|--------------|------------------|
+| ----------------------- | ----------- | ------------ | ---------------- |
 | Classe                  | clé         | Mot_de_passe | RÉSULTAT ATTENDU |
 | ----------              | TYPE        | --------     | ----------       |
 | Hash                    | string      | string       | crypté           |
 | Hash                    | peu importe | peu importe  | pas crypté       |
 
 | DONNÉES DE TEST | ENTRÉES     |                    | RÉSULTAT ATTENDU                 |
-|-----------------|-------------|--------------------|----------------------------------|
+| --------------- | ----------- | ------------------ | -------------------------------- |
 | Classe          | clé         | mot_de_passe       | RÉSULTAT ATTENDU                 |
 | ----------      | -----       | ----------         | ----------                       |
 | Hash            | 'Secret'    | 'Attack at dawn45' | 45a01f645fc35b383552544b9bf58da7 |
@@ -931,14 +932,14 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 ### Décrypter
 
 | PARTITION D'ÉQUIVALENCE | ENTRÉES                 |                    | RÉSULTAT ATTENDU |
-|-------------------------|-------------------------|--------------------|------------------|
+| ----------------------- | ----------------------- | ------------------ | ---------------- |
 | Classe                  | clé                     | Mot_de_passe       | RÉSULTAT ATTENDU |
 | ----------              | TYPE                    | --------           | ----------       |
 | Hash                    | string                  | string             | décrypté         |
 | Hash                    | not hexadecimal ou null | not string ou null | pas décrypté     |
 
 | DONNÉES DE TEST | ENTRÉES     |                                  | RÉSULTAT ATTENDU   |
-|-----------------|-------------|----------------------------------|--------------------|
+| --------------- | ----------- | -------------------------------- | ------------------ |
 | Classe          | clé         | Mot_de_passe                     | RÉSULTAT ATTENDU   |
 | ----------      | --------    | ----------                       | ----------         |
 | Hash            | 'Secret'    | 45a01f645fc35b383552544b9bf58da7 | 'Attack at dawn45' |

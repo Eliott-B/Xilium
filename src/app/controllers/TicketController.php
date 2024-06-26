@@ -55,10 +55,10 @@ class TicketController
             'tic_title' => $_POST['title'],
             'tic_description' => $_POST['description'],
             'author_id' => $_SESSION['id'],
-            'label_id' => $_POST['problem'],
-            'priority_id' => (isset($_POST['priority'])) ? $_POST['priority'] : null,
+            'label_id' => (int)$_POST['problem'],
+            'priority_id' => (isset($_POST['priority'])) ? (int)$_POST['priority'] : null,
             'status_id' => 1,
-            'category_id' => $_POST['category'],
+            'category_id' => (int)$_POST['category'],
             'updater_id' => $_SESSION['id'],
             'creation_date' => date('Y-m-d H:i:s'),
             'update_date' => date('Y-m-d H:i:s')
