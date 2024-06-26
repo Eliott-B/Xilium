@@ -2,7 +2,7 @@
 
 namespace app\xiliumtest;
 
-use InvalidArgumentException;
+use Exception;
 use PHPUnit\Framework\TestCase;
 use app\models\Status;
 
@@ -39,5 +39,22 @@ final class StatusTest extends TestCase
         $this->assertSame('test2', $stat["sta_name"]);
         $this->assertSame('#000000', $stat["sta_css_color"]);
         $status->delete($stat["sta_id"]);
+    }
+
+    public function testDelete()
+    {
+        $status = new Status();
+        $status->create([
+            'sta_name' => "test",
+            'sta_css_color' => '#000000'
+        ]);
+        $status->delete(400);
+        try {
+            $status->find(400);
+            $this->fail("Aucun enregistrement trouvé");
+        }
+        catch (Exception $e) {
+            $this->assertEquals("Aucun enregistrement trouvé", $e->getMessage());
+        }
     }
 }

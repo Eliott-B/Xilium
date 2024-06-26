@@ -59,16 +59,33 @@ class Category extends Model
      * Créé une catégorie à partir de ses args
      * sauf si les entrés ne sont pas bonnes
      * @param array $args
-     * @return bool
      */
     public function create(array $args)
     {
-        if (gettype($args['cat_name']) != "string" ||
-            ($args['cat_css_color'] != null && gettype($args['cat_css_color']) != "string")) {
-            return false;
+        if (gettype($args['cat_name']) != "string") {
+            throw new \Exception("Le nom de la catégorie doit être une chaine de caractère");
+        }
+        else if (array_key_exists('cat_css_color', $args) && gettype($args['cat_css_color']) != "string") {
+            throw new \Exception("La couleur de la catégorie doit être une chaine de caractère");
         } else {
             parent::create($args);
-            return true;
+        }
+    }
+
+    /**
+     * Update une category à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     */
+    public function update(array $args)
+    {
+        if (gettype($args['cat_name']) != "string") {
+            throw new \Exception("Le nom de la catégorie doit être une chaine de caractère");
+        }
+        else if (array_key_exists('cat_css_color', $args) && gettype($args['cat_css_color']) != "string") {
+            throw new \Exception("La couleur de la catégorie doit être une chaine de caractère");
+        } else {
+            parent::update($args);
         }
     }
 }

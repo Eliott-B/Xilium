@@ -17,6 +17,7 @@ class Role extends Model
      * @var array
      */
     protected array $fillable = [
+        'rol_id',
         'rol_name'
     ];
 
@@ -36,15 +37,28 @@ class Role extends Model
      * Créé un role à partir de ses args
      * sauf si les entrés ne sont pas bonnes
      * @param array $args
-     * @return bool
      */
     public function create(array $args)
     {
         if (gettype($args['rol_name']) != "string") {
-            return false;
+            throw new \Exception("Le nom du role doit être une chaine de caractère");
         } else {
-            parent::create($args);
-            return true;
+            parent::custom("INSERT INTO roles (rol_id, rol_name) VALUES (:rol_id, :rol_name)", $args);
+            $this->id = $this->db->getLastId();
+        }
+    }
+
+    /**
+     * Update un role à partir de ses args
+     * sauf si les entrés ne sont pas bonnes
+     * @param array $args
+     */
+    public function update(array $args)
+    {
+        if (gettype($args['rol_name']) != "string") {
+            throw new \Exception("Le nom du role doit être une chaine de caractère");
+        } else {
+            parent::update($args);
         }
     }
 }

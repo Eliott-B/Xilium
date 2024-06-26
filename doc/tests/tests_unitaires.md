@@ -186,7 +186,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Classe          | pri_name    | pri_index   | pri_css_color     | RÉSULTAT ATTENDU |
 | ----------      | --------    | ----------  | ----------        | ----------       |
 | Priorities      | 'nom'       | 2           | '#2ecc71' ou null | créée            |
-| Priorities      | peu importe | peu importe | 123             | pas créée        |
+| Priorities      | peu importe | peu importe | 123               | pas créée        |
 | Priorities      | peu importe | 1.5 ou null | peu importe       | pas créée        |
 | Priorities      | 41 ou null  | peu importe | peu importe       | pas créée        |
 
@@ -315,7 +315,7 @@ Si les tests ne sont pas satisfaisant, GitHub bloquera la demande de merge jusqu
 | Categories      | 1             | 'Matériel'  | '#9b59b6' ou null | modifiée         |
 | Categories      | 'asd' ou null | peu importe | peu importe       | pas modifiée     |
 | Categories      | n'existe pas  | peu importe | peu importe       | pas modifiée     |
-| Categories      | 1             | peu importe | #9b5b6            | pas modifiée     |
+| Categories      | 1             | peu importe | 123               | pas modifiée     |
 | Categories      | 1             | 56 ou null  | peu importe       | pas modifiée     |
 
 ---
