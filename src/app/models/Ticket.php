@@ -59,12 +59,12 @@ class Ticket extends Model
         else if (array_key_exists('tech_id', $args) && gettype($args['tech_id']) != "integer") {
             throw new \Exception("L'identifiant du technicien assigné au ticket doit être un entier");
         }
-        else if (array_key_exists('creation_date', $args) != null && gettype($args['creation_date']) != "timestamp") {
-            throw new \Exception("La date de création du ticket doit être une date");
-        }
-        else if (array_key_exists('update_date', $args) != null && gettype($args['update_date']) != "timestamp") {
-            throw new \Exception("La date de mise à jour du ticket doit être une date");
-        }
+        // else if (array_key_exists('creation_date', $args) != null && gettype($args['creation_date']) != "timestamp") {
+        //     throw new \Exception("La date de création du ticket doit être une date");
+        // }
+        // else if (array_key_exists('update_date', $args) != null && gettype($args['update_date']) != "timestamp") {
+        //     throw new \Exception("La date de mise à jour du ticket doit être une date");
+        // }
         else {
             parent::create($args);
         }
