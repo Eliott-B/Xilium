@@ -1,310 +1,553 @@
 type,description,priorite,categorie
-Demande,Installation de Python sur le poste de travail,Faible,Logiciel
-Incident,Erreur de connexion au réseau Wi-Fi,Élevée,Réseau
-Demande,Mise à jour de la documentation du projet de développement web,Moyenne,Documentation
-Incident,Panne du serveur de développement,Très élevée,Matériel
-Demande,Aide pour la résolution d'un problème de programmation en Java,Moyenne,Logiciel
-Incident,Problème de connexion à la base de données,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement,Faible,Logiciel
-Incident,Problème de sécurité sur le réseau,Élevée,Réseau
-Demande,Aide pour la mise en place d'un projet de développement mobile,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du framework de développement web,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de compilation du code JavaScript,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code C#,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code JavaScript,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C#,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code C#,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code C#,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code C#,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code Java,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de développement,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code C#,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du poste de travail,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
-Incident,Erreur de compilation du code C++,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de développement web,Faible,Logiciel
-Incident,Problème de sécurité sur le système de gestion de projet,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement d'applications mobiles,Moyenne,Logiciel
-Incident,Panne du système de gestion de version,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de base de données,Moyenne,Documentation
-Incident,Erreur de connexion à la bibliothèque en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel employé,Faible,Logiciel
-Incident,Perte de données sur le serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation,Moyenne,Documentation
-Incident,Erreur de compilation du code Python,Moyenne,Logiciel
-Demande,Installation d'un nouvel outil de débogage,Faible,Logiciel
-Incident,Problème de sécurité sur le système d'exploitation,Élevée,Matériel
-Demande,Aide pour la mise en place d'un projet de développement de jeu vidéo,Moyenne,Logiciel
-Incident,Panne du système de sauvegarde,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système de gestion de projet,Moyenne,Documentation
-Incident,Erreur de connexion à la plateforme de développement en ligne,Élevée,Réseau
-Demande,Création d'un compte utilisateur pour un nouvel étudiant,Faible,Logiciel
-Incident,Perte de données sur le disque dur du serveur de fichiers,Très élevée,Matériel
-Demande,Mise à jour de la documentation du système d'exploitation mobile,Moyenne,Documentation
+Demande,Impossible d'ouvrir le projet dans l'IDE,Elevé,Logiciel
+Incident,Le serveur de développement est inaccessible,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des étudiants,Faible,Logiciel
+Incident,Le matériel de développement est défectueux,Elevé,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Problème de connexion au réseau,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Demande,Amélioration de la sécurité du système,Moyenne,Logiciel
+Incident,Erreur de syntaxe dans le code,Faible,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des cours,Faible,Logiciel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de l'interface utilisateur,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Problème de performance du système,Moyenne,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le système de gestion des étudiants est instable,Elevé,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des événements,Faible,Logiciel
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la sécurité des données,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Demande,Amélioration de l'expérience utilisateur,Moyenne,Logiciel
+Incident,Erreur de compilation dans le code,Faible,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des projets,Faible,Logiciel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Demande,Amélioration de l'expérience utilisateur,Moyenne,Logiciel
+Incident,Erreur de compilation dans le code,Faible,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des projets,Faible,Logiciel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Problème de performance du système,Moyenne,Logiciel
+Demande,Amélioration de la sécurité des données,Moyenne,Logiciel
+Incident,Le système de gestion des étudiants est instable,Elevé,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des événements,Faible,Logiciel
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Demande,Amélioration de l'expérience utilisateur,Moyenne,Logiciel
+Incident,Erreur de compilation dans le code,Faible,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des projets,Faible,Logiciel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Demande,Nouvelle fonctionnalité pour le système de gestion des événements,Faible,Logiciel
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Demande,Amélioration de l'expérience utilisateur,Moyenne,Logiciel
+Incident,Erreur de compilation dans le code,Faible,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des projets,Faible,Logiciel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Incident,Problème de stockage des données,Moyenne,Réseau
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le système de gestion des étudiants est inaccessible,Elevé,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Le matériel de développement est obsolète,Moyenne,Matériel
+Demande,Nouvelle fonctionnalité pour le système de gestion des ressources,Faible,Logiciel
+Incident,Erreur de login dans le système,Faible,Logiciel
+Demande,Ajout d'un nouveau chapitre dans la documentation,Faible,Documentation
+Incident,Problème de performance du système,Moyenne,Logiciel
+Demande,Amélioration de la sécurité des données,Moyenne,Logiciel
+Incident,Le système de gestion des étudiants est instable,Elevé,Logiciel
+Demande,Nouvelle fonctionnalité pour le système de gestion des événements,Faible,Logiciel
+Incident,Le matériel de développement est endommagé,Moyenne,Matériel
+Demande,Ajout d'un nouveau tutoriel dans la documentation,Faible,Documentation
+Incident,Erreur de données dans le système,Faible,Logiciel
+Demande,Amélioration de la gestion des erreurs,Moyenne,Logiciel
+Incident,Problème de synchronisation des données,Moyenne,Réseau
+Demande,Nouvelle fonctionnalité pour le système de gestion des tâches,Faible,Logiciel
+Incident,Le système de gestion des étudiants est lent,Elevé,Logiciel
+Demande,Ajout d'un nouveau module dans la documentation,Faible,Documentation
+Incident,Le matériel de développement est manquant,Moyenne,Matériel
+Demande,Amélioration de l'expérience utilisateur,Moyenne,Logiciel
+"Incident","Erreur de connexion au Wi-Fi dans le bâtiment A","Haute","Réseau"
+"Demande","Installation d'un point d'accès Wi-Fi supplémentaire dans la salle de cours 3","Moyenne","Réseau"
+"Incident","Perte de connexion internet dans les laboratoires de développement","Élevée","Réseau"
+"Demande","Mise à jour des paramètres de sécurité du réseau pour les étudiants","Basse","Réseau"
+"Incident","Problème de latence sur le réseau lors de la transmission de fichiers","Moyenne","Réseau"
+"Demande","Création d'un réseau virtuel privé pour les projets de groupe","Haute","Réseau"
+"Incident","Erreur de routage sur le réseau causant des problèmes d'accès aux ressources","Élevée","Réseau"
+"Demande","Amélioration de la sécurité du réseau pour les appareils mobiles","Moyenne","Réseau"
+"Incident","Panne du routeur principal du réseau","Élevée","Réseau"
+"Demande","Installation d'un système de détection d'intrusion sur le réseau","Haute","Réseau"
+"Incident","Problème de connexion au réseau pour les étudiants en dehors du campus","Moyenne","Réseau"
+"Demande","Mise en place d'un système de gestion de bande passante pour les laboratoires","Basse","Réseau"
+"Incident","Erreur de configuration du réseau causant des problèmes d'accès aux ressources","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage en nuage pour les étudiants","Haute","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Amélioration de la vitesse de téléchargement sur le réseau","Moyenne","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de surveillance du réseau pour les administrateurs","Haute","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en stage","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les professeurs","Moyenne","Réseau"
+"Demande","Amélioration de la fiabilité du réseau pour les laboratoires","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage pour les données des étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en ligne","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les étudiants en dehors du campus","Moyenne","Réseau"
+"Demande","Amélioration de la vitesse de téléchargement sur le réseau","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage en nuage pour les étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en stage","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les professeurs","Moyenne","Réseau"
+"Demande","Amélioration de la fiabilité du réseau pour les laboratoires","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage pour les données des étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en ligne","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les étudiants en dehors du campus","Moyenne","Réseau"
+"Demande","Amélioration de la vitesse de téléchargement sur le réseau","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage en nuage pour les étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en stage","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les professeurs","Moyenne","Réseau"
+"Demande","Amélioration de la fiabilité du réseau pour les laboratoires","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage pour les données des étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en ligne","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les étudiants en dehors du campus","Moyenne","Réseau"
+"Demande","Amélioration de la vitesse de téléchargement sur le réseau","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage en nuage pour les étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en stage","Basse","Réseau"
+"Incident","Panne du système de sécurité du réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de gestion des accès au réseau","Moyenne","Réseau"
+"Incident","Problème de connexion au réseau pour les professeurs","Moyenne","Réseau"
+"Demande","Amélioration de la fiabilité du réseau pour les laboratoires","Haute","Réseau"
+"Incident","Erreur de configuration du système de sécurité du réseau","Moyenne","Réseau"
+"Demande","Création d'un réseau de stockage pour les données des étudiants","Basse","Réseau"
+"Incident","Perte de données due à une erreur de sauvegarde sur le réseau","Élevée","Réseau"
+"Demande","Mise en place d'un système de détection d'anomalies sur le réseau","Haute","Réseau"
+"Incident","Problème de sécurité sur le réseau causant des vulnérabilités","Élevée","Réseau"
+"Demande","Installation d'un système de gestion des mises à jour du réseau","Moyenne","Réseau"
+"Incident","Erreur de mise à jour du système d'exploitation du routeur","Moyenne","Réseau"
+"Demande","Création d'un réseau privé virtuel pour les étudiants en ligne","Basse","Réseau"
+Incident,Imprimante en panne dans le laboratoire 1,Haute,Matériel
+Demande,Demande de mise à jour du système d'exploitation des ordinateurs de la salle 3,Moyenne,Matériel
+Incident,Écran de l'ordinateur portable du professeur X endommagé,Basse,Matériel
+Demande,Demande d'installation de logiciels spécifiques pour le cours de développement web,Moyenne,Matériel
+Incident,Problème de connexion Wi-Fi dans le bâtiment B,Haute,Matériel
+Demande,Demande de remplacement des souris et claviers usagés des ordinateurs de la salle 2,Basse,Matériel
+Incident,Ordinateur du laboratoire 2 ne démarre plus,Haute,Matériel
+Demande,Demande d'installation d'un projeteur dans la salle de conférence,Moyenne,Matériel
+Incident,Problème de fonctionnement de la caméra de surveillance du bâtiment A,Basse,Matériel
+Demande,Demande de mise à jour des drivers des imprimantes 3D,Moyenne,Matériel
+Incident,Écran de l'ordinateur fixe du laboratoire 3 endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux casques audio pour les ordinateurs de la salle 1,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de climatisation du bâtiment C,Haute,Matériel
+Demande,Demande de remplacement des batteries des ordinateurs portables des professeurs,Basse,Matériel
+Incident,Ordinateur du laboratoire 1 ne reconnaît plus les périphériques USB,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion de la température pour les serveurs,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de recharge des ordinateurs portables,Basse,Matériel
+Demande,Demande de mise à jour des logiciels de sécurité des ordinateurs de la salle 3,Moyenne,Matériel
+Incident,Écran de l'ordinateur fixe du laboratoire 2 endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux écrans pour les ordinateurs de la salle 2,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de détection d'incendie du bâtiment B,Haute,Matériel
+Demande,Demande de remplacement des clés USB endommagées,Basse,Matériel
+Incident,Ordinateur du laboratoire 3 ne démarre plus,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des impressions,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de connexion Wi-Fi du bâtiment A,Basse,Matériel
+Demande,Demande de mise à jour des drivers des scanners 3D,Moyenne,Matériel
+Incident,Écran de l'ordinateur portable du professeur Y endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux ordinateurs pour la salle de conférence,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de sécurité des accès du bâtiment C,Haute,Matériel
+Demande,Demande de remplacement des batteries des ordinateurs fixes des laboratoires,Basse,Matériel
+Incident,Ordinateur du laboratoire 2 ne reconnaît plus les périphériques réseau,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des mises à jour des logiciels,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de recharge des ordinateurs fixes,Basse,Matériel
+Demande,Demande de mise à jour des logiciels de productivité des ordinateurs de la salle 1,Moyenne,Matériel
+Incident,Écran de l'ordinateur fixe du laboratoire 1 endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux ordinateurs pour la salle 3,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de climatisation du bâtiment A,Haute,Matériel
+Demande,Demande de remplacement des câbles HDMI endommagés,Basse,Matériel
+Incident,Ordinateur du laboratoire 3 ne reconnaît plus les périphériques audio,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des impressions 3D,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de connexion Wi-Fi du bâtiment C,Basse,Matériel
+Demande,Demande de mise à jour des drivers des imprimantes laser,Moyenne,Matériel
+Incident,Écran de l'ordinateur portable du professeur Z endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux écrans pour les ordinateurs de la salle 3,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de sécurité des accès du bâtiment B,Haute,Matériel
+Demande,Demande de remplacement des clés USB endommagées,Basse,Matériel
+Incident,Ordinateur du laboratoire 1 ne démarre plus,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des mises à jour des systèmes d'exploitation,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de recharge des ordinateurs portables,Basse,Matériel
+Demande,Demande de mise à jour des logiciels de développement des ordinateurs de la salle 2,Moyenne,Matériel
+Incident,Écran de l'ordinateur fixe du laboratoire 2 endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux ordinateurs pour la salle de conférence,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de climatisation du bâtiment C,Haute,Matériel
+Demande,Demande de remplacement des batteries des ordinateurs fixes des laboratoires,Basse,Matériel
+Incident,Ordinateur du laboratoire 3 ne reconnaît plus les périphériques réseau,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des impressions,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de connexion Wi-Fi du bâtiment A,Basse,Matériel
+Demande,Demande de mise à jour des drivers des scanners 3D,Moyenne,Matériel
+Incident,Écran de l'ordinateur portable du professeur X endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux écrans pour les ordinateurs de la salle 2,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de sécurité des accès du bâtiment C,Haute,Matériel
+Demande,Demande de remplacement des clés USB endommagées,Basse,Matériel
+Incident,Ordinateur du laboratoire 2 ne démarre plus,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des mises à jour des logiciels,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de recharge des ordinateurs fixes,Basse,Matériel
+Demande,Demande de mise à jour des logiciels de productivité des ordinateurs de la salle 1,Moyenne,Matériel
+Incident,Écran de l'ordinateur fixe du laboratoire 1 endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux ordinateurs pour la salle 3,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de climatisation du bâtiment A,Haute,Matériel
+Demande,Demande de remplacement des câbles HDMI endommagés,Basse,Matériel
+Incident,Ordinateur du laboratoire 3 ne reconnaît plus les périphériques audio,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des impressions 3D,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de connexion Wi-Fi du bâtiment C,Basse,Matériel
+Demande,Demande de mise à jour des drivers des imprimantes laser,Moyenne,Matériel
+Incident,Écran de l'ordinateur portable du professeur Y endommagé,Basse,Matériel
+Demande,Demande d'installation de nouveaux écrans pour les ordinateurs de la salle 3,Moyenne,Matériel
+Incident,Problème de fonctionnement du système de sécurité des accès du bâtiment B,Haute,Matériel
+Demande,Demande de remplacement des clés USB endommagées,Basse,Matériel
+Incident,Ordinateur du laboratoire 1 ne démarre plus,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des mises à jour des systèmes d'exploitation,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de recharge des ordinateurs portables,Basse,Matériel
+Demande,Demande de mise à jour des logiciels de développement des ordinateurs de la salle 2,Moyenne,Matériel
+Incident,Écran de l'ordinateur fixe du laboratoire 2 endommagé,Basse,Matériel
+Demande,Demande de remplacement des clés USB endommagées,Basse,Matériel
+Incident,Ordinateur du laboratoire 1 ne démarre plus,Haute,Matériel
+Demande,Demande d'installation d'un système de gestion des mises à jour des systèmes d'exploitation,Moyenne,Matériel
+Incident,Problème de fonctionnement de la borne de recharge des ordinateurs portables,Basse,Matériel
+Demande,Demande de mise à jour des logiciels de développement des ordinateurs de la salle 2,Moyenne,Matériel
+Incident,Erreur de lien dans la documentation de Python,Haute,Documentation
+Demande,Ajouter une section sur les meilleures pratiques de codage, Moyenne,Documentation
+Incident,La documentation de JavaScript est incomplète,Élevée,Documentation
+Demande,Créer un tutoriel sur l'utilisation de Git, Basse,Documentation
+Incident,La documentation de HTML/CSS est obsolète,Haute,Documentation
+Demande,Ajouter des exemples de code pour les débutants, Moyenne,Documentation
+Incident,Le lien de téléchargement de la documentation est cassé,Élevée,Documentation
+Demande,Créer un glossaire des termes techniques, Basse,Documentation
+Incident,La documentation de Java est introuvable,Haute,Documentation
+Demande,Ajouter des vidéos de tutoriels pour les étapes complexes, Moyenne,Documentation
+Incident,La documentation de C++ est erronée,Élevée,Documentation
+Demande,Créer un guide de démarrage rapide pour les nouveaux étudiants, Basse,Documentation
+Incident,La documentation de Ruby est incomplète,Haute,Documentation
+Demande,Ajouter des exercices pratiques pour les étudiants, Moyenne,Documentation
+Incident,Le système de recherche de la documentation ne fonctionne pas,Élevée,Documentation
+Demande,Créer un forum de discussion pour les étudiants, Basse,Documentation
+Incident,La documentation de PHP est obsolète,Haute,Documentation
+Demande,Ajouter des ressources supplémentaires pour les étudiants avancés, Moyenne,Documentation
+Incident,La documentation de Swift est introuvable,Élevée,Documentation
+Demande,Créer un guide de style pour les contributeurs, Basse,Documentation
+Incident,La documentation de Go est erronée,Haute,Documentation
+Demande,Ajouter des exemples de projets pour les étudiants, Moyenne,Documentation
+Incident,La documentation de Rust est incomplète,Élevée,Documentation
+Demande,Créer un système de notation pour les étudiants, Basse,Documentation
+Incident,La documentation de TypeScript est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants handicapés, Moyenne,Documentation
+Incident,La documentation de Lisp est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants étrangers, Moyenne,Documentation
+Incident,La documentation de Prolog est introuvable,Élevée,Documentation
+Demande,Créer un guide de contribution pour les étudiants, Basse,Documentation
+Incident,La documentation de R est erronée,Haute,Documentation
+Demande,Ajouter des exemples de code pour les étudiants avancés, Moyenne,Documentation
+Incident,La documentation de MATLAB est incomplète,Élevée,Documentation
+Demande,Créer un système de notation pour les contributeurs, Basse,Documentation
+Incident,La documentation de Julia est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants débutants, Moyenne,Documentation
+Incident,La documentation de Lua est introuvable,Élevée,Documentation
+Demande,Créer un guide de démarrage rapide pour les nouveaux professeurs, Basse,Documentation
+Incident,La documentation de Perl est erronée,Haute,Documentation
+Demande,Ajouter des exercices pratiques pour les étudiants avancés, Moyenne,Documentation
+Incident,La documentation de Tcl est incomplète,Élevée,Documentation
+Demande,Créer un système de suivi des progrès pour les professeurs, Basse,Documentation
+Incident,La documentation de SQL est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants en difficulté, Moyenne,Documentation
+Incident,La documentation de NoSQL est introuvable,Élevée,Documentation
+Demande,Créer un guide de contribution pour les professeurs, Basse,Documentation
+Incident,La documentation de MongoDB est erronée,Haute,Documentation
+Demande,Ajouter des exemples de code pour les étudiants débutants, Moyenne,Documentation
+Incident,La documentation de Cassandra est incomplète,Élevée,Documentation
+Demande,Créer un système de notation pour les étudiants en ligne, Basse,Documentation
+Incident,La documentation de PostgreSQL est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants étrangers, Moyenne,Documentation
+Incident,La documentation de MySQL est introuvable,Élevée,Documentation
+Demande,Créer un guide de démarrage rapide pour les nouveaux étudiants en ligne, Basse,Documentation
+Incident,La documentation de Oracle est erronée,Haute,Documentation
+Demande,Ajouter des exercices pratiques pour les étudiants en ligne, Moyenne,Documentation
+Incident,La documentation de Microsoft SQL Server est incomplète,Élevée,Documentation
+Demande,Créer un système de suivi des progrès pour les étudiants en ligne, Basse,Documentation
+Incident,La documentation de Firebase est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants en difficulté en ligne, Moyenne,Documentation
+Incident,La documentation de Redis est introuvable,Élevée,Documentation
+Demande,Créer un guide de contribution pour les étudiants en ligne, Basse,Documentation
+Incident,La documentation de RabbitMQ est erronée,Haute,Documentation
+Demande,Ajouter des exemples de code pour les étudiants avancés en ligne, Moyenne,Documentation
+Incident,La documentation de Apache Kafka est incomplète,Élevée,Documentation
+Demande,Créer un système de notation pour les étudiants en ligne, Basse,Documentation
+Incident,La documentation de Apache Storm est obsolète,Haute,Documentation
+Demande,Ajouter des ressources pour les étudiants étrangers en ligne, Moyenne,Documentation
+Incident,La documentation de Apache Flink est introuvable,Élevée,Documentation
+Demande,Créer un guide de démarrage rapide pour les nouveaux professeurs en ligne, Basse,Documentation
+Incident,La documentation de Apache Spark est erronée,Haute,Documentation
+Demande,Ajouter des exercices pratiques pour les étudiants avancés en ligne, Moyenne,Documentation
